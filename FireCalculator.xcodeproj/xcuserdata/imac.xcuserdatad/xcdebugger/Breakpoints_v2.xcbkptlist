@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A13151C8-19D4-41CD-86F2-E6DFA5CFBB31"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "2AC55611-5BDE-40DA-B7CB-B5F79F4EE6E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = ""
+            moduleName = "">
+            <Locations>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B5673A9-FD1D-43C6-B185-6A182E493F14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireCalculator/NewStartViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "tableView(_:heightForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireCalculator/NewStartViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "NewStartViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - 1cfddc7e0b3e0b41"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.fireTimeLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - 6a92df473f11af5d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.fireTimeLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - 7306047a987c5042"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.fireTimeLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - ec3458f02a7b7392"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.fireTimeLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - cff3cc88612e8e47"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.init(style: __C.UITableViewStyle) -&gt; FireCalculator.NewStartViewController"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1750">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - 79831af24f016f84"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FireCalculator.NewStartViewController"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1597">
+               </Location>
+               <Location
+                  uuid = "982FEC5B-7A2C-43B7-9164-73D2B2F596CE - ad7b457b61fe9157"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireCalculator.NewStartViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FireCalculator.NewStartViewController&gt;"
+                  moduleName = "FireCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/imac/Desktop/Swift%20Projects/FireCalculator/FireCalculator/NewStartViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1547">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
