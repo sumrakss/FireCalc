@@ -1,25 +1,28 @@
-
+//
+//  PDFPreviewViewController.swift
+//  FireCalculator
+//
+//  Created by Алексей on 01.03.2020.
+//  Copyright © 2020 Alexey Orekhov. All rights reserved.
+//
 
 import UIKit
 import PDFKit
 
 class PDFPreviewViewController: UIViewController {
-  @IBOutlet weak var pdfView: PDFView!
+    public var documentData: Data?
     
-  public var documentData: Data?
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    @IBOutlet weak var pdfView: PDFView!
     
-    if let data = documentData {
-      pdfView.document = PDFDocument(data: data)
-      pdfView.autoScales = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let data = documentData {
+          pdfView.document = PDFDocument(data: data)
+          pdfView.autoScales = true
+            
+        }
     }
-  }
-  
+    
 
-  
-  
-  
 }
-

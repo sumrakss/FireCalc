@@ -646,44 +646,44 @@
                         <outletCollection property="teamCountStack" destination="kEH-tj-LFR" collectionClass="NSMutableArray" id="XRC-8Q-wGe"/>
                         <outletCollection property="teamCountStack" destination="KrH-bd-kV7" collectionClass="NSMutableArray" id="ylH-jj-NBD"/>
                         <outletCollection property="teamCountStack" destination="enz-Yd-QAb" collectionClass="NSMutableArray" id="oPy-Nf-F96"/>
-                        <segue destination="ASW-0g-Gqc" kind="show" identifier="toFound" id="lWg-Ev-cGd"/>
-                        <segue destination="gXA-9P-Dxt" kind="show" identifier="toNotFound" id="e0Q-bK-KnC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMa-bd-N0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63.200000000000003" y="620.23988005997012"/>
+            <point key="canvasLocation" x="-1136" y="609"/>
         </scene>
         <!--Preview View Controller-->
-        <scene sceneID="2ao-kk-0nQ">
+        <scene sceneID="tLH-wX-DsA">
             <objects>
-                <viewController id="ffW-Ni-pbq" customClass="PDFPreviewViewController" customModule="FireCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Bc-0b-HbY">
+                <viewController id="BYU-Iu-D8N" customClass="PDFPreviewViewController" customModule="FireCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZyI-xo-QLq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzz-E8-Pu3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gB-Pd-rJ7" customClass="PDFView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qq2-cA-d6C" firstAttribute="bottom" secondItem="Tzz-E8-Pu3" secondAttribute="bottom" id="3Zd-3C-Hwh"/>
-                            <constraint firstItem="Qq2-cA-d6C" firstAttribute="trailing" secondItem="Tzz-E8-Pu3" secondAttribute="trailing" id="71c-Uc-XDs"/>
-                            <constraint firstItem="Tzz-E8-Pu3" firstAttribute="leading" secondItem="Qq2-cA-d6C" secondAttribute="leading" id="chx-tk-zD4"/>
-                            <constraint firstItem="Tzz-E8-Pu3" firstAttribute="top" secondItem="Qq2-cA-d6C" secondAttribute="top" id="sES-aa-luc"/>
+                            <constraint firstItem="8gB-Pd-rJ7" firstAttribute="leading" secondItem="dVM-I3-6JB" secondAttribute="leading" id="AgA-NT-mfb"/>
+                            <constraint firstItem="8gB-Pd-rJ7" firstAttribute="top" secondItem="dVM-I3-6JB" secondAttribute="top" id="GoL-Fh-UIl"/>
+                            <constraint firstItem="dVM-I3-6JB" firstAttribute="trailing" secondItem="8gB-Pd-rJ7" secondAttribute="trailing" id="MZM-Yd-Jwo"/>
+                            <constraint firstItem="dVM-I3-6JB" firstAttribute="bottom" secondItem="8gB-Pd-rJ7" secondAttribute="bottom" id="tcA-xJ-Qfm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Qq2-cA-d6C"/>
+                        <viewLayoutGuide key="safeArea" id="dVM-I3-6JB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TEu-ar-qer"/>
+                    <navigationItem key="navigationItem" id="v9d-J9-MOi">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="1ty-Nm-e8e"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="pdfView" destination="Tzz-E8-Pu3" id="8eU-fV-ZUS"/>
+                        <outlet property="pdfView" destination="8gB-Pd-rJ7" id="U2h-hc-NP2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GDM-tw-LX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QbT-1L-7Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6299" y="1750"/>
+            <point key="canvasLocation" x="-6511" y="1008"/>
         </scene>
         <!--Звено-->
         <scene sceneID="agt-hy-is9">
@@ -734,7 +734,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Сложные условия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-7L-Zna">
                                                     <rect key="frame" x="16" y="11" width="167" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -762,9 +762,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Время включения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qH3-q6-0z1">
-                                                    <rect key="frame" x="20" y="13" width="143.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="13" width="147.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -809,9 +809,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Время у очага" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="09c-OU-8iG">
-                                                    <rect key="frame" x="20" y="13" width="114" height="20.5"/>
+                                                    <rect key="frame" x="20" y="13" width="116.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1042,19 +1042,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QX-ae-DtM">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-QM-FMa">
                                                     <rect key="frame" x="20" y="11" width="335" height="30"/>
-                                                    <state key="normal" title="Рассчитать"/>
+                                                    <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="doneButton:" destination="aty-dd-hWz" eventType="touchUpInside" id="14B-im-yfF"/>
+                                                        <segue destination="BYU-Iu-D8N" kind="show" identifier="previewSegue" id="b89-zw-VYR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5QX-ae-DtM" secondAttribute="trailing" id="g9n-GK-pv9"/>
-                                                <constraint firstItem="5QX-ae-DtM" firstAttribute="bottom" secondItem="n9D-vE-c76" secondAttribute="bottomMargin" id="iDb-s8-JxS"/>
-                                                <constraint firstItem="5QX-ae-DtM" firstAttribute="top" secondItem="n9D-vE-c76" secondAttribute="topMargin" id="m7J-Zr-8XM"/>
-                                                <constraint firstItem="5QX-ae-DtM" firstAttribute="leading" secondItem="n9D-vE-c76" secondAttribute="leadingMargin" id="wBe-5v-xVD"/>
+                                                <constraint firstItem="W5e-QM-FMa" firstAttribute="bottom" secondItem="n9D-vE-c76" secondAttribute="bottomMargin" id="Wx6-uV-QID"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="W5e-QM-FMa" secondAttribute="trailing" id="bk0-3f-hlm"/>
+                                                <constraint firstItem="W5e-QM-FMa" firstAttribute="top" secondItem="n9D-vE-c76" secondAttribute="topMargin" id="daE-eB-Xpy"/>
+                                                <constraint firstItem="W5e-QM-FMa" firstAttribute="leading" secondItem="n9D-vE-c76" secondAttribute="leadingMargin" id="j2S-Gb-LsW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1096,7 +1096,6 @@
                         <outletCollection property="firePlaceFields" destination="9bG-Dt-dIk" collectionClass="NSMutableArray" id="1cI-Z3-wy5"/>
                         <outletCollection property="firePlaceFields" destination="HNq-nV-oLt" collectionClass="NSMutableArray" id="4Mq-3k-5qj"/>
                         <outletCollection property="firePlaceFields" destination="Au6-bb-IpU" collectionClass="NSMutableArray" id="3p4-c6-77D"/>
-                        <segue destination="ffW-Ni-pbq" kind="show" identifier="previewSegue" id="bb7-Rf-0GS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-uO-4N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1483,7 +1482,7 @@
             <objects>
                 <tableViewController id="ASW-0g-Gqc" customClass="FoundTableViewController" customModule="FireCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zup-Gg-RrL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -1505,14 +1504,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkN-6l-iVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.20000000000005" y="25.637181409295355"/>
+            <point key="canvasLocation" x="-6039" y="1794"/>
         </scene>
         <!--Очаг не найден-->
         <scene sceneID="5wy-XN-Cis">
             <objects>
                 <tableViewController id="gXA-9P-Dxt" customClass="NotFoundTableController" customModule="FireCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5BW-rp-Fbb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -1534,7 +1533,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQ6-Cm-vXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="1156"/>
+            <point key="canvasLocation" x="-4442" y="1794"/>
         </scene>
         <!--Рассчеты-->
         <scene sceneID="84S-2S-YHG">

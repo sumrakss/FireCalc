@@ -60,16 +60,7 @@ class Formula {
             return workTime
         }
         
-        
-    // 5) Расчет контрольного времени подачи команды постовым на возвращение звена  (Тк.вых)
-//    func exitTimeCalculation(inputTime: Date, workTime: Double) -> String {
-//
-//            let time = DateFormatter()
-//            time.dateFormat = "HH:mm"
-//
-//            let exitTime = time.string(from: (inputTime + workTime))
-//            return exitTime
-//        }
+
     
       // MARK: - Функции расчетов параметров работы, если очаг не найден.
     

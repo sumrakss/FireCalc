@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// UIPickerViewDelegate, UIPickerViewDataSource
+
 class NewStartViewController: UITableViewController {
 
 //    var tappedIndexPath: IndexPath?
@@ -60,6 +60,7 @@ class NewStartViewController: UITableViewController {
         }
     }
     
+    @IBOutlet weak var doneButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -209,21 +210,17 @@ class NewStartViewController: UITableViewController {
 
         return tableView.rowHeight
     }
-    
-    @IBAction func doneButton(_ sender: UIButton) {
-//        let teamCount = Int(vSlider.value)
-//        inputFieldsView(fieldCount: teamCount)
         
-        performSegue(withIdentifier: "previewSegue", sender: self)
-        
-    }
+
     
     
+    // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "previewSegue" {
         guard let vc = segue.destination as? PDFPreviewViewController else { return }
         let pdfCreator = PDFCreator()
-        vc.documentData = pdfCreator.createFlyer()
+        vc.documentData = pdfCreator.fireNotFound()
       }
     }
+
 }

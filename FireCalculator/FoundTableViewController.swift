@@ -11,11 +11,11 @@ import UIKit
 class FoundTableViewController: UITableViewController {
     
     // Время велючения
-    var startTime = Date()
+    var enterTime = Date()
     // Время у очага
-    var hearthTime = Date()
+    var fireTime = Date()
     // Сложные условия true/false
-    var hardChoice: Bool = false
+    var hardWork: Bool = false
     // Падение давления в звене
     var maxDrop = [Double]()
     // Давление при включении
@@ -45,11 +45,11 @@ class FoundTableViewController: UITableViewController {
         paramArray.append(String(Int(totalTime)))
 
         // 2) Расчет ожидаемого времени возвращения звена из НДС (Твозв)
-        let expectedTime = comp.expectedTimeCalculation(inputTime: startTime, totalTime: totalTime)
+        let expectedTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: totalTime)
         paramArray.append(expectedTime)
 
         // 3) Расчет давления для выхода (Рк.вых)
-        let exitPressure = comp.exitPressureCalculation(maxDrop: maxDrop, hardChoice: hardChoice)
+        let exitPressure = comp.exitPressureCalculation(maxDrop: maxDrop, hardChoice: hardWork)
         paramArray.append(String(ceil(exitPressure)))
         
         // 4) Расчет времени работы у очага (Траб)
@@ -57,7 +57,7 @@ class FoundTableViewController: UITableViewController {
         paramArray.append(String(format:"%.1f", workTime))
         
         // 5) Время подачи команды постовым на выход звена
-        let  exitTime = comp.expectedTimeCalculation(inputTime: hearthTime, totalTime: workTime)
+        let  exitTime = comp.expectedTimeCalculation(inputTime: fireTime, totalTime: workTime)
         paramArray.append(exitTime)
 
                 

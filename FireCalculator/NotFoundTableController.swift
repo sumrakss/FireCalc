@@ -11,9 +11,9 @@ import UIKit
 class NotFoundTableController: UITableViewController {
     
     // Время велючения
-    var startTime = Date()
+    var enterTime = Date()
 
-    var hardChoice: Bool = false    // Сложные условия true/false
+    var hardWork: Bool = false    // Сложные условия true/false
     // Падение давления в звене
     var maxDrop = [Double]()
     // Давление при включении
@@ -34,7 +34,7 @@ class NotFoundTableController: UITableViewController {
         let comp = Formula()
 
         // 1) Расчет максимального возможного падения давления при поиске очага
-        let maxDrop = comp.maxDropCalculation(minPressure: enterData, hardChoice: hardChoice)
+        let maxDrop = comp.maxDropCalculation(minPressure: enterData, hardChoice: hardWork)
         paramArray.append(String(Int(maxDrop)))
 
         // 2) Расчет давления к выходу
@@ -46,7 +46,7 @@ class NotFoundTableController: UITableViewController {
         paramArray.append(String(format:"%.1f", timeDelta)) 
 
         // 4) Расчет контрольного времени подачи команды постовым на возвращение звена  (Тк.вых)
-        let exitTime = comp.expectedTimeCalculation(inputTime: startTime, totalTime: timeDelta)
+        let exitTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: timeDelta)
         paramArray.append(exitTime)
 
         // Uncomment the following line to preserve selection between presentations
