@@ -12,8 +12,11 @@ import PDFKit
 class PDFCreator: NSObject {
     
     let minPressure = 280   // Минимальное давление при включении
-    let reductionStability = 10
-    let maxDrop = 90    // Максимальное падение давления при поиске
+    let reductor = 10
+    let exitPressure = 190 // 1
+    let deltaT = 14.3   // 3
+    let capacity = 6.8  // Объем баллона
+    let maxDrop = 95    // 2 Максимальное падение давления при поиске
     let ratio = 3   //  Коэффициент сложности
     
     enum value: String {
@@ -52,19 +55,28 @@ class PDFCreator: NSObject {
 
             // 1
             String(minPressure).draw(at: CGPoint(x: 335, y: 120), withAttributes: large)
-            String(reductionStability).draw(at: CGPoint(x: 393, y: 120), withAttributes: large)
+            String(reductor).draw(at: CGPoint(x: 393, y: 120), withAttributes: large)
             String(ratio).draw(at: CGPoint(x: 220, y: 148), withAttributes: large)
             String(ratio).draw(at: CGPoint(x: 372, y: 148), withAttributes: large)
             String(maxDrop).draw(at: CGPoint(x: 444, y: 135), withAttributes: large)
-          
 //            drawLine(context, length: 110, pointX: 95+cgHorizontal, pointY: 98+cgVertical)
             
-
-
+            // 2
+            String(minPressure).draw(at: CGPoint(x: 327, y: 218), withAttributes: large)
+            String(maxDrop).draw(at: CGPoint(x: 390, y: 218), withAttributes: large)
+            String(exitPressure).draw(at: CGPoint(x: 445, y: 218), withAttributes: large)
             
+            // 3
+            String(maxDrop).draw(at: CGPoint(x: 245, y: 295), withAttributes: large)
+            String(capacity).draw(at: CGPoint(x: 295, y: 295), withAttributes: large)
+            String(reductor).draw(at: CGPoint(x: 290, y: 324), withAttributes: large)
+            String(deltaT).draw(at: CGPoint(x: 350, y: 310), withAttributes: large)
             
-             // Добавление PDF шаблона с формулами
-            let path = Bundle.main.path(forResource: "test2", ofType: "pdf")!
+            // 4
+//            String(deltaT).draw(at: CGPoint(x: 285, y: 340), withAttributes: large)
+            
+            // Добавление PDF шаблона с формулами
+            let path = Bundle.main.path(forResource: "test3", ofType: "pdf")!
             let url = URL(fileURLWithPath: path)
             let document = CGPDFDocument(url as CFURL)
             let page = document?.page(at: 1)
