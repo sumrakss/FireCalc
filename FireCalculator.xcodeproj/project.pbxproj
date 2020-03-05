@@ -74,11 +74,11 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
 				FA66575D240FBABA0056B1F8 /* test3.pdf */,
+				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
+				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
 				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
 				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
-				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
 				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,

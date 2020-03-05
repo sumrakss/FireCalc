@@ -11,6 +11,17 @@ import PDFKit
 
 class PDFCreator: NSObject {
     
+//    // Время велючения
+//    var enterTime = Date()
+//    // Сложные условия true/false
+//    var hardWork: Bool = false
+//    // Падение давления в звене
+//    var maxDrop = [Double]()
+//    // Давление при включении
+//    var enterData = [Double]()
+//    // Вычисляемые значения
+//    var paramArray = [String]()
+    
     let minPressure = 280   // Минимальное давление при включении
     let reductor = 10
     let exitPressure = 190 // 1
@@ -18,24 +29,43 @@ class PDFCreator: NSObject {
     let capacity = 6.8  // Объем баллона
     let maxDrop = 95    // 2 Максимальное падение давления при поиске
     let ratio = 3   //  Коэффициент сложности
-    
-    enum value: String {
-        case kg = "кг/см"
-        case mp = "МПа"
-    }
-    
-    
 
+    
+    /*
+    func test() {
+        let comp = Formula()
+
+        // 1) Расчет максимального возможного падения давления при поиске очага
+        let maxDrop = comp.maxDropCalculation(minPressure: enterData, hardChoice: hardWork)
+        paramArray.append(String(Int(maxDrop)))
+
+        // 2) Расчет давления к выходу
+        let exitPressure = comp.exitPressureCalculation(minPressure: enterData, maxDrop: maxDrop)
+        paramArray.append(String(ceil(exitPressure)))
+
+        // 3) Расчет промежутка времени с вкл. до подачи команды дТ
+        let timeDelta = comp.deltaTimeCalculation(maxDrop: maxDrop)
+        paramArray.append(String(format:"%.1f", timeDelta))
+
+        // 4) Расчет контрольного времени подачи команды постовым на возвращение звена  (Тк.вых)
+        let exitTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: timeDelta)
+        paramArray.append(exitTime)
+    
+    }
+    */
     
     
     // Метод генерирует лист формата А4 если очаг пожара не найден
-    func fireNotFound() -> Data {
-//        let pdfMetaData = [
-//          kCGPDFContextCreator: "Formula",
-//          kCGPDFContextAuthor: "Bolas"
-//        ]
+    func notFoundPDFCreator() -> Data {
+        
+//        test()
+        
+        let pdfMetaData = [
+          kCGPDFContextCreator: "Formula",
+          kCGPDFContextAuthor: "Bolas"
+        ]
         let format = UIGraphicsPDFRendererFormat()
-//        format.documentInfo = pdfMetaData as [String: Any]
+        format.documentInfo = pdfMetaData as [String: Any]
         
         
         // A4 size
@@ -136,4 +166,6 @@ class PDFCreator: NSObject {
       drawContext.strokePath()
       drawContext.restoreGState()
     }
+    
+
 }

@@ -188,12 +188,10 @@ class NewStartViewController: UITableViewController {
 //
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-
         if indexPath.row == 3 {
             if tappedCell1 {
                 return tableView.rowHeight
             } else {
-               
                 return 0
             }
         }
@@ -202,7 +200,6 @@ class NewStartViewController: UITableViewController {
             if tappedCell2  && firePlace {
                 return tableView.rowHeight
             } else {
-                
                 return 0
             }
         }
@@ -212,7 +209,6 @@ class NewStartViewController: UITableViewController {
             return 256
         }
 
-
         return tableView.rowHeight
     }
         
@@ -221,11 +217,12 @@ class NewStartViewController: UITableViewController {
     
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "previewSegue" {
+        
+        if segue.identifier == "previewSegue" {
         guard let vc = segue.destination as? PDFPreviewViewController else { return }
         let pdfCreator = PDFCreator()
-        vc.documentData = pdfCreator.fireNotFound()
-      }
+        vc.documentData = pdfCreator.notFoundPDFCreator()
+            
+        }
     }
-
 }
