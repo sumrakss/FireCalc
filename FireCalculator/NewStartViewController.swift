@@ -162,6 +162,7 @@ class NewStartViewController: UITableViewController {
     
     
     
+    
     // Скрываем клавиатуру при касании за ее пределами
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -179,8 +180,10 @@ class NewStartViewController: UITableViewController {
              tappedCell2 = !tappedCell2
         }
 
-            self.tableView.reloadData()
-        }
+        tableView.beginUpdates()
+        tableView.reloadData()
+        tableView.endUpdates()
+    }
 
 //
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -190,6 +193,7 @@ class NewStartViewController: UITableViewController {
             if tappedCell1 {
                 return tableView.rowHeight
             } else {
+               
                 return 0
             }
         }
@@ -207,6 +211,7 @@ class NewStartViewController: UITableViewController {
         if indexPath == [1, 0] {
             return 256
         }
+
 
         return tableView.rowHeight
     }
