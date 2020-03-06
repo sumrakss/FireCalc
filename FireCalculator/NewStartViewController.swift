@@ -14,9 +14,9 @@ class NewStartViewController: UITableViewController {
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
     // Очаг найден true/false
-    var firePlace: Bool = true
+    var firePlace: Bool = false
     // Сложные условия true/false
-    var hardWork: Bool = false
+    var hardWork: Bool = true
     // Время включения
     var enterTime = Date()
     // Время у очага
@@ -65,7 +65,10 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        hardWorkSwitch.isOn = true
+        firePlaceSwitch.isOn = false
+        
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: enterTime)
@@ -126,9 +129,6 @@ class NewStartViewController: UITableViewController {
     // Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
         hardWork = !hardWork
-        
-        
-        
     }
     
     
@@ -151,16 +151,12 @@ class NewStartViewController: UITableViewController {
     }
     
     
-    
-    
 
     // Меняем численность состава звена ГДЗС
     @IBAction func teamChange(_ sender: UISlider) {
         let teamCount = Int(vSlider.value)
         inputFieldsView(fieldCount: teamCount)
     }
-    
-    
     
     
     // Скрываем клавиатуру при касании за ее пределами
@@ -181,8 +177,8 @@ class NewStartViewController: UITableViewController {
         }
 
         tableView.beginUpdates()
-        tableView.reloadData()
         tableView.endUpdates()
+        tableView.reloadData()
     }
 
 //
@@ -219,10 +215,15 @@ class NewStartViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "previewSegue" {
-        guard let vc = segue.destination as? PDFPreviewViewController else { return }
-        let pdfCreator = PDFCreator()
-        vc.documentData = pdfCreator.notFoundPDFCreator()
+            guard let vc = segue.destination as? PDFPreviewViewController else { return }
             
+            if !firePlace { // Если очаг не найден
+                let pdfCreator = PDFCreator()
+                pdfCreator.enterTime = enterTime
+                pdfCreator.enterData = enterData
+                pdfCreator.hardWork = hardWork
+                vc.documentData = pdfCreator.notFoundPDFCreator()
+            }
         }
     }
 }
