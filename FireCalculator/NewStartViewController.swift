@@ -16,7 +16,7 @@ class NewStartViewController: UITableViewController {
     // Очаг найден true/false
     var firePlace: Bool = false
     // Сложные условия true/false
-    var hardWork: Bool = true
+    var hardWork: Bool = false
     // Время включения
     var enterTime = Date()
     // Время у очага
@@ -27,7 +27,7 @@ class NewStartViewController: UITableViewController {
     // Давление у очага
     var hearthData = [Double]()
     // Падение давления в звене
-    var maxDrop = [Double]()
+    var fallPressure = [Double]()
     
 
     
@@ -66,14 +66,19 @@ class NewStartViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hardWorkSwitch.isOn = true
+        hardWorkSwitch.isOn = false
         firePlaceSwitch.isOn = false
+        fireStackLabel.isHidden = true
+        fireTimeCell.selectionStyle = .none
+        fireTimeLabel.isEnabled = false
+        fireTimeDetail.isEnabled = false
         
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: enterTime)
         fireTimeDetail.text = time.string(from: fireTime)
         
+
         let count = Int(vSlider.value)
         inputFieldsView(fieldCount: count)
     }
@@ -84,11 +89,15 @@ class NewStartViewController: UITableViewController {
     func inputFieldsView(fieldCount: Int) {
             enterData.removeAll()
             hearthData.removeAll()
-            maxDrop.removeAll()
+            fallPressure.removeAll()
             
             for item in teamCountStack {
-                item.isHidden = true
+                item.isHidden  = true
             }
+        
+//            for item in firePlaceFields {
+//                item.isHidden = true
+//            }
             
             for i in 0..<fieldCount {
                 if let enterValue = Double(enterValueFields[i].text!) {
@@ -99,7 +108,7 @@ class NewStartViewController: UITableViewController {
                     hearthData.append(hearthValue)
                 }
             
-                maxDrop.append(enterData[i] - hearthData[i])
+                fallPressure.append(enterData[i] - hearthData[i])
                 
                 teamCountStack[i].isHidden = false
             }
@@ -207,9 +216,7 @@ class NewStartViewController: UITableViewController {
 
         return tableView.rowHeight
     }
-        
-
-    
+          
     
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

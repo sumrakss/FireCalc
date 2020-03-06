@@ -21,7 +21,7 @@ class PDFCreator: NSObject {
     // Очаг найден true/false
     var firePlace: Bool = true
     // Падение давления в звене
-    var maxDrop = [Double]()
+    var fallPressure = [Double]()
     
     
     // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
@@ -49,13 +49,7 @@ class PDFCreator: NSObject {
         hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
         
         // PDF
-        let pdfMetaData = [
-          kCGPDFContextCreator: "Formula",
-          kCGPDFContextAuthor: "Bolas"
-        ]
         let format = UIGraphicsPDFRendererFormat()
-        format.documentInfo = pdfMetaData as [String: Any]
-        
         
         // A4 size
         let pageWidth = 595.2
@@ -67,10 +61,9 @@ class PDFCreator: NSObject {
             context.beginPage()
             let context = context.cgContext
             
-            
             // Щрифты для констант и вычисляемых значений
             let large = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 20)!]
-//            let small = [NSAttributedString.Key.font: UIFont(name: "Times", size: 13)!]
+            let small = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 15)!]
 
             // Координаты констант и вычисляемых значений на листе A4
             // 1
@@ -91,8 +84,13 @@ class PDFCreator: NSObject {
             String(format:"%.1f", timeDelta).draw(at: CGPoint(x: 350, y: 310), withAttributes: large)
             
             // 4
+            let time = DateFormatter()
+            time.dateFormat = "HH"
+            time.string(from: enterTime).draw(at: CGPoint(x: 220, y: 397), withAttributes: large)
+            time.dateFormat = "mm"
+            time.string(from: enterTime).draw(at: CGPoint(x: 244, y: 395), withAttributes: small)
+            String(Int(timeDelta)).draw(at: CGPoint(x: 275, y: 395), withAttributes: small)
             exitTime.draw(at: CGPoint(x: 325, y: 397), withAttributes: large)
-            
             
             // Подставляем PDF шаблон с формулами
             let path = Bundle.main.path(forResource: "test3", ofType: "pdf")!
