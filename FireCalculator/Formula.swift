@@ -11,9 +11,9 @@ import Foundation
 class Formula {
     
     // Объем баллона
-    let tankVolume = 7.0
+    var tankVolume = 7.0
     // Коэффициент расхода воздуха
-    let airFlow = 44.0
+    var airFlow = 44.0
     // давление воздуха, необходимое для устойчивой работы редуктора
     let reductionStability = 10.0
     

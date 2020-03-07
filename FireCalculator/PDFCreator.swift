@@ -26,7 +26,6 @@ class PDFCreator: NSObject {
     
     // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
     func notFoundPDFCreator() -> Data {
-        
         // Вычисляемые значения
         let comp = Formula()
         // 1) Расчет максимального возможного падения давления при поиске очага
@@ -107,6 +106,10 @@ class PDFCreator: NSObject {
     }
     
 
+//    func foundPDFCreator() -> Data {
+//
+//        return data
+//    }
     
     
     /*
