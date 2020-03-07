@@ -171,13 +171,20 @@ class NewStartViewController: UITableViewController {
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+//        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 2 {
             tappedCell1 = !tappedCell1
+            let indexPath = IndexPath(item: 3, section: 0)
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
-
+        
+        
         if indexPath.row == 4 && firePlace {
              tappedCell2 = !tappedCell2
+            let indexPath = IndexPath(item: 5, section: 0)
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
+        
 
             self.tableView.reloadData()
         }
@@ -207,7 +214,8 @@ class NewStartViewController: UITableViewController {
         if indexPath == [1, 0] {
             return 256
         }
-
+        
+        
         return tableView.rowHeight
     }
         
