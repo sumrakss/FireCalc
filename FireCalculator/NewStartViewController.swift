@@ -9,28 +9,26 @@
 import UIKit
 
 class NewStartViewController: UITableViewController {
-
-//    var tappedIndexPath: IndexPath?
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
     // Очаг найден true/false
-    var firePlace: Bool = true
+    var firePlace: Bool = false
     // Сложные условия true/false
     var hardWork: Bool = false
     // Время включения
     var enterTime = Date()
     // Время у очага
     var fireTime = Date()
-    
     // Давление при включении
     var enterData = [Double]()
     // Давление у очага
     var hearthData = [Double]()
     // Падение давления в звене
-    var maxDrop = [Double]()
+    var fallPressure = [Double]()
+	
+	var tank = 0.0
     
 
-    
     @IBOutlet weak var firePlaceLabel: UILabel!
     @IBOutlet weak var hardWorkLabel: UILabel!
     @IBOutlet weak var enterTimePicker: UIDatePicker!
@@ -38,16 +36,10 @@ class NewStartViewController: UITableViewController {
     @IBOutlet weak var fireTimeLabel: UILabel!
     @IBOutlet weak var enterTimeDetail: UILabel!
     @IBOutlet weak var fireTimeDetail: UILabel!
-    
     @IBOutlet weak var fireTimeCell: UITableViewCell!
-    
     @IBOutlet weak var firePlaceSwitch: UISwitch!
     @IBOutlet weak var hardWorkSwitch: UISwitch!
-    
-
     @IBOutlet weak var fireStackLabel: UILabel!
-    
-    
     @IBOutlet var teamCountStack: [UIStackView]!
     @IBOutlet var enterValueFields: [UITextField]!
     @IBOutlet var firePlaceFields: [UITextField]!
@@ -60,31 +52,37 @@ class NewStartViewController: UITableViewController {
         }
     }
     
-    @IBOutlet weak var doneButton: UIButton!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	override func viewDidLoad() {
+        hardWorkSwitch.isOn = false
+        firePlaceSwitch.isOn = false
+        fireStackLabel.isHidden = true
+        fireTimeCell.selectionStyle = .none
+        fireTimeLabel.isEnabled = false
+        fireTimeDetail.isEnabled = false
+        
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: enterTime)
         fireTimeDetail.text = time.string(from: fireTime)
         
+        for item in firePlaceFields {
+            item.isHidden = true
+//            item.borderStyle = .line
+        }
+
         let count = Int(vSlider.value)
         inputFieldsView(fieldCount: count)
     }
     
   
-    
     // Отрисовываем поля ввода в зависимости от состава звена
     func inputFieldsView(fieldCount: Int) {
             enterData.removeAll()
             hearthData.removeAll()
-            maxDrop.removeAll()
+            fallPressure.removeAll()
             
             for item in teamCountStack {
-                item.isHidden = true
+                item.isHidden  = true
             }
             
             for i in 0..<fieldCount {
@@ -96,12 +94,10 @@ class NewStartViewController: UITableViewController {
                     hearthData.append(hearthValue)
                 }
             
-                maxDrop.append(enterData[i] - hearthData[i])
-                
+                fallPressure.append(enterData[i] - hearthData[i])
                 teamCountStack[i].isHidden = false
             }
         }
-    
     
     
     // Очаг
@@ -126,11 +122,7 @@ class NewStartViewController: UITableViewController {
     // Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
         hardWork = !hardWork
-        
-        
-        
     }
-    
     
     
     // Устанавливаем время включения
@@ -139,9 +131,9 @@ class NewStartViewController: UITableViewController {
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: enterTime)
-        
     }
     
+	
     // Устанавливаем время у очага
     @IBAction func fireTimeChange(_ sender: UIDatePicker) {
         fireTime = fireTimePicker!.date
@@ -150,9 +142,6 @@ class NewStartViewController: UITableViewController {
         fireTimeDetail.text = time.string(from: fireTime)
     }
     
-    
-    
-    
 
     // Меняем численность состава звена ГДЗС
     @IBAction func teamChange(_ sender: UISlider) {
@@ -160,8 +149,14 @@ class NewStartViewController: UITableViewController {
         inputFieldsView(fieldCount: teamCount)
     }
     
-    
-    
+	
+	// Обновляем все переменные
+	@IBAction func doneButton(_ sender: UIButton) {
+		let teamCount = Int(vSlider.value)
+        inputFieldsView(fieldCount: teamCount)
+	}
+	
+	
     // Скрываем клавиатуру при касании за ее пределами
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -174,25 +169,25 @@ class NewStartViewController: UITableViewController {
 //        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 2 {
             tappedCell1 = !tappedCell1
-            let indexPath = IndexPath(item: 3, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .none)
+//            let indexPath = IndexPath(item: 3, section: 0)
+//            tableView.reloadRows(at: [indexPath], with: .none)
         }
         
         
         if indexPath.row == 4 && firePlace {
              tappedCell2 = !tappedCell2
-            let indexPath = IndexPath(item: 5, section: 0)
-            tableView.reloadRows(at: [indexPath], with: .none)
+//            let indexPath = IndexPath(item: 5, section: 0)
+//            tableView.reloadRows(at: [indexPath], with: .none)
         }
         
 
-            self.tableView.reloadData()
-        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.reloadData()
+    }
 
 //
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-
         if indexPath.row == 3 {
             if tappedCell1 {
                 return tableView.rowHeight
@@ -205,7 +200,6 @@ class NewStartViewController: UITableViewController {
             if tappedCell2  && firePlace {
                 return tableView.rowHeight
             } else {
-                
                 return 0
             }
         }
@@ -214,21 +208,30 @@ class NewStartViewController: UITableViewController {
         if indexPath == [1, 0] {
             return 256
         }
-        
-        
         return tableView.rowHeight
     }
-        
-
-    
-    
+          
+	
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "previewSegue" {
-        guard let vc = segue.destination as? PDFPreviewViewController else { return }
-        let pdfCreator = PDFCreator()
-        vc.documentData = pdfCreator.fireNotFound()
-      }
+        if segue.identifier == "previewSegue" {
+            guard let vc = segue.destination as? PDFPreviewViewController else { return }
+            let pdfCreator = PDFCreator()
+            
+            if firePlace { // Если очаг не найден
+                pdfCreator.enterTime = enterTime
+                pdfCreator.fireTime = enterTime
+                pdfCreator.hearthData = hearthData
+                pdfCreator.enterData = enterData
+                pdfCreator.hardWork = hardWork
+                pdfCreator.fallPressure = fallPressure
+                vc.documentData = pdfCreator.foundPDFCreator()
+            } else {
+                pdfCreator.enterTime = enterTime
+                pdfCreator.enterData = enterData
+                pdfCreator.hardWork = hardWork
+                vc.documentData = pdfCreator.notFoundPDFCreator()
+            }
+        }
     }
-
 }

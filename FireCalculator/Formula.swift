@@ -8,14 +8,25 @@
 
 import Foundation
 
-class Formula {
+class Formula: DataDelegate {
     
     // Объем баллона
-    let tankVolume = 8.0
+    var tankVolume = 7.0
     // Коэффициент расхода воздуха
-    let airFlow = 44.0
-    // давление воздуха (кислорода), необходимое для устойчивой работы редуктора
+    var airFlow = 44.0
+    // давление воздуха, необходимое для устойчивой работы редуктора
     let reductionStability = 10.0
+    
+    func transferData(data: Double) {
+        tankVolume = data
+        print(tankVolume)
+    }
+
+    
+    init() {
+        let vc = SettingsTableController()
+        vc.delegate = self
+    }
     
       // MARK: - Функции расчетов параметров работы, если очаг найден.
         
@@ -66,7 +77,7 @@ class Formula {
     
     // 1) Расчет максимального расхода давления при поиске очага
     func maxDropCalculation(minPressure: [Double], hardChoice: Bool) -> Double {
-
+            
            var hardValue = 2.5
            if hardChoice { hardValue = 3}
            let pressure = (minPressure.min()! - reductionStability) / hardValue
@@ -81,6 +92,9 @@ class Formula {
        
     // 3) Расчет промежутка времени с вкл. до подачи команды дТ
     func deltaTimeCalculation(maxDrop: Double) -> Double {
+        let vc = SettingsTableController()
+        vc.delegate = self
+        print("deltaTimeCalculation")
         let pressure = (maxDrop * tankVolume) / airFlow
         return pressure
     }
