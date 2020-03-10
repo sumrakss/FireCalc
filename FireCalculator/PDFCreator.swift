@@ -1,127 +1,218 @@
-/// Copyright (c) 2020 Razeware LLC
-///
-
+//
+//  PDFCreator.swift
+//  FireCalculator
+//
+//  Created by Алексей on 01.03.2020.
+//  Copyright © 2020 Alexey Orekhov. All rights reserved.
+//
 
 import UIKit
 import PDFKit
 
 class PDFCreator: NSObject {
-  
-  func createFlyer() -> Data {
-    let pdfMetaData = [
-      kCGPDFContextCreator: "Formula",
-      kCGPDFContextAuthor: "Bolas"
-    ]
-    let format = UIGraphicsPDFRendererFormat()
-    format.documentInfo = pdfMetaData as [String: Any]
     
-    let pageWidth = 8.5 * 72.0
-    let pageHeight = 11 * 72.0
-    let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+    // Время велючения
+    var enterTime = Date()
+    // Время у очага
+    var fireTime = Date()
+    // Давление при включении
+    var enterData = [Double]()
+    // Давление у очага
+    var hearthData = [Double]()
+    // Сложные условия true/false
+    var hardWork: Bool = false
     
-    let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+    // Очаг найден true/false
+    var firePlace: Bool = true
+    // Падение давления в звене
+    var fallPressure = [Double]()
     
-    let data = renderer.pdfData { (context) in
-        // 5
-        context.beginPage()
-        // 6
-        let large = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22)] //boldSystemFont(ofSize: 72)
-        let small = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
-//        let attributes3 = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 8)]
-//        let text = "I'm a PDF!"
-//        text.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
-        let x = 10
-        let y = 20
-        let solussion = "РЕШЕНИЕ:"
-        let pressure = "P"
-        let maxpadP = "max пад"
-        let mininpP = "min вкл"
-        let ustrabP = "уст. раб"
-        let exitP = "к. вых"
-        let kgcm = "кг/см"
-      
-//        let equally = "="
-      
-        solussion.draw(at: CGPoint(x: 230+x, y: 35+y), withAttributes: large)
-      
-        pressure.draw(at: CGPoint(x: 15+x, y: 105+y), withAttributes: large)
-        maxpadP.draw(at: CGPoint(x: 25+x, y: 125+y), withAttributes: small)
-        "=".draw(at: CGPoint(x: 90+x, y: 105+y), withAttributes: large)
-      
-        pressure.draw(at: CGPoint(x: 110+x, y: 80+y), withAttributes: large)
-        mininpP.draw(at: CGPoint(x: 120+x, y: 100+y), withAttributes: small)
-        "-".draw(at: CGPoint(x: 180+x, y: 80+y), withAttributes: large)
-        pressure.draw(at: CGPoint(x: 200+x, y: 80+y), withAttributes: large)
-        ustrabP.draw(at: CGPoint(x: 210+x, y: 100+y), withAttributes: small)
-        "3".draw(at: CGPoint(x: 180+x, y: 130+y), withAttributes: large)
-        "=".draw(at: CGPoint(x: 260+x, y: 105+y), withAttributes: large)
-      
+    
+    // Метод генерирует лист А4 c расчетами если очаг пожара найден.
+    func foundPDFCreator() -> Data {
+        // Вычисляемые значения
+        let comp = Formula()
+        // 1) Расчет общего времени работы (Тобщ)
+        let totalTime = comp.totalTimeCalculation(minPressure: enterData)
+
+        // 2) Расчет ожидаемого времени возвращения звена из НДС (Твозв)
+        let expectedTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: totalTime)
+
+        // 3) Расчет давления для выхода (Рк.вых)
+        let exitPressure = comp.exitPressureCalculation(maxDrop: fallPressure, hardChoice: hardWork)
         
-      }
-
-      return data
-    
-  }
-  
-  /*
-  func addBodyText(pageRect: CGRect, textTop: CGFloat) {
-    let textFont = UIFont.systemFont(ofSize: 12.0, weight: .regular)
-    // 1
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.alignment = .natural
-    paragraphStyle.lineBreakMode = .byWordWrapping
-    // 2
-    let textAttributes = [
-      NSAttributedString.Key.paragraphStyle: paragraphStyle,
-      NSAttributedString.Key.font: textFont
-    ]
-    let attributedText = NSAttributedString(
-      string: body, attributes: textAttributes
-    )
-    // 3
-    let textRect = CGRect(
-      x: 10,
-      y: textTop,
-      width: pageRect.width - 20,
-      height: pageRect.height - textTop - pageRect.height / 5.0
-    )
-    attributedText.draw(in: textRect)
-  }
-
-  
-  // 1
-  func drawTearOffs(_ drawContext: CGContext, pageRect: CGRect,
-                    tearOffY: CGFloat, numberTabs: Int) {
-    // 2
-    drawContext.saveGState()
-    // 3
-    drawContext.setLineWidth(2.0)
-
-    // 4
-    drawContext.move(to: CGPoint(x: 0, y: tearOffY))
-    drawContext.addLine(to: CGPoint(x: pageRect.width, y: tearOffY))
-    drawContext.strokePath()
-    drawContext.restoreGState()
-
-    // 5
-    drawContext.saveGState()
-    let dashLength = CGFloat(72.0 * 0.2)
-    drawContext.setLineDash(phase: 0, lengths: [dashLength, dashLength])
-    // 6
-    let tabWidth = pageRect.width / CGFloat(numberTabs)
-    for tearOffIndex in 1..<numberTabs {
-      // 7
-      let tabX = CGFloat(tearOffIndex) * tabWidth
-      drawContext.move(to: CGPoint(x: tabX, y: tearOffY))
-      drawContext.addLine(to: CGPoint(x: tabX, y: pageRect.height))
-      drawContext.strokePath()
+        // 4) Расчет времени работы у очага (Траб)
+        let workTime = comp.workTimeCalculation(minPressure: hearthData, exitPressure: exitPressure)
+        
+        // 5) Время подачи команды постовым на выход звена
+        let  exitTime = comp.expectedTimeCalculation(inputTime: fireTime, totalTime: workTime)
+        
+        // Константы из формул
+               let minPressure = String(Int(enterData.min()!))        // Минимальное давление при включении
+               let reductor = String(Int(comp.reductionStability))    // Давление воздуха, необходимое для устойчивой работы редуктора
+               let capacity = String(comp.tankVolume)                 // Объем баллона в литрах
+               var ratio: String                                      // Коэффициент, учитывающий необходимый запас воздуха
+               hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
+               
+               // PDF
+               let format = UIGraphicsPDFRendererFormat()
+               
+               // A4 size
+               let pageWidth = 595.2
+               let pageHeight = 841.8
+               let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+               let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+               
+               let data = renderer.pdfData { (context) in
+                   context.beginPage()
+                   let context = context.cgContext
+                   
+                   // Щрифты для констант и вычисляемых значений
+                   let large = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 20)!]
+                   let small = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 15)!]
+                
+                // Подставляем PDF шаблон с формулами
+                let path = Bundle.main.path(forResource: "test3", ofType: "pdf")!
+                let url = URL(fileURLWithPath: path)
+                let document = CGPDFDocument(url as CFURL)
+                let page = document?.page(at: 1)
+                UIColor.white.set()
+                context.translateBy(x: 0.0, y: pageRect.size.height)
+                context.scaleBy(x: 1.0, y: -1.0)
+                context.drawPDFPage(page!)
+        }
+        return data
     }
-    // 7
-    drawContext.restoreGState()
-  }
-  */
-  
+    
+    
+    // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
+    func notFoundPDFCreator() -> Data {
+        // Вычисляемые значения
+        let comp = Formula()
+        // 1) Расчет максимального возможного падения давления при поиске очага
+        let maxDrop = comp.maxDropCalculation(minPressure: enterData, hardChoice: hardWork)
+        
+        // 2) Расчет давления к выходу
+        let exitPressure = comp.exitPressureCalculation(minPressure: enterData, maxDrop: maxDrop)
+        
+        // 3) Расчет промежутка времени с вкл. до подачи команды дТ
+        let timeDelta = comp.deltaTimeCalculation(maxDrop: maxDrop)
+        
+        // 4) Расчет контрольного времени подачи команды постовым на возвращение звена  (Тк.вых)
+        let exitTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: timeDelta)
+        
+        // Константы из формул
+        let minPressure = String(Int(enterData.min()!))        // Минимальное давление при включении
+        let reductor = String(Int(comp.reductionStability))    // Давление воздуха, необходимое для устойчивой работы редуктора
+        let capacity = String(comp.tankVolume)                 // Объем баллона в литрах
+        var ratio: String                                      // Коэффициент, учитывающий необходимый запас воздуха
+        hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
+        
+        // PDF
+        let format = UIGraphicsPDFRendererFormat()
+        
+        // A4 size
+        let pageWidth = 595.2
+        let pageHeight = 841.8
+        let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+        let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        
+        let data = renderer.pdfData { (context) in
+            context.beginPage()
+            let context = context.cgContext
+            
+            // Щрифты для констант и вычисляемых значений
+            let large = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 20)!]
+            let small = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 15)!]
 
-  
-  
+            // Координаты констант и вычисляемых значений на листе A4
+            // 1
+            minPressure.draw(at: CGPoint(x: 335, y: 120), withAttributes: large)
+            reductor.draw(at: CGPoint(x: 393, y: 120), withAttributes: large)
+            ratio.draw(at: CGPoint(x: 220, y: 148), withAttributes: large)
+            ratio.draw(at: CGPoint(x: 372, y: 148), withAttributes: large)
+            String(Int(maxDrop)).draw(at: CGPoint(x: 444, y: 135), withAttributes: large)
+
+            // 2
+            minPressure.draw(at: CGPoint(x: 327, y: 218), withAttributes: large)
+            String(Int(maxDrop)).draw(at: CGPoint(x: 390, y: 218), withAttributes: large)
+            String(Int(ceil(exitPressure))).draw(at: CGPoint(x: 445, y: 218), withAttributes: large)
+
+            // 3
+            String(Int(maxDrop)).draw(at: CGPoint(x: 245, y: 295), withAttributes: large)
+            capacity.draw(at: CGPoint(x: 295, y: 295), withAttributes: large)
+            String(format:"%.1f", timeDelta).draw(at: CGPoint(x: 350, y: 310), withAttributes: large)
+            
+            // 4
+            let time = DateFormatter()
+            time.dateFormat = "HH"
+            time.string(from: enterTime).draw(at: CGPoint(x: 220, y: 397), withAttributes: large)
+            time.dateFormat = "mm"
+            time.string(from: enterTime).draw(at: CGPoint(x: 244, y: 395), withAttributes: small)
+            String(Int(timeDelta)).draw(at: CGPoint(x: 275, y: 395), withAttributes: small)
+            exitTime.draw(at: CGPoint(x: 325, y: 397), withAttributes: large)
+            
+            // Подставляем PDF шаблон с формулами
+            let path = Bundle.main.path(forResource: "test3", ofType: "pdf")!
+            let url = URL(fileURLWithPath: path)
+            let document = CGPDFDocument(url as CFURL)
+            let page = document?.page(at: 1)
+            UIColor.white.set()
+            context.translateBy(x: 0.0, y: pageRect.size.height)
+            context.scaleBy(x: 1.0, y: -1.0)
+            context.drawPDFPage(page!)
+          }
+
+          return data
+    }
+    
+
+//    func foundPDFCreator() -> Data {
+//
+//        return data
+//    }
+    
+    
+    /*
+     length - длина линии
+     pointX - начальная координата линии по оси Х
+     pointY - положение линии заданной длины по осиY
+     */
+    func drawLine(_ drawContext: CGContext, length: CGFloat, pointX: CGFloat, pointY: CGFloat) {
+
+        drawContext.saveGState()
+        // Толщина линии
+        drawContext.setLineWidth(1.0)
+        drawContext.move(to: CGPoint(x: pointX, y: pointY))
+        let endPointX = pointX + length
+
+        drawContext.addLine(to: CGPoint(x: endPointX, y: pointY))
+        drawContext.strokePath()
+        drawContext.restoreGState()
+    }
+    
+    // Метод рисует линии в формулах
+    /*
+     startLineX - координата начала линии по оси X
+     startLineY - координата конца линии по оси Х
+     heightLineY - положение линии по оси Y
+     
+     Чтобы нарисовать диагональную линию, heightLineY в методах move и addLine
+     должны иметь разное значение.
+     */
+    func drawTearOffs(_ drawContext: CGContext, startLineX: CGFloat, endLineX: CGFloat,
+                      heightLineY: CGFloat) {
+
+      drawContext.saveGState()
+      // Толщина линии
+      drawContext.setLineWidth(1.0)
+      // Начало линии
+      drawContext.move(to: CGPoint(x: startLineX, y: heightLineY))
+      // Конец линии
+      drawContext.addLine(to: CGPoint(x: endLineX, y: heightLineY))
+      drawContext.strokePath()
+      drawContext.restoreGState()
+    }
+    
+
 }

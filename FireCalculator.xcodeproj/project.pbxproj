@@ -8,27 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885DF6E923FCD0EA00BB6E1D /* Main.storyboard */; };
+		88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBDD91240BCED900F8012B /* PDFCreator.swift */; };
+		88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */; };
 		88F327F423FBF4B40085BBC8 /* NewStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */; };
-		FA12946B240A9B4F008308C4 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12946A240A9B4F008308C4 /* PDFCreator.swift */; };
-		FA12946D240A9BCA008308C4 /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12946C240A9BCA008308C4 /* PDFPreviewViewController.swift */; };
 		FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F35FC23DEB07000A8641C /* AppDelegate.swift */; };
 		FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */; };
 		FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360523DEB07300A8641C /* Assets.xcassets */; };
 		FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */; };
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
-		FA5BB99C23F3FE4A00F7B7DC /* NotFoundTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
-		FAA8E36723E7B467001042F7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8E36623E7B467001042F7 /* StartViewController.swift */; };
+		FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA66575D240FBABA0056B1F8 /* test3.pdf */; };
 		FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC756D123F137C7004FC55B /* FoundTableViewController.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		885DF6E923FCD0EA00BB6E1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88DBDD91240BCED900F8012B /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
 		88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStartViewController.swift; sourceTree = "<group>"; };
-		FA12946A240A9B4F008308C4 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
-		FA12946C240A9BCA008308C4 /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
 		FA1F35F923DEB07000A8641C /* FireCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F35FC23DEB07000A8641C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +36,8 @@
 		FA1F360A23DEB07300A8641C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
-		FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
-		FAA8E36623E7B467001042F7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		FA66575D240FBABA0056B1F8 /* test3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test3.pdf; sourceTree = "<group>"; };
 		FAC756D123F137C7004FC55B /* FoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundTableViewController.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,15 +72,14 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				FA66575D240FBABA0056B1F8 /* test3.pdf */,
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
-				FA12946A240A9B4F008308C4 /* PDFCreator.swift */,
-				FA12946C240A9BCA008308C4 /* PDFPreviewViewController.swift */,
 				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
+				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
+				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
 				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
-				FAA8E36623E7B467001042F7 /* StartViewController.swift */,
-				FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */,
 				FAC756D123F137C7004FC55B /* FoundTableViewController.swift */,
 				FA60648123F7AD0000B2317A /* Formula.swift */,
 				FA1F360523DEB07300A8641C /* Assets.xcassets */,
@@ -154,6 +151,7 @@
 			files = (
 				FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */,
 				885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */,
+				FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
 			);
@@ -166,17 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA8E36723E7B467001042F7 /* StartViewController.swift in Sources */,
-				FA12946D240A9BCA008308C4 /* PDFPreviewViewController.swift in Sources */,
-				FA5BB99C23F3FE4A00F7B7DC /* NotFoundTableController.swift in Sources */,
 				FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */,
 				FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */,
 				FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */,
+				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
 				FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */,
 				FA60648223F7AD0000B2317A /* Formula.swift in Sources */,
 				88F327F423FBF4B40085BBC8 /* NewStartViewController.swift in Sources */,
-				FA12946B240A9B4F008308C4 /* PDFCreator.swift in Sources */,
+				88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
