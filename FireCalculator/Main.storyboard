@@ -95,7 +95,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6.8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fch-sF-fKp">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fch-sF-fKp">
                                                     <rect key="frame" x="289" y="5" width="70" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5Xd-rc-ep1"/>
@@ -333,7 +333,11 @@
                         <viewLayoutGuide key="safeArea" id="dVM-I3-6JB"/>
                     </view>
                     <navigationItem key="navigationItem" id="v9d-J9-MOi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="1ty-Nm-e8e"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="1ty-Nm-e8e">
+                            <connections>
+                                <action selector="shareAction:" destination="BYU-Iu-D8N" id="Pxy-M2-8Ud"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pdfView" destination="8gB-Pd-rJ7" id="U2h-hc-NP2"/>
@@ -341,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbT-1L-7Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5183" y="2001"/>
+            <point key="canvasLocation" x="-5183" y="2106"/>
         </scene>
         <!--Звено-->
         <scene sceneID="agt-hy-is9">
@@ -437,15 +441,19 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="WEs-hb-Gg2">
-                                        <rect key="frame" x="0.0" y="186" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="WEs-hb-Gg2">
+                                        <rect key="frame" x="0.0" y="186" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WEs-hb-Gg2" id="bZV-DO-GiL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uWU-Ha-HDJ">
-                                                    <rect key="frame" x="5" y="0.0" width="365" height="150"/>
+                                                    <rect key="frame" x="20" y="5" width="335" height="190"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="190" id="4pf-aC-KJF"/>
+                                                        <constraint firstAttribute="width" constant="335" id="SCk-wa-2U5"/>
+                                                    </constraints>
                                                     <locale key="locale" localeIdentifier="ru"/>
                                                     <connections>
                                                         <action selector="enterTimeChange:" destination="aty-dd-hWz" eventType="valueChanged" id="3ig-CZ-YVv"/>
@@ -453,15 +461,15 @@
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="uWU-Ha-HDJ" firstAttribute="leading" secondItem="bZV-DO-GiL" secondAttribute="leading" constant="5" id="Dhq-r0-TUD"/>
-                                                <constraint firstAttribute="trailing" secondItem="uWU-Ha-HDJ" secondAttribute="trailing" constant="5" id="SyY-aT-jhj"/>
-                                                <constraint firstItem="uWU-Ha-HDJ" firstAttribute="top" secondItem="bZV-DO-GiL" secondAttribute="top" id="iSa-iJ-jUX"/>
-                                                <constraint firstAttribute="bottom" secondItem="uWU-Ha-HDJ" secondAttribute="bottom" id="z4i-xe-KKX"/>
+                                                <constraint firstItem="uWU-Ha-HDJ" firstAttribute="leading" secondItem="bZV-DO-GiL" secondAttribute="leading" constant="20" id="NaE-NH-GcP"/>
+                                                <constraint firstItem="uWU-Ha-HDJ" firstAttribute="top" secondItem="bZV-DO-GiL" secondAttribute="top" constant="5" id="P5h-TA-zlZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="uWU-Ha-HDJ" secondAttribute="trailing" constant="20" id="UJB-5F-Ji0"/>
+                                                <constraint firstAttribute="bottom" secondItem="uWU-Ha-HDJ" secondAttribute="bottom" constant="5" id="cKU-Ll-DVG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="09c-OU-8iG" detailTextLabel="MIb-f9-21v" style="IBUITableViewCellStyleValue1" id="H8X-5S-wzu">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="386" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H8X-5S-wzu" id="eDU-8X-rGm">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
@@ -484,15 +492,19 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="WGo-KT-2N4">
-                                        <rect key="frame" x="0.0" y="379.5" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="WGo-KT-2N4">
+                                        <rect key="frame" x="0.0" y="429.5" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WGo-KT-2N4" id="cfR-0a-Gmf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="c90-cH-XsC">
-                                                    <rect key="frame" x="5" y="0.0" width="365" height="150"/>
+                                                    <rect key="frame" x="20" y="5" width="335" height="190"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="335" id="uFJ-LY-On5"/>
+                                                        <constraint firstAttribute="height" constant="190" id="vaJ-pL-9wd"/>
+                                                    </constraints>
                                                     <locale key="locale" localeIdentifier="ru"/>
                                                     <connections>
                                                         <action selector="fireTimeChange:" destination="aty-dd-hWz" eventType="valueChanged" id="mi3-o8-Tho"/>
@@ -500,10 +512,10 @@
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="c90-cH-XsC" secondAttribute="trailing" constant="5" id="CXp-YY-9Rt"/>
-                                                <constraint firstItem="c90-cH-XsC" firstAttribute="leading" secondItem="cfR-0a-Gmf" secondAttribute="leading" constant="5" id="Dag-WZ-B0h"/>
-                                                <constraint firstAttribute="bottom" secondItem="c90-cH-XsC" secondAttribute="bottom" id="b5A-3J-ds7"/>
-                                                <constraint firstItem="c90-cH-XsC" firstAttribute="top" secondItem="cfR-0a-Gmf" secondAttribute="top" id="jtL-Ij-ljM"/>
+                                                <constraint firstAttribute="trailing" secondItem="c90-cH-XsC" secondAttribute="trailing" constant="20" id="Ebe-q8-PD2"/>
+                                                <constraint firstItem="c90-cH-XsC" firstAttribute="top" secondItem="cfR-0a-Gmf" secondAttribute="top" constant="5" id="MsV-O3-eqt"/>
+                                                <constraint firstAttribute="bottom" secondItem="c90-cH-XsC" secondAttribute="bottom" constant="5" id="xeX-7T-65t"/>
+                                                <constraint firstItem="c90-cH-XsC" firstAttribute="leading" secondItem="cfR-0a-Gmf" secondAttribute="leading" constant="20" id="yZZ-mo-3Ry"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -512,7 +524,7 @@
                             <tableViewSection headerTitle="Давление в звене" footerTitle="При  расчете параметров если очаг пожара НЕ НАЙДЕН, достаточно ввести минимальное значение в любом поле ввода." id="YIl-be-AlO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="267" id="e6c-nt-5CT">
-                                        <rect key="frame" x="0.0" y="593" width="375" height="267"/>
+                                        <rect key="frame" x="0.0" y="693" width="375" height="267"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6c-nt-5CT" id="snF-ft-cpQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
@@ -697,7 +709,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="52" id="xJV-dh-HYm">
-                                        <rect key="frame" x="0.0" y="860" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="960" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJV-dh-HYm" id="n9D-vE-c76">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
@@ -762,7 +774,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-uO-4N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5183" y="1051"/>
+            <point key="canvasLocation" x="-5183.1999999999998" y="1050.6746626686659"/>
         </scene>
         <!--Рассчеты-->
         <scene sceneID="84S-2S-YHG">

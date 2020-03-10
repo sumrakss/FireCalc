@@ -9,9 +9,9 @@
 import Foundation
 
 class Formula: DataDelegate {
-    
+//	let vc = SettingsTableController()
     // Объем баллона
-    var tankVolume = 7.0
+	var tankVolume = 7.0
     // Коэффициент расхода воздуха
     var airFlow = 44.0
     // давление воздуха, необходимое для устойчивой работы редуктора
@@ -19,21 +19,20 @@ class Formula: DataDelegate {
     
     func transferData(data: Double) {
         tankVolume = data
-        print(tankVolume)
     }
 
     
     init() {
         let vc = SettingsTableController()
         vc.delegate = self
-    }
+	}
     
       // MARK: - Функции расчетов параметров работы, если очаг найден.
         
     // 1) Расчет общего времени работы (Тобщ)
     func totalTimeCalculation(minPressure: [Double]) -> Double {
 
-        let totalTime = (minPressure.min()! - reductionStability) * tankVolume / airFlow
+		let totalTime = (minPressure.min()! - reductionStability) * tankVolume / airFlow
         return totalTime
     }
         
@@ -67,7 +66,7 @@ class Formula: DataDelegate {
     // 4) Расчет времени работы у очага (Траб)
     func workTimeCalculation(minPressure: [Double], exitPressure: Double) -> Double {
 
-            let workTime = (minPressure.min()! - exitPressure) * tankVolume / airFlow
+		let workTime = (minPressure.min()! - exitPressure) * tankVolume / airFlow
             return workTime
         }
         
@@ -80,7 +79,7 @@ class Formula: DataDelegate {
             
            var hardValue = 2.5
            if hardChoice { hardValue = 3}
-           let pressure = (minPressure.min()! - reductionStability) / hardValue
+		   let pressure = (minPressure.min()! - reductionStability) / hardValue
            return pressure
        }
        
@@ -95,7 +94,7 @@ class Formula: DataDelegate {
         let vc = SettingsTableController()
         vc.delegate = self
         print("deltaTimeCalculation")
-        let pressure = (maxDrop * tankVolume) / airFlow
+		let pressure = (maxDrop * tankVolume) / airFlow
         return pressure
     }
 }

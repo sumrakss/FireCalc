@@ -16,6 +16,7 @@ class SettingsTableController: UITableViewController {
          
     @IBOutlet weak var tankVolumeTextField: UITextField!
     @IBOutlet weak var reductionStabilityTExtField: UITextField!
+	
 
     var delegate: DataDelegate?
   

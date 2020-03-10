@@ -11,6 +11,8 @@ import UIKit
 class NewStartViewController: UITableViewController {
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
+	
+	
     // Очаг найден true/false
     var firePlace: Bool = false
     // Сложные условия true/false
@@ -26,7 +28,7 @@ class NewStartViewController: UITableViewController {
     // Падение давления в звене
     var fallPressure = [Double]()
 	
-	var tank = 0.0
+//	var tank = 0.0
     
 
     @IBOutlet weak var firePlaceLabel: UILabel!
@@ -165,43 +167,29 @@ class NewStartViewController: UITableViewController {
     
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-//        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 2 {
             tappedCell1 = !tappedCell1
-//            let indexPath = IndexPath(item: 3, section: 0)
-//            tableView.reloadRows(at: [indexPath], with: .none)
+			tableView.reloadRows(at: [indexPath], with: .none)
+//			tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
         }
         
         
         if indexPath.row == 4 && firePlace {
              tappedCell2 = !tappedCell2
-//            let indexPath = IndexPath(item: 5, section: 0)
-//            tableView.reloadRows(at: [indexPath], with: .none)
+			tableView.reloadRows(at: [indexPath], with: .none)
         }
-        
-
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        tableView.reloadData()
+//        tableView.beginUpdates()
+//        tableView.endUpdates()1§
     }
 
 //
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 3 {
-            if tappedCell1 {
-                return tableView.rowHeight
-            } else {
-                return 0
-            }
+		if indexPath.row == 3 {
+			return (tappedCell1 ? tableView.rowHeight : 0)
         }
 
         if indexPath.row == 5 {
-            if tappedCell2  && firePlace {
-                return tableView.rowHeight
-            } else {
-                return 0
-            }
+			return (tappedCell2  && firePlace ? tableView.rowHeight : 0)
         }
         
         // Высота ячейки с полями ввода
