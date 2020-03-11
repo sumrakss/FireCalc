@@ -17,9 +17,9 @@
 		FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */; };
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
-		FA54C1AE240E874F00C38BDC /* test2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA54C1AD240E874F00C38BDC /* test2.pdf */; };
-		FA5BB99C23F3FE4A00F7B7DC /* NotFoundTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
+		FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA66575D240FBABA0056B1F8 /* test3.pdf */; };
+		FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125A2418FA6800CAF846 /* AppData.swift */; };
 		FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC756D123F137C7004FC55B /* FoundTableViewController.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -37,9 +37,9 @@
 		FA1F360A23DEB07300A8641C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
-		FA54C1AD240E874F00C38BDC /* test2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = test2.pdf; path = ../../pdfPatterns/test2.pdf; sourceTree = "<group>"; };
-		FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		FA66575D240FBABA0056B1F8 /* test3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test3.pdf; sourceTree = "<group>"; };
+		FAB7125A2418FA6800CAF846 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		FAC756D123F137C7004FC55B /* FoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundTableViewController.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,15 +74,14 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				FA66575D240FBABA0056B1F8 /* test3.pdf */,
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
-				FA54C1AD240E874F00C38BDC /* test2.pdf */,
+				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
 				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
 				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
-				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
 				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
-				FA5BB99B23F3FE4A00F7B7DC /* NotFoundTableController.swift */,
 				FAC756D123F137C7004FC55B /* FoundTableViewController.swift */,
 				FA60648123F7AD0000B2317A /* Formula.swift */,
 				FA1F360523DEB07300A8641C /* Assets.xcassets */,
@@ -90,6 +89,7 @@
 				FA1F35FC23DEB07000A8641C /* AppDelegate.swift */,
 				FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */,
 				FA1F360A23DEB07300A8641C /* Info.plist */,
+				FAB7125A2418FA6800CAF846 /* AppData.swift */,
 			);
 			path = FireCalculator;
 			sourceTree = "<group>";
@@ -154,8 +154,8 @@
 			files = (
 				FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */,
 				885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */,
+				FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
-				FA54C1AE240E874F00C38BDC /* test2.pdf in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5BB99C23F3FE4A00F7B7DC /* NotFoundTableController.swift in Sources */,
 				FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */,
 				FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */,
 				FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */,
@@ -177,6 +176,7 @@
 				FA60648223F7AD0000B2317A /* Formula.swift in Sources */,
 				88F327F423FBF4B40085BBC8 /* NewStartViewController.swift in Sources */,
 				88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */,
+				FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

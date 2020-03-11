@@ -88,3 +88,5 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+FireCalculator.xcodeproj/project.xcworkspace/xcuserdata/imac.xcuserdatad/UserInterfaceState.xcuserstate
