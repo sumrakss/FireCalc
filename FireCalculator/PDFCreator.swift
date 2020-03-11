@@ -27,7 +27,7 @@ class PDFCreator: NSObject {
     // Падение давления в звене
     var fallPressure = [Double]()
     
-    
+    /*
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
     func foundPDFCreator() -> Data {
         // Вычисляемые значения
@@ -84,7 +84,8 @@ class PDFCreator: NSObject {
         return data
     }
     
-    
+    */
+	
     // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
     func notFoundPDFCreator() -> Data {
         // Вычисляемые значения

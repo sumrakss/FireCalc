@@ -12,9 +12,8 @@ class NewStartViewController: UITableViewController {
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
 	
-	
     // Очаг найден true/false
-    var firePlace: Bool = false
+	var firePlace: Bool = false
     // Сложные условия true/false
     var hardWork: Bool = false
     // Время включения
@@ -27,8 +26,6 @@ class NewStartViewController: UITableViewController {
     var hearthData = [Double]()
     // Падение давления в звене
     var fallPressure = [Double]()
-	
-//	var tank = 0.0
     
 
     @IBOutlet weak var firePlaceLabel: UILabel!
@@ -104,6 +101,7 @@ class NewStartViewController: UITableViewController {
     
     // Очаг
     @IBAction func firePlaceChange(_ sender: Any) {
+		
         firePlace = !firePlace
         fireStackLabel.isHidden = !fireStackLabel.isHidden
         fireTimeLabel.isEnabled = !fireTimeLabel.isEnabled
@@ -182,7 +180,7 @@ class NewStartViewController: UITableViewController {
 //        tableView.endUpdates()1§
     }
 
-//
+	
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.row == 3 {
 			return (tappedCell1 ? tableView.rowHeight : 0)
@@ -213,7 +211,7 @@ class NewStartViewController: UITableViewController {
                 pdfCreator.enterData = enterData
                 pdfCreator.hardWork = hardWork
                 pdfCreator.fallPressure = fallPressure
-                vc.documentData = pdfCreator.foundPDFCreator()
+//                vc.documentData = pdfCreator.foundPDFCreator()
             } else {
                 pdfCreator.enterTime = enterTime
                 pdfCreator.enterData = enterData
