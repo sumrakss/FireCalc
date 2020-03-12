@@ -20,7 +20,7 @@
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
 		FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA66575D240FBABA0056B1F8 /* test3.pdf */; };
 		FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125A2418FA6800CAF846 /* AppData.swift */; };
-		FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC756D123F137C7004FC55B /* FoundTableViewController.swift */; };
+		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		FA66575D240FBABA0056B1F8 /* test3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test3.pdf; sourceTree = "<group>"; };
 		FAB7125A2418FA6800CAF846 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
-		FAC756D123F137C7004FC55B /* FoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundTableViewController.swift; sourceTree = "<group>"; };
+		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,23 +75,39 @@
 			isa = PBXGroup;
 			children = (
 				FA66575D240FBABA0056B1F8 /* test3.pdf */,
-				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
-				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
-				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
-				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
+				FAB7125F2419063700CAF846 /* Data */,
+				FA3156C8241A322E00D8206B /* View */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
-				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
-				FAC756D123F137C7004FC55B /* FoundTableViewController.swift */,
-				FA60648123F7AD0000B2317A /* Formula.swift */,
 				FA1F360523DEB07300A8641C /* Assets.xcassets */,
 				FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */,
 				FA1F35FC23DEB07000A8641C /* AppDelegate.swift */,
-				FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */,
 				FA1F360A23DEB07300A8641C /* Info.plist */,
-				FAB7125A2418FA6800CAF846 /* AppData.swift */,
 			);
 			path = FireCalculator;
+			sourceTree = "<group>";
+		};
+		FA3156C8241A322E00D8206B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */,
+				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
+				88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */,
+				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
+				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAB7125F2419063700CAF846 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
+				FAB7125C2419061900CAF846 /* SettingsData.swift */,
+				FAB7125A2418FA6800CAF846 /* AppData.swift */,
+				FA60648123F7AD0000B2317A /* Formula.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +185,7 @@
 			files = (
 				FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */,
 				FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */,
-				FAC756D223F137C7004FC55B /* FoundTableViewController.swift in Sources */,
+				FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */,
 				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
 				FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */,

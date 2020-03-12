@@ -8,31 +8,16 @@
 
 import Foundation
 
-class Formula: DataDelegate {
-//	let vc = SettingsTableController()
-    // Объем баллона
-	var tankVolume = 7.0
-    // Коэффициент расхода воздуха
-    var airFlow = 44.0
-    // давление воздуха, необходимое для устойчивой работы редуктора
-    let reductionStability = 10.0
+class Formula { //:
     
-    func transferData(data: Double) {
-        tankVolume = data
-    }
-
-    
-    init() {
-        let vc = SettingsTableController()
-        vc.delegate = self
-	}
+    var formulaData = SettingsData()
     
       // MARK: - Функции расчетов параметров работы, если очаг найден.
         
     // 1) Расчет общего времени работы (Тобщ)
     func totalTimeCalculation(minPressure: [Double]) -> Double {
 
-		let totalTime = (minPressure.min()! - reductionStability) * tankVolume / airFlow
+        let totalTime = (minPressure.min()! - SettingsData.reductionStability) * SettingsData.cylinderVolume / SettingsData.airFlow
         return totalTime
     }
         
@@ -54,9 +39,9 @@ class Formula: DataDelegate {
         let exitPressure: Double
 
         if hardChoice {
-            exitPressure = 2 * maxDrop.max()! + reductionStability
+            exitPressure = 2 * maxDrop.max()! + SettingsData.reductionStability
         } else {
-            exitPressure = maxDrop.max()! + maxDrop.max()! / 2 + reductionStability
+            exitPressure = maxDrop.max()! + maxDrop.max()! / 2 + SettingsData.reductionStability
         }
 
         return exitPressure
@@ -65,8 +50,8 @@ class Formula: DataDelegate {
         
     // 4) Расчет времени работы у очага (Траб)
     func workTimeCalculation(minPressure: [Double], exitPressure: Double) -> Double {
-
-		let workTime = (minPressure.min()! - exitPressure) * tankVolume / airFlow
+        
+        let workTime = (minPressure.min()! - exitPressure) * SettingsData.cylinderVolume / SettingsData.airFlow
             return workTime
         }
         
@@ -76,25 +61,21 @@ class Formula: DataDelegate {
     
     // 1) Расчет максимального расхода давления при поиске очага
     func maxDropCalculation(minPressure: [Double], hardChoice: Bool) -> Double {
-            
-           var hardValue = 2.5
-           if hardChoice { hardValue = 3}
-		   let pressure = (minPressure.min()! - reductionStability) / hardValue
-           return pressure
-       }
+        var hardValue = 2.5
+        if hardChoice { hardValue = 3}
+        let pressure = (minPressure.min()! - SettingsData.reductionStability) / hardValue
+        return pressure
+    }
        
        // 2) Расчет давления к выходу
     func exitPressureCalculation(minPressure: [Double], maxDrop: Double) -> Double {
-           let pressure = (minPressure.min()! - maxDrop)
-           return pressure
-       }
+       let pressure = (minPressure.min()! - maxDrop)
+       return pressure
+    }
        
     // 3) Расчет промежутка времени с вкл. до подачи команды дТ
     func deltaTimeCalculation(maxDrop: Double) -> Double {
-        let vc = SettingsTableController()
-        vc.delegate = self
-        print("deltaTimeCalculation")
-		let pressure = (maxDrop * tankVolume) / airFlow
+        let pressure = (maxDrop * SettingsData.cylinderVolume) / SettingsData.airFlow
         return pressure
     }
 }

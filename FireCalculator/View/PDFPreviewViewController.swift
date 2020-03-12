@@ -11,6 +11,7 @@ import PDFKit
 
 class PDFPreviewViewController: UIViewController {
     public var documentData: Data?
+    var appData: AppData?
     
     @IBOutlet weak var pdfView: PDFView!
     
@@ -26,9 +27,9 @@ class PDFPreviewViewController: UIViewController {
     
 
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {
-		let pdfCreator = PDFCreator()
-		let pdfData = pdfCreator.notFoundPDFCreator()
-		let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
-		present(vc, animated: true, completion: nil)
+        let pdfCreator = PDFCreator()
+        let pdfData = pdfCreator.notFoundPDFCreator(appData: appData!)
+        let vc = UIActivityViewController(activityItems: [pdfData], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
 	}
 }

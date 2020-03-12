@@ -81,7 +81,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Параметры СИЗОД" id="HM9-z3-meL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cIX-S8-eKs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="cIX-S8-eKs">
                                         <rect key="frame" x="0.0" y="198.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cIX-S8-eKs" id="bhH-gk-UEX">
@@ -103,7 +103,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="changeData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="5A7-cd-ocP"/>
+                                                        <action selector="cylinderVolumeData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="RFy-pp-tdn"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -113,7 +113,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9eG-7v-hF6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="9eG-7v-hF6">
                                         <rect key="frame" x="0.0" y="242" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9eG-7v-hF6" id="FcI-oq-fAu">
@@ -134,6 +134,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="airRateData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="Iw9-Yn-Bgs"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -142,32 +145,67 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KCz-ik-7c9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KCz-ik-7c9">
                                         <rect key="frame" x="0.0" y="285.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCz-ik-7c9" id="q9E-st-40s">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Показатель работы редуктора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-8e-fXX">
-                                                    <rect key="frame" x="16" y="11" width="272" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-1m-J0j">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-1m-J0j">
                                                     <rect key="frame" x="289" y="5" width="70" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="XTf-Dx-Ggc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="airIndexTextData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="wSU-i1-Nag"/>
+                                                    </connections>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Коэффициент сжимаемости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omz-xk-0X9">
+                                                    <rect key="frame" x="16" y="12" width="272" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="WeG-1m-J0j" firstAttribute="centerY" secondItem="q9E-st-40s" secondAttribute="centerY" id="G7B-9o-67t"/>
                                                 <constraint firstAttribute="trailing" secondItem="WeG-1m-J0j" secondAttribute="trailing" constant="16" id="hld-Bu-OkX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pmE-Fo-yK0">
+                                        <rect key="frame" x="0.0" y="329" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pmE-Fo-yK0" id="IJP-0y-814">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-Ou-5E7">
+                                                    <rect key="frame" x="289" y="5" width="70" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="o1w-Rp-fPW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="reductionStabilityData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="JJ3-Dn-Fji"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Давление устойчивой работы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-8e-fXX">
+                                                    <rect key="frame" x="16" y="12" width="272" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Vff-Ou-5E7" secondAttribute="trailing" constant="16" id="2Jn-At-TW8"/>
+                                                <constraint firstItem="Vff-Ou-5E7" firstAttribute="centerY" secondItem="IJP-0y-814" secondAttribute="centerY" id="7rS-WF-GBk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -181,8 +219,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Настройки" id="Wci-IG-jGt"/>
                     <connections>
-                        <outlet property="reductionStabilityTExtField" destination="WeG-1m-J0j" id="ZD4-x1-9re"/>
-                        <outlet property="tankVolumeTextField" destination="fch-sF-fKp" id="7mY-i1-iuk"/>
+                        <outlet property="airIndexTextField" destination="WeG-1m-J0j" id="wT1-dO-EGr"/>
+                        <outlet property="airRateTextField" destination="nyZ-27-eMM" id="qeh-SB-rjR"/>
+                        <outlet property="cylinderVolumeTextField" destination="fch-sF-fKp" id="4Q8-0T-X59"/>
+                        <outlet property="reductionStabilityTextField" destination="Vff-Ou-5E7" id="WeI-xt-caQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prg-om-qai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -335,7 +375,7 @@
                     <navigationItem key="navigationItem" id="v9d-J9-MOi">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="1ty-Nm-e8e">
                             <connections>
-                                <action selector="shareAction:" destination="BYU-Iu-D8N" id="Pxy-M2-8Ud"/>
+                                <action selector="shareAction:" destination="BYU-Iu-D8N" id="4za-Dw-UUj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -367,7 +407,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Очаг найден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-O9-6za">
                                                     <rect key="frame" x="16" y="11" width="167" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -717,6 +757,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-QM-FMa">
                                                     <rect key="frame" x="16" y="11" width="343" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Рассчитать"/>
                                                     <connections>
                                                         <action selector="doneButton:" destination="aty-dd-hWz" eventType="touchUpInside" id="2mz-JA-ZDv"/>

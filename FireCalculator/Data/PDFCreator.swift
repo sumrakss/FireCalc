@@ -11,22 +11,6 @@ import PDFKit
 
 class PDFCreator: NSObject {
     
-    // Время велючения
-    var enterTime = Date()
-    // Время у очага
-    var fireTime = Date()
-    // Давление при включении
-    var enterData = [Double]()
-    // Давление у очага
-    var hearthData = [Double]()
-    // Сложные условия true/false
-    var hardWork: Bool = false
-    
-    // Очаг найден true/false
-    var firePlace: Bool = true
-    // Падение давления в звене
-    var fallPressure = [Double]()
-    
     /*
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
     func foundPDFCreator() -> Data {
@@ -87,27 +71,28 @@ class PDFCreator: NSObject {
     */
 	
     // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
-    func notFoundPDFCreator() -> Data {
+    func notFoundPDFCreator(appData: AppData) -> Data {
         // Вычисляемые значения
         let comp = Formula()
+//        comp.settingsData = settingsData
         // 1) Расчет максимального возможного падения давления при поиске очага
-        let maxDrop = comp.maxDropCalculation(minPressure: enterData, hardChoice: hardWork)
+        let maxDrop = comp.maxDropCalculation(minPressure: appData.enterData, hardChoice: appData.hardWork)
         
         // 2) Расчет давления к выходу
-        let exitPressure = comp.exitPressureCalculation(minPressure: enterData, maxDrop: maxDrop)
+        let exitPressure = comp.exitPressureCalculation(minPressure: appData.enterData, maxDrop: maxDrop)
         
         // 3) Расчет промежутка времени с вкл. до подачи команды дТ
         let timeDelta = comp.deltaTimeCalculation(maxDrop: maxDrop)
         
         // 4) Расчет контрольного времени подачи команды постовым на возвращение звена  (Тк.вых)
-        let exitTime = comp.expectedTimeCalculation(inputTime: enterTime, totalTime: timeDelta)
+        let exitTime = comp.expectedTimeCalculation(inputTime: appData.enterTime, totalTime: timeDelta)
         
         // Константы из формул
-        let minPressure = String(Int(enterData.min()!))        // Минимальное давление при включении
-        let reductor = String(Int(comp.reductionStability))    // Давление воздуха, необходимое для устойчивой работы редуктора
-        let capacity = String(comp.tankVolume)                 // Объем баллона в литрах
+        let minPressure = String(Int(appData.enterData.min()!))        // Минимальное давление при включении
+        let reductor = String(Int(SettingsData.reductionStability))    // Давление воздуха, необходимое для устойчивой работы редуктора
+        let capacity = String(SettingsData.cylinderVolume)                 // Объем баллона в литрах
         var ratio: String                                      // Коэффициент, учитывающий необходимый запас воздуха
-        hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
+        appData.hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
         
         // PDF
         let format = UIGraphicsPDFRendererFormat()
@@ -147,9 +132,9 @@ class PDFCreator: NSObject {
             // 4
             let time = DateFormatter()
             time.dateFormat = "HH"
-            time.string(from: enterTime).draw(at: CGPoint(x: 220, y: 397), withAttributes: large)
+            time.string(from: appData.enterTime).draw(at: CGPoint(x: 220, y: 397), withAttributes: large)
             time.dateFormat = "mm"
-            time.string(from: enterTime).draw(at: CGPoint(x: 244, y: 395), withAttributes: small)
+            time.string(from: appData.enterTime).draw(at: CGPoint(x: 244, y: 395), withAttributes: small)
             String(Int(timeDelta)).draw(at: CGPoint(x: 275, y: 395), withAttributes: small)
             exitTime.draw(at: CGPoint(x: 325, y: 397), withAttributes: large)
             

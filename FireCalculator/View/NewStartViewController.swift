@@ -12,21 +12,7 @@ class NewStartViewController: UITableViewController {
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
 	
-    // Очаг найден true/false
-	var firePlace: Bool = false
-    // Сложные условия true/false
-    var hardWork: Bool = false
-    // Время включения
-    var enterTime = Date()
-    // Время у очага
-    var fireTime = Date()
-    // Давление при включении
-    var enterData = [Double]()
-    // Давление у очага
-    var hearthData = [Double]()
-    // Падение давления в звене
-    var fallPressure = [Double]()
-    
+    var data = AppData()
 
     @IBOutlet weak var firePlaceLabel: UILabel!
     @IBOutlet weak var hardWorkLabel: UILabel!
@@ -61,8 +47,8 @@ class NewStartViewController: UITableViewController {
         
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
-        enterTimeDetail.text = time.string(from: enterTime)
-        fireTimeDetail.text = time.string(from: fireTime)
+        enterTimeDetail.text = time.string(from: data.enterTime)
+        fireTimeDetail.text = time.string(from: data.fireTime)
         
         for item in firePlaceFields {
             item.isHidden = true
@@ -76,9 +62,9 @@ class NewStartViewController: UITableViewController {
   
     // Отрисовываем поля ввода в зависимости от состава звена
     func inputFieldsView(fieldCount: Int) {
-            enterData.removeAll()
-            hearthData.removeAll()
-            fallPressure.removeAll()
+            data.enterData.removeAll()
+            data.hearthData.removeAll()
+            data.fallPressure.removeAll()
             
             for item in teamCountStack {
                 item.isHidden  = true
@@ -86,14 +72,14 @@ class NewStartViewController: UITableViewController {
             
             for i in 0..<fieldCount {
                 if let enterValue = Double(enterValueFields[i].text!) {
-                    enterData.append(enterValue)
+                    data.enterData.append(enterValue)
                 }
                 
                 if let hearthValue = Double(firePlaceFields[i].text!) {
-                    hearthData.append(hearthValue)
+                    data.hearthData.append(hearthValue)
                 }
             
-                fallPressure.append(enterData[i] - hearthData[i])
+                data.fallPressure.append(data.enterData[i] - data.hearthData[i])
                 teamCountStack[i].isHidden = false
             }
         }
@@ -102,12 +88,12 @@ class NewStartViewController: UITableViewController {
     // Очаг
     @IBAction func firePlaceChange(_ sender: Any) {
 		
-        firePlace = !firePlace
+        data.firePlace = !data.firePlace
         fireStackLabel.isHidden = !fireStackLabel.isHidden
         fireTimeLabel.isEnabled = !fireTimeLabel.isEnabled
         // Делаем ячейку неактивной в случае если очаг не найден
         fireTimeDetail.isEnabled = !fireTimeDetail.isEnabled
-        firePlace ? (fireTimeCell.selectionStyle = .default) : (fireTimeCell.selectionStyle = .none)
+        data.firePlace ? (fireTimeCell.selectionStyle = .default) : (fireTimeCell.selectionStyle = .none)
         // Скрываем TimePicker если очаг не найден
         if tappedCell2 {  tappedCell2 = false }
         
@@ -121,25 +107,25 @@ class NewStartViewController: UITableViewController {
     
     // Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
-        hardWork = !hardWork
+        data.hardWork = !data.hardWork
     }
     
     
     // Устанавливаем время включения
     @IBAction func enterTimeChange(_ sender: UIDatePicker) {
-        enterTime = enterTimePicker!.date
+        data.enterTime = enterTimePicker!.date
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
-        enterTimeDetail.text = time.string(from: enterTime)
+        enterTimeDetail.text = time.string(from: data.enterTime)
     }
     
 	
     // Устанавливаем время у очага
     @IBAction func fireTimeChange(_ sender: UIDatePicker) {
-        fireTime = fireTimePicker!.date
+        data.fireTime = fireTimePicker!.date
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
-        fireTimeDetail.text = time.string(from: fireTime)
+        fireTimeDetail.text = time.string(from: data.fireTime)
     }
     
 
@@ -172,7 +158,7 @@ class NewStartViewController: UITableViewController {
         }
         
         
-        if indexPath.row == 4 && firePlace {
+        if indexPath.row == 4 && data.firePlace {
              tappedCell2 = !tappedCell2
 			tableView.reloadRows(at: [indexPath], with: .none)
         }
@@ -187,7 +173,7 @@ class NewStartViewController: UITableViewController {
         }
 
         if indexPath.row == 5 {
-			return (tappedCell2  && firePlace ? tableView.rowHeight : 0)
+			return (tappedCell2  && data.firePlace ? tableView.rowHeight : 0)
         }
         
         // Высота ячейки с полями ввода
@@ -204,19 +190,13 @@ class NewStartViewController: UITableViewController {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
             
-            if firePlace { // Если очаг не найден
-                pdfCreator.enterTime = enterTime
-                pdfCreator.fireTime = enterTime
-                pdfCreator.hearthData = hearthData
-                pdfCreator.enterData = enterData
-                pdfCreator.hardWork = hardWork
-                pdfCreator.fallPressure = fallPressure
+            if data.firePlace { // Если очаг найден
+//                pdfCreator.appData = data
+            
 //                vc.documentData = pdfCreator.foundPDFCreator()
             } else {
-                pdfCreator.enterTime = enterTime
-                pdfCreator.enterData = enterData
-                pdfCreator.hardWork = hardWork
-                vc.documentData = pdfCreator.notFoundPDFCreator()
+                vc.appData = data
+                vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
             }
         }
     }
