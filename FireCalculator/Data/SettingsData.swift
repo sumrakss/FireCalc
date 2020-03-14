@@ -12,7 +12,7 @@ struct SettingsData {
     
     static var air = true   //  Тип СИЗОД. По-умолчанию ДАСВ
     
-    static var valueUnit = true     // Единицы измерения
+    static var valueUnit = true     // Единицы измерения. По-умолчанию кгс/см2
     
     static var cylinderVolume = 6.8 // Объем баллога
     

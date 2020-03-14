@@ -22,18 +22,23 @@ class ValueTableController: UITableViewController {
     }
 
     
+    // Выбираем единицы измерения
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // кгс/см2
         if indexPath.row == 0 {
             SettingsData.valueUnit = true
             SettingsData.airRate = 40.0
             SettingsData.reductionStability = 10.0
+            SettingsData.airFlow = SettingsData.airRate * SettingsData.airIndex
+            print(SettingsData.airFlow)
             checkmarkCell()
         }
-        
+        // МПа
         if indexPath.row == 1 {
             SettingsData.valueUnit = false
-            SettingsData.airRate = SettingsData.airRate / 10
             SettingsData.reductionStability = SettingsData.reductionStability / 10
+            SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex) / 10
+            print(SettingsData.airFlow)
             checkmarkCell()
         }
         tableView.reloadData()

@@ -102,13 +102,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6.8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fch-sF-fKp">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6,8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fch-sF-fKp">
                                                     <rect key="frame" x="289" y="5" width="70" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5Xd-rc-ep1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="cylinderVolumeData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="RFy-pp-tdn"/>
                                                     </connections>
@@ -153,7 +153,7 @@
                                                         <constraint firstAttribute="width" constant="70" id="LiA-mJ-ckM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="airRateData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="Iw9-Yn-Bgs"/>
                                                     </connections>
@@ -192,13 +192,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-1m-J0j">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1,1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-1m-J0j">
                                                     <rect key="frame" x="289" y="5" width="70" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="XTf-Dx-Ggc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="airIndexTextData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="wSU-i1-Nag"/>
                                                     </connections>
@@ -243,7 +243,7 @@
                                                         <constraint firstAttribute="width" constant="70" id="o1w-Rp-fPW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="reductionStabilityData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="JJ3-Dn-Fji"/>
                                                     </connections>
@@ -683,12 +683,12 @@
                                                                         <constraint firstAttribute="width" constant="73" id="wkz-HL-qyJ"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="lWf-ai-qnw">
                                                                     <rect key="frame" x="116.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -707,12 +707,12 @@
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="280" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="XRm-P4-tPv">
                                                                     <rect key="frame" x="27.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="39b-dq-3H3">
                                                                     <rect key="frame" x="116.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -728,12 +728,12 @@
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="BvI-BJ-7T4">
                                                                     <rect key="frame" x="27.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="9bG-Dt-dIk">
                                                                     <rect key="frame" x="116.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -749,12 +749,12 @@
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="290" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jze-qb-RAJ">
                                                                     <rect key="frame" x="27.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="240" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-nV-oLt">
                                                                     <rect key="frame" x="116.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -773,12 +773,12 @@
                                                                         <constraint firstAttribute="width" constant="73" id="eac-pg-uI5"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="260" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Au6-bb-IpU">
                                                                     <rect key="frame" x="116.5" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>

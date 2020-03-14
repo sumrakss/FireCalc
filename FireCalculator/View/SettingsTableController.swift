@@ -18,9 +18,7 @@ class SettingsTableController: UITableViewController {
     @IBOutlet weak var airIndexTextField: UITextField!
     @IBOutlet weak var airIndexCell: UITableViewCell!
     @IBOutlet weak var reductionStabilityTextField: UITextField!
-    
     @IBOutlet weak var vCylinderLabel: UILabel!
-    //    var settingsData = SettingsData()
   
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,21 +46,22 @@ class SettingsTableController: UITableViewController {
     
     // Настройка объема баллона
     @IBAction func cylinderVolumeData(_ sender: Any) {
-        SettingsData.cylinderVolume = Double(cylinderVolumeTextField.text!)!
+        SettingsData.cylinderVolume = (cylinderVolumeTextField.text?.dotGuard())!
     }
     
     // Настройка объема баллона
     @IBAction func airRateData(_ sender: Any) {
-        SettingsData.airRate = Double(airRateTextField.text!)!
+        SettingsData.airRate = (airRateTextField.text?.dotGuard())!
     }
     
     // Настройка объема баллона
     @IBAction func airIndexTextData(_ sender: Any) {
-        SettingsData.airIndex = Double(airIndexTextField.text!)!
+        SettingsData.airIndex = (airIndexTextField.text?.dotGuard())!
     }
     
     // Настройка объема баллона
     @IBAction func reductionStabilityData(_ sender: Any) {
-        SettingsData.reductionStability = Double(reductionStabilityTextField.text!)!
+        SettingsData.reductionStability = (reductionStabilityTextField.text?.dotGuard())!
     }
 }
+

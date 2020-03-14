@@ -37,8 +37,10 @@ class NewStartViewController: UITableViewController {
         }
     }
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        print(SettingsData.airFlow)
         tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
         hardWorkSwitch.isOn = false
         firePlaceSwitch.isOn = false
@@ -54,7 +56,11 @@ class NewStartViewController: UITableViewController {
         
         for item in firePlaceFields {
             item.isHidden = true
-//            item.borderStyle = .line
+            item.borderStyle = .line
+        }
+        
+        for item in enterValueFields {
+            item.borderStyle = .line
         }
 
         let count = Int(vSlider.value)
@@ -73,12 +79,17 @@ class NewStartViewController: UITableViewController {
             }
             
             for i in 0..<fieldCount {
-                if let enterValue = Double(enterValueFields[i].text!) {
+                if let enterValue = enterValueFields[i].text?.dotGuard() {
+                    
+               
                     data.enterData.append(enterValue)
                 }
                 
-                if let hearthValue = Double(firePlaceFields[i].text!) {
+                if let hearthValue = firePlaceFields[i].text?.dotGuard() {
+               
+                    
                     data.hearthData.append(hearthValue)
+//                    data.hearthData.append(decimalGuard(value: hearthValue))
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -180,7 +191,23 @@ class NewStartViewController: UITableViewController {
         }
         return tableView.rowHeight
     }
-          
+    
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var headerText = ""
+        if section == 0 {
+            headerText = "Условия работы"
+        }
+        
+        if section == 1 {
+            if SettingsData.valueUnit {
+                headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})"
+            } else {
+                headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
+            }
+        }
+        return headerText
+    }
     
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -190,7 +217,6 @@ class NewStartViewController: UITableViewController {
             
             if data.firePlace { // Если очаг найден
 //                pdfCreator.appData = data
-            
 //                vc.documentData = pdfCreator.foundPDFCreator()
             } else {
                 vc.appData = data
@@ -198,9 +224,43 @@ class NewStartViewController: UITableViewController {
             }
         }
     }
-    
-    // Скрываем клавиатуру при касании за ее пределами
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+}
+
+
+//  расширение для автоматичесткой перевода строки запятой в точку
+extension String {
+    static let numberFormatter = NumberFormatter()
+    func dotGuard() -> Double {
+        var doubleValue: Double {
+            String.numberFormatter.decimalSeparator = "."
+            if let result =  String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            } else {
+                String.numberFormatter.decimalSeparator = ","
+                if let result = String.numberFormatter.number(from: self) {
+                    return result.doubleValue
+                }
+            }
+            return 0
+        }
+        return doubleValue
     }
 }
+
+/*
+extension String {
+    static let numberFormatter = NumberFormatter()
+    var doubleValue: Double {
+        String.numberFormatter.decimalSeparator = "."
+        if let result =  String.numberFormatter.number(from: self) {
+            return result.doubleValue
+        } else {
+            String.numberFormatter.decimalSeparator = ","
+            if let result = String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            }
+        }
+        return 0
+    }
+}
+*/

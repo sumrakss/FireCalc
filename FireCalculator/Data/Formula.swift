@@ -27,8 +27,7 @@ class Formula { //:
 
         let time = DateFormatter()
         time.dateFormat = "HH:mm"
-
-        let strDate = time.string(from: (inputTime + totalTime * 60))
+        let strDate = time.string(from: (inputTime + floor(totalTime) * 60))
         return strDate
     }
         

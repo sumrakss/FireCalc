@@ -18,17 +18,26 @@ class TypeTableController: UITableViewController {
         checkmarkCell()
     }
     
+    
+    // Выбираем тип аппарата
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // ДАСВ
         if indexPath.row == 0 {
             SettingsData.air = true
-            SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
+            if SettingsData.valueUnit {
+                SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
+            } else {
+                SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex) / 10
+            }
+            print(SettingsData.airFlow)
             checkmarkCell()
         }
         
-        
+        // ДАСК
         if indexPath.row == 1  {
             SettingsData.air = false
-            SettingsData.airFlow = 2.0
+            SettingsData.valueUnit ? (SettingsData.airFlow = 2.0) : (SettingsData.airFlow = 0.2)
+            print(SettingsData.airFlow)
             checkmarkCell()
         }
         tableView.reloadData()
