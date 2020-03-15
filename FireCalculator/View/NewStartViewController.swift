@@ -200,12 +200,11 @@ class NewStartViewController: UITableViewController {
         }
         
         if section == 1 {
-            if SettingsData.valueUnit {
-                headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})"
-            } else {
-                headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
-            }
+            
+            headerText = SettingsData.valueUnit ? "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})" : "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
         }
+//        tableView.reloadSections([0, 1], with: .automatic)
+        tableView.reloadData()
         return headerText
     }
     
