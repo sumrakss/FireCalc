@@ -23,6 +23,7 @@ class SettingsTableController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
         
         vCylinderLabel.text = "V\u{0431}"

@@ -9,10 +9,6 @@
 import UIKit
 
 class NewStartViewController: UITableViewController {
-    var tappedCell1: Bool = false
-    var tappedCell2: Bool = false
-	
-    var data = AppData()
 
     @IBOutlet weak var firePlaceLabel: UILabel!
     @IBOutlet weak var hardWorkLabel: UILabel!
@@ -37,19 +33,29 @@ class NewStartViewController: UITableViewController {
         }
     }
     
+    let time = DateFormatter()
+    var tappedCell1: Bool = false
+    var tappedCell2: Bool = false
+    var data = AppData()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(SettingsData.airFlow)
         tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
-        hardWorkSwitch.isOn = false
-        firePlaceSwitch.isOn = false
         fireStackLabel.isHidden = true
         fireTimeCell.selectionStyle = .none
         fireTimeLabel.isEnabled = false
         fireTimeDetail.isEnabled = false
         
-        let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: data.enterTime)
         fireTimeDetail.text = time.string(from: data.fireTime)
@@ -59,10 +65,6 @@ class NewStartViewController: UITableViewController {
             item.borderStyle = .line
         }
         
-        for item in enterValueFields {
-            item.borderStyle = .line
-        }
-
         let count = Int(vSlider.value)
         inputFieldsView(fieldCount: count)
     }
@@ -80,20 +82,17 @@ class NewStartViewController: UITableViewController {
             
             for i in 0..<fieldCount {
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
-                    
-               
                     data.enterData.append(enterValue)
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
-               
-                    
                     data.hearthData.append(hearthValue)
-//                    data.hearthData.append(decimalGuard(value: hearthValue))
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
                 teamCountStack[i].isHidden = false
+                enterValueFields[i].isHidden = false
+                enterValueFields[i].borderStyle = .line
             }
         }
     
@@ -110,11 +109,10 @@ class NewStartViewController: UITableViewController {
         // Скрываем TimePicker если очаг не найден
         if tappedCell2 {  tappedCell2 = false }
         
-        tableView.reloadData()
-        
         for item in firePlaceFields {
             item.isHidden = !item.isHidden
         }
+        tableView.reloadData()
     }
     
     
@@ -127,7 +125,6 @@ class NewStartViewController: UITableViewController {
     // Устанавливаем время включения
     @IBAction func enterTimeChange(_ sender: UIDatePicker) {
         data.enterTime = enterTimePicker!.date
-        let time = DateFormatter()
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: data.enterTime)
     }
@@ -136,7 +133,6 @@ class NewStartViewController: UITableViewController {
     // Устанавливаем время у очага
     @IBAction func fireTimeChange(_ sender: UIDatePicker) {
         data.fireTime = fireTimePicker!.date
-        let time = DateFormatter()
         time.dateFormat = "HH:mm"
         fireTimeDetail.text = time.string(from: data.fireTime)
     }
@@ -156,6 +152,10 @@ class NewStartViewController: UITableViewController {
     }
     
     
+    @IBAction func calcButton(_ sender: Any) {
+        let teamCount = Int(vSlider.value)
+        inputFieldsView(fieldCount: teamCount)
+    }
     
     
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
@@ -204,7 +204,7 @@ class NewStartViewController: UITableViewController {
             headerText = SettingsData.valueUnit ? "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})" : "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
         }
 //        tableView.reloadSections([0, 1], with: .automatic)
-        tableView.reloadData()
+        
         return headerText
     }
     
