@@ -21,9 +21,11 @@ class NewStartViewController: UITableViewController {
     @IBOutlet weak var firePlaceSwitch: UISwitch!
     @IBOutlet weak var hardWorkSwitch: UISwitch!
     @IBOutlet weak var fireStackLabel: UILabel!
-    @IBOutlet var teamCountStack: [UIStackView]!
-    @IBOutlet var enterValueFields: [UITextField]!
-    @IBOutlet var firePlaceFields: [UITextField]!
+    @IBOutlet var teamCountStack: [UIStackView]!    // Все текстовые поля построчно
+    @IBOutlet var enterValueFields: [UITextField]!  // Текстовые поля "При включении"
+    @IBOutlet var firePlaceFields: [UITextField]!   // Текстовые поля "У очага"
+    @IBOutlet var textFieldForInput: [UITextField]! // Текстовые поля для ввода
+    
     @IBOutlet weak var vSlider: UISlider! {
         didSet {
             vSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
@@ -33,21 +35,47 @@ class NewStartViewController: UITableViewController {
         }
     }
     
+    private var pickerComponent = [String]()    // Содержимое pickerview
+	
     let time = DateFormatter()
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
     var data = AppData()
     
+    var counter = 0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tableView.reloadData()
     }
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        generatePickerData()    // Генерируем список компонентов pickerView
+        
+        let pickerView = UIPickerView()
+		pickerView.delegate = self
+        pickerView.backgroundColor = .white
+        pickerView.delegate = self
+        pickerView.dataSource = self
+
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Скрыть", style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: nil)
+
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        
         
         print(SettingsData.airFlow)
         tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
@@ -62,14 +90,32 @@ class NewStartViewController: UITableViewController {
         
         for item in firePlaceFields {
             item.isHidden = true
-            item.borderStyle = .line
+//            item.borderStyle = .line
+        }
+        
+        // В текстовых полях выводим pickerView вместо клавиатуры
+        for textField in textFieldForInput {
+            textField.inputView = pickerView
+            textField.inputAccessoryView = toolBar
         }
         
         let count = Int(vSlider.value)
         inputFieldsView(fieldCount: count)
     }
     
-  
+
+    
+    
+    // Генерируем список компонентов pickerView
+    func generatePickerData() {
+        var value = 300
+        while value >= 100 {
+            pickerComponent.append(String(value))
+            value -= 5
+        }
+    }
+    
+    
     // Отрисовываем поля ввода в зависимости от состава звена
     func inputFieldsView(fieldCount: Int) {
             data.enterData.removeAll()
@@ -92,8 +138,10 @@ class NewStartViewController: UITableViewController {
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
                 teamCountStack[i].isHidden = false
                 enterValueFields[i].isHidden = false
-                enterValueFields[i].borderStyle = .line
+//                enterValueFields[i].borderStyle = .line
             }
+        counter += 1
+        print(counter)
         }
     
     
@@ -142,20 +190,19 @@ class NewStartViewController: UITableViewController {
     @IBAction func teamChange(_ sender: UISlider) {
         let teamCount = Int(vSlider.value)
         inputFieldsView(fieldCount: teamCount)
-    }
-    
-	
-	// Обновляем все переменные
-	@IBAction func doneButton(_ sender: UIButton) {
-		let teamCount = Int(vSlider.value)
-        inputFieldsView(fieldCount: teamCount)
+        
     }
     
     
-    @IBAction func calcButton(_ sender: Any) {
+    @IBAction func etst(_ sender: UIBarButtonItem) {
         let teamCount = Int(vSlider.value)
         inputFieldsView(fieldCount: teamCount)
     }
+    
+
+	
+    
+    
     
     
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
@@ -172,7 +219,7 @@ class NewStartViewController: UITableViewController {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
 //        tableView.beginUpdates()
-//        tableView.endUpdates()1§
+//        tableView.endUpdates()
     }
 
     
@@ -203,7 +250,6 @@ class NewStartViewController: UITableViewController {
             
             headerText = SettingsData.valueUnit ? "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})" : "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
         }
-//        tableView.reloadSections([0, 1], with: .automatic)
         
         return headerText
     }
@@ -245,6 +291,35 @@ extension String {
         return doubleValue
     }
 }
+
+
+
+extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+	
+    // Количество колонок в PickerView
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return pickerComponent.count
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        for textField in textFieldForInput {
+            if textField.isEditing {
+                textField.text = pickerComponent[row]
+            }
+        }
+        let teamCount = Int(vSlider.value)
+        inputFieldsView(fieldCount: teamCount)
+	}
+	
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return pickerComponent[row]
+	}
+}
+
 
 /*
 extension String {

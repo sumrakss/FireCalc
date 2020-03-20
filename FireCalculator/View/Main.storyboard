@@ -793,33 +793,29 @@
                                                         <constraint firstItem="HNq-nV-oLt" firstAttribute="width" secondItem="Jii-HN-geE" secondAttribute="width" id="pvq-nr-0gi"/>
                                                     </constraints>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2t-If-rxd">
-                                                    <rect key="frame" x="316" y="34" width="16.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZu-u2-Box">
-                                                    <rect key="frame" x="312" y="215" width="20" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="o1f-DR-g97">
+                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1f-DR-g97">
                                                     <rect key="frame" x="252" y="121" width="149" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="teamChange:" destination="aty-dd-hWz" eventType="valueChanged" id="dbz-59-dzv"/>
                                                     </connections>
                                                 </slider>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwS-nM-Dnp">
+                                                    <rect key="frame" x="311" y="34" width="30" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="-1"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRm-Lj-boI">
+                                                    <rect key="frame" x="311" y="200" width="30" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="+1"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5VY-ku-rim" firstAttribute="top" secondItem="snF-ft-cpQ" secondAttribute="top" constant="11" id="HiX-Dq-oYv"/>
-                                                <constraint firstItem="tZu-u2-Box" firstAttribute="top" secondItem="I2t-If-rxd" secondAttribute="bottom" constant="160.5" id="OOa-P5-UcK"/>
-                                                <constraint firstItem="I2t-If-rxd" firstAttribute="leading" secondItem="lWf-ai-qnw" secondAttribute="trailing" constant="33.5" id="dhI-br-VxM"/>
                                                 <constraint firstItem="ldx-JL-h5T" firstAttribute="top" secondItem="5VY-ku-rim" secondAttribute="bottom" constant="2.5" id="g99-F0-F7V"/>
-                                                <constraint firstItem="tZu-u2-Box" firstAttribute="leading" secondItem="Au6-bb-IpU" secondAttribute="trailing" constant="29.5" id="j7W-Lw-5Un"/>
-                                                <constraint firstItem="I2t-If-rxd" firstAttribute="top" secondItem="snF-ft-cpQ" secondAttribute="top" constant="34" id="jzw-ea-M1c"/>
                                                 <constraint firstItem="5VY-ku-rim" firstAttribute="centerX" secondItem="snF-ft-cpQ" secondAttribute="centerX" id="ktm-v7-0Cg"/>
                                                 <constraint firstItem="ldx-JL-h5T" firstAttribute="centerX" secondItem="snF-ft-cpQ" secondAttribute="centerX" id="ycf-EL-iUv"/>
                                             </constraints>
@@ -836,7 +832,7 @@
                     <navigationItem key="navigationItem" title="Звено" id="NV1-OL-IFo">
                         <barButtonItem key="rightBarButtonItem" title="Рассчитать" id="Bot-6C-XEs">
                             <connections>
-                                <action selector="calcButton:" destination="aty-dd-hWz" id="w76-ZV-ePx"/>
+                                <action selector="etst:" destination="aty-dd-hWz" id="X8t-JJ-c21"/>
                                 <segue destination="BYU-Iu-D8N" kind="show" identifier="previewSegue" id="RMl-9b-GRc"/>
                             </connections>
                         </barButtonItem>
@@ -870,6 +866,16 @@
                         <outletCollection property="firePlaceFields" destination="9bG-Dt-dIk" collectionClass="NSMutableArray" id="1cI-Z3-wy5"/>
                         <outletCollection property="firePlaceFields" destination="HNq-nV-oLt" collectionClass="NSMutableArray" id="4Mq-3k-5qj"/>
                         <outletCollection property="firePlaceFields" destination="Au6-bb-IpU" collectionClass="NSMutableArray" id="3p4-c6-77D"/>
+                        <outletCollection property="textFieldForInput" destination="Jii-HN-geE" collectionClass="NSMutableArray" id="3gH-Z0-mb8"/>
+                        <outletCollection property="textFieldForInput" destination="XRm-P4-tPv" collectionClass="NSMutableArray" id="6lc-Ic-HPD"/>
+                        <outletCollection property="textFieldForInput" destination="BvI-BJ-7T4" collectionClass="NSMutableArray" id="cha-8J-s3g"/>
+                        <outletCollection property="textFieldForInput" destination="Jze-qb-RAJ" collectionClass="NSMutableArray" id="iM8-jK-3UV"/>
+                        <outletCollection property="textFieldForInput" destination="aYI-ya-WzO" collectionClass="NSMutableArray" id="5JX-dK-maE"/>
+                        <outletCollection property="textFieldForInput" destination="lWf-ai-qnw" collectionClass="NSMutableArray" id="Twl-G7-Iqw"/>
+                        <outletCollection property="textFieldForInput" destination="39b-dq-3H3" collectionClass="NSMutableArray" id="RFB-bk-okm"/>
+                        <outletCollection property="textFieldForInput" destination="9bG-Dt-dIk" collectionClass="NSMutableArray" id="9Qf-yc-ffy"/>
+                        <outletCollection property="textFieldForInput" destination="HNq-nV-oLt" collectionClass="NSMutableArray" id="gPI-wO-eu2"/>
+                        <outletCollection property="textFieldForInput" destination="Au6-bb-IpU" collectionClass="NSMutableArray" id="87M-bp-0ys"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-uO-4N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -93,6 +93,8 @@ class PDFCreator: NSObject {
         let capacity = String(SettingsData.cylinderVolume)                 // Объем баллона в литрах
         var ratio: String                                      // Коэффициент, учитывающий необходимый запас воздуха
         appData.hardWork ? (ratio = "3") : (ratio = "2.5")             // при сложных условиях = 3, при простых = 2.5
+        let airIndex = String(SettingsData.airIndex)    // Коэффициент сжатия воздуха
+        
         
         // PDF
         let format = UIGraphicsPDFRendererFormat()
@@ -128,6 +130,7 @@ class PDFCreator: NSObject {
             String(Int(maxDrop)).draw(at: CGPoint(x: 245, y: 295), withAttributes: large)
             capacity.draw(at: CGPoint(x: 295, y: 295), withAttributes: large)
             String(format:"%.1f", timeDelta).draw(at: CGPoint(x: 350, y: 310), withAttributes: large)
+            airIndex.draw(at: CGPoint(x: 295, y: 324), withAttributes: large)
             
             // 4
             let time = DateFormatter()
