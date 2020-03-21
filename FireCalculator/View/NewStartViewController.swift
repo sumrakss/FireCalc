@@ -35,17 +35,18 @@ class NewStartViewController: UITableViewController {
         }
     }
     
-    private var pickerComponent = [String]()    // Содержимое pickerview
-	
     let time = DateFormatter()
     var tappedCell1: Bool = false
     var tappedCell2: Bool = false
     var data = AppData()
-    
     var counter = 0
+	//
+	var flag = true
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+		stockValues()
+		pickerViewSettings()
         tableView.reloadData()
     }
     
@@ -53,32 +54,8 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        generatePickerData()    // Генерируем список компонентов pickerView
-        
-        let pickerView = UIPickerView()
-		pickerView.delegate = self
-        pickerView.backgroundColor = .white
-        pickerView.delegate = self
-        pickerView.dataSource = self
-
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-
-        let doneButton = UIBarButtonItem(title: "Скрыть", style: UIBarButtonItem.Style.plain, target: self, action: nil)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: nil)
-
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        
-        
-        print(SettingsData.airFlow)
-        tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
+		// Скрываем клавиатуру при прокрутке
+        tableView.keyboardDismissMode = .onDrag
         fireStackLabel.isHidden = true
         fireTimeCell.selectionStyle = .none
         fireTimeLabel.isEnabled = false
@@ -88,15 +65,10 @@ class NewStartViewController: UITableViewController {
         enterTimeDetail.text = time.string(from: data.enterTime)
         fireTimeDetail.text = time.string(from: data.fireTime)
         
+		// Скрываем поля ввода "У очага" при первом запуске
         for item in firePlaceFields {
             item.isHidden = true
 //            item.borderStyle = .line
-        }
-        
-        // В текстовых полях выводим pickerView вместо клавиатуры
-        for textField in textFieldForInput {
-            textField.inputView = pickerView
-            textField.inputAccessoryView = toolBar
         }
         
         let count = Int(vSlider.value)
@@ -104,16 +76,27 @@ class NewStartViewController: UITableViewController {
     }
     
 
-    
-    
-    // Генерируем список компонентов pickerView
-    func generatePickerData() {
-        var value = 300
-        while value >= 100 {
-            pickerComponent.append(String(value))
-            value -= 5
-        }
-    }
+	// Метод изменяет значения в полях ввода при изменении единиц измерения
+	func stockValues() {
+		if !SettingsData.valueUnit && flag {
+			for i in 0 ..< data.enterData.count {
+				data.enterData[i] /= 10.0
+				data.hearthData[i] /= 10.0
+				enterValueFields[i].text = String(data.enterData[i])
+				firePlaceFields[i].text = String(data.hearthData[i])
+			}
+			flag = false
+		}
+		if SettingsData.valueUnit && !flag {
+			for i in 0 ..< data.enterData.count {
+				data.enterData[i] *= 10.0
+				data.hearthData[i] *= 10.0
+				enterValueFields[i].text = String(Int(data.enterData[i]))
+				firePlaceFields[i].text = String(Int(data.hearthData[i]))
+			}
+			flag = true
+		}
+	}
     
     
     // Отрисовываем поля ввода в зависимости от состава звена
@@ -127,8 +110,11 @@ class NewStartViewController: UITableViewController {
             }
             
             for i in 0..<fieldCount {
+				
+				
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
-                    data.enterData.append(enterValue)
+					data.enterData.append(enterValue)
+					print(enterValue)
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
@@ -144,8 +130,50 @@ class NewStartViewController: UITableViewController {
         print(counter)
         }
     
-    
-    // Очаг
+	
+	 // Настройка pickerView
+	func pickerViewSettings() {
+		// Очищаем содержимое для PickerView
+		data.pickerComponents.removeAll()
+		// Генерируем содержимое для PickerView
+		data.generatePickerData()
+		
+		let pickerView = UIPickerView()
+		pickerView.delegate = self
+		pickerView.backgroundColor = .white
+		pickerView.delegate = self
+		pickerView.dataSource = self
+
+		let toolBar = UIToolbar()
+		toolBar.barStyle = UIBarStyle.default
+		toolBar.isTranslucent = true
+//		toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+		toolBar.sizeToFit()
+
+		let doneButton = UIBarButtonItem(title: "Готово",
+										 style: UIBarButtonItem.Style.plain,
+										 target: self,
+										 action: #selector(dismissKeyboard))
+		
+		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: nil)
+
+		toolBar.setItems([spaceButton, doneButton], animated: false)
+		toolBar.isUserInteractionEnabled = true
+		
+		// В текстовых полях выводим pickerView вместо клавиатуры
+		for textField in textFieldForInput {
+			textField.inputView = pickerView
+			textField.inputAccessoryView = toolBar
+		}
+	}
+	
+	@objc func dismissKeyboard () {
+		view.endEditing(true)
+	}
+	
+	
+    // Swicher Очаг
     @IBAction func firePlaceChange(_ sender: Any) {
 		
         data.firePlace = !data.firePlace
@@ -164,13 +192,13 @@ class NewStartViewController: UITableViewController {
     }
     
     
-    // Сложные условия
+    // Swicher Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
         data.hardWork = !data.hardWork
     }
     
     
-    // Устанавливаем время включения
+    // DatePicker Устанавливаем время включения
     @IBAction func enterTimeChange(_ sender: UIDatePicker) {
         data.enterTime = enterTimePicker!.date
         time.dateFormat = "HH:mm"
@@ -178,7 +206,7 @@ class NewStartViewController: UITableViewController {
     }
     
 	
-    // Устанавливаем время у очага
+    // DatePicker Устанавливаем время у очага
     @IBAction func fireTimeChange(_ sender: UIDatePicker) {
         data.fireTime = fireTimePicker!.date
         time.dateFormat = "HH:mm"
@@ -194,14 +222,13 @@ class NewStartViewController: UITableViewController {
     }
     
     
+	// BarButton Рассчитать
     @IBAction func etst(_ sender: UIBarButtonItem) {
         let teamCount = Int(vSlider.value)
         inputFieldsView(fieldCount: teamCount)
     }
-    
 
 	
-    
     
     
     
@@ -272,7 +299,7 @@ class NewStartViewController: UITableViewController {
 }
 
 
-//  расширение для автоматичесткой перевода строки запятой в точку
+//  расширение для автоматического перевода запятой в точку
 extension String {
     static let numberFormatter = NumberFormatter()
     func dotGuard() -> Double {
@@ -295,30 +322,53 @@ extension String {
 
 
 extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-	
     // Количество колонок в PickerView
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//		if data.firePlace { return 2 }
 		return 1
 	}
 	
+	
+	// Количество строк в PickerView
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return pickerComponent.count
+		return self.data.pickerComponents.count
 	}
 	
+	
+	// Логика для выбранного элемента
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         for textField in textFieldForInput {
             if textField.isEditing {
-                textField.text = pickerComponent[row]
+				textField.text = self.data.pickerComponents[row]
             }
         }
         let teamCount = Int(vSlider.value)
         inputFieldsView(fieldCount: teamCount)
 	}
 	
+	// Отображаем в picker значения из списка
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return pickerComponent[row]
+		return self.data.pickerComponents[row]
 	}
 }
+
+
+/*
+extension NewStartViewController: ToolbarPickerViewDelegate {
+
+    func didTapDone() {
+        let row = self.pickerView.selectedRow(inComponent: 0)
+        self.pickerView.selectRow(row, inComponent: 0, animated: false)
+		self.textView.text = self.data.pickerComponents[row]
+        self.textField.resignFirstResponder()
+    }
+
+    func didTapCancel() {
+        self.textField.text = nil
+        self.textField.resignFirstResponder()
+    }
+}
+*/
 
 
 /*

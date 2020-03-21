@@ -26,12 +26,12 @@ struct SettingsData {
 }
 
 
-enum UnitType: String {
-    case air = "ДАСВ"
-    case oxygen = "ДАСК"
-}
-
-enum UnitValue: String {
-    case kgc = "кгс/см\u{00B2}"
-    case mpa = "МПа"
-}
+//enum UnitType: String {
+//    case air = "ДАСВ"
+//    case oxygen = "ДАСК"
+//}
+//
+//enum UnitValue: String {
+//    case kgc = "кгс/см\u{00B2}"
+//    case mpa = "МПа"
+//}

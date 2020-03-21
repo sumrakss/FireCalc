@@ -24,6 +24,26 @@ struct AppData {
     var hearthData = [Double]()
     // Падение давления в звене
     var fallPressure = [Double]()
+	
+	var pickerComponents = [String]()    // Содержимое pickerview
+	
+	mutating func generatePickerData() {
+		var value = 300.0
+        if SettingsData.valueUnit {
+            while value >= 100 {
+                pickerComponents.append(String(Int(value)))
+                value -= 5
+            }
+        }
+		
+		if !SettingsData.valueUnit {
+			value = 30
+			while value >= 10 {
+				pickerComponents.append(String(value))
+				value -= 0.5
+			}
+        }
+	}
 }
 
 
