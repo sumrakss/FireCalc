@@ -18,10 +18,12 @@
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
-		FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA66575D240FBABA0056B1F8 /* test3.pdf */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125A2418FA6800CAF846 /* AppData.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
+		FABDD0F8242842C50071693A /* airFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD0F7242842C50071693A /* airFound.pdf */; };
+		FABDD0FA242846170071693A /* hardAirFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD0F9242846170071693A /* hardAirFound.pdf */; };
+		FABDD105242881360071693A /* airNotFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD104242881350071693A /* airNotFound.pdf */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -39,10 +41,12 @@
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
-		FA66575D240FBABA0056B1F8 /* test3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test3.pdf; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FAB7125A2418FA6800CAF846 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		FABDD0F7242842C50071693A /* airFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFound.pdf; sourceTree = "<group>"; };
+		FABDD0F9242846170071693A /* hardAirFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFound.pdf; sourceTree = "<group>"; };
+		FABDD104242881350071693A /* airNotFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFound.pdf; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +80,9 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				FA66575D240FBABA0056B1F8 /* test3.pdf */,
+				FABDD0F7242842C50071693A /* airFound.pdf */,
+				FABDD104242881350071693A /* airNotFound.pdf */,
+				FABDD0F9242846170071693A /* hardAirFound.pdf */,
 				FAB7125F2419063700CAF846 /* Data */,
 				FA3156C8241A322E00D8206B /* View */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
@@ -172,10 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */,
+				FABDD0F8242842C50071693A /* airFound.pdf in Resources */,
 				885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */,
-				FA66575E240FBABA0056B1F8 /* test3.pdf in Resources */,
+				FABDD0FA242846170071693A /* hardAirFound.pdf in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
+				FABDD105242881360071693A /* airNotFound.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

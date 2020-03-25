@@ -25,15 +25,14 @@ class NewStartViewController: UITableViewController {
     @IBOutlet var enterValueFields: [UITextField]!  // Текстовые поля "При включении"
     @IBOutlet var firePlaceFields: [UITextField]!   // Текстовые поля "У очага"
     @IBOutlet var textFieldForInput: [UITextField]! // Текстовые поля для ввода
-    
-    @IBOutlet weak var vSlider: UISlider! {
-        didSet {
-            vSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
-            vSlider.minimumValue = 2
-            vSlider.maximumValue = 5
-            vSlider.value = 3
-        }
-    }
+	@IBOutlet weak var teamStepper: UIStepper!{
+		didSet {
+			teamStepper.value = 3
+			teamStepper.minimumValue = 2
+			teamStepper.maximumValue = 5
+		}
+	}
+	
     
     let time = DateFormatter()
     var tappedCell1: Bool = false
@@ -42,7 +41,10 @@ class NewStartViewController: UITableViewController {
     var counter = 0
 	//
 	var flag = true
-    
+	var teamCounter = 3
+	
+
+	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 		stockValues()
@@ -71,8 +73,7 @@ class NewStartViewController: UITableViewController {
 //            item.borderStyle = .line
         }
         
-        let count = Int(vSlider.value)
-        inputFieldsView(fieldCount: count)
+        inputFieldsView(fieldCount: teamCounter)
     }
     
 
@@ -82,6 +83,7 @@ class NewStartViewController: UITableViewController {
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] /= 10.0
 				data.hearthData[i] /= 10.0
+				data.fallPressure[i] /= 10.0
 				enterValueFields[i].text = String(data.enterData[i])
 				firePlaceFields[i].text = String(data.hearthData[i])
 			}
@@ -91,6 +93,7 @@ class NewStartViewController: UITableViewController {
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] *= 10.0
 				data.hearthData[i] *= 10.0
+				data.fallPressure[i] *= 10.0
 				enterValueFields[i].text = String(Int(data.enterData[i]))
 				firePlaceFields[i].text = String(Int(data.hearthData[i]))
 			}
@@ -139,8 +142,7 @@ class NewStartViewController: UITableViewController {
 		data.generatePickerData()
 		
 		let pickerView = UIPickerView()
-		pickerView.delegate = self
-		pickerView.backgroundColor = .white
+//		pickerView.backgroundColor = .white
 		pickerView.delegate = self
 		pickerView.dataSource = self
 
@@ -215,17 +217,16 @@ class NewStartViewController: UITableViewController {
     
 
     // Меняем численность состава звена ГДЗС
-    @IBAction func teamChange(_ sender: UISlider) {
-        let teamCount = Int(vSlider.value)
-        inputFieldsView(fieldCount: teamCount)
-        
-    }
-    
-    
+	@IBAction func teamChanger(_ sender: UIStepper) {
+		teamCounter = Int(sender.value)
+		inputFieldsView(fieldCount: teamCounter)
+		tableView.reloadData()
+	}
+	
+	
 	// BarButton Рассчитать
     @IBAction func etst(_ sender: UIBarButtonItem) {
-        let teamCount = Int(vSlider.value)
-        inputFieldsView(fieldCount: teamCount)
+        inputFieldsView(fieldCount: teamCounter)
     }
 
 	
@@ -242,7 +243,7 @@ class NewStartViewController: UITableViewController {
         
         
         if indexPath.row == 4 && data.firePlace {
-             tappedCell2 = !tappedCell2
+			tappedCell2 = !tappedCell2
             tableView.reloadRows(at: [indexPath], with: .none)
         }
 //        tableView.beginUpdates()
@@ -258,11 +259,7 @@ class NewStartViewController: UITableViewController {
         if indexPath.row == 5 {
             return (tappedCell2  && data.firePlace ? tableView.rowHeight : 0)
         }
-        
-        // Высота ячейки с полями ввода
-        if indexPath == [1, 0] {
-            return 256
-        }
+       
         return tableView.rowHeight
     }
     
@@ -286,12 +283,11 @@ class NewStartViewController: UITableViewController {
         if segue.identifier == "previewSegue" {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
-            
+			vc.appData = data
+			
             if data.firePlace { // Если очаг найден
-//                pdfCreator.appData = data
-//                vc.documentData = pdfCreator.foundPDFCreator()
-            } else {
-                vc.appData = data
+                vc.documentData = pdfCreator.foundPDFCreator(appData: data)
+			} else {
                 vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
             }
         }
@@ -342,8 +338,7 @@ extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 				textField.text = self.data.pickerComponents[row]
             }
         }
-        let teamCount = Int(vSlider.value)
-        inputFieldsView(fieldCount: teamCount)
+        inputFieldsView(fieldCount: teamCounter)
 	}
 	
 	// Отображаем в picker значения из списка

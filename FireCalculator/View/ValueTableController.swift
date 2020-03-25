@@ -13,7 +13,7 @@ class ValueTableController: UITableViewController {
     @IBOutlet weak var cell1: UITableViewCell!
     @IBOutlet weak var cell2: UITableViewCell!
     @IBOutlet weak var cellLabel: UILabel!
-    
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         cellLabel.text = "кгс/см\u{00B2}"
@@ -26,19 +26,43 @@ class ValueTableController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // кгс/см2
         if indexPath.row == 0 {
-            SettingsData.valueUnit = true
-            SettingsData.airRate = 40.0
-            SettingsData.reductionStability = 10.0
-            SettingsData.airFlow = SettingsData.airRate * SettingsData.airIndex
-            print(SettingsData.airFlow)
+			if !SettingsData.valueUnit {
+				if SettingsData.air {
+					SettingsData.reductionStability *= 10
+					SettingsData.airRate *= 10
+					SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex)
+				} else {
+					SettingsData.reductionStability *= 10
+					SettingsData.airRate *= 10
+					SettingsData.airFlow = 2
+				}
+				SettingsData.valueUnit = true
+			}
+			
+            print("airFlow \(SettingsData.airFlow)")
+			print("airRate \(SettingsData.airRate)")
+			print("reductionStability \(SettingsData.reductionStability)")
+			print()
             checkmarkCell()
         }
         // МПа
         if indexPath.row == 1 {
-            SettingsData.valueUnit = false
-            SettingsData.reductionStability = SettingsData.reductionStability / 10
-            SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex) / 10
-            print(SettingsData.airFlow)
+			if SettingsData.valueUnit {
+				if SettingsData.air {
+					SettingsData.reductionStability /= 10
+					SettingsData.airRate /= 10
+					SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex)
+				} else {
+					SettingsData.reductionStability /= 10
+					SettingsData.airRate /= 10
+					SettingsData.airFlow = 0.2
+				}
+				SettingsData.valueUnit = false
+			}
+            print("airFlow \(SettingsData.airFlow)")
+			print("airRate \(SettingsData.airRate)")
+			print("reductionStability \(SettingsData.reductionStability)")
+			print()
             checkmarkCell()
         }
         tableView.reloadData()

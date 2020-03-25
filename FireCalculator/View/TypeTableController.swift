@@ -13,6 +13,8 @@ class TypeTableController: UITableViewController {
     @IBOutlet weak var cell1: UITableViewCell!
     @IBOutlet weak var cell2: UITableViewCell!
     
+	var flag = true
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         checkmarkCell()
@@ -23,21 +25,29 @@ class TypeTableController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // ДАСВ
         if indexPath.row == 0 {
-            SettingsData.air = true
-            if SettingsData.valueUnit {
-                SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
-            } else {
-                SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex) / 10
-            }
-            print(SettingsData.airFlow)
+			if !SettingsData.air {
+				SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
+				SettingsData.air = true
+			}
+			
+            print("airFlow \(SettingsData.airFlow)")
+			print("airRate \(SettingsData.airRate)")
+			print("reductionStability \(SettingsData.reductionStability)")
+			print()
             checkmarkCell()
         }
         
         // ДАСК
         if indexPath.row == 1  {
-            SettingsData.air = false
-            SettingsData.valueUnit ? (SettingsData.airFlow = 2.0) : (SettingsData.airFlow = 0.2)
-            print(SettingsData.airFlow)
+			if SettingsData.air {
+				SettingsData.airFlow = SettingsData.valueUnit ? 2.0 : 0.2
+				SettingsData.air = false
+			}
+			
+            print("airFlow \(SettingsData.airFlow)")
+			print("airRate \(SettingsData.airRate)")
+			print("reductionStability \(SettingsData.reductionStability)")
+			print()
             checkmarkCell()
         }
         tableView.reloadData()

@@ -9,18 +9,18 @@
 import Foundation
 
 struct SettingsData {
-    
-    static var air = true   //  Тип СИЗОД. По-умолчанию ДАСВ
-    
-    static var valueUnit = true     // Единицы измерения. По-умолчанию кгс/см2
-    
-    static var cylinderVolume = 6.8 // Объем баллога
-    
-    static var airIndex = 1.1          // Коэффициент сжимаемости воздуха
-    
-    static var airRate = 40.0     // Средний расход воздуха
-        
-    static var reductionStability = 10.0    // давление воздуха, необходимое для устойчивой работы редуктора
+    //  Тип СИЗОД. По-умолчанию ДАСВ
+    static var air = true
+    // Единицы измерения. По-умолчанию кгс/см2
+    static var valueUnit = true
+    // Объем баллога
+    static var cylinderVolume = 6.8
+    // Коэффициент сжимаемости воздуха
+    static var airIndex = 1.1
+    // Средний расход воздуха
+    static var airRate = 40.0
+	// давление воздуха, необходимое для устойчивой работы редуктора
+    static var reductionStability = 10.0
     
     static var airFlow = airIndex * airRate
 }

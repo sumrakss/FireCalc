@@ -38,31 +38,38 @@ class SettingsTableController: UITableViewController {
         switch SettingsData.valueUnit {
             case true:
                 valueDetailLabel.text = "кгс/см\u{00B2}"
-                reductionStabilityTextField.text = "10"
+//                reductionStabilityTextField.text = String(SettingsData.reductionStability)
+//				airRateTextField.text = String(Int(SettingsData.airRate))
             default:
                 valueDetailLabel.text = "МПа"
-                reductionStabilityTextField.text = "1"
         }
+		reductionStabilityTextField.text = String(Int(SettingsData.reductionStability))
+		airRateTextField.text = String(Int(SettingsData.airRate))
+		tableView.reloadData()
     }
     
     // Настройка объема баллона
     @IBAction func cylinderVolumeData(_ sender: Any) {
         SettingsData.cylinderVolume = (cylinderVolumeTextField.text?.dotGuard())!
+		print(SettingsData.cylinderVolume)
     }
     
     // Настройка объема баллона
     @IBAction func airRateData(_ sender: Any) {
         SettingsData.airRate = (airRateTextField.text?.dotGuard())!
+		print(SettingsData.airRate)
     }
     
     // Настройка объема баллона
     @IBAction func airIndexTextData(_ sender: Any) {
         SettingsData.airIndex = (airIndexTextField.text?.dotGuard())!
+		print(SettingsData.airIndex)
     }
     
     // Настройка объема баллона
     @IBAction func reductionStabilityData(_ sender: Any) {
         SettingsData.reductionStability = (reductionStabilityTextField.text?.dotGuard())!
+		print(SettingsData.reductionStability)
     }
 }
 
