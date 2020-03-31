@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8841C67A242CD43500927AEC /* hardAirFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8841C679242CD43500927AEC /* hardAirFound.pdf */; };
 		885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 885DF6E923FCD0EA00BB6E1D /* Main.storyboard */; };
 		88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBDD91240BCED900F8012B /* PDFCreator.swift */; };
 		88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */; };
@@ -17,22 +18,22 @@
 		FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */; };
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
+		FA56DA072432EF64001583A6 /* airFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA56DA062432EF64001583A6 /* airFound.pdf */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125A2418FA6800CAF846 /* AppData.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
-		FABDD0F8242842C50071693A /* airFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD0F7242842C50071693A /* airFound.pdf */; };
-		FABDD0FA242846170071693A /* hardAirFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD0F9242846170071693A /* hardAirFound.pdf */; };
 		FABDD105242881360071693A /* airNotFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD104242881350071693A /* airNotFound.pdf */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8841C679242CD43500927AEC /* hardAirFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFound.pdf; sourceTree = "<group>"; };
 		885DF6E923FCD0EA00BB6E1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		88DBDD91240BCED900F8012B /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
 		88F327F323FBF4B40085BBC8 /* NewStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStartViewController.swift; sourceTree = "<group>"; };
-		FA1F35F923DEB07000A8641C /* FireCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1F35F923DEB07000A8641C /* БрандМастер.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "БрандМастер.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F35FC23DEB07000A8641C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA1F360523DEB07300A8641C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,12 +41,11 @@
 		FA1F360A23DEB07300A8641C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
+		FA56DA062432EF64001583A6 /* airFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFound.pdf; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FAB7125A2418FA6800CAF846 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
-		FABDD0F7242842C50071693A /* airFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFound.pdf; sourceTree = "<group>"; };
-		FABDD0F9242846170071693A /* hardAirFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFound.pdf; sourceTree = "<group>"; };
 		FABDD104242881350071693A /* airNotFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFound.pdf; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 		FA1F35FA23DEB07000A8641C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F35F923DEB07000A8641C /* FireCalculator.app */,
+				FA1F35F923DEB07000A8641C /* БрандМастер.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,9 +80,9 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				FABDD0F7242842C50071693A /* airFound.pdf */,
 				FABDD104242881350071693A /* airNotFound.pdf */,
-				FABDD0F9242846170071693A /* hardAirFound.pdf */,
+				FA56DA062432EF64001583A6 /* airFound.pdf */,
+				8841C679242CD43500927AEC /* hardAirFound.pdf */,
 				FAB7125F2419063700CAF846 /* Data */,
 				FA3156C8241A322E00D8206B /* View */,
 				FAE2AF2723FFC52B004FA92B /* .gitignore */,
@@ -136,7 +136,7 @@
 			);
 			name = FireCalculator;
 			productName = FireCalculator;
-			productReference = FA1F35F923DEB07000A8641C /* FireCalculator.app */;
+			productReference = FA1F35F923DEB07000A8641C /* БрандМастер.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,10 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */,
-				FABDD0F8242842C50071693A /* airFound.pdf in Resources */,
+				FA56DA072432EF64001583A6 /* airFound.pdf in Resources */,
 				885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */,
-				FABDD0FA242846170071693A /* hardAirFound.pdf in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
+				8841C67A242CD43500927AEC /* hardAirFound.pdf in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
 				FABDD105242881360071693A /* airNotFound.pdf in Resources */,
 			);
@@ -347,8 +347,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "БрандМастер";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -365,8 +366,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "БрандМастер";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

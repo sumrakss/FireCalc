@@ -28,6 +28,8 @@ class TypeTableController: UITableViewController {
 			if !SettingsData.air {
 				SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
 				SettingsData.air = true
+				SettingsData.cylinderVolume = 6.8
+				SettingsData.reductionStability = SettingsData.valueUnit ? 10 : 1.0
 			}
 			
             print("airFlow \(SettingsData.airFlow)")
@@ -42,6 +44,7 @@ class TypeTableController: UITableViewController {
 			if SettingsData.air {
 				SettingsData.airFlow = SettingsData.valueUnit ? 2.0 : 0.2
 				SettingsData.air = false
+				SettingsData.cylinderVolume = 1.0
 			}
 			
             print("airFlow \(SettingsData.airFlow)")

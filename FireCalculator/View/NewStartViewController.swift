@@ -56,6 +56,9 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		firePlaceLabel.text = "Поиск очага"
+		hardWorkLabel.text = "Нормальные условия"
 		// Скрываем клавиатуру при прокрутке
         tableView.keyboardDismissMode = .onDrag
         fireStackLabel.isHidden = true
@@ -190,12 +193,16 @@ class NewStartViewController: UITableViewController {
         for item in firePlaceFields {
             item.isHidden = !item.isHidden
         }
+		
+		firePlaceLabel.text = data.firePlace ? "Очаг обнаружен" : "Поиск очага"
+		
         tableView.reloadData()
     }
     
     
     // Swicher Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
+		hardWorkLabel.text = data.hardWork ? "Нормальные условия" : "Сложные условия"
         data.hardWork = !data.hardWork
     }
     

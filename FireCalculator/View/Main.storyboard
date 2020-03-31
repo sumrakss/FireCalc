@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iPb-yu-lCR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iPb-yu-lCR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -287,9 +287,12 @@
                     <navigationItem key="navigationItem" title="Настройки" id="Wci-IG-jGt"/>
                     <connections>
                         <outlet property="airIndexCell" destination="KCz-ik-7c9" id="6eX-kb-PiJ"/>
+                        <outlet property="airIndexLabel" destination="omz-xk-0X9" id="gao-4G-dZO"/>
                         <outlet property="airIndexTextField" destination="WeG-1m-J0j" id="wT1-dO-EGr"/>
+                        <outlet property="airRateLabel" destination="8wh-Ds-OZW" id="hho-aX-GM7"/>
                         <outlet property="airRateTextField" destination="nyZ-27-eMM" id="qeh-SB-rjR"/>
                         <outlet property="cylinderVolumeTextField" destination="fch-sF-fKp" id="4Q8-0T-X59"/>
+                        <outlet property="reducLabel" destination="xs0-dB-0Na" id="qeF-dx-InB"/>
                         <outlet property="reductionStabilityTextField" destination="Vff-Ou-5E7" id="WeI-xt-caQ"/>
                         <outlet property="typeDetailLabel" destination="k9o-m0-Own" id="2pm-xw-0dJ"/>
                         <outlet property="vCylinderLabel" destination="7wZ-i2-1d4" id="hoZ-m5-bw3"/>
@@ -514,7 +517,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сложные условия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-7L-Zna">
-                                                    <rect key="frame" x="16" y="11" width="167" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="230" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -522,7 +525,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-Nu-pPw">
                                                     <rect key="frame" x="311" y="6.5" width="51" height="31"/>
-                                                    <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="onTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="hardWorkChange:" destination="aty-dd-hWz" eventType="valueChanged" id="GAw-N6-Qyc"/>
                                                     </connections>
@@ -898,7 +901,9 @@
         <scene sceneID="84S-2S-YHG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbt-2F-zFi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Рассчеты" image="command" catalog="system" id="pqb-fg-Pf7"/>
+                    <tabBarItem key="tabBarItem" title="Рассчеты" image="icons8" selectedImage="icons8" id="pqb-fg-Pf7">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jxn-hI-dkZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -917,7 +922,9 @@
         <scene sceneID="uZ5-rn-fqb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kgR-ig-7k8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Настройки" image="gear" catalog="system" id="Xgf-Gp-kbw"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="gear" catalog="system" id="Xgf-Gp-kbw">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="If0-aZ-ZEo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -930,11 +937,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyJ-9M-jDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3314" y="130"/>
+            <point key="canvasLocation" x="-3316" y="80"/>
         </scene>
     </scenes>
     <resources>
-        <image name="command" catalog="system" width="64" height="56"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="icons8" width="25" height="25"/>
     </resources>
 </document>
