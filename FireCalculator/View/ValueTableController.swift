@@ -38,11 +38,6 @@ class ValueTableController: UITableViewController {
 				}
 				SettingsData.valueUnit = true
 			}
-			
-            print("airFlow \(SettingsData.airFlow)")
-			print("airRate \(SettingsData.airRate)")
-			print("reductionStability \(SettingsData.reductionStability)")
-			print()
             checkmarkCell()
         }
         // МПа
@@ -59,10 +54,6 @@ class ValueTableController: UITableViewController {
 				}
 				SettingsData.valueUnit = false
 			}
-            print("airFlow \(SettingsData.airFlow)")
-			print("airRate \(SettingsData.airRate)")
-			print("reductionStability \(SettingsData.reductionStability)")
-			print()
             checkmarkCell()
         }
         tableView.reloadData()

@@ -26,13 +26,6 @@ class SettingsTableController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//		if overrideUserInterfaceStyle == .dark {
-//			print("dark")
-//		} else {
-//			print("light")
-//		}
-//		print(overrideUserInterfaceStyle.rawValue)
-	
 		
         tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
         
@@ -42,25 +35,10 @@ class SettingsTableController: UITableViewController {
 			// Воздух
             case true:
                 typeDetailLabel.text = "ДАСВ"
-				airRateTextField.isEnabled = true
-				airIndexTextField.isEnabled = true
-				airRateLabel.isEnabled = true
-				airIndexLabel.isEnabled = true
-				// Возвращаем системные цвета
-				airRateTextField.textColor = .label
-				airIndexTextField.textColor = .label
 				
 			// Кислород
             default:
                 typeDetailLabel.text = "ДАСК"
-				// Делаем поля неактивными
-				airRateTextField.isEnabled = false
-				airIndexTextField.isEnabled = false
-				airRateLabel.isEnabled = false
-				airIndexLabel.isEnabled = false
-				airRateTextField.textColor = .gray
-				airIndexTextField.textColor = .gray
-				
         }
         
         switch SettingsData.valueUnit {
@@ -125,6 +103,7 @@ class SettingsTableController: UITableViewController {
 		   
 		   return tableView.rowHeight
 	   }
+	
 	
 	func atencionMessage(value: Double) {
 		guard value != 0

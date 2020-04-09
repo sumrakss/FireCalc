@@ -16,6 +16,7 @@ class PDFCreator: NSObject {
 	let airPressK = "* К"
 	let airPressSG = "сж"
 	
+	
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
     func foundPDFCreator(appData: AppData) -> Data {
         // Вычисляемые значения
@@ -338,40 +339,7 @@ class PDFCreator: NSObject {
 
           return data
     }
-    
-/*
-	func patternPDF(fileName: String) -> Data {
-		// PDF
-		let format = UIGraphicsPDFRendererFormat()
 
-		// A4 size
-		let pageWidth = 595.2
-		let pageHeight = 841.8
-		let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
-		let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
-
-		let data = renderer.pdfData { (context) in
-			context.beginPage()
-			let context = context.cgContext
-
-			// Щрифты для констант и вычисляемых значений
-			let large = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 16)!]
-			let small = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 15)!]
-
-			// Подставляем PDF шаблон с формулами
-			let path = Bundle.main.path(forResource: fileName, ofType: "pdf")!
-			let url = URL(fileURLWithPath: path)
-			let document = CGPDFDocument(url as CFURL)
-			let page = document?.page(at: 1)
-			UIColor.white.set()
-			context.translateBy(x: 0.0, y: pageRect.size.height)
-			context.scaleBy(x: 1.0, y: -1.0)
-			context.drawPDFPage(page!)
-		}
-		return data
-    }
-    
-  */
 	
     /*
      length - длина линии

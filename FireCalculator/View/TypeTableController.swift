@@ -13,7 +13,6 @@ class TypeTableController: UITableViewController {
     @IBOutlet weak var cell1: UITableViewCell!
     @IBOutlet weak var cell2: UITableViewCell!
     
-	var flag = true
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +29,9 @@ class TypeTableController: UITableViewController {
 				SettingsData.air = true
 				SettingsData.cylinderVolume = 6.8
 				SettingsData.reductionStability = SettingsData.valueUnit ? 10 : 1.0
+				cell1.accessoryType = .checkmark
+				cell2.accessoryType = .none
 			}
-			
-            print("airFlow \(SettingsData.airFlow)")
-			print("airRate \(SettingsData.airRate)")
-			print("reductionStability \(SettingsData.reductionStability)")
-			print()
             checkmarkCell()
         }
         
@@ -45,12 +41,9 @@ class TypeTableController: UITableViewController {
 				SettingsData.airFlow = SettingsData.valueUnit ? 2.0 : 0.2
 				SettingsData.air = false
 				SettingsData.cylinderVolume = 1.0
+				cell1.accessoryType = .none
+				cell2.accessoryType = .checkmark
 			}
-			
-            print("airFlow \(SettingsData.airFlow)")
-			print("airRate \(SettingsData.airRate)")
-			print("reductionStability \(SettingsData.reductionStability)")
-			print()
             checkmarkCell()
         }
         tableView.reloadData()

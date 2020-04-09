@@ -14,7 +14,6 @@ class NewStartViewController: UITableViewController {
     @IBOutlet weak var hardWorkLabel: UILabel!
     @IBOutlet weak var enterTimePicker: UIDatePicker!
     @IBOutlet weak var fireTimePicker: UIDatePicker!
-//    @IBOutlet weak var fireTimeLabel: UILabel!
 	@IBOutlet weak var fireTimeDetail: UILabel!
     @IBOutlet weak var enterTimeDetail: UILabel!
     @IBOutlet weak var fireTimeCell: UITableViewCell!
@@ -33,13 +32,13 @@ class NewStartViewController: UITableViewController {
 		}
 	}
 	
-    
+	
     let time = DateFormatter()
-    var tappedCell1: Bool = false
-    var tappedCell2: Bool = false
+	var tapList = Set<IndexPath?>()
+	var tappedIndexPath: IndexPath?
     var data = AppData()
+	
     var counter = 0
-	//
 	var flag = true
 	var teamCounter = 3
 	
@@ -56,16 +55,13 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.keyboardDismissMode = .onDrag
 		
-//		tableView.backgroundView = UIImageView(image: UIImage(named: "back.jpg"))
-		firePlaceLabel.text = "Очаг [поиск]"
-		hardWorkLabel.text = "Условия [нормальные]"
+		firePlaceLabel.text = "Очаг поиск"
+		hardWorkLabel.text = "Условия нормальные"
 		// Скрываем клавиатуру при прокрутке
-        tableView.keyboardDismissMode = .onDrag
         fireStackLabel.isHidden = true
         fireTimeCell.selectionStyle = .none
-//        fireTimeLabel.isEnabled = false
-//        fireTimeDetail.isEnabled = false
         
         time.dateFormat = "HH:mm"
         enterTimeDetail.text = time.string(from: data.enterTime)
@@ -84,6 +80,7 @@ class NewStartViewController: UITableViewController {
 	// Метод изменяет значения в полях ввода при изменении единиц измерения
 	func stockValues() {
 		if !SettingsData.valueUnit && flag {
+			// Изменить значения видимых полей ввода
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] /= 10.0
 				data.hearthData[i] /= 10.0
@@ -91,8 +88,15 @@ class NewStartViewController: UITableViewController {
 				enterValueFields[i].text = String(data.enterData[i])
 				firePlaceFields[i].text = String(data.hearthData[i])
 			}
+			// Изменить значения скрытых полей ввода
+			for i in data.enterData.count ..< enterValueFields.count {
+				enterValueFields[i].text = String((enterValueFields[i].text?.dotGuard())! / 10.0)
+				firePlaceFields[i].text = String((firePlaceFields[i].text?.dotGuard())! / 10.0)
+			}
+			
 			flag = false
 		}
+		
 		if SettingsData.valueUnit && !flag {
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] *= 10.0
@@ -101,6 +105,12 @@ class NewStartViewController: UITableViewController {
 				enterValueFields[i].text = String(Int(data.enterData[i]))
 				firePlaceFields[i].text = String(Int(data.hearthData[i]))
 			}
+			
+			for i in data.enterData.count ..< enterValueFields.count {
+				enterValueFields[i].text = String(Int((enterValueFields[i].text?.dotGuard())! * 10.0))
+				firePlaceFields[i].text = String(Int((firePlaceFields[i].text?.dotGuard())! * 10.0))
+			}
+			
 			flag = true
 		}
 	}
@@ -117,8 +127,6 @@ class NewStartViewController: UITableViewController {
             }
             
             for i in 0..<fieldCount {
-				
-				
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
 					data.enterData.append(enterValue)
 					print(enterValue)
@@ -126,6 +134,7 @@ class NewStartViewController: UITableViewController {
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
                     data.hearthData.append(hearthValue)
+//					print(hearthValue)
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -134,7 +143,7 @@ class NewStartViewController: UITableViewController {
 //                enterValueFields[i].borderStyle = .line
             }
         counter += 1
-        print(counter)
+        
         }
     
 	
@@ -183,27 +192,24 @@ class NewStartViewController: UITableViewController {
     @IBAction func firePlaceChange(_ sender: Any) {
         data.firePlace = !data.firePlace
         fireStackLabel.isHidden = !fireStackLabel.isHidden
-//        fireTimeLabel.isEnabled = !fireTimeLabel.isEnabled
-        // Делаем ячейку неактивной в случае если очаг не найден
-//        fireTimeDetail.isEnabled = !fireTimeDetail.isEnabled
-        data.firePlace ? (fireTimeCell.selectionStyle = .default) : (fireTimeCell.selectionStyle = .none)
-        // Скрываем TimePicker если очаг не найден
-        if tappedCell2 {  tappedCell2 = false }
         
         for item in firePlaceFields {
             item.isHidden = !item.isHidden
         }
 		
-		firePlaceLabel.text = data.firePlace ? "Очаг [обнаружен]" : "Очаг [поиск]"
+		firePlaceLabel.text = data.firePlace ? "Очаг обнаружен" : "Очаг поиск"
+		
+		// Скрываем DatePicker "У очага" если firePlaceSwitch переключался
+		tapList.remove([0, 4])
+		
 		tableView.beginUpdates()
 		tableView.endUpdates()
-//        tableView.reloadData()
     }
     
     
     // Swicher Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
-		hardWorkLabel.text = data.hardWork ? "Условия [нормальные]" : "Условия [сложные]"
+		hardWorkLabel.text = data.hardWork ? "Условия нормальные" : "Условия сложные"
         data.hardWork = !data.hardWork
     }
     
@@ -228,6 +234,7 @@ class NewStartViewController: UITableViewController {
 	@IBAction func teamChanger(_ sender: UIStepper) {
 		teamCounter = Int(sender.value)
 		inputFieldsView(fieldCount: teamCounter)
+		print(data.enterData)
 		tableView.reloadData()
 	}
 	
@@ -239,38 +246,32 @@ class NewStartViewController: UITableViewController {
 
 
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//		cell.backgroundColor = UIColor(white: 1, alpha: 0.4)
+//		cell.backgroundColor = UIColor(white: 8, alpha: 0.5)
 	}
     
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
-            tappedCell1 = !tappedCell1
-            tableView.reloadRows(at: [indexPath], with: .none)
-//            tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .none)
-        }
-        
-        if indexPath.row == 4 && data.firePlace {
-			tappedCell2 = !tappedCell2
-            tableView.reloadRows(at: [indexPath], with: .none)
-        }
+		tappedIndexPath = indexPath
+		tapList.contains(tappedIndexPath) ? tapList.remove(tappedIndexPath) : tapList.insert(tappedIndexPath)
+		print(tapList)
+		tableView.reloadRows(at: [indexPath], with: .none)
     }
 
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 3 {
-            return (tappedCell1 ? tableView.rowHeight : 0)
+		if indexPath.row == 3 {
+			return tapList.contains([0, 2]) ? tableView.rowHeight : 0
         }
 		
 		// Отображаем поле "Время у очага" только при необходимости
 		if indexPath.row == 4 {
 			return (data.firePlace ? tableView.rowHeight : 0)
         }
-
+		
         if indexPath.row == 5 {
-            return (tappedCell2  && data.firePlace ? tableView.rowHeight : 0)
+			return tapList.contains([0, 4]) && data.firePlace ? tableView.rowHeight : 0
         }
-       
+		
         return tableView.rowHeight
     }
     
@@ -282,7 +283,6 @@ class NewStartViewController: UITableViewController {
         }
         
         if section == 1 {
-            
             headerText = SettingsData.valueUnit ? "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})" : "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
         }
         
@@ -331,7 +331,6 @@ extension String {
 extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Количество колонок в PickerView
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//		if data.firePlace { return 2 }
 		return 1
 	}
 	
@@ -357,24 +356,6 @@ extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 		return self.data.pickerComponents[row]
 	}
 }
-
-
-/*
-extension NewStartViewController: ToolbarPickerViewDelegate {
-
-    func didTapDone() {
-        let row = self.pickerView.selectedRow(inComponent: 0)
-        self.pickerView.selectRow(row, inComponent: 0, animated: false)
-		self.textView.text = self.data.pickerComponents[row]
-        self.textField.resignFirstResponder()
-    }
-
-    func didTapCancel() {
-        self.textField.text = nil
-        self.textField.resignFirstResponder()
-    }
-}
-*/
 
 
 /*
