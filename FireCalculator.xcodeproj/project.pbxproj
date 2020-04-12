@@ -16,12 +16,12 @@
 		FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */; };
 		FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360523DEB07300A8641C /* Assets.xcassets */; };
 		FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */; };
+		FA39F2F32442C23400000662 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F2F22442C23400000662 /* UserSettings.swift */; };
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
 		FA56DA072432EF64001583A6 /* airFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA56DA062432EF64001583A6 /* airFound.pdf */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
-		FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125A2418FA6800CAF846 /* AppData.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FABDD105242881360071693A /* airNotFound.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDD104242881350071693A /* airNotFound.pdf */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
@@ -39,12 +39,12 @@
 		FA1F360523DEB07300A8641C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1F360823DEB07300A8641C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1F360A23DEB07300A8641C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA39F2F22442C23400000662 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
 		FA56DA062432EF64001583A6 /* airFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFound.pdf; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
-		FAB7125A2418FA6800CAF846 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FABDD104242881350071693A /* airNotFound.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFound.pdf; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -111,9 +111,9 @@
 		FAB7125F2419063700CAF846 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FA39F2F22442C23400000662 /* UserSettings.swift */,
 				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
 				FAB7125C2419061900CAF846 /* SettingsData.swift */,
-				FAB7125A2418FA6800CAF846 /* AppData.swift */,
 				FA60648123F7AD0000B2317A /* Formula.swift */,
 			);
 			path = Data;
@@ -204,7 +204,7 @@
 				FA60648223F7AD0000B2317A /* Formula.swift in Sources */,
 				88F327F423FBF4B40085BBC8 /* NewStartViewController.swift in Sources */,
 				88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */,
-				FAB7125B2418FA6800CAF846 /* AppData.swift in Sources */,
+				FA39F2F32442C23400000662 /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

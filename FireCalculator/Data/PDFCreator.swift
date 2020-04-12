@@ -12,13 +12,13 @@ import PDFKit
 class PDFCreator: NSObject {
     
 //	private var value = "кгс/см\u{00B2}"
-	let value = SettingsData.valueUnit ? "кгс/см\u{00B2}" : "МПа"
+	let value = SettingsData.measureType == .kgc ? "кгс/см\u{00B2}" : "МПа"
 	let airPressK = "* К"
 	let airPressSG = "сж"
 	
 	
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
-    func foundPDFCreator(appData: AppData) -> Data {
+    func foundPDFCreator(appData: SettingsData) -> Data {
         // Вычисляемые значения
         let comp = Formula()
         // 1) Расчет общего времени работы (Тобщ)
@@ -39,23 +39,23 @@ class PDFCreator: NSObject {
         // Константы из формул
 //		let value = SettingsData.valueUnit ? "кгс/см\u{00B2}" : "МПа"
 		// Минимальное давление при включении
-		let minPressure = SettingsData.valueUnit ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
+		let minPressure = SettingsData.measureType == .kgc ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
 		// Минимальне давление у очага
-		let minFirePressure = SettingsData.valueUnit ? String(Int(appData.hearthData.min()!)) : String(appData.hearthData.min()!)
+		let minFirePressure = SettingsData.measureType == .kgc ? String(Int(appData.hearthData.min()!)) : String(appData.hearthData.min()!)
 		// Давление воздуха, необходимое для устойчивой работы редуктора
 		let reductor = String(Int(SettingsData.reductionStability))
 		// Объем баллона в литрах
         let capacity = String(SettingsData.cylinderVolume)
 		
-		let airRate = SettingsData.valueUnit ? String(Int(SettingsData.airRate)) : String(SettingsData.airRate)
+		let airRate = SettingsData.measureType == .kgc ? String(Int(SettingsData.airRate)) : String(SettingsData.airRate)
 		// Pквых округлям при кгс и не меняем при МПа
-		let exitPString = SettingsData.valueUnit ? String(Int(exitPressure)) : String(format:"%.1f", exitPressure)
+		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", exitPressure)
 		
 		let airIndex = String(SettingsData.airIndex)
 		
-		let maxFallPresure = SettingsData.valueUnit ? String(Int(appData.fallPressure.max()!)) : String(appData.fallPressure.max()!)
+		let maxFallPresure = SettingsData.measureType == .kgc ? String(Int(appData.fallPressure.max()!)) : String(appData.fallPressure.max()!)
 		
-		let airFlow = SettingsData.valueUnit ? String(Int(SettingsData.airFlow)) : String(SettingsData.airFlow)
+		let airFlow = SettingsData.measureType == .kgc ? String(Int(SettingsData.airFlow)) : String(SettingsData.airFlow)
 		
 		// PDF
 		let format = UIGraphicsPDFRendererFormat()
@@ -79,29 +79,29 @@ class PDFCreator: NSObject {
 			value.draw(at: CGPoint(x: 148, y: 123), withAttributes: large)
 			
 			// 1
-			if SettingsData.air {
-				// Шаблон для ДАСВ
-				// 40
-				airRate.draw(at: CGPoint(x: 153, y: 206), withAttributes: large)
-				airPressK.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
-				airPressSG.draw(at: CGPoint(x: 200, y: 215), withAttributes: small)
+			switch SettingsData.deviceType {
 				
-				airRate.draw(at: CGPoint(x: 307, y: 206), withAttributes: large)
-				"*".draw(at: CGPoint(x: 330, y: 206), withAttributes: large)
-				// 1.1
-				airIndex.draw(at: CGPoint(x: 340, y: 206), withAttributes: large)
-			
-			} else {
-				// Шаблон для ДАСК
-				airFlow.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
-				airFlow.draw(at: CGPoint(x: 335, y: 206), withAttributes: large)
+				case .air:
+					// Шаблон для ДАСВ
+					// 40
+					airRate.draw(at: CGPoint(x: 153, y: 206), withAttributes: large)
+					airPressK.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
+					airPressSG.draw(at: CGPoint(x: 200, y: 215), withAttributes: small)
+					
+					airRate.draw(at: CGPoint(x: 307, y: 206), withAttributes: large)
+					"*".draw(at: CGPoint(x: 330, y: 206), withAttributes: large)
+					// 1.1
+					airIndex.draw(at: CGPoint(x: 340, y: 206), withAttributes: large)
+				case .oxigen:
+					// Шаблон для ДАСК
+					airFlow.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 335, y: 206), withAttributes: large)
 			}
             minPressure.draw(at: CGPoint(x: 286, y: 182), withAttributes: large)
 			// 10
             reductor.draw(at: CGPoint(x: 333, y: 182), withAttributes: large)
 			// 6.8
 			capacity.draw(at: CGPoint(x: 370, y: 182), withAttributes: large)
-			
 			// 40
 			// T
 			String(format:"%.1f", totalTime).draw(at: CGPoint(x: 422, y: 194), withAttributes: large)
@@ -136,23 +136,24 @@ class PDFCreator: NSObject {
 			
 			// 4
 			if appData.hardWork {
-				if SettingsData.air {
-					//  Шаблон для ДАСВ
-					// 40
-					airRate.draw(at: CGPoint(x: 136, y: 420), withAttributes: large)
-					airRate.draw(at: CGPoint(x: 303, y: 420), withAttributes: large)
+				switch SettingsData.deviceType {
+					case .air:
+						//  Шаблон для ДАСВ
+						// 40
+						airRate.draw(at: CGPoint(x: 136, y: 420), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 303, y: 420), withAttributes: large)
 
-					airPressK.draw(at: CGPoint(x: 160, y: 420), withAttributes: large)
-					airPressSG.draw(at: CGPoint(x: 180, y: 427), withAttributes: small)
+						airPressK.draw(at: CGPoint(x: 160, y: 420), withAttributes: large)
+						airPressSG.draw(at: CGPoint(x: 180, y: 427), withAttributes: small)
+						
+						"*".draw(at: CGPoint(x: 325, y: 420), withAttributes: large)
+						// 1.1
+						airIndex.draw(at: CGPoint(x: 335, y: 420), withAttributes: large)
 					
-					"*".draw(at: CGPoint(x: 325, y: 420), withAttributes: large)
-					// 1.1
-					airIndex.draw(at: CGPoint(x: 335, y: 420), withAttributes: large)
-				
-				} else {
-					// Шаблон для ДАСК
-					airFlow.draw(at: CGPoint(x: 160, y: 420), withAttributes: large)
-					airFlow.draw(at: CGPoint(x: 325, y: 420), withAttributes: large)
+					case .oxigen:
+						// Шаблон для ДАСК
+						airFlow.draw(at: CGPoint(x: 160, y: 420), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 325, y: 420), withAttributes: large)
 				}
 				
 				minFirePressure.draw(at: CGPoint(x: 268, y: 397), withAttributes: large)
@@ -165,23 +166,24 @@ class PDFCreator: NSObject {
 				String(Int(workTime)).draw(at: CGPoint(x: 478, y: 410), withAttributes: large)
 			} else {
 				
-				if SettingsData.air {
-					//  Шаблон для ДАСВ
-					// 40
-					airRate.draw(at: CGPoint(x: 138, y: 435), withAttributes: large)
-					airRate.draw(at: CGPoint(x: 296, y: 435), withAttributes: large)
+				switch SettingsData.deviceType {
+					case .air:
+						//  Шаблон для ДАСВ
+						// 40
+						airRate.draw(at: CGPoint(x: 138, y: 435), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 296, y: 435), withAttributes: large)
 
-					airPressK.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
-					airPressSG.draw(at: CGPoint(x: 182, y: 442), withAttributes: small)
-					
-					"*".draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
-					// 1.1
-					airIndex.draw(at: CGPoint(x: 328, y: 435), withAttributes: large)
+						airPressK.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
+						airPressSG.draw(at: CGPoint(x: 182, y: 442), withAttributes: small)
+						
+						"*".draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
+						// 1.1
+						airIndex.draw(at: CGPoint(x: 328, y: 435), withAttributes: large)
 				
-				} else {
-					// Шаблон для ДАСК
-					airFlow.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
-					airFlow.draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
+					case .oxigen:
+						// Шаблон для ДАСК
+						airFlow.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
 				}
 				
 				
@@ -228,7 +230,7 @@ class PDFCreator: NSObject {
     
 	
     // Метод генерирует лист А4 c расчетами если очаг пожара не найден.
-    func notFoundPDFCreator(appData: AppData) -> Data {
+    func notFoundPDFCreator(appData: SettingsData) -> Data {
         // Вычисляемые значения
         let comp = Formula()
         // 1) Расчет максимального возможного падения давления при поиске очага
@@ -245,11 +247,11 @@ class PDFCreator: NSObject {
         
         // Константы из формул
 		// Минимальное давление при включении
-        let minPressure = SettingsData.valueUnit ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
+        let minPressure = SettingsData.measureType == .kgc ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
 		// Максимальное падение давления
-		let maxDropString = SettingsData.valueUnit ? (String(Int(maxDrop))) : (String(format:"%.1f", maxDrop))
+		let maxDropString = SettingsData.measureType == .kgc ? (String(Int(maxDrop))) : (String(format:"%.1f", maxDrop))
 		// Давление к выходу
-		let exitPString = SettingsData.valueUnit ? (String(Int(exitPressure))) : (String(format:"%.1f", exitPressure))
+		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", exitPressure))
 		// Давление воздуха, необходимое для устойчивой работы редуктора
         let reductor = String(Int(SettingsData.reductionStability))
 		// Объем баллона в литрах
@@ -263,7 +265,7 @@ class PDFCreator: NSObject {
 		// 40 средний расход воздуха
 		let airRate =  String(Int(SettingsData.airRate)) 
         
-		let airFlow = SettingsData.valueUnit ? String(Int(SettingsData.airFlow)) : String(SettingsData.airFlow)
+		let airFlow = SettingsData.measureType == .kgc ? String(Int(SettingsData.airFlow)) : String(SettingsData.airFlow)
 		
         // PDF
         let format = UIGraphicsPDFRendererFormat()
@@ -297,19 +299,20 @@ class PDFCreator: NSObject {
 			value.draw(at: CGPoint(x: 488, y: 218), withAttributes: large)
 
             // 3
-			if SettingsData.air {
-				airRate.draw(at: CGPoint(x: 112, y: 324), withAttributes: large)
-				airPressK.draw(at: CGPoint(x: 140, y: 324), withAttributes: large)
-				airPressSG.draw(at: CGPoint(x: 170, y: 333), withAttributes: small)
-				
-				airRate.draw(at: CGPoint(x: 255, y: 324), withAttributes: large)
-				"*".draw(at: CGPoint(x: 282, y: 325), withAttributes: large)
-				airIndex.draw(at: CGPoint(x: 295, y: 324), withAttributes: large)
-			} else {
-				airFlow.draw(at: CGPoint(x: 140, y: 324), withAttributes: large)
-				airFlow.draw(at: CGPoint(x: 290, y: 324), withAttributes: large)
-			}
+			switch SettingsData.deviceType {
+				case .air:
+					airRate.draw(at: CGPoint(x: 112, y: 324), withAttributes: large)
+					airPressK.draw(at: CGPoint(x: 140, y: 324), withAttributes: large)
+					airPressSG.draw(at: CGPoint(x: 170, y: 333), withAttributes: small)
+					
+					airRate.draw(at: CGPoint(x: 255, y: 324), withAttributes: large)
+					"*".draw(at: CGPoint(x: 282, y: 325), withAttributes: large)
+					airIndex.draw(at: CGPoint(x: 295, y: 324), withAttributes: large)
+				case .oxigen:
+					airFlow.draw(at: CGPoint(x: 140, y: 324), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 290, y: 324), withAttributes: large)
 			
+			}
             maxDropString.draw(at: CGPoint(x: 248, y: 295), withAttributes: large)
             capacity.draw(at: CGPoint(x: 308, y: 295), withAttributes: large)
 			

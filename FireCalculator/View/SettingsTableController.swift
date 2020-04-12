@@ -10,7 +10,9 @@ import UIKit
 
 
 class SettingsTableController: UITableViewController {
-         
+	
+	let defaults = UserDefaults.standard
+	
     @IBOutlet weak var typeDetailLabel: UILabel!
     @IBOutlet weak var valueDetailLabel: UILabel!
     @IBOutlet weak var cylinderVolumeTextField: UITextField!
@@ -22,6 +24,7 @@ class SettingsTableController: UITableViewController {
 	@IBOutlet weak var airRateLabel: UILabel!
 	@IBOutlet weak var airIndexLabel: UILabel!
 	@IBOutlet weak var reducLabel: UILabel!
+	@IBOutlet weak var saveButton: UIButton!
 	
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,21 +34,21 @@ class SettingsTableController: UITableViewController {
         
 		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
 		
-        switch SettingsData.air {
+        switch SettingsData.deviceType {
 			// Воздух
-            case true:
+			case .air:
                 typeDetailLabel.text = "ДАСВ"
 				
 			// Кислород
-            default:
+			case .oxigen:
                 typeDetailLabel.text = "ДАСК"
         }
         
-        switch SettingsData.valueUnit {
-            case true:
+		switch SettingsData.measureType {
+			case .kgc:
                 valueDetailLabel.text = "кгс/см\u{00B2}"
 				reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
-            default:
+			case .mpa:
                 valueDetailLabel.text = "МПа"
 				reducLabel.text = "Давление редуктора (МПа)"
         }
@@ -55,7 +58,7 @@ class SettingsTableController: UITableViewController {
 		airRateTextField.text = String(Int(SettingsData.airRate))
 		airIndexTextField.text = String(SettingsData.airIndex)
 		// Давление устойчивой работы редуктора
-		reductionStabilityTextField.text = SettingsData.valueUnit ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
+		reductionStabilityTextField.text = SettingsData.measureType == .kgc ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
 		
 		
 		tableView.reloadData()
@@ -89,15 +92,25 @@ class SettingsTableController: UITableViewController {
 		print(SettingsData.reductionStability)
     }
 	
+	@IBAction func saveUserSettings(_ sender: UIButton) {
+		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
+		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
+		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
+		defaults.set(SettingsData.airRate, forKey: "airRate")
+		defaults.set(SettingsData.airIndex, forKey: "airIndex")
+		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
+		defaults.set(SettingsData.airFlow, forKey: "airFlow")
+		print("Settings save")
+	}
 	
 	// Отобразить поля настроек только для ДАСВ
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.section == 1, indexPath.row == 1 {
-			return (SettingsData.air ? tableView.rowHeight : 0)
+			return (SettingsData.deviceType == .air ? tableView.rowHeight : 0)
 		}
 
 		if indexPath.section == 1, indexPath.row == 2 {
-				return (SettingsData.air ? tableView.rowHeight : 0)
+				return (SettingsData.deviceType == .air ? tableView.rowHeight : 0)
 		}
 		   
 		   

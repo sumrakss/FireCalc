@@ -276,6 +276,30 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="svK-GN-ddq">
+                                        <rect key="frame" x="0.0" y="372.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="svK-GN-ddq" id="Nmb-Wl-xZa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRD-dn-ifW">
+                                                    <rect key="frame" x="16" y="6" width="382" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <state key="normal" title="Сохранить настройки"/>
+                                                    <connections>
+                                                        <action selector="saveUserSettings:" destination="BDL-cD-JAh" eventType="touchUpInside" id="lqC-Qm-dH5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="YRD-dn-ifW" secondAttribute="bottom" constant="6" id="6p5-3d-tAw"/>
+                                                <constraint firstAttribute="trailing" secondItem="YRD-dn-ifW" secondAttribute="trailing" constant="16" id="TlM-EW-8us"/>
+                                                <constraint firstItem="YRD-dn-ifW" firstAttribute="top" secondItem="Nmb-Wl-xZa" secondAttribute="top" constant="6" id="ibK-K0-QOj"/>
+                                                <constraint firstItem="YRD-dn-ifW" firstAttribute="leading" secondItem="Nmb-Wl-xZa" secondAttribute="leading" constant="16" id="ycJ-Qt-xKh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -294,6 +318,7 @@
                         <outlet property="cylinderVolumeTextField" destination="fch-sF-fKp" id="4Q8-0T-X59"/>
                         <outlet property="reducLabel" destination="xs0-dB-0Na" id="qeF-dx-InB"/>
                         <outlet property="reductionStabilityTextField" destination="Vff-Ou-5E7" id="WeI-xt-caQ"/>
+                        <outlet property="saveButton" destination="YRD-dn-ifW" id="9KS-id-gHC"/>
                         <outlet property="typeDetailLabel" destination="k9o-m0-Own" id="2pm-xw-0dJ"/>
                         <outlet property="vCylinderLabel" destination="7wZ-i2-1d4" id="hoZ-m5-bw3"/>
                         <outlet property="valueDetailLabel" destination="i90-81-zRy" id="75q-ts-3zk"/>

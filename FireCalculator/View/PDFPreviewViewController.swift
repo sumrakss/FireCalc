@@ -11,7 +11,7 @@ import PDFKit
 
 class PDFPreviewViewController: UIViewController {
     public var documentData: Data?
-    var appData: AppData?
+    var appData: SettingsData?
     
     @IBOutlet weak var pdfView: PDFView!
     

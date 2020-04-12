@@ -36,7 +36,7 @@ class NewStartViewController: UITableViewController {
     let time = DateFormatter()
 	var tapList = Set<IndexPath?>()
 	var tappedIndexPath: IndexPath?
-    var data = AppData()
+	var data = SettingsData()
 	
     var counter = 0
 	var flag = true
@@ -55,6 +55,11 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		print("reductionStability \(SettingsData.reductionStability)")
+		print("airRate \(SettingsData.airRate)")
+		print("airFlow \(SettingsData.airFlow)")
+//		loadUserSettings()
+		// Скрываем клавиатуру
 		tableView.keyboardDismissMode = .onDrag
 		
 		firePlaceLabel.text = "Очаг поиск"
@@ -76,10 +81,23 @@ class NewStartViewController: UITableViewController {
         inputFieldsView(fieldCount: teamCounter)
     }
     
-
+	// Загрузка сохраненных настроек пользователя
+	func loadUserSettings() {
+		let defaults = UserDefaults.standard
+		SettingsData.deviceType = DeviceType(rawValue: defaults.string(forKey: "deviceType")!)!
+		SettingsData.measureType = MeasureType(rawValue: defaults.string(forKey: "measureType")!)!
+		SettingsData.cylinderVolume = defaults.double(forKey: "cylinderVolume")
+		SettingsData.airRate = defaults.double(forKey: "airRate")
+		SettingsData.airIndex = defaults.double(forKey: "airIndex")
+		SettingsData.reductionStability = defaults.double(forKey: "reductionStability")
+//		SettingsData.airFlow = defaults.double(forKey: "airFlow")
+		defaults.synchronize()
+		print(SettingsData.airFlow)
+	}
+	
 	// Метод изменяет значения в полях ввода при изменении единиц измерения
 	func stockValues() {
-		if !SettingsData.valueUnit && flag {
+		if SettingsData.measureType == .mpa && flag {
 			// Изменить значения видимых полей ввода
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] /= 10.0
@@ -97,7 +115,7 @@ class NewStartViewController: UITableViewController {
 			flag = false
 		}
 		
-		if SettingsData.valueUnit && !flag {
+		if SettingsData.measureType == .kgc && !flag {
 			for i in 0 ..< data.enterData.count {
 				data.enterData[i] *= 10.0
 				data.hearthData[i] *= 10.0
@@ -116,7 +134,7 @@ class NewStartViewController: UITableViewController {
 	}
     
     
-    // Отрисовываем поля ввода в зависимости от состава звена
+    // Отрисовываем поля ввода в зависимости от численности звена
     func inputFieldsView(fieldCount: Int) {
             data.enterData.removeAll()
             data.hearthData.removeAll()
@@ -129,12 +147,10 @@ class NewStartViewController: UITableViewController {
             for i in 0..<fieldCount {
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
 					data.enterData.append(enterValue)
-					print(enterValue)
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
                     data.hearthData.append(hearthValue)
-//					print(hearthValue)
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -149,7 +165,7 @@ class NewStartViewController: UITableViewController {
 	
 	 // Настройка pickerView
 	func pickerViewSettings() {
-		// Очищаем содержимое для PickerView
+		// Очищаем содержимое  PickerView
 		data.pickerComponents.removeAll()
 		// Генерируем содержимое для PickerView
 		data.generatePickerData()
@@ -283,7 +299,13 @@ class NewStartViewController: UITableViewController {
         }
         
         if section == 1 {
-            headerText = SettingsData.valueUnit ? "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})" : "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
+			switch SettingsData.measureType {
+				case .kgc:
+					headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})"
+				case .mpa:
+					headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
+					
+			}
         }
         
         return headerText
