@@ -37,6 +37,7 @@ class NewStartViewController: UITableViewController {
 	var tapList = Set<IndexPath?>()
 	var tappedIndexPath: IndexPath?
 	var data = SettingsData()
+	let defaults = UserDefaults.standard
 	
     var counter = 0
 	var flag = true
@@ -55,10 +56,8 @@ class NewStartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		print("reductionStability \(SettingsData.reductionStability)")
-		print("airRate \(SettingsData.airRate)")
-		print("airFlow \(SettingsData.airFlow)")
-//		loadUserSettings()
+		loadUserSettings()
+		
 		// Скрываем клавиатуру
 		tableView.keyboardDismissMode = .onDrag
 		
@@ -80,19 +79,40 @@ class NewStartViewController: UITableViewController {
         
         inputFieldsView(fieldCount: teamCounter)
     }
-    
+
+
+	
 	// Загрузка сохраненных настроек пользователя
 	func loadUserSettings() {
-		let defaults = UserDefaults.standard
-		SettingsData.deviceType = DeviceType(rawValue: defaults.string(forKey: "deviceType")!)!
-		SettingsData.measureType = MeasureType(rawValue: defaults.string(forKey: "measureType")!)!
-		SettingsData.cylinderVolume = defaults.double(forKey: "cylinderVolume")
-		SettingsData.airRate = defaults.double(forKey: "airRate")
-		SettingsData.airIndex = defaults.double(forKey: "airIndex")
-		SettingsData.reductionStability = defaults.double(forKey: "reductionStability")
-//		SettingsData.airFlow = defaults.double(forKey: "airFlow")
+	
+		if let deviceType = DeviceType(rawValue: defaults.string(forKey: "deviceType") ?? "") {
+			SettingsData.deviceType = deviceType
+		}
+		if let measureType = MeasureType(rawValue: defaults.string(forKey: "measureType") ?? "") {
+			SettingsData.measureType = measureType
+		}
+		
+		let cylinderVolume = defaults.double(forKey: "cylinderVolume") 
+		
+		if cylinderVolume != 0.0 {
+			SettingsData.cylinderVolume = cylinderVolume
+		}
+		
+		let airRate = defaults.double(forKey: "airRate")
+		if airRate != 0.0 {
+			SettingsData.airRate = airRate
+		}
+		 
+		let airIndex = defaults.double(forKey: "airIndex")
+		if airIndex != 0 {
+			SettingsData.airIndex = airIndex
+		}
+			
+		let reductionStability = defaults.double(forKey: "reductionStability")
+		if reductionStability != 0 {
+			SettingsData.reductionStability = reductionStability
+		}
 		defaults.synchronize()
-		print(SettingsData.airFlow)
 	}
 	
 	// Метод изменяет значения в полях ввода при изменении единиц измерения

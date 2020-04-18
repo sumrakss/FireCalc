@@ -20,6 +20,15 @@ class ValueTableController: UITableViewController {
         checkmarkCell()
     }
 
+	
+	// Сохнаняем настройки при выходе
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		let defaults = UserDefaults.standard
+		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
+		
+	}
+	
     
     // Выбираем единицы измерения
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -27,22 +36,10 @@ class ValueTableController: UITableViewController {
         // кгс/см2
         if indexPath.row == 0 {
 			if SettingsData.measureType == .mpa {
+				SettingsData.measureType = .kgc
 				SettingsData.reductionStability *= 10
 				SettingsData.airRate *= 10
-//				switch SettingsData.deviceType {
-//					case .air:
-//						SettingsData.reductionStability *= 10
-//						SettingsData.airRate *= 10
-////						SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex)
-//					case .oxigen:
-//						SettingsData.reductionStability *= 10
-//						SettingsData.airRate *= 10
-////						SettingsData.airFlow = 2
-//				}
-				SettingsData.measureType = .kgc
 				print("reductionStability \(SettingsData.reductionStability)")
-				print("airRate \(SettingsData.airRate)")
-				print("airFlow \(SettingsData.airFlow)")
 			}
             checkmarkCell()
         }
@@ -50,22 +47,10 @@ class ValueTableController: UITableViewController {
         // МПа
         if indexPath.row == 1 {
 			if SettingsData.measureType == .kgc {
+				SettingsData.measureType = .mpa
 				SettingsData.reductionStability /= 10
 				SettingsData.airRate /= 10
-//				switch SettingsData.deviceType {
-//					case .air:
-//						SettingsData.reductionStability /= 10
-//						SettingsData.airRate /= 10
-////						SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex)
-//					case .oxigen:
-//						SettingsData.reductionStability /= 10
-//						SettingsData.airRate /= 10
-////						SettingsData.airFlow = 0.2
-//				}
-				SettingsData.measureType = .mpa
 				print("reductionStability \(SettingsData.reductionStability)")
-				print("airRate \(SettingsData.airRate)")
-				print("airFlow \(SettingsData.airFlow)")
 			}
             checkmarkCell()
         }

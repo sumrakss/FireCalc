@@ -19,21 +19,26 @@ class TypeTableController: UITableViewController {
         checkmarkCell()
     }
     
-    
+	
+	// Сохнаняем настройки при выходе
+    override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		let defaults = UserDefaults.standard
+		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
+		
+	}
+	
+	
     // Выбираем тип аппарата
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // ДАСВ
         if indexPath.row == 0 {
 			if SettingsData.deviceType == .oxigen{
-//				SettingsData.airFlow = SettingsData.airIndex * SettingsData.airRate
 				SettingsData.deviceType = .air
 				SettingsData.cylinderVolume = 6.8
-				SettingsData.reductionStability = SettingsData.measureType == .kgc ? 10 : 1.0
 				cell1.accessoryType = .checkmark
 				cell2.accessoryType = .none
 				print("reductionStability \(SettingsData.reductionStability)")
-				print("airRate \(SettingsData.airRate)")
-				print("airFlow \(SettingsData.airFlow)")
 			}
             checkmarkCell()
         }
@@ -41,14 +46,11 @@ class TypeTableController: UITableViewController {
         // ДАСК
         if indexPath.row == 1  {
 			if SettingsData.deviceType == .air {
-//				SettingsData.airFlow = SettingsData.measureType == .kgc ? 2.0 : 0.2
 				SettingsData.deviceType = .oxigen
 				SettingsData.cylinderVolume = 1.0
 				cell1.accessoryType = .none
 				cell2.accessoryType = .checkmark
 				print("reductionStability \(SettingsData.reductionStability)")
-				print("airRate \(SettingsData.airRate)")
-				print("airFlow \(SettingsData.airFlow)")
 			}
             checkmarkCell()
         }

@@ -22,7 +22,7 @@ enum MeasureType: String {
 
 
 class SettingsData {
-//class SettingsData: NSCoding  {
+	
     //  Тип СИЗОД. По-умолчанию ДАСВ
 	static var deviceType = DeviceType.air
     // Единицы измерения.

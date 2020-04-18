@@ -24,7 +24,6 @@ class SettingsTableController: UITableViewController {
 	@IBOutlet weak var airRateLabel: UILabel!
 	@IBOutlet weak var airIndexLabel: UILabel!
 	@IBOutlet weak var reducLabel: UILabel!
-	@IBOutlet weak var saveButton: UIButton!
 	
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,18 +51,32 @@ class SettingsTableController: UITableViewController {
                 valueDetailLabel.text = "МПа"
 				reducLabel.text = "Давление редуктора (МПа)"
         }
-		
-		// Объем баллона
+		defaultDataText()
+		tableView.reloadData()
+    }
+    
+	// Сохнаняем настройки при выходе
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
+		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
+		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
+		defaults.set(SettingsData.airRate, forKey: "airRate")
+		defaults.set(SettingsData.airIndex, forKey: "airIndex")
+		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
+		print("Settings save")
+	}
+	
+
+	
+	func defaultDataText() {
 		cylinderVolumeTextField.text = String(SettingsData.cylinderVolume)
 		airRateTextField.text = String(Int(SettingsData.airRate))
 		airIndexTextField.text = String(SettingsData.airIndex)
 		// Давление устойчивой работы редуктора
 		reductionStabilityTextField.text = SettingsData.measureType == .kgc ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
-		
-		
-		tableView.reloadData()
-    }
-    
+	}
+	
     // Настройка объема баллона
     @IBAction func cylinderVolumeData(_ sender: Any) {
         SettingsData.cylinderVolume = (cylinderVolumeTextField.text?.dotGuard())!
@@ -92,16 +105,27 @@ class SettingsTableController: UITableViewController {
 		print(SettingsData.reductionStability)
     }
 	
-	@IBAction func saveUserSettings(_ sender: UIButton) {
-		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
-		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
-		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
-		defaults.set(SettingsData.airRate, forKey: "airRate")
-		defaults.set(SettingsData.airIndex, forKey: "airIndex")
-		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
-		defaults.set(SettingsData.airFlow, forKey: "airFlow")
-		print("Settings save")
+	
+	@IBAction func resetUserSettings(_ sender: UIButton) {
+		let dictionary = defaults.dictionaryRepresentation()
+		dictionary.keys.forEach { key in
+			defaults.removeObject(forKey: key)
+		}
+		defaults.synchronize()
+		SettingsData.deviceType = DeviceType.air
+		SettingsData.measureType = MeasureType.kgc
+		SettingsData.cylinderVolume = 6.8
+		SettingsData.airIndex = 1.1
+		SettingsData.airRate = 40.0
+		SettingsData.reductionStability = 10.0
+		typeDetailLabel.text = "ДАСВ"
+		valueDetailLabel.text = "кгс/см\u{00B2}"
+		defaultDataText()
+//		tableView.reloadData()
+		tableView.beginUpdates()
+		tableView.endUpdates()
 	}
+	
 	
 	// Отобразить поля настроек только для ДАСВ
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -112,10 +136,17 @@ class SettingsTableController: UITableViewController {
 		if indexPath.section == 1, indexPath.row == 2 {
 				return (SettingsData.deviceType == .air ? tableView.rowHeight : 0)
 		}
-		   
-		   
 		   return tableView.rowHeight
-	   }
+	}
+	
+	
+	func saveUserSettingsMessage() {
+		let alert = UIAlertController(title: "Параметры сохранены", message: "", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		present(alert, animated: true, completion: nil)
+		return
+		
+	}
 	
 	
 	func atencionMessage(value: Double) {
