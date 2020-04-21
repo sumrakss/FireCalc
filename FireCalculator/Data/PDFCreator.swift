@@ -75,8 +75,8 @@ class PDFCreator: NSObject {
 
 			
 			// 0
-			maxFallPresure.draw(at: CGPoint(x: 120, y: 123), withAttributes: large)
-			value.draw(at: CGPoint(x: 148, y: 123), withAttributes: large)
+			maxFallPresure.draw(at: CGPoint(x: 120, y: 175), withAttributes: large) //123
+			value.draw(at: CGPoint(x: 148, y: 175), withAttributes: large)
 			
 			// 1
 			switch SettingsData.deviceType {
@@ -84,37 +84,37 @@ class PDFCreator: NSObject {
 				case .air:
 					// Шаблон для ДАСВ
 					// 40
-					airRate.draw(at: CGPoint(x: 153, y: 206), withAttributes: large)
-					airPressK.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
-					airPressSG.draw(at: CGPoint(x: 200, y: 215), withAttributes: small)
+					airRate.draw(at: CGPoint(x: 153, y: 266), withAttributes: large)
+					airPressK.draw(at: CGPoint(x: 175, y: 266), withAttributes: large)
+					airPressSG.draw(at: CGPoint(x: 200, y: 275), withAttributes: small)
 					
-					airRate.draw(at: CGPoint(x: 307, y: 206), withAttributes: large)
-					"*".draw(at: CGPoint(x: 330, y: 206), withAttributes: large)
+					airRate.draw(at: CGPoint(x: 307, y: 266), withAttributes: large)
+					"*".draw(at: CGPoint(x: 330, y: 266), withAttributes: large)
 					// 1.1
-					airIndex.draw(at: CGPoint(x: 340, y: 206), withAttributes: large)
+					airIndex.draw(at: CGPoint(x: 340, y: 266), withAttributes: large)
 				case .oxigen:
 					// Шаблон для ДАСК
-					airFlow.draw(at: CGPoint(x: 175, y: 206), withAttributes: large)
-					airFlow.draw(at: CGPoint(x: 335, y: 206), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 175, y: 266), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 335, y: 266), withAttributes: large)
 			}
-            minPressure.draw(at: CGPoint(x: 286, y: 182), withAttributes: large)
+            minPressure.draw(at: CGPoint(x: 286, y: 242), withAttributes: large)
 			// 10
-            reductor.draw(at: CGPoint(x: 333, y: 182), withAttributes: large)
+            reductor.draw(at: CGPoint(x: 333, y: 242), withAttributes: large)
 			// 6.8
-			capacity.draw(at: CGPoint(x: 370, y: 182), withAttributes: large)
+			capacity.draw(at: CGPoint(x: 370, y: 242), withAttributes: large)
 			// 40
 			// T
-			String(format:"%.1f", totalTime).draw(at: CGPoint(x: 422, y: 194), withAttributes: large)
-			String(Int(totalTime)).draw(at: CGPoint(x: 480, y: 194), withAttributes: large)
+			String(format:"%.1f", totalTime).draw(at: CGPoint(x: 422, y: 254), withAttributes: large)
+			String(Int(totalTime)).draw(at: CGPoint(x: 480, y: 254), withAttributes: large)
 			
 			//2
 			let time = DateFormatter()
             time.dateFormat = "HH"
-            time.string(from: appData.enterTime).draw(at: CGPoint(x: 200, y: 268), withAttributes: large)
+            time.string(from: appData.enterTime).draw(at: CGPoint(x: 200, y: 331), withAttributes: large)
             time.dateFormat = "mm"
-            time.string(from: appData.enterTime).draw(at: CGPoint(x: 220, y: 266), withAttributes: small)
-			String(Int(totalTime)).draw(at: CGPoint(x: 251, y: 266), withAttributes: small)
-			expectedTime.draw(at: CGPoint(x: 287, y: 268), withAttributes: large)
+            time.string(from: appData.enterTime).draw(at: CGPoint(x: 220, y: 328), withAttributes: small)
+			String(Int(totalTime)).draw(at: CGPoint(x: 251, y: 328), withAttributes: small)
+			expectedTime.draw(at: CGPoint(x: 288, y: 331), withAttributes: large)
 			
 			// 3
 			if appData.hardWork {
@@ -125,12 +125,12 @@ class PDFCreator: NSObject {
 				exitPString.draw(at: CGPoint(x: 460, y: 333), withAttributes: large)
 				value.draw(at: CGPoint(x: 503, y: 333), withAttributes: large)
 			} else {
-				maxFallPresure.draw(at: CGPoint(x: 315, y: 342), withAttributes: large)
-				maxFallPresure.draw(at: CGPoint(x: 370, y: 342), withAttributes: large)
+				maxFallPresure.draw(at: CGPoint(x: 315, y: 411), withAttributes: large)
+				maxFallPresure.draw(at: CGPoint(x: 370, y: 411), withAttributes: large)
 				
-				reductor.draw(at: CGPoint(x: 415, y: 342), withAttributes: large)
-				exitPString.draw(at: CGPoint(x: 448, y: 342), withAttributes: large)
-				value.draw(at: CGPoint(x: 480, y: 342), withAttributes: large)
+				reductor.draw(at: CGPoint(x: 415, y: 411), withAttributes: large)
+				exitPString.draw(at: CGPoint(x: 448, y: 411), withAttributes: large)
+				value.draw(at: CGPoint(x: 480, y: 411), withAttributes: large)
 			}
 			
 			
@@ -170,31 +170,31 @@ class PDFCreator: NSObject {
 					case .air:
 						//  Шаблон для ДАСВ
 						// 40
-						airRate.draw(at: CGPoint(x: 138, y: 435), withAttributes: large)
-						airRate.draw(at: CGPoint(x: 296, y: 435), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 138, y: 507), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 296, y: 507), withAttributes: large)
 
-						airPressK.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
-						airPressSG.draw(at: CGPoint(x: 182, y: 442), withAttributes: small)
+						airPressK.draw(at: CGPoint(x: 160, y: 507), withAttributes: large)
+						airPressSG.draw(at: CGPoint(x: 182, y: 514), withAttributes: small)
 						
-						"*".draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
+						"*".draw(at: CGPoint(x: 318, y: 507), withAttributes: large)
 						// 1.1
-						airIndex.draw(at: CGPoint(x: 328, y: 435), withAttributes: large)
+						airIndex.draw(at: CGPoint(x: 328, y: 507), withAttributes: large)
 				
 					case .oxigen:
 						// Шаблон для ДАСК
-						airFlow.draw(at: CGPoint(x: 160, y: 435), withAttributes: large)
-						airFlow.draw(at: CGPoint(x: 318, y: 435), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 160, y: 507), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 318, y: 507), withAttributes: large)
 				}
 				
 				
-				minFirePressure.draw(at: CGPoint(x: 268, y: 410), withAttributes: large)
+				minFirePressure.draw(at: CGPoint(x: 268, y: 482), withAttributes: large)
 				// 10
-				exitPString.draw(at: CGPoint(x: 313, y: 410), withAttributes: large)
+				exitPString.draw(at: CGPoint(x: 313, y: 482), withAttributes: large)
 				// 6.8
-				capacity.draw(at: CGPoint(x: 358, y: 410), withAttributes: large)
+				capacity.draw(at: CGPoint(x: 358, y: 482), withAttributes: large)
 				// T
-				String(format:"%.1f", workTime).draw(at: CGPoint(x: 410, y: 423), withAttributes: large)
-				String(Int(workTime)).draw(at: CGPoint(x: 470, y: 423), withAttributes: large)
+				String(format:"%.1f", workTime).draw(at: CGPoint(x: 410, y: 495), withAttributes: large)
+				String(Int(workTime)).draw(at: CGPoint(x: 470, y: 495), withAttributes: large)
 			}
 			
 			// 5
@@ -207,15 +207,15 @@ class PDFCreator: NSObject {
 				exitTime.draw(at: CGPoint(x: 283, y: 483), withAttributes: large)
 			} else {
 				time.dateFormat = "HH"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 190, y: 496), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 190, y: 571), withAttributes: large)
 				time.dateFormat = "mm"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 210, y: 494), withAttributes: small)
-				String(Int(workTime)).draw(at: CGPoint(x: 238, y: 494), withAttributes: small)
-				exitTime.draw(at: CGPoint(x: 275, y: 496), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 210, y: 568), withAttributes: small)
+				String(Int(workTime)).draw(at: CGPoint(x: 238, y: 568), withAttributes: small)
+				exitTime.draw(at: CGPoint(x: 275, y: 571), withAttributes: large)
 			}
 			
 			// Подставляем PDF шаблон с формулами
-			let path = appData.hardWork ? Bundle.main.path(forResource: "hardAirFound", ofType: "pdf")! : Bundle.main.path(forResource: "airFound", ofType: "pdf")!
+			let path = appData.hardWork ? Bundle.main.path(forResource: "hardAirFound", ofType: "pdf")! : Bundle.main.path(forResource: "airFoundNew", ofType: "pdf")!
 			let url = URL(fileURLWithPath: path)
 			let document = CGPDFDocument(url as CFURL)
 			let page = document?.page(at: 1)

@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA3D5B16244BDE7100F38B69"
-               BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440;Tests.xctest"
-               BlueprintName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440;Tests"
-               ReferencedContainer = "container:FireCalculator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
