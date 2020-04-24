@@ -25,7 +25,11 @@ class TypeTableController: UITableViewController {
 		super.viewDidDisappear(animated)
 		let defaults = UserDefaults.standard
 		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
-		
+		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
+		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
+		defaults.set(SettingsData.airRate, forKey: "airRate")
+		defaults.set(SettingsData.airIndex, forKey: "airIndex")
+		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
 	}
 	
 	
@@ -67,4 +71,6 @@ class TypeTableController: UITableViewController {
 				cell2.accessoryType = .checkmark
 		}
     }
+	
+
 }

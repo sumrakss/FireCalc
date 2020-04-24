@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA1F35F823DEB07000A8641C"
-               BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440;.app"
+               BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440; - &#x413;&#x414;&#x417;&#x421;.app"
                BlueprintName = "FireCalculator"
                ReferencedContainer = "container:FireCalculator.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F35F823DEB07000A8641C"
-            BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440;.app"
+            BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440; - &#x413;&#x414;&#x417;&#x421;.app"
             BlueprintName = "FireCalculator"
             ReferencedContainer = "container:FireCalculator.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F35F823DEB07000A8641C"
-            BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440;.app"
+            BuildableName = "&#x411;&#x440;&#x430;&#x43d;&#x434;&#x41c;&#x430;&#x441;&#x442;&#x435;&#x440; - &#x413;&#x414;&#x417;&#x421;.app"
             BlueprintName = "FireCalculator"
             ReferencedContainer = "container:FireCalculator.xcodeproj">
          </BuildableReference>

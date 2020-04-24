@@ -21,11 +21,23 @@ class PDFPreviewViewController: UIViewController {
         if let data = documentData {
           pdfView.document = PDFDocument(data: data)
           pdfView.autoScales = true
-            
         }
     }
     
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		// Разрешаем любую ориентацию для отображения PDF-файла с решением
+		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+	}
 
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		// При переходе на другое view разрешаем только портретную ориентацию
+		// и устанавливаем ее
+		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+	}
+	
+	
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {
         let pdfCreator = PDFCreator()
 		var pdfData = Data()

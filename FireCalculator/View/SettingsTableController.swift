@@ -52,7 +52,9 @@ class SettingsTableController: UITableViewController {
 				reducLabel.text = "Давление редуктора (МПа)"
         }
 		defaultDataText()
-		tableView.reloadData()
+//		tableView.reloadData()
+		tableView.beginUpdates()
+		tableView.endUpdates()
     }
     
 	// Сохнаняем настройки при выходе
@@ -81,37 +83,36 @@ class SettingsTableController: UITableViewController {
     @IBAction func cylinderVolumeData(_ sender: Any) {
         SettingsData.cylinderVolume = (cylinderVolumeTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.cylinderVolume)
-		print(SettingsData.cylinderVolume)
     }
     
     // Настройка объема баллона
     @IBAction func airRateData(_ sender: Any) {
         SettingsData.airRate = (airRateTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.airRate)
-		print(SettingsData.airRate)
     }
     
     // Настройка объема баллона
     @IBAction func airIndexTextData(_ sender: Any) {
         SettingsData.airIndex = (airIndexTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.airIndex)
-		print(SettingsData.airIndex)
     }
     
     // Настройка объема баллона
     @IBAction func reductionStabilityData(_ sender: Any) {
         SettingsData.reductionStability = (reductionStabilityTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.reductionStability)
-		print(SettingsData.reductionStability)
     }
 	
 	
 	@IBAction func resetUserSettings(_ sender: UIButton) {
 		let dictionary = defaults.dictionaryRepresentation()
+		
 		dictionary.keys.forEach { key in
 			defaults.removeObject(forKey: key)
 		}
 		defaults.synchronize()
+		
+		
 		SettingsData.deviceType = DeviceType.air
 		SettingsData.measureType = MeasureType.kgc
 		SettingsData.cylinderVolume = 6.8
@@ -121,9 +122,10 @@ class SettingsTableController: UITableViewController {
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
 		defaultDataText()
-//		tableView.reloadData()
-		tableView.beginUpdates()
-		tableView.endUpdates()
+		tableView.reloadData()
+//		tableView.beginUpdates()
+//		tableView.endUpdates()
+		saveUserSettingsMessage()
 	}
 	
 	
@@ -141,7 +143,7 @@ class SettingsTableController: UITableViewController {
 	
 	
 	func saveUserSettingsMessage() {
-		let alert = UIAlertController(title: "Параметры сохранены", message: "", preferredStyle: .alert)
+		let alert = UIAlertController(title: "Установлены настройки по-умолчанию", message: "", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		present(alert, animated: true, completion: nil)
 		return

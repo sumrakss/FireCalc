@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewStartViewController: UITableViewController {
+class MainScreenViewController: UITableViewController {
 
     @IBOutlet weak var firePlaceLabel: UILabel!
     @IBOutlet weak var hardWorkLabel: UILabel!
@@ -51,7 +51,6 @@ class NewStartViewController: UITableViewController {
 		pickerViewSettings()
         tableView.reloadData()
     }
-    
 
     
     override func viewDidLoad() {
@@ -370,7 +369,7 @@ extension String {
 
 
 
-extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Количество колонок в PickerView
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		return 1
@@ -397,6 +396,10 @@ extension NewStartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 		return self.data.pickerComponents[row]
 	}
+	
+	
+
+	
 }
 
 

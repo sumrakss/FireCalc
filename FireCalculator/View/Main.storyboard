@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iPb-yu-lCR">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
         <!--Настройки-->
         <scene sceneID="cS5-0T-vyn">
             <objects>
-                <tableViewController id="BDL-cD-JAh" customClass="SettingsTableController" customModule="БрандМастер" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BDL-cD-JAh" customClass="SettingsTableController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JHO-PK-UR5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Тип СИЗОД-->
         <scene sceneID="XFB-ld-Vbn">
             <objects>
-                <tableViewController id="OtL-UK-VdM" customClass="TypeTableController" customModule="БрандМастер" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OtL-UK-VdM" customClass="TypeTableController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xpG-GG-3ht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,7 +399,7 @@
         <!--Единицы-->
         <scene sceneID="Ru3-8N-7yb">
             <objects>
-                <tableViewController id="cQ4-m9-c9K" customClass="ValueTableController" customModule="БрандМастер" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cQ4-m9-c9K" customClass="ValueTableController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="1sp-3z-TQf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +463,7 @@
         <!--Preview View Controller-->
         <scene sceneID="tLH-wX-DsA">
             <objects>
-                <viewController id="BYU-Iu-D8N" customClass="PDFPreviewViewController" customModule="БрандМастер" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYU-Iu-D8N" customClass="PDFPreviewViewController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyI-xo-QLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,12 +495,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbT-1L-7Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4106" y="2140"/>
+            <point key="canvasLocation" x="-5394" y="2157"/>
         </scene>
         <!--Звено-->
         <scene sceneID="agt-hy-is9">
             <objects>
-                <tableViewController id="aty-dd-hWz" customClass="NewStartViewController" customModule="БрандМастер" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="aty-dd-hWz" customClass="MainScreenViewController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="GwO-1N-lpZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
