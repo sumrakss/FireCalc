@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
 		return self.orientationLock
 	}
+	
 	struct AppUtility {
 		static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
 			if let delegate = UIApplication.shared.delegate as? AppDelegate {
