@@ -13,32 +13,50 @@ class ValueTableController: UITableViewController {
     @IBOutlet weak var cell1: UITableViewCell!
     @IBOutlet weak var cell2: UITableViewCell!
     @IBOutlet weak var cellLabel: UILabel!
-    
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         cellLabel.text = "кгс/см\u{00B2}"
         checkmarkCell()
-        
     }
 
+	
+	// Сохнаняем настройки при выходе
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		let defaults = UserDefaults.standard
+		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
+		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
+		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
+		defaults.set(SettingsData.airRate, forKey: "airRate")
+		defaults.set(SettingsData.airIndex, forKey: "airIndex")
+		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
+		
+	}
+	
     
     // Выбираем единицы измерения
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
         // кгс/см2
         if indexPath.row == 0 {
-            SettingsData.valueUnit = true
-            SettingsData.airRate = 40.0
-            SettingsData.reductionStability = 10.0
-            SettingsData.airFlow = SettingsData.airRate * SettingsData.airIndex
-            print(SettingsData.airFlow)
+			if SettingsData.measureType == .mpa {
+				SettingsData.measureType = .kgc
+				SettingsData.reductionStability *= 10
+				SettingsData.airRate *= 10
+				print("reductionStability \(SettingsData.reductionStability)")
+			}
             checkmarkCell()
         }
+		
         // МПа
         if indexPath.row == 1 {
-            SettingsData.valueUnit = false
-            SettingsData.reductionStability = SettingsData.reductionStability / 10
-            SettingsData.airFlow = (SettingsData.airRate * SettingsData.airIndex) / 10
-            print(SettingsData.airFlow)
+			if SettingsData.measureType == .kgc {
+				SettingsData.measureType = .mpa
+				SettingsData.reductionStability /= 10
+				SettingsData.airRate /= 10
+				print("reductionStability \(SettingsData.reductionStability)")
+			}
             checkmarkCell()
         }
         tableView.reloadData()
@@ -46,12 +64,15 @@ class ValueTableController: UITableViewController {
     
     
     func checkmarkCell() {
-        if SettingsData.valueUnit {
-            cell1.accessoryType = .checkmark
-            cell2.accessoryType = .none
-        } else {
-            cell1.accessoryType = .none
-            cell2.accessoryType = .checkmark
-        }
+		switch SettingsData.measureType {
+			case .kgc:
+				cell1.accessoryType = .checkmark
+				cell2.accessoryType = .none
+			case .mpa:
+				cell1.accessoryType = .none
+				cell2.accessoryType = .checkmark
+		}
     }
+	
+
 }

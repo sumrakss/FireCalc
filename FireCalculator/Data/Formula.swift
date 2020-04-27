@@ -60,8 +60,7 @@ class Formula { //:
     
     // 1) Расчет максимального расхода давления при поиске очага
     func maxDropCalculation(minPressure: [Double], hardChoice: Bool) -> Double {
-        var hardValue = 2.5
-        if hardChoice { hardValue = 3}
+        let hardValue = hardChoice ? 3 : 2.5
         let pressure = (minPressure.min()! - SettingsData.reductionStability) / hardValue
         return pressure
     }
