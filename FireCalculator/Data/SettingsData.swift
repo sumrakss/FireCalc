@@ -35,16 +35,8 @@ class SettingsData {
     static var airRate = 40.0
 	// давление воздуха, необходимое для устойчивой работы редуктора
     static var reductionStability = 10.0
-	
-//	static var reductionStability: Double {
-//		get {
-//			return SettingsData.measureType == .kgc ? 10 : 1.0
-//		}
-//
-//		set(newValue) {
-//			self.reductionStability = newValue
-//		}
-//	}
+	// Ручной ввод давления (иначе испльзутся picker)
+	static var handInputMode = false
     
 	static var airFlow: Double {
 		get {

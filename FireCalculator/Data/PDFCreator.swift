@@ -49,11 +49,11 @@ class PDFCreator: NSObject {
 		
 		let airRate = SettingsData.measureType == .kgc ? String(Int(SettingsData.airRate)) : String(SettingsData.airRate)
 		// Pквых округлям при кгс и не меняем при МПа
-		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", exitPressure)
+		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
 		
 		let airIndex = String(SettingsData.airIndex)
 		
-		let maxFallPresure = SettingsData.measureType == .kgc ? String(Int(appData.fallPressure.max()!)) : String(appData.fallPressure.max()!)
+		let maxFallPresure = SettingsData.measureType == .kgc ? String(Int(appData.fallPressure.max()!)) : String(format:"%.1f",appData.fallPressure.max()!)
 		
 		let airFlow = SettingsData.measureType == .kgc ? String(Int(SettingsData.airFlow)) : String(SettingsData.airFlow)
 		
@@ -230,9 +230,9 @@ class PDFCreator: NSObject {
 		// Минимальное давление при включении
         let minPressure = SettingsData.measureType == .kgc ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
 		// Максимальное падение давления
-		let maxDropString = SettingsData.measureType == .kgc ? (String(Int(maxDrop))) : (String(format:"%.1f", maxDrop))
+		let maxDropString = SettingsData.measureType == .kgc ? (String(Int(maxDrop))) : (String(format:"%.1f", floor(maxDrop * 10) / 10))
 		// Давление к выходу
-		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", exitPressure))
+		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", floor(exitPressure * 10) / 10))
 		// Давление воздуха, необходимое для устойчивой работы редуктора
         let reductor = SettingsData.measureType == .kgc ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
 		// Объем баллона в литрах
