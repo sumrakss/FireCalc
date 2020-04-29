@@ -31,6 +31,7 @@ class MainScreenViewController: UITableViewController {
 			teamStepper.maximumValue = 5
 		}
 	}
+	@IBOutlet weak var solutionSwitch: UISwitch!
 	
 	
     let time = DateFormatter()
@@ -42,6 +43,7 @@ class MainScreenViewController: UITableViewController {
     var counter = 0
 	var flag = true
 	var teamCounter = 3
+	var simpleSolution = false
 	
 
 	
@@ -60,8 +62,8 @@ class MainScreenViewController: UITableViewController {
 		// Скрываем клавиатуру
 		tableView.keyboardDismissMode = .onDrag
 		
-		firePlaceLabel.text = "Очаг поиск"
-		hardWorkLabel.text = "Условия нормальные"
+		firePlaceLabel.text = "Очаг - поиск"
+		hardWorkLabel.text = "Условия - нормальные"
 		// Скрываем клавиатуру при прокрутке
         fireStackLabel.isHidden = true
         fireTimeCell.selectionStyle = .none
@@ -110,6 +112,11 @@ class MainScreenViewController: UITableViewController {
 		let reductionStability = defaults.double(forKey: "reductionStability")
 		if reductionStability != 0 {
 			SettingsData.reductionStability = reductionStability
+		}
+		
+		let handInput = defaults.bool(forKey: "handInputMode")
+		if handInput != nil {
+			SettingsData.handInputMode = handInput
 		}
 		defaults.synchronize()
 	}
@@ -165,11 +172,15 @@ class MainScreenViewController: UITableViewController {
             
             for i in 0..<fieldCount {
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
+					
 					data.enterData.append(enterValue)
+					
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
-                    data.hearthData.append(hearthValue)
+					
+					data.hearthData.append(hearthValue)
+					
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -178,7 +189,6 @@ class MainScreenViewController: UITableViewController {
 //                enterValueFields[i].borderStyle = .line
             }
         counter += 1
-        
         }
     
 	
@@ -211,12 +221,22 @@ class MainScreenViewController: UITableViewController {
 		toolBar.setItems([spaceButton, doneButton], animated: false)
 		toolBar.isUserInteractionEnabled = true
 		
-		// В текстовых полях выводим pickerView вместо клавиатуры
-		for textField in textFieldForInput {
-			textField.inputView = pickerView
-			textField.inputAccessoryView = toolBar
+		if !SettingsData.handInputMode {
+			// В текстовых полях выводим pickerView вместо клавиатуры
+			for textField in textFieldForInput {
+				textField.inputView = pickerView
+				textField.inputAccessoryView = toolBar
+			}
+		} else {
+			
+			for textField in textFieldForInput {
+				textField.inputView = nil
+				textField.reloadInputViews()
+				textField.inputAccessoryView = toolBar
+			}
 		}
 	}
+	
 	
 	@objc func dismissKeyboard () {
 		view.endEditing(true)
@@ -232,7 +252,7 @@ class MainScreenViewController: UITableViewController {
             item.isHidden = !item.isHidden
         }
 		
-		firePlaceLabel.text = data.firePlace ? "Очаг обнаружен" : "Очаг поиск"
+		firePlaceLabel.text = data.firePlace ? "Очаг - обнаружен" : "Очаг - поиск"
 		
 		// Скрываем DatePicker "У очага" если firePlaceSwitch переключался
 		tapList.remove([0, 4])
@@ -244,7 +264,7 @@ class MainScreenViewController: UITableViewController {
     
     // Swicher Сложные условия
     @IBAction func hardWorkChange(_ sender: UISwitch) {
-		hardWorkLabel.text = data.hardWork ? "Условия нормальные" : "Условия сложные"
+		hardWorkLabel.text = data.hardWork ? "Условия - нормальные" : "Условия - сложные"
         data.hardWork = !data.hardWork
     }
     
@@ -269,26 +289,24 @@ class MainScreenViewController: UITableViewController {
 	@IBAction func teamChanger(_ sender: UIStepper) {
 		teamCounter = Int(sender.value)
 		inputFieldsView(fieldCount: teamCounter)
-		print(data.enterData)
 		tableView.reloadData()
 	}
-	
-	
-	// BarButton Рассчитать
-    @IBAction func etst(_ sender: UIBarButtonItem) {
-        inputFieldsView(fieldCount: teamCounter)
-    }
 
 
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //		cell.backgroundColor = UIColor(white: 8, alpha: 0.5)
 	}
     
+	
     // MARK: Скрываем и отображам DatePicker по тапу на ячейке
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tappedIndexPath = indexPath
-		tapList.contains(tappedIndexPath) ? tapList.remove(tappedIndexPath) : tapList.insert(tappedIndexPath)
-		print(tapList)
+		if tapList.contains(tappedIndexPath) {
+			tapList.remove(tappedIndexPath)
+		} else {
+			tapList.insert(tappedIndexPath)
+		}
+//		tapList.contains(tappedIndexPath) ? tapList.remove(tappedIndexPath) : tapList.insert(tappedIndexPath)
 		tableView.reloadRows(at: [indexPath], with: .none)
     }
 
@@ -323,10 +341,8 @@ class MainScreenViewController: UITableViewController {
 					headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (кгс/см\u{00B2})"
 				case .mpa:
 					headerText = "ДАВЛЕНИЕ В ЗВЕНЕ (МПа)"
-					
 			}
         }
-        
         return headerText
     }
     
@@ -337,13 +353,42 @@ class MainScreenViewController: UITableViewController {
             let pdfCreator = PDFCreator()
 			vc.appData = data
 			
-            if data.firePlace { // Если очаг найден
-                vc.documentData = pdfCreator.foundPDFCreator(appData: data)
+			// Проверяем содержимое на корретность ввода
+			// для этого обновляем массивы значений
+			inputFieldsView(fieldCount: teamCounter)
+			atencionMessage()
+			
+			if simpleSolution {
+				// Простое решение
+				//TODO
 			} else {
-                vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
-            }
+				// Подробное решение по-умолчанию
+				
+				// Подробное решение
+				if data.firePlace { // Если очаг найден
+					vc.documentData = pdfCreator.foundPDFCreator(appData: data)
+				} else {
+					vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
+				}
+			}
         }
     }
+	
+	
+	
+	// Проверка корректности ввода
+	func atencionMessage() {
+		var firewall: Double
+		firewall = SettingsData.measureType == .kgc ? 350 : 35
+		
+		if (data.enterData.min()! < 1 || data.enterData.max()! > firewall) ||
+			(data.hearthData.min()! < 1 || data.hearthData.max()! > firewall) {
+			let alert = UIAlertController(title: "Некорректное значение", message: "Введите значение в пределах \n1 - \(firewall)", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
+			return
+		}
+	}
 }
 
 

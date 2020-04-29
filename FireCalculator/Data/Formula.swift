@@ -62,6 +62,7 @@ class Formula { //:
     func maxDropCalculation(minPressure: [Double], hardChoice: Bool) -> Double {
         let hardValue = hardChoice ? 3 : 2.5
         let pressure = (minPressure.min()! - SettingsData.reductionStability) / hardValue
+		print(pressure)
         return pressure
     }
        

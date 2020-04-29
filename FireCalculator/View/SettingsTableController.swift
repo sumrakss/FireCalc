@@ -24,6 +24,15 @@ class SettingsTableController: UITableViewController {
 	@IBOutlet weak var airRateLabel: UILabel!
 	@IBOutlet weak var airIndexLabel: UILabel!
 	@IBOutlet weak var reducLabel: UILabel!
+	@IBOutlet weak var handModeSwitch: UISwitch!{
+		didSet {
+			if SettingsData.handInputMode {
+				handModeSwitch.isOn = true
+			} else {
+				handModeSwitch.isOn = false
+			}
+		}
+	}
 	
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +75,7 @@ class SettingsTableController: UITableViewController {
 		defaults.set(SettingsData.airRate, forKey: "airRate")
 		defaults.set(SettingsData.airIndex, forKey: "airIndex")
 		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
+		defaults.set(SettingsData.handInputMode, forKey: "handInputMode")
 		print("Settings save")
 	}
 	
@@ -121,11 +131,19 @@ class SettingsTableController: UITableViewController {
 		SettingsData.reductionStability = 10.0
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
+		SettingsData.handInputMode = false
+		handModeSwitch.isOn = false
 		defaultDataText()
 		tableView.reloadData()
 //		tableView.beginUpdates()
 //		tableView.endUpdates()
 		saveUserSettingsMessage()
+	}
+	
+	// Ручной режим ввода давления
+	@IBAction func handMode(_ sender: UISwitch) {
+		SettingsData.handInputMode = !SettingsData.handInputMode
+		print("Ручной режим \(SettingsData.handInputMode)")
 	}
 	
 	
@@ -143,7 +161,7 @@ class SettingsTableController: UITableViewController {
 	
 	
 	func saveUserSettingsMessage() {
-		let alert = UIAlertController(title: "Установлены настройки по-умолчанию", message: "", preferredStyle: .alert)
+		let alert = UIAlertController(title: "Настройки по-умолчанию", message: "", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		present(alert, animated: true, completion: nil)
 		return

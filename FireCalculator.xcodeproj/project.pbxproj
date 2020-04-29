@@ -22,19 +22,10 @@
 		FA6675E52451CDC40020624C /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA6675E32451CDC40020624C /* airFoundNew.pdf */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FA770A062453261D00CD6BAB /* airNotFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA770A052453261D00CD6BAB /* airNotFoundNew.pdf */; };
+		FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C12112456F044008F768F /* AboutTableViewController.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FA3D5B1C244BDE7100F38B69 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA1F35F123DEB07000A8641C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA1F35F823DEB07000A8641C;
-			remoteInfo = FireCalculator;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		885DF6E923FCD0EA00BB6E1D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -50,24 +41,17 @@
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
-		FA6675DB245192110020624C /* БрандМастерTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "БрандМастерTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6675E22451CDC40020624C /* hardAirFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFoundNew.pdf; sourceTree = "<group>"; };
 		FA6675E32451CDC40020624C /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFoundNew.pdf; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FA770A052453261D00CD6BAB /* airNotFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFoundNew.pdf; sourceTree = "<group>"; };
+		FA7C12112456F044008F768F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA1F35F623DEB07000A8641C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA3D5B14244BDE7100F38B69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,7 +66,6 @@
 			children = (
 				FA1F35FB23DEB07000A8641C /* FireCalculator */,
 				FA16B226244F27C400B5B39C /* БрандМастер - ГДЗС.app */,
-				FA6675DB245192110020624C /* БрандМастерTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +93,10 @@
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
 				88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */,
 				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
+				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
 				FA724A6C241B46BC0000EA3A /* ValueTableController.swift */,
-				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
+				FA7C12112456F044008F768F /* AboutTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,24 +131,6 @@
 			productReference = FA16B226244F27C400B5B39C /* БрандМастер - ГДЗС.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA3D5B16244BDE7100F38B69 /* БрандМастерTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA3D5B20244BDE7100F38B69 /* Build configuration list for PBXNativeTarget "БрандМастерTests" */;
-			buildPhases = (
-				FA3D5B13244BDE7100F38B69 /* Sources */,
-				FA3D5B14244BDE7100F38B69 /* Frameworks */,
-				FA3D5B15244BDE7100F38B69 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA3D5B1D244BDE7100F38B69 /* PBXTargetDependency */,
-			);
-			name = "БрандМастерTests";
-			productName = "БрандМастерTests";
-			productReference = FA6675DB245192110020624C /* БрандМастерTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +143,6 @@
 				TargetAttributes = {
 					FA1F35F823DEB07000A8641C = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					FA3D5B16244BDE7100F38B69 = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = FA1F35F823DEB07000A8641C;
 					};
 				};
 			};
@@ -198,7 +160,6 @@
 			projectRoot = "";
 			targets = (
 				FA1F35F823DEB07000A8641C /* FireCalculator */,
-				FA3D5B16244BDE7100F38B69 /* БрандМастерTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,13 +179,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA3D5B15244BDE7100F38B69 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -235,6 +189,7 @@
 				FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */,
 				FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */,
 				FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */,
+				FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */,
 				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
 				FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */,
@@ -245,22 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA3D5B13244BDE7100F38B69 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FA3D5B1D244BDE7100F38B69 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA1F35F823DEB07000A8641C /* FireCalculator */;
-			targetProxy = FA3D5B1C244BDE7100F38B69 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */ = {
@@ -393,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -401,7 +341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.4;
+				MARKETING_VERSION = 0.8.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
@@ -414,7 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -422,53 +362,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.4;
+				MARKETING_VERSION = 0.8.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		FA3D5B1E244BDE7100F38B69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 95Q7BF5S85;
-				INFOPLIST_FILE = "БрандМастерTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.-----------Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/БрандМастер.app/БрандМастер";
-			};
-			name = Debug;
-		};
-		FA3D5B1F244BDE7100F38B69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 95Q7BF5S85;
-				INFOPLIST_FILE = "БрандМастерTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.-----------Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/БрандМастер.app/БрандМастер";
 			};
 			name = Release;
 		};
@@ -489,15 +387,6 @@
 			buildConfigurations = (
 				FA1F360E23DEB07300A8641C /* Debug */,
 				FA1F360F23DEB07300A8641C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA3D5B20244BDE7100F38B69 /* Build configuration list for PBXNativeTarget "БрандМастерTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA3D5B1E244BDE7100F38B69 /* Debug */,
-				FA3D5B1F244BDE7100F38B69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
