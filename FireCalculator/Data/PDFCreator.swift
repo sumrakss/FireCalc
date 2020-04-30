@@ -17,6 +17,40 @@ class PDFCreator: NSObject {
 	let airPressSG = "сж"
 	
 	
+	// PDF-страница с примечаниями
+	func marksViewer() -> Data{
+		// 1
+		let pdfMetaData = [
+		  kCGPDFContextCreator: "Flyer Builder",
+		  kCGPDFContextAuthor: "raywenderlich.com"
+		]
+		let format = UIGraphicsPDFRendererFormat()
+		format.documentInfo = pdfMetaData as [String: Any]
+
+		let pageWidth = 595.2
+		let pageHeight = 841.8
+		let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+
+		let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+		let data = renderer.pdfData { (context) in
+		  context.beginPage()
+		let context = context.cgContext
+			
+		// Подставляем PDF шаблон с формулами
+		let path = Bundle.main.path(forResource: "Marks", ofType: "pdf")!
+		let url = URL(fileURLWithPath: path)
+		let document = CGPDFDocument(url as CFURL)
+		// Количество страниц
+		let page = document?.page(at: 1)
+		UIColor.white.set()
+		context.translateBy(x: 0.0, y: pageRect.size.height)
+		context.scaleBy(x: 1.0, y: -1.0)
+		context.drawPDFPage(page!)
+		}
+
+		return data
+	}
+	
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
     func foundPDFCreator(appData: SettingsData) -> Data {
         // Вычисляемые значения

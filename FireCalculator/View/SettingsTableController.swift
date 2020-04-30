@@ -122,7 +122,6 @@ class SettingsTableController: UITableViewController {
 		}
 		defaults.synchronize()
 		
-		
 		SettingsData.deviceType = DeviceType.air
 		SettingsData.measureType = MeasureType.kgc
 		SettingsData.cylinderVolume = 6.8
@@ -137,6 +136,7 @@ class SettingsTableController: UITableViewController {
 		tableView.reloadData()
 //		tableView.beginUpdates()
 //		tableView.endUpdates()
+
 		saveUserSettingsMessage()
 	}
 	
@@ -167,6 +167,7 @@ class SettingsTableController: UITableViewController {
 		return
 		
 	}
+	
 	
 	
 	func atencionMessage(value: Double) {

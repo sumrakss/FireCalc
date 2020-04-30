@@ -81,7 +81,6 @@ class MainScreenViewController: UITableViewController {
         inputFieldsView(fieldCount: teamCounter)
     }
 
-
 	
 	// Загрузка сохраненных настроек пользователя
 	func loadUserSettings() {
@@ -120,6 +119,7 @@ class MainScreenViewController: UITableViewController {
 		}
 		defaults.synchronize()
 	}
+	
 	
 	// Метод изменяет значения в полях ввода при изменении единиц измерения
 	func stockValues() {
@@ -172,15 +172,11 @@ class MainScreenViewController: UITableViewController {
             
             for i in 0..<fieldCount {
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
-					
 					data.enterData.append(enterValue)
-					
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
-					
 					data.hearthData.append(hearthValue)
-					
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -189,7 +185,7 @@ class MainScreenViewController: UITableViewController {
 //                enterValueFields[i].borderStyle = .line
             }
         counter += 1
-        }
+	}
     
 	
 	 // Настройка pickerView
@@ -352,7 +348,6 @@ class MainScreenViewController: UITableViewController {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
 			vc.appData = data
-			
 			// Проверяем содержимое на корретность ввода
 			// для этого обновляем массивы значений
 			inputFieldsView(fieldCount: teamCounter)
@@ -362,8 +357,6 @@ class MainScreenViewController: UITableViewController {
 				// Простое решение
 				//TODO
 			} else {
-				// Подробное решение по-умолчанию
-				
 				// Подробное решение
 				if data.firePlace { // Если очаг найден
 					vc.documentData = pdfCreator.foundPDFCreator(appData: data)
@@ -413,7 +406,6 @@ extension String {
 }
 
 
-
 extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Количество колонок в PickerView
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -441,10 +433,6 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 		return self.data.pickerComponents[row]
 	}
-	
-	
-
-	
 }
 
 

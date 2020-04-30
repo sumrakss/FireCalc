@@ -8,11 +8,13 @@
 
 import Foundation
 
+
 // Типы дыхательного аппарата
 enum DeviceType: String {
 	case air
 	case oxigen
 }
+
 
 // Единицы измерения расчетов
 enum MeasureType: String {
