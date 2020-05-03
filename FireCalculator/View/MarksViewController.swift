@@ -26,7 +26,7 @@ class MarksViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 
 	

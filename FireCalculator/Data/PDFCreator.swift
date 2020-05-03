@@ -53,6 +53,9 @@ class PDFCreator: NSObject {
 	
     // Метод генерирует лист А4 c расчетами если очаг пожара найден.
     func foundPDFCreator(appData: SettingsData) -> Data {
+		
+		
+		
         // Вычисляемые значения
         let comp = Formula()
         // 1) Расчет общего времени работы (Тобщ)
@@ -61,17 +64,26 @@ class PDFCreator: NSObject {
         // 2) Расчет ожидаемого времени возвращения звена из НДС (Твозв)
         let expectedTime = comp.expectedTimeCalculation(inputTime: appData.enterTime, totalTime: totalTime)
 
+		
         // 3) Расчет давления для выхода (Рк.вых)
-        let exitPressure = comp.exitPressureCalculation(maxDrop: appData.fallPressure, hardChoice: appData.hardWork)
-
+        var exitPressure = comp.exitPressureCalculation(maxDrop: appData.fallPressure, hardChoice: appData.hardWork)
+		// Pквых округлям при кгс и не меняем при МПа
+		
+		var exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
+		
+		
+		if SettingsData.airSignalMode {
+			if exitPressure < SettingsData.airSignal {
+				exitPressure = SettingsData.airSignal
+				SettingsData.airSignalFlag = true
+			}
+		}
+	
         // 4) Расчет времени работы у очага (Траб)
         let workTime = comp.workTimeCalculation(minPressure: appData.hearthData, exitPressure: exitPressure)
-
         // 5) Время подачи команды постовым на выход звена
         let  exitTime = comp.expectedTimeCalculation(inputTime: appData.fireTime, totalTime: workTime)
 
-        // Константы из формул
-//		let value = SettingsData.valueUnit ? "кгс/см\u{00B2}" : "МПа"
 		// Минимальное давление при включении
 		let minPressure = SettingsData.measureType == .kgc ? String(Int(appData.enterData.min()!)) : String(appData.enterData.min()!)
 		// Минимальне давление у очага
@@ -82,8 +94,6 @@ class PDFCreator: NSObject {
         let capacity = String(SettingsData.cylinderVolume)
 		
 		let airRate = SettingsData.measureType == .kgc ? String(Int(SettingsData.airRate)) : String(SettingsData.airRate)
-		// Pквых округлям при кгс и не меняем при МПа
-		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
 		
 		let airIndex = String(SettingsData.airIndex)
 		
@@ -93,7 +103,6 @@ class PDFCreator: NSObject {
 		
 		// Номер газодымзащитника с наибольшим падением давления
 		let index = appData.fallPressure.firstIndex(of: appData.fallPressure.max()!)!
-		
 		
 		let startPressure = SettingsData.measureType == .kgc ? String(Int(appData.enterData[index])) : String(appData.enterData[index])
 		
@@ -155,6 +164,7 @@ class PDFCreator: NSObject {
 			String(Int(totalTime)).draw(at: CGPoint(x: 369, y: 368), withAttributes: small)
 			expectedTime.draw(at: CGPoint(x: 402, y: 371), withAttributes: large)
 			
+			
 			// 3
 			if appData.hardWork {
 				maxFallPresure.draw(at: CGPoint(x: 345, y: 478), withAttributes: large)
@@ -170,68 +180,82 @@ class PDFCreator: NSObject {
 				value.draw(at: CGPoint(x: 502, y: 486), withAttributes: large)
 			}
 			
-			
+			if SettingsData.airSignalFlag {
+				exitPString = SettingsData.measureType == .kgc ? String(Int(SettingsData.airSignal)) : String(format:"%.1f", floor(SettingsData.airSignal * 10) / 10)
+				
+			}
+						
 			// 4
+			let someValue = SettingsData.airSignalFlag ? 40 : 0
+			
 			if appData.hardWork {
 				switch SettingsData.deviceType {
 					case .air:
-						airRate.draw(at: CGPoint(x: 148, y: 583), withAttributes: large)
-						airRate.draw(at: CGPoint(x: 313, y: 583), withAttributes: large)
-						airPressK.draw(at: CGPoint(x: 170, y: 583), withAttributes: large)
-						airPressSG.draw(at: CGPoint(x: 195, y: 591), withAttributes: small)
-						"*".draw(at: CGPoint(x: 335, y: 583), withAttributes: large)
-						airIndex.draw(at: CGPoint(x: 345, y: 583), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 148, y: 583+someValue), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 313, y: 583+someValue), withAttributes: large)
+						airPressK.draw(at: CGPoint(x: 170, y: 583+someValue), withAttributes: large)
+						airPressSG.draw(at: CGPoint(x: 195, y: 591+someValue), withAttributes: small)
+						"*".draw(at: CGPoint(x: 335, y: 583+someValue), withAttributes: large)
+						airIndex.draw(at: CGPoint(x: 345, y: 583+someValue), withAttributes: large)
 					
 					case .oxigen:
-						airFlow.draw(at: CGPoint(x: 170, y: 583), withAttributes: large)
-						airFlow.draw(at: CGPoint(x: 335, y: 583), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 170, y: 583+someValue), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 335, y: 583+someValue), withAttributes: large)
 				}
 				
-				minFirePressure.draw(at: CGPoint(x: 276, y: 562), withAttributes: large)
-				exitPString.draw(at: CGPoint(x: 318, y: 562), withAttributes: large)
-				capacity.draw(at: CGPoint(x: 373, y: 562), withAttributes: large)
-				String(format:"%.1f", workTime).draw(at: CGPoint(x: 423, y: 575), withAttributes: large)
-				String(Int(workTime)).draw(at: CGPoint(x: 481, y: 575), withAttributes: large)
+				minFirePressure.draw(at: CGPoint(x: 276, y: 562+someValue), withAttributes: large)
+				exitPString.draw(at: CGPoint(x: 318, y: 562+someValue), withAttributes: large)
+				capacity.draw(at: CGPoint(x: 373, y: 562+someValue), withAttributes: large)
+				String(format:"%.1f", workTime).draw(at: CGPoint(x: 423, y: 575+someValue), withAttributes: large)
+				String(Int(workTime)).draw(at: CGPoint(x: 481, y: 575+someValue), withAttributes: large)
 			} else {
 				switch SettingsData.deviceType {
 					case .air:
-						airRate.draw(at: CGPoint(x: 138, y: 597), withAttributes: large)
-						airRate.draw(at: CGPoint(x: 296, y: 597), withAttributes: large)
-						airPressK.draw(at: CGPoint(x: 160, y: 597), withAttributes: large)
-						airPressSG.draw(at: CGPoint(x: 185, y: 602), withAttributes: small)
-						"*".draw(at: CGPoint(x: 318, y: 597), withAttributes: large)
-						airIndex.draw(at: CGPoint(x: 328, y: 597), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 138, y: 597+someValue), withAttributes: large)
+						airRate.draw(at: CGPoint(x: 296, y: 597+someValue), withAttributes: large)
+						airPressK.draw(at: CGPoint(x: 160, y: 597+someValue), withAttributes: large)
+						airPressSG.draw(at: CGPoint(x: 185, y: 602+someValue), withAttributes: small)
+						"*".draw(at: CGPoint(x: 318, y: 597+someValue), withAttributes: large)
+						airIndex.draw(at: CGPoint(x: 328, y: 597+someValue), withAttributes: large)
 				
 					case .oxigen:
-						airFlow.draw(at: CGPoint(x: 160, y: 595), withAttributes: large)
-						airFlow.draw(at: CGPoint(x: 318, y: 595), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 160, y: 595+someValue), withAttributes: large)
+						airFlow.draw(at: CGPoint(x: 318, y: 595+someValue), withAttributes: large)
 				}
-				minFirePressure.draw(at: CGPoint(x: 268, y: 576), withAttributes: large)
-				exitPString.draw(at: CGPoint(x: 312, y: 576), withAttributes: large)
-				capacity.draw(at: CGPoint(x: 360, y: 576), withAttributes: large)
-				String(format:"%.1f", workTime).draw(at: CGPoint(x: 410, y: 588), withAttributes: large)
-				String(Int(workTime)).draw(at: CGPoint(x: 470, y: 588), withAttributes: large)
+				minFirePressure.draw(at: CGPoint(x: 268, y: 576+someValue), withAttributes: large)
+				exitPString.draw(at: CGPoint(x: 312, y: 576+someValue), withAttributes: large)
+				print(exitPressure)
+				capacity.draw(at: CGPoint(x: 360, y: 576+someValue), withAttributes: large)
+				String(format:"%.1f", floor(workTime*10)/10).draw(at: CGPoint(x: 410, y: 588+someValue), withAttributes: large)
+				String(Int(workTime)).draw(at: CGPoint(x: 470, y: 588+someValue), withAttributes: large)
 			}
 			
 			// 5
 			if appData.hardWork {
 				time.dateFormat = "HH"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 310, y: 690), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 310, y: 690+someValue), withAttributes: large)
 				time.dateFormat = "mm"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 330, y: 685), withAttributes: small)
-				String(Int(workTime)).draw(at: CGPoint(x: 358, y: 685), withAttributes: small)
-				exitTime.draw(at: CGPoint(x: 403, y: 690), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 330, y: 685+someValue), withAttributes: small)
+				String(Int(workTime)).draw(at: CGPoint(x: 358, y: 685+someValue), withAttributes: small)
+				exitTime.draw(at: CGPoint(x: 403, y: 690+someValue), withAttributes: large)
 			} else {
 				time.dateFormat = "HH"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 314, y: 702), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 314, y: 702+someValue), withAttributes: large)
 				time.dateFormat = "mm"
-				time.string(from: appData.fireTime).draw(at: CGPoint(x: 335, y: 699), withAttributes: small)
-				String(Int(workTime)).draw(at: CGPoint(x: 362, y: 699), withAttributes: small)
-				exitTime.draw(at: CGPoint(x: 392, y: 702), withAttributes: large)
+				time.string(from: appData.fireTime).draw(at: CGPoint(x: 335, y: 699+someValue), withAttributes: small)
+				String(Int(workTime)).draw(at: CGPoint(x: 362, y: 699+someValue), withAttributes: small)
+				exitTime.draw(at: CGPoint(x: 392, y: 702+someValue), withAttributes: large)
 			}
 			
+			// Имя файла PDF-шаблона
+			var fileName = appData.hardWork ? "hardAirFoundNew" : "airFoundNew"
 			// Подставляем PDF шаблон с формулами
-			let path = appData.hardWork ? Bundle.main.path(forResource: "hardAirFoundNew", ofType: "pdf")! : Bundle.main.path(forResource: "airFoundNew", ofType: "pdf")!
+			if SettingsData.airSignalFlag {
+				// Выбираем шаблон в зависимости от настроек
+				fileName = appData.hardWork ? "hardFoundSignal" : "foundSignal"
+			}
+			
+			let path = Bundle.main.path(forResource: fileName, ofType: "pdf")!
 			let url = URL(fileURLWithPath: path)
 			let document = CGPDFDocument(url as CFURL)
 			let page = document?.page(at: 1)

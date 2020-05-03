@@ -24,23 +24,37 @@ class PDFPreviewViewController: UIViewController {
         }
     }
     
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+		AppDelegate.AppUtility.lockOrientation(.all)
+		atencionMessage()
 	}
 
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-	}
-	
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
+		
 		// При переходе на другое view разрешаем только портретную ориентацию
 		// и устанавливаем ее
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
+	
+	
+	// Выход по звуковому сигналу
+	func atencionMessage() {
+		if SettingsData.airSignalMode {
+			if SettingsData.airSignalFlag {
+				let alert = UIAlertController(title: "Внимание", message: "Выход по звуковому сигналу!", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				present(alert, animated: true, completion: nil)
+				SettingsData.airSignalFlag = false
+				return
+			}
+		}
+	}
+	
 	
 	
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {

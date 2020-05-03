@@ -25,7 +25,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMW-Fh-BiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4233" y="-705"/>
+            <point key="canvasLocation" x="-4047" y="-943"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="cS5-0T-vyn">
@@ -111,7 +111,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EP1-b8-r8q">
                                                     <rect key="frame" x="310" y="6" width="51" height="33"/>
                                                     <connections>
-                                                        <action selector="handMode:" destination="BDL-cD-JAh" eventType="valueChanged" id="JsM-BA-siu"/>
+                                                        <action selector="handMode:" destination="BDL-cD-JAh" eventType="valueChanged" id="dOF-oG-0pU"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -124,12 +124,44 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="CZi-YP-2Y0">
+                                        <rect key="frame" x="0.0" y="185.83333206176758" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CZi-YP-2Y0" id="9D6-5O-haG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учитывать сигнал" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-Gx-Kti">
+                                                    <rect key="frame" x="16" y="11.666666666666664" width="181" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="181" id="iQ2-mk-mzN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-VE-4rH">
+                                                    <rect key="frame" x="310" y="6" width="51" height="33"/>
+                                                    <connections>
+                                                        <action selector="airSignalMode:" destination="BDL-cD-JAh" eventType="valueChanged" id="3Jx-Ro-8MF"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MYx-VE-4rH" secondAttribute="trailing" constant="16" id="FGD-XM-Ool"/>
+                                                <constraint firstItem="qfc-Gx-Kti" firstAttribute="centerY" secondItem="9D6-5O-haG" secondAttribute="centerY" id="eyv-bL-RxC"/>
+                                                <constraint firstItem="MYx-VE-4rH" firstAttribute="top" secondItem="9D6-5O-haG" secondAttribute="top" constant="6" id="mJA-yd-kWA"/>
+                                                <constraint firstItem="qfc-Gx-Kti" firstAttribute="leading" secondItem="9D6-5O-haG" secondAttribute="leading" constant="16" id="mwp-fr-u7x"/>
+                                                <constraint firstAttribute="bottom" secondItem="MYx-VE-4rH" secondAttribute="bottom" constant="5" id="yUl-u6-cgA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Параметры СИЗОД" id="HM9-z3-meL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="cIX-S8-eKs">
-                                        <rect key="frame" x="0.0" y="269.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="313.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cIX-S8-eKs" id="bhH-gk-UEX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -174,7 +206,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="9eG-7v-hF6">
-                                        <rect key="frame" x="0.0" y="313.33333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="356.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9eG-7v-hF6" id="FcI-oq-fAu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -219,7 +251,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KCz-ik-7c9">
-                                        <rect key="frame" x="0.0" y="356.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="400.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCz-ik-7c9" id="q9E-st-40s">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -264,7 +296,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pmE-Fo-yK0">
-                                        <rect key="frame" x="0.0" y="400.33333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="443.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pmE-Fo-yK0" id="IJP-0y-814">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -309,12 +341,58 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="BIp-GS-elr">
+                                        <rect key="frame" x="0.0" y="487.33333206176758" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BIp-GS-elr" id="PWD-uH-DHw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6.5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UI6-fc-gEo">
+                                                    <rect key="frame" x="289" y="5" width="70" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="4lW-4a-TpL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="airSignalData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="mfx-S7-40B"/>
+                                                    </connections>
+                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9M2-bA-ZHb">
+                                                    <rect key="frame" x="16" y="5" width="253" height="34.333333333333336"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сигнальное устройство" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-uA-CaU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срабатывание сигнала (кгс/cм)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="287" translatesAutoresizingMaskIntoConstraints="NO" id="f7S-F4-6Oa">
+                                                            <rect key="frame" x="0.0" y="22" width="253" height="12.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UI6-fc-gEo" firstAttribute="leading" secondItem="9M2-bA-ZHb" secondAttribute="trailing" constant="20" id="1yA-mu-cCf"/>
+                                                <constraint firstItem="9M2-bA-ZHb" firstAttribute="top" secondItem="PWD-uH-DHw" secondAttribute="top" constant="5" id="APx-nD-vUa"/>
+                                                <constraint firstItem="UI6-fc-gEo" firstAttribute="centerY" secondItem="PWD-uH-DHw" secondAttribute="centerY" id="EZm-Kt-sTl"/>
+                                                <constraint firstItem="9M2-bA-ZHb" firstAttribute="leading" secondItem="PWD-uH-DHw" secondAttribute="leading" constant="16" id="FAH-by-8sE"/>
+                                                <constraint firstAttribute="trailing" secondItem="UI6-fc-gEo" secondAttribute="trailing" constant="16" id="O0Y-OM-HJ3"/>
+                                                <constraint firstAttribute="bottom" secondItem="9M2-bA-ZHb" secondAttribute="bottom" constant="4.5" id="hJn-Db-CJd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="MgO-Rm-OpS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="wTH-vR-XZq">
-                                        <rect key="frame" x="0.0" y="479.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="566.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wTH-vR-XZq" id="fNQ-oJ-899">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -354,8 +432,11 @@
                         <outlet property="airIndexTextField" destination="WeG-1m-J0j" id="wT1-dO-EGr"/>
                         <outlet property="airRateLabel" destination="8wh-Ds-OZW" id="hho-aX-GM7"/>
                         <outlet property="airRateTextField" destination="nyZ-27-eMM" id="qeh-SB-rjR"/>
+                        <outlet property="airSignalLabel" destination="f7S-F4-6Oa" id="OOb-Mt-H4O"/>
+                        <outlet property="airSignalSwitch" destination="MYx-VE-4rH" id="g3i-aV-zoB"/>
+                        <outlet property="airSignalTextField" destination="UI6-fc-gEo" id="OwM-IF-RB3"/>
                         <outlet property="cylinderVolumeTextField" destination="fch-sF-fKp" id="cTQ-Ua-hP8"/>
-                        <outlet property="handModeSwitch" destination="EP1-b8-r8q" id="LzI-6b-d2F"/>
+                        <outlet property="handModeSwitch" destination="EP1-b8-r8q" id="Mkd-4s-qOT"/>
                         <outlet property="reducLabel" destination="xs0-dB-0Na" id="qeF-dx-InB"/>
                         <outlet property="reductionStabilityTextField" destination="Vff-Ou-5E7" id="WeI-xt-caQ"/>
                         <outlet property="typeDetailLabel" destination="k9o-m0-Own" id="2pm-xw-0dJ"/>
@@ -365,7 +446,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Prg-om-qai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4154" y="1113"/>
+            <point key="canvasLocation" x="-4047" y="825"/>
         </scene>
         <!--Тип СИЗОД-->
         <scene sceneID="XFB-ld-Vbn">
@@ -428,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkC-Sg-1Jw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3074" y="906"/>
+            <point key="canvasLocation" x="-4750" y="1957"/>
         </scene>
         <!--Единицы-->
         <scene sceneID="Ru3-8N-7yb">
@@ -492,7 +573,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDR-kx-3ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3074" y="1633"/>
+            <point key="canvasLocation" x="-3178" y="1957"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="tLH-wX-DsA">
@@ -529,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbT-1L-7Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5394" y="2157"/>
+            <point key="canvasLocation" x="-5286" y="974"/>
         </scene>
         <!--Звено-->
         <scene sceneID="agt-hy-is9">
@@ -984,7 +1065,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-uO-4N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5364" y="1112.807881773399"/>
+            <point key="canvasLocation" x="-6407" y="1078"/>
         </scene>
         <!--Расчеты-->
         <scene sceneID="84S-2S-YHG">
@@ -1005,7 +1086,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzr-xk-Vby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5393" y="69"/>
+            <point key="canvasLocation" x="-6086" y="-2"/>
         </scene>
         <!--About Table View Controller-->
         <scene sceneID="Lvt-0z-Igb">
@@ -1161,7 +1242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbu-W4-jzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1634.4000000000001" y="68.7192118226601"/>
+            <point key="canvasLocation" x="-1980" y="910"/>
         </scene>
         <!--Marks View Controller-->
         <scene sceneID="Erh-sr-hxL">
@@ -1192,7 +1273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8d-7h-2Uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-654" y="69"/>
+            <point key="canvasLocation" x="-1980" y="1804"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="uZ5-rn-fqb">
@@ -1213,7 +1294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyJ-9M-jDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4153" y="69"/>
+            <point key="canvasLocation" x="-4047" y="69"/>
         </scene>
         <!--Info-->
         <scene sceneID="bGj-VC-26c">
@@ -1232,7 +1313,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5g-c7-7gW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2833" y="69"/>
+            <point key="canvasLocation" x="-1980" y="13"/>
         </scene>
     </scenes>
     <resources>

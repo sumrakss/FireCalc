@@ -39,7 +39,12 @@ class SettingsData {
     static var reductionStability = 10.0
 	// Ручной ввод давления (иначе испльзутся picker)
 	static var handInputMode = false
-    
+	// Учитывать звуковой сигнал в расчетах
+	static var airSignalMode = false
+	// Давление срабатывания звукового сигнала
+	static var airSignal = 6.3
+    static var airSignalFlag = false
+	
 	static var airFlow: Double {
 		get {
 			switch deviceType {

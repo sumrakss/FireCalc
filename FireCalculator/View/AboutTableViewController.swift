@@ -93,15 +93,15 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		   if segue.identifier == "toMarks" {
-			   guard let vc = segue.destination as? MarksViewController else { return }
-			   let pdfCreator = PDFCreator()
-	
-			   vc.documentData = pdfCreator.marksViewer()
-			   
-				
-		   }
+	   if segue.identifier == "toMarks" {
+		   guard let vc = segue.destination as? MarksViewController else { return }
+		   let pdfCreator = PDFCreator()
+
+		   vc.documentData = pdfCreator.marksViewer()
+		   
+			
 	   }
+   }
 	
 	
 	

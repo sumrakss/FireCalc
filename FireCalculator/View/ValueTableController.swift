@@ -44,6 +44,7 @@ class ValueTableController: UITableViewController {
 				SettingsData.measureType = .kgc
 				SettingsData.reductionStability *= 10
 				SettingsData.airRate *= 10
+				SettingsData.airSignal *= 10
 				print("reductionStability \(SettingsData.reductionStability)")
 			}
             checkmarkCell()
@@ -55,6 +56,7 @@ class ValueTableController: UITableViewController {
 				SettingsData.measureType = .mpa
 				SettingsData.reductionStability /= 10
 				SettingsData.airRate /= 10
+				SettingsData.airSignal /= 10
 				print("reductionStability \(SettingsData.reductionStability)")
 			}
             checkmarkCell()

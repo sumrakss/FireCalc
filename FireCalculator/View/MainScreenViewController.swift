@@ -91,31 +91,33 @@ class MainScreenViewController: UITableViewController {
 		if let measureType = MeasureType(rawValue: defaults.string(forKey: "measureType") ?? "") {
 			SettingsData.measureType = measureType
 		}
-		
-		let cylinderVolume = defaults.double(forKey: "cylinderVolume") 
-		
-		if cylinderVolume != 0.0 {
-			SettingsData.cylinderVolume = cylinderVolume
+
+		if UserDefaults.standard.object(forKey: "cylinderVolume") != nil {
+			SettingsData.cylinderVolume = defaults.double(forKey: "cylinderVolume")
+		}
+
+		if UserDefaults.standard.object(forKey: "airRate") != nil {
+			SettingsData.airRate = defaults.double(forKey: "airRate")
+		}
+
+		if UserDefaults.standard.object(forKey: "airIndex") != nil {
+			SettingsData.airIndex = defaults.double(forKey: "airIndex")
+		}
+	
+		if UserDefaults.standard.object(forKey: "reductionStability") != nil {
+			SettingsData.reductionStability = defaults.double(forKey: "reductionStability")
 		}
 		
-		let airRate = defaults.double(forKey: "airRate")
-		if airRate != 0.0 {
-			SettingsData.airRate = airRate
+		if UserDefaults.standard.object(forKey: "handInputMode") != nil {
+			SettingsData.handInputMode = defaults.bool(forKey: "handInputMode")
 		}
-		 
-		let airIndex = defaults.double(forKey: "airIndex")
-		if airIndex != 0 {
-			SettingsData.airIndex = airIndex
+
+		if UserDefaults.standard.object(forKey: "airSignal") != nil {
+			SettingsData.airSignal = defaults.double(forKey: "airSignal")
 		}
-			
-		let reductionStability = defaults.double(forKey: "reductionStability")
-		if reductionStability != 0 {
-			SettingsData.reductionStability = reductionStability
-		}
-		
-		let handInput = defaults.bool(forKey: "handInputMode")
-		if handInput != nil {
-			SettingsData.handInputMode = handInput
+
+		if UserDefaults.standard.object(forKey: "airSignalMode") != nil {
+			SettingsData.airSignalMode = defaults.bool(forKey: "airSignalMode")
 		}
 		defaults.synchronize()
 	}

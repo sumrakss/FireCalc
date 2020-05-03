@@ -21,12 +21,14 @@
 		FA6675E42451CDC40020624C /* hardAirFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA6675E22451CDC40020624C /* hardAirFoundNew.pdf */; };
 		FA6675E52451CDC40020624C /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA6675E32451CDC40020624C /* airFoundNew.pdf */; };
 		FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */; };
-		FA6CA802245AFFB900B430EA /* Marks.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA6CA801245AFFB900B430EA /* Marks.pdf */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FA770A062453261D00CD6BAB /* airNotFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA770A052453261D00CD6BAB /* airNotFoundNew.pdf */; };
 		FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C12112456F044008F768F /* AboutTableViewController.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
+		FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE93245BF73200BF4F2C /* Marks.pdf */; };
+		FAF6AE97245D713F00BF4F2C /* foundSignal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE95245D713F00BF4F2C /* foundSignal.pdf */; };
+		FAF6AE98245D713F00BF4F2C /* hardFoundSignal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE96245D713F00BF4F2C /* hardFoundSignal.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,12 +48,14 @@
 		FA6675E22451CDC40020624C /* hardAirFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFoundNew.pdf; sourceTree = "<group>"; };
 		FA6675E32451CDC40020624C /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFoundNew.pdf; sourceTree = "<group>"; };
 		FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
-		FA6CA801245AFFB900B430EA /* Marks.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Marks.pdf; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FA770A052453261D00CD6BAB /* airNotFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFoundNew.pdf; sourceTree = "<group>"; };
 		FA7C12112456F044008F768F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAF6AE93245BF73200BF4F2C /* Marks.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Marks.pdf; sourceTree = "<group>"; };
+		FAF6AE95245D713F00BF4F2C /* foundSignal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = foundSignal.pdf; sourceTree = "<group>"; };
+		FAF6AE96245D713F00BF4F2C /* hardFoundSignal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardFoundSignal.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,9 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				FA6CA801245AFFB900B430EA /* Marks.pdf */,
+				FAF6AE95245D713F00BF4F2C /* foundSignal.pdf */,
+				FAF6AE96245D713F00BF4F2C /* hardFoundSignal.pdf */,
+				FAF6AE93245BF73200BF4F2C /* Marks.pdf */,
 				FA6675E32451CDC40020624C /* airFoundNew.pdf */,
 				FA770A052453261D00CD6BAB /* airNotFoundNew.pdf */,
 				FA6675E22451CDC40020624C /* hardAirFoundNew.pdf */,
@@ -180,9 +186,11 @@
 				FA770A062453261D00CD6BAB /* airNotFoundNew.pdf in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
 				FA6675E52451CDC40020624C /* airFoundNew.pdf in Resources */,
+				FAF6AE97245D713F00BF4F2C /* foundSignal.pdf in Resources */,
 				FA6675E42451CDC40020624C /* hardAirFoundNew.pdf in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
-				FA6CA802245AFFB900B430EA /* Marks.pdf in Resources */,
+				FAF6AE98245D713F00BF4F2C /* hardFoundSignal.pdf in Resources */,
+				FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

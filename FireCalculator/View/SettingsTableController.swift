@@ -24,6 +24,10 @@ class SettingsTableController: UITableViewController {
 	@IBOutlet weak var airRateLabel: UILabel!
 	@IBOutlet weak var airIndexLabel: UILabel!
 	@IBOutlet weak var reducLabel: UILabel!
+	@IBOutlet weak var airSignalLabel: UILabel!
+	
+	@IBOutlet weak var airSignalTextField: UITextField!
+	// Точность
 	@IBOutlet weak var handModeSwitch: UISwitch!{
 		didSet {
 			if SettingsData.handInputMode {
@@ -33,13 +37,24 @@ class SettingsTableController: UITableViewController {
 			}
 		}
 	}
+	// Звуковой сигнал
+	@IBOutlet weak var airSignalSwitch: UISwitch!{
+		didSet {
+			if SettingsData.airSignalMode {
+				airSignalSwitch.isOn = true
+			} else {
+				airSignalSwitch.isOn = false
+			}
+		}
+	}
 	
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+		// Скрываем клавиатуру при прокрутке
+        tableView.keyboardDismissMode = .onDrag
+      
 		
-        tableView.keyboardDismissMode = .onDrag // Скрываем клавиатуру при прокрутке
-        
 		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
 		
         switch SettingsData.deviceType {
@@ -56,9 +71,11 @@ class SettingsTableController: UITableViewController {
 			case .kgc:
                 valueDetailLabel.text = "кгс/см\u{00B2}"
 				reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
+				airSignalLabel.text = "Срабатывание сигнала (кгс/см\u{00B2})"
 			case .mpa:
                 valueDetailLabel.text = "МПа"
 				reducLabel.text = "Давление редуктора (МПа)"
+				airSignalLabel.text = "Срабатывание сигнала (МПа)"
         }
 		defaultDataText()
 //		tableView.reloadData()
@@ -76,6 +93,9 @@ class SettingsTableController: UITableViewController {
 		defaults.set(SettingsData.airIndex, forKey: "airIndex")
 		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
 		defaults.set(SettingsData.handInputMode, forKey: "handInputMode")
+		defaults.set(SettingsData.airSignal, forKey: "airSignal")
+		defaults.set(SettingsData.airSignalMode, forKey: "airSignalMode")
+		defaults.synchronize()
 		print("Settings save")
 	}
 	
@@ -87,7 +107,9 @@ class SettingsTableController: UITableViewController {
 		airIndexTextField.text = String(SettingsData.airIndex)
 		// Давление устойчивой работы редуктора
 		reductionStabilityTextField.text = SettingsData.measureType == .kgc ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
+		airSignalTextField.text = SettingsData.measureType == .kgc ? String(Int(SettingsData.airSignal)) : String(SettingsData.airSignal)
 	}
+	
 	
     // Настройка объема баллона
     @IBAction func cylinderVolumeData(_ sender: Any) {
@@ -95,24 +117,31 @@ class SettingsTableController: UITableViewController {
 		atencionMessage(value: SettingsData.cylinderVolume)
     }
     
-    // Настройка объема баллона
+    // Настройка средний расход воздуха
     @IBAction func airRateData(_ sender: Any) {
         SettingsData.airRate = (airRateTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.airRate)
     }
     
-    // Настройка объема баллона
+    // Настройка коэффициента сжатия
     @IBAction func airIndexTextData(_ sender: Any) {
         SettingsData.airIndex = (airIndexTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.airIndex)
     }
     
-    // Настройка объема баллона
+    // Настройка давления устойчивой работы редуктора
     @IBAction func reductionStabilityData(_ sender: Any) {
         SettingsData.reductionStability = (reductionStabilityTextField.text?.dotGuard())!
 		atencionMessage(value: SettingsData.reductionStability)
     }
 	
+	// Настройка давления срабатывания звукового сигнала
+	@IBAction func airSignalData(_ sender: UITextField) {
+		SettingsData.airSignal = (airSignalTextField.text?.dotGuard())!
+		atencionMessage(value: SettingsData.airSignal)
+	}
+	
+				
 	
 	@IBAction func resetUserSettings(_ sender: UIButton) {
 		let dictionary = defaults.dictionaryRepresentation()
@@ -120,6 +149,7 @@ class SettingsTableController: UITableViewController {
 		dictionary.keys.forEach { key in
 			defaults.removeObject(forKey: key)
 		}
+		
 		defaults.synchronize()
 		
 		SettingsData.deviceType = DeviceType.air
@@ -128,10 +158,15 @@ class SettingsTableController: UITableViewController {
 		SettingsData.airIndex = 1.1
 		SettingsData.airRate = 40.0
 		SettingsData.reductionStability = 10.0
+		SettingsData.airSignal = 63
+		SettingsData.handInputMode = false
+		SettingsData.airSignalMode = true
+		SettingsData.airSignal = 63
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
-		SettingsData.handInputMode = false
 		handModeSwitch.isOn = false
+		airSignalSwitch.isOn = false
+		
 		defaultDataText()
 		tableView.reloadData()
 //		tableView.beginUpdates()
@@ -140,10 +175,16 @@ class SettingsTableController: UITableViewController {
 		saveUserSettingsMessage()
 	}
 	
-	// Ручной режим ввода давления
+	// Ручной режим ввода давления Точность
 	@IBAction func handMode(_ sender: UISwitch) {
 		SettingsData.handInputMode = !SettingsData.handInputMode
 		print("Ручной режим \(SettingsData.handInputMode)")
+	}
+	
+	
+	@IBAction func airSignalMode(_ sender: UISwitch) {
+		SettingsData.airSignalMode = !SettingsData.airSignalMode
+		print("Учитывать сигнал \(SettingsData.airSignalMode)")
 	}
 	
 	
