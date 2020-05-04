@@ -29,12 +29,13 @@ class MarksViewController: UIViewController {
 		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 
+//	override func viewWillDisappear(_ animated: Bool) {
+//		super.viewWillDisappear(animated)
+//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+//	}
 	
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		// При переходе на другое view разрешаем только портретную ориентацию
-		// и устанавливаем ее
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
 }

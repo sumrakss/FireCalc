@@ -22,7 +22,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 	
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		
-		let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+		let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 20))
 		if section == 0 {
 	//		let logo = UIImage(named: "logo.png")
 			let header = UILabel()
@@ -30,7 +30,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 			let copyright = UILabel()
 	//		let imageView = UIImageView(image: logo)
 			
-			header.frame = CGRect.init(x: 0, y: 0, width: headerView.frame.width-0, height: headerView.frame.height-10)
+//			header.frame = CGRect.init(x: 0, y: 0, width: headerView.frame.width-0, height: headerView.frame.height-10)
 			version.frame = CGRect.init(x: 0, y: 25, width: headerView.frame.width-0, height: headerView.frame.height-10)
 			copyright.frame = CGRect.init(x: 0, y: 46, width: headerView.frame.width-0, height: headerView.frame.height-10)
 	//		imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -49,7 +49,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 			copyright.textColor = .systemGray
 			
 	//		headerView.addSubview(imageView)
-			headerView.addSubview(header)
+//			headerView.addSubview(header)
 			headerView.addSubview(version)
 			headerView.addSubview(copyright)
 		}

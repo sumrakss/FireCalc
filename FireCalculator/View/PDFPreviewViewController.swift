@@ -28,18 +28,23 @@ class PDFPreviewViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
-		AppDelegate.AppUtility.lockOrientation(.all)
 		atencionMessage()
+		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		
-		// При переходе на другое view разрешаем только портретную ориентацию
-		// и устанавливаем ее
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
 		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
+	
+	
+//	override func viewWillDisappear(_ animated: Bool) {
+//		super.viewWillDisappear(animated)
+//
+//		// При переходе на другое view разрешаем только портретную ориентацию
+//		// и устанавливаем ее
+//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+//	}
 	
 	
 	// Выход по звуковому сигналу

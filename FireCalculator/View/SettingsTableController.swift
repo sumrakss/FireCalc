@@ -28,25 +28,9 @@ class SettingsTableController: UITableViewController {
 	
 	@IBOutlet weak var airSignalTextField: UITextField!
 	// Точность
-	@IBOutlet weak var handModeSwitch: UISwitch!{
-		didSet {
-			if SettingsData.handInputMode {
-				handModeSwitch.isOn = true
-			} else {
-				handModeSwitch.isOn = false
-			}
-		}
-	}
+	@IBOutlet weak var handModeSwitch: UISwitch!
 	// Звуковой сигнал
-	@IBOutlet weak var airSignalSwitch: UISwitch!{
-		didSet {
-			if SettingsData.airSignalMode {
-				airSignalSwitch.isOn = true
-			} else {
-				airSignalSwitch.isOn = false
-			}
-		}
-	}
+	@IBOutlet weak var airSignalSwitch: UISwitch!
 	
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +38,8 @@ class SettingsTableController: UITableViewController {
 		// Скрываем клавиатуру при прокрутке
         tableView.keyboardDismissMode = .onDrag
       
+		airSignalSwitch.isOn = SettingsData.airSignalMode ? true : false
+		handModeSwitch.isOn = SettingsData.handInputMode ? true : false
 		
 		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
 		
@@ -149,7 +135,6 @@ class SettingsTableController: UITableViewController {
 		dictionary.keys.forEach { key in
 			defaults.removeObject(forKey: key)
 		}
-		
 		defaults.synchronize()
 		
 		SettingsData.deviceType = DeviceType.air
@@ -160,8 +145,8 @@ class SettingsTableController: UITableViewController {
 		SettingsData.reductionStability = 10.0
 		SettingsData.airSignal = 63
 		SettingsData.handInputMode = false
-		SettingsData.airSignalMode = true
-		SettingsData.airSignal = 63
+		SettingsData.airSignalMode = false
+		SettingsData.airSignal = 60
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
 		handModeSwitch.isOn = false
@@ -209,6 +194,40 @@ class SettingsTableController: UITableViewController {
 		
 	}
 	
+	// Проверка корректности ввода
+	func atencionMessage(caseField: Int, value: Double) {
+		
+		var guardValue = 0.0
+		switch caseField {
+			case 1:
+				if value < 0 || value > 20 {
+					guardValue = 20
+			}
+			case 2:
+				if value < 1 || value > 100 {
+					guardValue = 100
+			}
+			case 3:
+				if value < 0.5 || value > 1.5 {
+					guardValue = 1.5
+			}
+			case 4:
+				if value < 1 || value > 40 {
+					guardValue = 40
+			}
+			case 5:
+				if value < 4 || value > 70 {
+					guardValue = 40
+			}
+			default:
+				guardValue = 0
+		}
+		
+			let alert = UIAlertController(title: "Некорректное значение", message: "Введите значение в пределах \n - \(guardValue)", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
+			return
+		}
 	
 	
 	func atencionMessage(value: Double) {

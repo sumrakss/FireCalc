@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	// Настраиваем ориентацию экрана для приложения
 	var orientationLock = UIInterfaceOrientationMask.portrait
-
+	
 	func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
 		return self.orientationLock
 	}
