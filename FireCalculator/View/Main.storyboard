@@ -1034,7 +1034,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БрандМастер в VK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-PY-LrP">
-                                                    <rect key="frame" x="34" y="12" width="176" height="20.333333333333329"/>
+                                                    <rect key="frame" x="34" y="11.999999999999998" width="176" height="20.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="ZHr-rB-bTb"/>
                                                     </constraints>
