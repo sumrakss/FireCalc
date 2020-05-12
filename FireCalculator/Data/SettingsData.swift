@@ -42,7 +42,7 @@ class SettingsData {
 	// Учитывать звуковой сигнал в расчетах
 	static var airSignalMode = false
 	// Давление срабатывания звукового сигнала
-	static var airSignal = 6.3
+	static var airSignal = 60.0
     static var airSignalFlag = false
 	
 	static var airFlow: Double {

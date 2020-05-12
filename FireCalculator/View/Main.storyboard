@@ -887,7 +887,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-LO-Uoc">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="290" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-LO-Uoc">
                                                                     <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -911,7 +911,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XK-wvU">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="290" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XK-wvU">
                                                                     <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -1358,9 +1358,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Газодымозащитник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCH-K0-ay6">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="164" height="20.333333333333329"/>
+                                                    <rect key="frame" x="16" y="11.666666666666664" width="176" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="164" id="O4e-fe-ceV"/>
+                                                        <constraint firstAttribute="width" constant="176" id="b1r-80-aki"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1368,10 +1368,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eCH-K0-ay6" firstAttribute="leading" secondItem="Gzg-4J-zGV" secondAttribute="leading" constant="16" id="74O-UH-J64"/>
-                                                <constraint firstItem="eCH-K0-ay6" firstAttribute="centerY" secondItem="Gzg-4J-zGV" secondAttribute="centerY" id="8MM-i1-Mc8"/>
+                                                <constraint firstItem="eCH-K0-ay6" firstAttribute="leading" secondItem="Gzg-4J-zGV" secondAttribute="leading" constant="16" id="Jwj-8K-QMQ"/>
+                                                <constraint firstItem="eCH-K0-ay6" firstAttribute="centerY" secondItem="Gzg-4J-zGV" secondAttribute="centerY" id="ghW-jC-MdS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BJp-cb-fFl" kind="show" id="jIS-1I-2qv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IIs-8g-tvQ">
                                         <rect key="frame" x="0.0" y="105.33333587646484" width="375" height="43.666667938232422"/>
@@ -1395,6 +1398,9 @@
                                                 <constraint firstItem="HnJ-NT-22w" firstAttribute="centerY" secondItem="tHw-rY-YzG" secondAttribute="centerY" id="lIK-26-7tH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4hE-w3-MXT" kind="show" id="jGN-ff-1Nw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1408,7 +1414,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zov-lv-jNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5927" y="3049"/>
+            <point key="canvasLocation" x="-5927.1999999999998" y="3048.768472906404"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fAQ-Vd-GKU">
@@ -1426,7 +1432,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjT-PM-3sj">
                                                 <rect key="frame" x="8" y="0.0" width="359" height="1972.3333333333333"/>
-                                                <mutableString key="text">Командир звена ГДЗС назначается из числа наиболее опытных и подготовленных лиц младшего и среднего начальствующего состава ФПС ГПС.
+                                                <string key="text">Командир звена ГДЗС назначается из числа наиболее опытных и подготовленных лиц младшего и среднего начальствующего состава ФПС ГПС.
 
 При ведении действий по тушению пожаров в НДС, командир звена ГДЗС подчиняется РТП, начальнику УТП (СТП).
 
@@ -1461,7 +1467,7 @@
 - докладывать о неисправностях или иных неблагоприятных для звена ГДЗС обстоятельствах на пост безопасности и принимать решения по обеспечению безопасности газодымозащитников звена ГДЗС;
 
 - определять при выходе из НДС место выключения из СИЗОД и давать команду звену ГДЗС на выключение из СИЗОД.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1511,7 +1517,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ZC-6v-LLi">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-tL-0yH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1484.3333333333333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-kp-S7q">
+                                                <rect key="frame" x="8" y="8" width="359" height="1468.3333333333333"/>
+                                                <string key="text">Газодымозащитник при осуществлении своей деятельности обязан:
+
+- быть в постоянной готовности к ведению действий по тушению пожаров в непригодной для дыхания среде, совершенствовать в установленном порядке свою физическую, специальную, медицинскую, психологическую подготовку;
+
+- содержать в полной технической исправности СИЗОД, другой закрепленный за ним пожарный инструмент и оборудование, обеспечивать в установленные сроки техническое обслуживание СИЗОД;
+
+- уметь проводить расчеты запаса воздуха (кислорода) и времени пребывания звена ГДЗС в СИЗОД в непригодной для дыхания среде;
+
+- уметь оказывать первую помощь пострадавшим на пожаре;
+
+- совершенствовать навыки действий в составе звена ГДЗС при ведении тушения пожаров в непригодной для дыхания среде.
+
+При ведении действий по тушению пожаров в непригодной для дыхания среде газодымозащитник обязан:
+
+- подчиняться командиру звена ГДЗС, знать задачу звена ГДЗС и выполнять ее;
+
+- знать место расположения поста безопасности и КПП;
+
+- строго соблюдать маршрут движения звена ГДЗС и правила работы в СИЗОД, выполнять приказы, отданные командиром звена ГДЗС;
+
+- не оставлять звено ГДЗС без разрешения командира звена ГДЗС;
+
+- следить на маршруте движения за изменением обстановки, обращать внимание на состояние строительных конструкций, как во время движения, так и на месте проведения работ;
+
+- запоминать маршрут к месту проведения тушения пожаров в непригодной для дыхания среде;
+
+- следить по манометру за давлением воздуха (кислорода) в баллоне СИЗОД;
+
+- не пользоваться без необходимости аварийным клапаном (байпасом);
+
+- включаться в СИЗОД и выключаться из него по команде командира звена ГДЗС;
+
+- докладывать командиру звена ГДЗС об изменении обстановки, обнаруженных неисправностях в СИЗОД или появлении плохого самочувствия (головной боли, ощущения кислого вкуса во рту, затруднения дыхания) и действовать по его указанию.</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="T1s-kp-S7q" secondAttribute="bottom" constant="8" id="Rnk-9L-Bzr"/>
+                                            <constraint firstItem="T1s-kp-S7q" firstAttribute="top" secondItem="Kya-tL-0yH" secondAttribute="top" constant="8" id="UdC-fe-RVl"/>
+                                            <constraint firstItem="T1s-kp-S7q" firstAttribute="leading" secondItem="Kya-tL-0yH" secondAttribute="leading" constant="8" id="h9d-85-euT"/>
+                                            <constraint firstAttribute="trailing" secondItem="T1s-kp-S7q" secondAttribute="trailing" constant="8" id="yBO-1t-hPm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Kya-tL-0yH" firstAttribute="top" secondItem="3ZC-6v-LLi" secondAttribute="top" id="8SD-c2-5li"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kya-tL-0yH" secondAttribute="trailing" id="Nls-Be-Odl"/>
+                                    <constraint firstItem="Kya-tL-0yH" firstAttribute="height" secondItem="3ZC-6v-LLi" secondAttribute="height" priority="250" id="XgD-cT-qpR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kya-tL-0yH" secondAttribute="bottom" id="dgk-ys-Rzf"/>
+                                    <constraint firstItem="Kya-tL-0yH" firstAttribute="leading" secondItem="3ZC-6v-LLi" secondAttribute="leading" id="vih-jd-API"/>
+                                    <constraint firstItem="Kya-tL-0yH" firstAttribute="width" secondItem="3ZC-6v-LLi" secondAttribute="width" id="x0S-GG-lQd"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1539,7 +1606,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLN-eX-6BA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-gJ-gM4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1825.3333333333333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIu-pF-To2">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1825.3333333333333"/>
+                                                <string key="text">Постовой на посту безопасности выставляется на месте тушения пожара в непригодной для дыхания среде (учении) на свежем воздухе перед входом в непригодную для дыхания среду. Постовыми на посту безопасности назначаются личный состав, прошедший обучение и допущенный для выполнения этих обязанностей распорядительным документом начальника (руководителя) подразделения.
+
+Постовой на посту безопасности при осуществлении своей деятельности обязан:
+
+- выполнять требования, предусмотренные для него Порядком тушения пожаров подразделениями пожарной охраны*(9);
+
+- добросовестно исполнять обязанности, ничем не отвлекаться и не покидать пост безопасности до выполнения задачи звеном ГДЗС и без команды должностного лица федеральной противопожарной службы Государственной противопожарной службы на пожаре, которому он подчинен;
+
+- уметь проводить расчеты запаса воздуха (кислорода) и времени работы звена ГДЗС в СИЗОД, вести журнал учета времени пребывания звеньев ГДЗС в непригодной для дыхания среде по рекомендуемому образцу согласно приложению N 4 к настоящим Правилам;
+
+- рассчитывать перед входом звена ГДЗС в непригодную для дыхания среду ожидаемое время его возвращения, сообщать результат расчета командиру звена ГДЗС и заносить в журнал учета работающих звеньев ГДЗС.
+
+При получении от командира звена ГДЗС сведений о максимальном падении давления воздуха (кислорода) в СИЗОД сообщить ему информацию:
+
+- о давлении воздуха (кислорода) в баллоне СИЗОД, при котором звену ГДЗС необходимо возвращаться на свежий воздух;
+
+- о примерном времени работы звена ГДЗС у очага пожара и (или) места проведения спасательных работ;
+
+- об учете газодымозащитников, находящихся в непригодной для дыхания среде и возвратившихся из нее;
+
+- поддерживать постоянную связь со звеном ГДЗС и выполнять указания командира звена ГДЗС, в случае потери связи со звеном ГДЗС сообщить РТП, начальнику КПП, УТП (СТП) и действовать по их указанию;
+
+- не допускать лиц, не входящих в состав звена ГДЗС, в непригодную для дыхания среду;
+
+- не допускать скопление людей у места входа звена ГДЗС в задымленное помещение;
+
+- внимательно вести наблюдение за обстановкой на пожаре и состоянием строительных конструкций в районе поста безопасности. При изменениях состояния строительных конструкций в установленном порядке информировать должностных лиц федеральной противопожарной службы Государственной противопожарной службы на пожаре и командира звена ГДЗС. В случае если звену ГДЗС угрожает опасность, немедленно сообщить о ее характере и определить с командиром звена ГДЗС порядок совместных действий;
+
+информировать командира звена ГДЗС через каждые 10 минут о времени, прошедшем с момента включения в СИЗОД.</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="kIu-pF-To2" firstAttribute="leading" secondItem="5N9-gJ-gM4" secondAttribute="leading" constant="8" id="75H-bj-w8c"/>
+                                            <constraint firstAttribute="trailing" secondItem="kIu-pF-To2" secondAttribute="trailing" constant="8" id="AgT-jm-rkY"/>
+                                            <constraint firstAttribute="bottom" secondItem="kIu-pF-To2" secondAttribute="bottom" id="bZZ-F0-leA"/>
+                                            <constraint firstItem="kIu-pF-To2" firstAttribute="top" secondItem="5N9-gJ-gM4" secondAttribute="top" id="nF1-Pb-bpq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5N9-gJ-gM4" firstAttribute="height" secondItem="xLN-eX-6BA" secondAttribute="height" priority="250" id="3e1-ql-Bb4"/>
+                                    <constraint firstItem="5N9-gJ-gM4" firstAttribute="leading" secondItem="xLN-eX-6BA" secondAttribute="leading" id="4Fk-dd-BvX"/>
+                                    <constraint firstAttribute="trailing" secondItem="5N9-gJ-gM4" secondAttribute="trailing" id="59v-BI-a5Y"/>
+                                    <constraint firstItem="5N9-gJ-gM4" firstAttribute="top" secondItem="xLN-eX-6BA" secondAttribute="top" id="BYI-6a-F97"/>
+                                    <constraint firstItem="5N9-gJ-gM4" firstAttribute="width" secondItem="xLN-eX-6BA" secondAttribute="width" id="E1i-C5-st1"/>
+                                    <constraint firstAttribute="bottom" secondItem="5N9-gJ-gM4" secondAttribute="bottom" id="cxf-b6-JMR"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
