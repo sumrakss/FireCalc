@@ -32,9 +32,15 @@ class SettingsTableController: UITableViewController {
 	// Звуковой сигнал
 	@IBOutlet weak var airSignalSwitch: UISwitch!
 	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		navigationItem.title = "Настройки"
+		navigationController?.navigationBar.prefersLargeTitles = true
+	}
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//        super.viewWillAppear(false)
 		// Скрываем клавиатуру при прокрутке
         tableView.keyboardDismissMode = .onDrag
       
@@ -64,9 +70,9 @@ class SettingsTableController: UITableViewController {
 				airSignalLabel.text = "Срабатывание сигнала (МПа)"
         }
 		defaultDataText()
-//		tableView.reloadData()
-		tableView.beginUpdates()
-		tableView.endUpdates()
+		tableView.reloadData()
+//		tableView.beginUpdates()
+//		tableView.endUpdates()
     }
     
 	// Сохнаняем настройки при выходе
@@ -185,6 +191,12 @@ class SettingsTableController: UITableViewController {
 		   return tableView.rowHeight
 	}
 	
+	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		if section == 0 {
+			return 0
+		}
+		return 40
+	}
 	
 	func saveUserSettingsMessage() {
 		let alert = UIAlertController(title: "Настройки по-умолчанию", message: "", preferredStyle: .alert)

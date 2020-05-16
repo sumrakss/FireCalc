@@ -55,6 +55,9 @@ class SettingsData {
 			}
 		}
 	}
+	
+	// Показать простое решение
+	var simpleSolution = true
 	// Очаг найден true/false
 	var firePlace = false
 	// Сложные условия true/false

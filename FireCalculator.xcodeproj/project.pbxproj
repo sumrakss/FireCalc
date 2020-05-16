@@ -25,6 +25,7 @@
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
 		FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
+		FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */; };
 		FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C12112456F044008F768F /* AboutTableViewController.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
@@ -52,6 +53,7 @@
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
+		FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		FA7C12112456F044008F768F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */,
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
+				FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */,
 				88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */,
 				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
 				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
@@ -207,6 +210,7 @@
 				FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */,
 				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
 				FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */,
+				FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */,
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
 				FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */,
 				FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */,
@@ -349,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -357,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.8;
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
@@ -370,7 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -378,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.8;
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;

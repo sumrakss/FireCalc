@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainScreenViewController: UITableViewController {
 
@@ -31,7 +32,6 @@ class MainScreenViewController: UITableViewController {
 			teamStepper.maximumValue = 5
 		}
 	}
-	@IBOutlet weak var solutionSwitch: UISwitch!
 	
 	
     let time = DateFormatter()
@@ -42,8 +42,8 @@ class MainScreenViewController: UITableViewController {
 	
     var counter = 0
 	var flag = true
+	// Численность звена
 	var teamCounter = 3
-	var simpleSolution = false
 	
 
 	
@@ -57,8 +57,10 @@ class MainScreenViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		loadUserSettings()
+		navigationItem.title = "Условия работы"
+		navigationController?.navigationBar.prefersLargeTitles = true
 		
+		loadUserSettings()
 		// Скрываем клавиатуру
 		tableView.keyboardDismissMode = .onDrag
 		
@@ -131,8 +133,8 @@ class MainScreenViewController: UITableViewController {
 				data.enterData[i] /= 10.0
 				data.hearthData[i] /= 10.0
 				data.fallPressure[i] /= 10.0
-				enterValueFields[i].text = String(data.enterData[i])
 				firePlaceFields[i].text = String(data.hearthData[i])
+				enterValueFields[i].text = String(data.enterData[i])
 			}
 			// Изменить значения скрытых полей ввода
 			for i in data.enterData.count ..< enterValueFields.count {
@@ -241,7 +243,10 @@ class MainScreenViewController: UITableViewController {
 	}
 	
 	
-    // Swicher Очаг
+	
+	
+	
+	// Swicher Очаг
     @IBAction func firePlaceChange(_ sender: Any) {
         data.firePlace = !data.firePlace
         fireStackLabel.isHidden = !fireStackLabel.isHidden
@@ -290,7 +295,14 @@ class MainScreenViewController: UITableViewController {
 		tableView.reloadData()
 	}
 
-
+	
+	@IBAction func solutionSwitcher(_ sender: UISwitch) {
+		data.simpleSolution = !data.simpleSolution
+		print(data.simpleSolution)
+	}
+	
+	
+// MARK: fesf
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //		cell.backgroundColor = UIColor(white: 8, alpha: 0.5)
 	}
@@ -327,11 +339,19 @@ class MainScreenViewController: UITableViewController {
     }
     
     
+//	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//		if section == 0 {
+//			return 40
+//		}
+//		return 40
+//	}
+	
+	
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var headerText = ""
-        if section == 0 {
-            headerText = "Условия работы"
-        }
+//        if section == 0 {
+//            headerText = "Условия работы"
+//        }
         
         if section == 1 {
 			switch SettingsData.measureType {
@@ -344,29 +364,39 @@ class MainScreenViewController: UITableViewController {
         return headerText
     }
     
+	
+	@IBAction func solutionButton(_ sender: UIBarButtonItem) {
+		if data.simpleSolution {
+			performSegue(withIdentifier: "toSimple", sender: self)
+		} else {
+			performSegue(withIdentifier: "previewSegue", sender: self)
+		}
+	}
+	
+	
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
-			vc.appData = data
+//			vc.appData = data
 			// Проверяем содержимое на корретность ввода
 			// для этого обновляем массивы значений
 			inputFieldsView(fieldCount: teamCounter)
 			atencionMessage()
 			
-			if simpleSolution {
-				// Простое решение
-				//TODO
+			if data.firePlace { // Если очаг найден
+				vc.documentData = pdfCreator.foundPDFCreator(appData: data)
 			} else {
-				// Подробное решение
-				if data.firePlace { // Если очаг найден
-					vc.documentData = pdfCreator.foundPDFCreator(appData: data)
-				} else {
-					vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
-				}
+				vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
 			}
         }
+		
+		if segue.identifier == "toSimple" {
+			guard let vc = segue.destination as? SimpleTableViewController else { return }
+			vc.appData = data
+			
+		}
     }
 	
 	
@@ -423,8 +453,9 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	
 	// Логика для выбранного элемента
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		
         for textField in textFieldForInput {
-            if textField.isEditing {
+			if textField.isEditing {
 				textField.text = self.data.pickerComponents[row]
             }
         }
@@ -433,25 +464,8 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	
 	// Отображаем в picker значения из списка
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		
 		return self.data.pickerComponents[row]
 	}
 }
 
-
-/*
-extension String {
-    static let numberFormatter = NumberFormatter()
-    var doubleValue: Double {
-        String.numberFormatter.decimalSeparator = "."
-        if let result =  String.numberFormatter.number(from: self) {
-            return result.doubleValue
-        } else {
-            String.numberFormatter.decimalSeparator = ","
-            if let result = String.numberFormatter.number(from: self) {
-                return result.doubleValue
-            }
-        }
-        return 0
-    }
-}
-*/

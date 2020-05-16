@@ -20,7 +20,6 @@
                     <connections>
                         <segue destination="Nbt-2F-zFi" kind="relationship" relationship="viewControllers" id="yXK-Au-HfM"/>
                         <segue destination="kgR-ig-7k8" kind="relationship" relationship="viewControllers" id="StW-1L-8WE"/>
-                        <segue destination="B3s-2w-Hhh" kind="relationship" relationship="viewControllers" id="ePc-sh-QSi"/>
                         <segue destination="IWW-mr-Wy2" kind="relationship" relationship="viewControllers" id="3QY-pJ-3oO"/>
                     </connections>
                 </tabBarController>
@@ -37,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Настройки" footerTitle="Точность позволяет вводить значения давления вручную." id="PzA-UL-soh">
+                            <tableViewSection headerTitle=" " footerTitle="Точность позволяет вводить значения давления вручную." id="PzA-UL-soh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="oBQ-2z-Fth" detailTextLabel="k9o-m0-Own" style="IBUITableViewCellStyleValue1" id="0wZ-TG-VW4">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.5"/>
@@ -510,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkC-Sg-1Jw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2958" y="1804"/>
+            <point key="canvasLocation" x="-3436" y="1804"/>
         </scene>
         <!--Единицы-->
         <scene sceneID="Ru3-8N-7yb">
@@ -574,7 +573,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDR-kx-3ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1868" y="1804"/>
+            <point key="canvasLocation" x="-2124" y="1804"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="tLH-wX-DsA">
@@ -611,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbT-1L-7Tn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7606" y="1141"/>
+            <point key="canvasLocation" x="-7231" y="1142"/>
         </scene>
         <!--Звено-->
         <scene sceneID="agt-hy-is9">
@@ -664,7 +663,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-Nu-pPw">
                                                     <rect key="frame" x="311" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <color key="onTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="onTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="hardWorkChange:" destination="aty-dd-hWz" eventType="valueChanged" id="GAw-N6-Qyc"/>
                                                     </connections>
@@ -687,22 +686,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kQ6-QK-A1W">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kQ6-QK-A1W">
                                         <rect key="frame" x="0.0" y="142.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kQ6-QK-A1W" id="fsJ-Dv-YBH">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPi-C6-Hx0">
-                                                    <rect key="frame" x="271" y="10" width="65" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="4RL-wY-lbw"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время включения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r8-t4-jan">
                                                     <rect key="frame" x="16" y="11.666666666666666" width="181" height="20.666666666666671"/>
                                                     <constraints>
@@ -710,6 +700,15 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPi-C6-Hx0">
+                                                    <rect key="frame" x="294" y="10" width="65" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="4RL-wY-lbw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -720,7 +719,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="mPi-C6-Hx0" secondAttribute="trailing" constant="39" id="ciq-5n-4zw"/>
+                                            <constraint firstAttribute="trailing" secondItem="mPi-C6-Hx0" secondAttribute="trailing" constant="16" id="ciq-5n-4zw"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="216" id="WEs-hb-Gg2">
@@ -750,22 +749,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="H8X-5S-wzu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="H8X-5S-wzu">
                                         <rect key="frame" x="0.0" y="401.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H8X-5S-wzu" id="eDU-8X-rGm">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-q7-vkP">
-                                                    <rect key="frame" x="271" y="10" width="65" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="0Zv-mW-xFY"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время у очага" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-un-Pob">
                                                     <rect key="frame" x="16" y="11.666666666666664" width="181" height="21"/>
                                                     <constraints>
@@ -775,16 +765,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-q7-vkP">
+                                                    <rect key="frame" x="294" y="10" width="65" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="UgM-ae-txm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vjV-q7-vkP" firstAttribute="centerY" secondItem="eDU-8X-rGm" secondAttribute="centerY" id="834-5T-Aqa"/>
+                                                <constraint firstAttribute="trailing" secondItem="vjV-q7-vkP" secondAttribute="trailing" constant="16" id="4rS-vI-irg"/>
+                                                <constraint firstItem="vjV-q7-vkP" firstAttribute="centerY" secondItem="eDU-8X-rGm" secondAttribute="centerY" id="7OS-73-Wgd"/>
                                                 <constraint firstItem="vaE-un-Pob" firstAttribute="leading" secondItem="eDU-8X-rGm" secondAttribute="leading" constant="16" id="GeQ-iG-P8u"/>
+                                                <constraint firstAttribute="trailing" secondItem="vjV-q7-vkP" secondAttribute="trailing" constant="16" id="LWU-jQ-q2F"/>
                                                 <constraint firstItem="vaE-un-Pob" firstAttribute="centerY" secondItem="eDU-8X-rGm" secondAttribute="centerY" id="mZm-Ct-dCg"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="vjV-q7-vkP" secondAttribute="trailing" constant="39" id="V9w-vZ-OVv"/>
-                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="216" id="WGo-KT-2N4">
                                         <rect key="frame" x="0.0" y="445.33333206176758" width="375" height="216"/>
@@ -876,7 +874,6 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-Kf-tkB">
                                                                     <rect key="frame" x="0.0" y="5.3333333333333357" width="11.333333333333334" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-bn-ke2">
@@ -887,7 +884,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="290" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-LO-Uoc">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-LO-Uoc">
                                                                     <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -903,7 +900,6 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxp-q4-etU">
                                                                     <rect key="frame" x="0.0" y="5.3333333333333286" width="11.333333333333334" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjH-Ru-eRk">
@@ -911,7 +907,7 @@
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="290" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XK-wvU">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XK-wvU">
                                                                     <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -924,7 +920,6 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GT-nG-y6R">
                                                                     <rect key="frame" x="0.0" y="5.3333333333333286" width="11.333333333333334" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-H7-QVt">
@@ -945,7 +940,6 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cX4-Rv-oKj">
                                                                     <rect key="frame" x="0.0" y="5.3333333333333428" width="11.333333333333334" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="25p-hn-If6">
@@ -966,7 +960,6 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-3l-7Fn">
                                                                     <rect key="frame" x="0.0" y="5.3333333333333428" width="11.333333333333334" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-MN-PJY">
@@ -1010,6 +1003,41 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="mhF-gu-mCF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="44" id="lJp-Tn-Fai">
+                                        <rect key="frame" x="0.0" y="1099.6666641235352" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJp-Tn-Fai" id="7hU-xr-Rre">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qZ-BY-lFT">
+                                                    <rect key="frame" x="311" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <connections>
+                                                        <action selector="solutionSwitcher:" destination="aty-dd-hWz" eventType="valueChanged" id="oj3-kB-waQ"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подробное решение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4j-RV-x2V">
+                                                    <rect key="frame" x="20" y="11.666666666666664" width="205" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="205" id="gah-AX-IjO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5qZ-BY-lFT" secondAttribute="trailing" constant="15" id="1QG-iq-8Ow"/>
+                                                <constraint firstItem="5qZ-BY-lFT" firstAttribute="centerY" secondItem="7hU-xr-Rre" secondAttribute="centerY" id="ds1-cv-6iw"/>
+                                                <constraint firstItem="z4j-RV-x2V" firstAttribute="leading" secondItem="7hU-xr-Rre" secondAttribute="leading" constant="20" id="gPp-s8-SNF"/>
+                                                <constraint firstItem="z4j-RV-x2V" firstAttribute="centerY" secondItem="7hU-xr-Rre" secondAttribute="centerY" id="qrN-Y6-nJ1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="aty-dd-hWz" id="dQZ-fk-TD9"/>
@@ -1019,8 +1047,7 @@
                     <navigationItem key="navigationItem" title="Звено" id="NV1-OL-IFo">
                         <barButtonItem key="rightBarButtonItem" title="Рассчитать" style="done" id="Bot-6C-XEs">
                             <connections>
-                                <action selector="etst:" destination="aty-dd-hWz" id="X8t-JJ-c21"/>
-                                <segue destination="BYU-Iu-D8N" kind="show" identifier="previewSegue" id="RMl-9b-GRc"/>
+                                <action selector="solutionButton:" destination="aty-dd-hWz" id="0yE-er-RTb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1062,11 +1089,59 @@
                         <outletCollection property="textFieldForInput" destination="ujd-cf-BPO" collectionClass="NSMutableArray" id="6EJ-gN-WPO"/>
                         <outletCollection property="textFieldForInput" destination="i6y-D0-wQK" collectionClass="NSMutableArray" id="pzk-7i-jUy"/>
                         <outletCollection property="textFieldForInput" destination="rbi-sA-fb6" collectionClass="NSMutableArray" id="vyX-1a-cip"/>
+                        <segue destination="BYU-Iu-D8N" kind="show" identifier="previewSegue" id="LCy-ZD-EHG"/>
+                        <segue destination="BRd-Sk-h7F" kind="show" identifier="toSimple" id="lW1-NB-lb6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-uO-4N6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6196" y="974"/>
+            <point key="canvasLocation" x="-6196" y="973.89162561576359"/>
+        </scene>
+        <!--Simple Table View Controller-->
+        <scene sceneID="bBD-B2-1qi">
+            <objects>
+                <tableViewController id="BRd-Sk-h7F" customClass="SimpleTableViewController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="H3d-hO-1W2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="zCB-w5-zmi" detailTextLabel="ooi-ub-oUU" style="IBUITableViewCellStyleSubtitle" id="Rbf-Rd-YBt">
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="55.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbf-Rd-YBt" id="fXC-K1-biI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zCB-w5-zmi">
+                                            <rect key="frame" x="16" y="10.000000000000002" width="36" height="21.666666666666668"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ooi-ub-oUU">
+                                            <rect key="frame" x="15.999999999999996" y="31.666666666666668" width="32.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="BRd-Sk-h7F" id="5Yt-TM-c2Q"/>
+                            <outlet property="delegate" destination="BRd-Sk-h7F" id="hiZ-IK-mIE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="S4r-KR-ibe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zkw-It-Ogt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5142" y="1071"/>
         </scene>
         <!--Расчеты-->
         <scene sceneID="84S-2S-YHG">
@@ -1089,7 +1164,7 @@
             </objects>
             <point key="canvasLocation" x="-6194" y="-11"/>
         </scene>
-        <!--БрандМастер - ГДЗС-->
+        <!--Информация-->
         <scene sceneID="Lvt-0z-Igb">
             <objects>
                 <tableViewController id="5Sx-ER-Z0d" customClass="AboutTableViewController" customModule="БрандМастер___ГДЗС" customModuleProvider="target" sceneMemberID="viewController">
@@ -1098,10 +1173,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="БрандМастер - ГДЗС Версия 0.8.4" footerTitle="Примечания к формулам" id="4Ea-vy-zI0">
+                            <tableViewSection id="4Ea-vy-zI0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="axn-Qm-zJz">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axn-Qm-zJz" id="iwT-8U-uot">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
@@ -1134,12 +1209,80 @@
                                             <segue destination="HKN-gV-lSk" kind="show" identifier="toMarks" id="STE-6F-9wk"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="IAk-D7-RFx">
+                                        <rect key="frame" x="0.0" y="61.666667938232422" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IAk-D7-RFx" id="TYs-EA-ixD">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mark" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-pX-mmv">
+                                                    <rect key="frame" x="16" y="3.6666666666666679" width="10" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="kEr-yB-78D"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обязанности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-sY-05o">
+                                                    <rect key="frame" x="34" y="11.666666666666664" width="176" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="176" id="ptJ-tN-lku"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X6v-sY-05o" firstAttribute="leading" secondItem="JaV-pX-mmv" secondAttribute="trailing" constant="8" id="3EG-ih-2q2"/>
+                                                <constraint firstItem="JaV-pX-mmv" firstAttribute="leading" secondItem="TYs-EA-ixD" secondAttribute="leading" constant="16" id="RLp-5P-Dq0"/>
+                                                <constraint firstItem="X6v-sY-05o" firstAttribute="centerY" secondItem="TYs-EA-ixD" secondAttribute="centerY" id="sda-xs-55e"/>
+                                                <constraint firstItem="JaV-pX-mmv" firstAttribute="centerY" secondItem="TYs-EA-ixD" secondAttribute="centerY" id="z7I-Ks-3zL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="V1X-iu-Uuj" kind="show" id="SOw-Vi-sKc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="F9C-Gc-jX2">
+                                        <rect key="frame" x="0.0" y="105.33333587646484" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9C-Gc-jX2" id="hHh-a7-eUb">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mark" translatesAutoresizingMaskIntoConstraints="NO" id="1Ap-MO-Z11">
+                                                    <rect key="frame" x="16" y="3.6666666666666679" width="10" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="C51-OR-NQt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минимум оснащения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-4G-uqs">
+                                                    <rect key="frame" x="34" y="11.666666666666664" width="213" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="213" id="UcN-Ey-WF6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FIW-4G-uqs" firstAttribute="leading" secondItem="hHh-a7-eUb" secondAttribute="leading" constant="34" id="3od-eQ-Fe8"/>
+                                                <constraint firstItem="FIW-4G-uqs" firstAttribute="centerY" secondItem="hHh-a7-eUb" secondAttribute="centerY" id="J3I-b2-dme"/>
+                                                <constraint firstItem="1Ap-MO-Z11" firstAttribute="leading" secondItem="hHh-a7-eUb" secondAttribute="leading" constant="16" id="PrL-sF-Dz2"/>
+                                                <constraint firstItem="1Ap-MO-Z11" firstAttribute="centerY" secondItem="hHh-a7-eUb" secondAttribute="centerY" id="uqN-pC-cWa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dkf-4J-kKu" kind="show" id="xc2-m5-U5W"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="uTX-6I-rOJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ruA-86-m8q">
-                                        <rect key="frame" x="0.0" y="147" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="185.00000381469727" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ruA-86-m8q" id="2Fd-LC-ILQ">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
@@ -1170,7 +1313,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kwX-xp-rHE">
-                                        <rect key="frame" x="0.0" y="190.66666793823242" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="228.66667175292969" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kwX-xp-rHE" id="J9Z-VJ-mn2">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
@@ -1201,7 +1344,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="b2h-7w-2b6">
-                                        <rect key="frame" x="0.0" y="234.33333587646484" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="272.33333969116211" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b2h-7w-2b6" id="rLp-UE-rwV">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="43.666667938232422"/>
@@ -1239,79 +1382,11 @@
                             <outlet property="delegate" destination="5Sx-ER-Z0d" id="Oc4-cE-bBy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="БрандМастер - ГДЗС" id="3cg-Qj-8cj"/>
+                    <navigationItem key="navigationItem" title="Информация" id="3cg-Qj-8cj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbu-W4-jzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1162" y="892"/>
-        </scene>
-        <!--ГДЗС-->
-        <scene sceneID="4af-TV-1ue">
-            <objects>
-                <tableViewController id="qQE-Mi-fFD" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zpD-QO-isP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="TDV-8I-rHu">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ej4-FT-zPy">
-                                        <rect key="frame" x="0.0" y="18" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ej4-FT-zPy" id="LdJ-zE-nyr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обязанности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-Xa-McR">
-                                                    <rect key="frame" x="16" y="11" width="164" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="164" id="ThA-0I-UnJ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="g6i-Xa-McR" firstAttribute="centerY" secondItem="LdJ-zE-nyr" secondAttribute="centerY" id="C9p-PJ-rGY"/>
-                                                <constraint firstItem="g6i-Xa-McR" firstAttribute="leading" secondItem="LdJ-zE-nyr" secondAttribute="leadingMargin" id="Nqz-J9-uni"/>
-                                                <constraint firstItem="g6i-Xa-McR" firstAttribute="top" secondItem="LdJ-zE-nyr" secondAttribute="topMargin" id="xEg-jo-sQj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="V1X-iu-Uuj" kind="show" id="pbF-dF-NS8"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XVU-Xd-rcM">
-                                        <rect key="frame" x="0.0" y="61.666667938232422" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XVU-Xd-rcM" id="ZCf-WT-ysg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4Ql-9v-GoP">
-                                        <rect key="frame" x="0.0" y="105.33333587646484" width="375" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ql-9v-GoP" id="Jhh-ad-2qy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="qQE-Mi-fFD" id="Rb9-NY-AZF"/>
-                            <outlet property="delegate" destination="qQE-Mi-fFD" id="EUQ-ph-Z1F"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="ГДЗС" id="awU-IO-XVu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L3Z-gL-1nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-7252" y="3028"/>
+            <point key="canvasLocation" x="-1162.4000000000001" y="891.87192118226608"/>
         </scene>
         <!--Обязанности-->
         <scene sceneID="Iy2-6h-mGk">
@@ -1402,6 +1477,58 @@
                                             <segue destination="4hE-w3-MXT" kind="show" id="jGN-ff-1Nw"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0ez-3k-Dyw">
+                                        <rect key="frame" x="0.0" y="149.00000381469727" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ez-3k-Dyw" id="6Q8-Lc-U9K">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При использовании ДАСК" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-6s-Mgr">
+                                                    <rect key="frame" x="16" y="11.666666666666664" width="241" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="241" id="L2T-hV-zD9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c1H-6s-Mgr" firstAttribute="leading" secondItem="6Q8-Lc-U9K" secondAttribute="leading" constant="16" id="6QV-Am-kbf"/>
+                                                <constraint firstItem="c1H-6s-Mgr" firstAttribute="centerY" secondItem="6Q8-Lc-U9K" secondAttribute="centerY" id="S84-zL-vkX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yEz-PF-2Hm" kind="show" id="rFC-Cd-c23"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B7u-kQ-09v">
+                                        <rect key="frame" x="0.0" y="192.66667175292969" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B7u-kQ-09v" id="q6v-la-NHz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При использовании ДАСВ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUa-EG-q2Q">
+                                                    <rect key="frame" x="16" y="11.666666666666664" width="239" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="239" id="gHr-rr-YIS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qUa-EG-q2Q" firstAttribute="leading" secondItem="q6v-la-NHz" secondAttribute="leading" constant="16" id="2aO-Xm-Ytd"/>
+                                                <constraint firstItem="qUa-EG-q2Q" firstAttribute="centerY" secondItem="q6v-la-NHz" secondAttribute="centerY" id="eR1-5w-yH9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="U8Q-7o-oCG" kind="show" id="mXl-QC-W8d"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1414,7 +1541,152 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zov-lv-jNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5927.1999999999998" y="3048.768472906404"/>
+            <point key="canvasLocation" x="1325.5999999999999" y="1347.7832512315272"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="454-Xr-c4X">
+            <objects>
+                <viewController id="yEz-PF-2Hm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0o-B5-TE4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueO-YZ-tf3">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-7d-guT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1035.3333333333333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-Xt-fIB">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1035.3333333333333"/>
+                                                <string key="text">При использовании ДАСК в непригодной для дыхания среде, газодымозащитник обязан:
+
+1. Проводить замену кислородных баллонов и регенеративных патронов только на свежем воздухе;
+
+2. Удалять влагу из соединительной коробки через каждые 40 - 60 мин. Работы в порядке, установленным руководством по эксплуатации организацией - изготовителем СИЗОД;
+
+3. Проводить продувку ДАСК с помощью механизма аварийной подачи кислорода (байпаса);
+
+4. При неисправности дыхательных клапанов для обеспечения выхода пережимать при каждом выдохе шланг вдоха, а при каждом вдохе - шланг выдоха;
+
+5. Проводить, при ведении действий по тушению пожаров в НДС в условиях отрицательной температуры окружающей среды, включение в ДАСК в отапливаемом помещении (в подъезде дома, кабине пожарного автомобиля), а также применять на шлангах с клапанной коробкой и регенеративных патронах теплозащитные комплекты;
+
+6. Оберегать ДАСК от ударов;
+
+7. Доложить в случаях обнаружения неисправности ДАСК командиру звена ГДЗС и действовать по его указанию;
+
+8. Не допускать после выключения из ДАСК интенсивного дыхания холодным воздухом и приема холодной воды.
+
+Не допускается использовать ДАСК при тушении пожаров на объектах, где по особенностям технологического процесса производства их использование запрещено.
+</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4fY-Xt-fIB" secondAttribute="trailing" constant="8" id="1L6-oM-Ufd"/>
+                                            <constraint firstItem="4fY-Xt-fIB" firstAttribute="top" secondItem="Lmt-7d-guT" secondAttribute="top" id="Kq5-TK-9Po"/>
+                                            <constraint firstAttribute="bottom" secondItem="4fY-Xt-fIB" secondAttribute="bottom" id="KuB-fk-zOw"/>
+                                            <constraint firstItem="4fY-Xt-fIB" firstAttribute="leading" secondItem="Lmt-7d-guT" secondAttribute="leading" constant="8" id="a9K-Zu-yEk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lmt-7d-guT" firstAttribute="top" secondItem="ueO-YZ-tf3" secondAttribute="top" id="2p4-ss-d1q"/>
+                                    <constraint firstItem="Lmt-7d-guT" firstAttribute="height" secondItem="ueO-YZ-tf3" secondAttribute="height" priority="250" id="BCG-RW-Ors"/>
+                                    <constraint firstItem="Lmt-7d-guT" firstAttribute="leading" secondItem="ueO-YZ-tf3" secondAttribute="leading" id="D0A-j9-GBr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lmt-7d-guT" secondAttribute="trailing" id="EXW-Yk-h4g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lmt-7d-guT" secondAttribute="bottom" id="S9t-ye-zy1"/>
+                                    <constraint firstItem="Lmt-7d-guT" firstAttribute="width" secondItem="ueO-YZ-tf3" secondAttribute="width" id="ggB-yq-8Gz"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ueO-YZ-tf3" firstAttribute="trailing" secondItem="qZf-mh-Br0" secondAttribute="trailing" id="H78-cD-91L"/>
+                            <constraint firstItem="ueO-YZ-tf3" firstAttribute="leading" secondItem="qZf-mh-Br0" secondAttribute="leading" id="adB-4Z-afd"/>
+                            <constraint firstItem="ueO-YZ-tf3" firstAttribute="bottom" secondItem="qZf-mh-Br0" secondAttribute="bottom" id="cmg-js-cyn"/>
+                            <constraint firstItem="ueO-YZ-tf3" firstAttribute="top" secondItem="qZf-mh-Br0" secondAttribute="top" id="d3f-aD-xa4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qZf-mh-Br0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oTu-Go-rql"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7E-Rv-weZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128.8000000000002" y="1412.807881773399"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eFm-8S-2uV">
+            <objects>
+                <viewController id="U8Q-7o-oCG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="da8-cR-UCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw6-6O-M6a">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-Mu-Pxg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="662.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0I-sc-gpJ">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="662.66666666666663"/>
+                                                <string key="text">При использовании ДАСВ в непригодной для дыхания среде газодымозащитник обязан:
+
+1. Использовать на баллонах защитные чехлы;
+
+2. При срабатывании сигнального устройства незамедлительно доложить командиру звена ГДЗС и выйти в составе звена ГДЗС на свежий воздух;
+
+3. При ведении действий по тушению пожаров в непригодной для дыхания среде в условиях отрицательной температуры окружающей среды, проводить включение в ДАСВ в отапливаемом помещении (в подъезде дома, кабине пожарного автомобиля);
+
+4. Оберегать ДАСВ от ударов;
+
+5. Доложить в случаях обнаружения неисправности ДАСВ командиру звена ГДЗС и действовать по его указанию;
+
+6. Применять спасательное устройство, входящее в комплект ДАСВ;
+
+7. Не допускать после выключения из ДАСВ интенсивного дыхания холодным воздухом и приема холодной воды.</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="V0I-sc-gpJ" firstAttribute="top" secondItem="0Wx-Mu-Pxg" secondAttribute="top" id="2pL-1R-GbF"/>
+                                            <constraint firstItem="V0I-sc-gpJ" firstAttribute="leading" secondItem="0Wx-Mu-Pxg" secondAttribute="leading" constant="8" id="Gpx-N5-fTp"/>
+                                            <constraint firstAttribute="bottom" secondItem="V0I-sc-gpJ" secondAttribute="bottom" id="TcI-Qk-emT"/>
+                                            <constraint firstAttribute="trailing" secondItem="V0I-sc-gpJ" secondAttribute="trailing" constant="8" id="TdH-9A-tJt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Wx-Mu-Pxg" firstAttribute="leading" secondItem="fw6-6O-M6a" secondAttribute="leading" id="7Ve-UZ-nGo"/>
+                                    <constraint firstItem="0Wx-Mu-Pxg" firstAttribute="height" secondItem="fw6-6O-M6a" secondAttribute="height" priority="250" id="JAj-xU-oia"/>
+                                    <constraint firstItem="0Wx-Mu-Pxg" firstAttribute="width" secondItem="fw6-6O-M6a" secondAttribute="width" id="MgA-xJ-N19"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Wx-Mu-Pxg" secondAttribute="trailing" id="boK-VD-IUd"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Wx-Mu-Pxg" secondAttribute="bottom" id="lb4-WG-60f"/>
+                                    <constraint firstItem="0Wx-Mu-Pxg" firstAttribute="top" secondItem="fw6-6O-M6a" secondAttribute="top" id="mpB-gg-494"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fw6-6O-M6a" firstAttribute="trailing" secondItem="7Ot-Mn-wcS" secondAttribute="trailing" id="5mQ-BN-yck"/>
+                            <constraint firstItem="fw6-6O-M6a" firstAttribute="leading" secondItem="7Ot-Mn-wcS" secondAttribute="leading" id="PVp-RG-9pC"/>
+                            <constraint firstItem="fw6-6O-M6a" firstAttribute="top" secondItem="7Ot-Mn-wcS" secondAttribute="top" id="WwW-W5-4fk"/>
+                            <constraint firstItem="fw6-6O-M6a" firstAttribute="bottom" secondItem="7Ot-Mn-wcS" secondAttribute="bottom" id="fQU-31-Mwx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Ot-Mn-wcS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cSI-ws-Kfj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXN-IZ-GLV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4084" y="1412.807881773399"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fAQ-Vd-GKU">
@@ -1428,52 +1700,52 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOG-F9-u6q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1972.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2153"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjT-PM-3sj">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="1972.3333333333333"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjT-PM-3sj">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="2153"/>
                                                 <string key="text">Командир звена ГДЗС назначается из числа наиболее опытных и подготовленных лиц младшего и среднего начальствующего состава ФПС ГПС.
 
 При ведении действий по тушению пожаров в НДС, командир звена ГДЗС подчиняется РТП, начальнику УТП (СТП).
 
 Командир звена ГДЗС при осуществлении своей деятельности обязан:
 
-- знать задачу своего звена ГДЗС, наметить план действий по ее выполнению и маршрут движения, довести информацию о возможной опасности до газодымозащитников;
+1. Знать задачу своего звена ГДЗС, наметить план действий по ее выполнению и маршрут движения, довести информацию о возможной опасности до газодымозащитников;
 
-- руководить работой звена ГДЗС, выполняя требования правил работы в СИЗОД и требования безопасности;
+2. Руководить работой звена ГДЗС, выполняя требования правил работы в СИЗОД и требования безопасности;
 
-- знать и уметь проводить приемы оказания первой помощи пострадавшим;
+3. Знать и уметь проводить приемы оказания первой помощи пострадавшим;
 
-- убедиться в готовности личного состава звена ГДЗС к выполнению поставленной задачи;
+4. Убедиться в готовности личного состава звена ГДЗС к выполнению поставленной задачи;
 
-- проверять наличие и исправность требуемого минимума экипировки газодымозащитников, необходимой для выполнения поставленной задачи;
+5. Проверять наличие и исправность требуемого минимума экипировки газодымозащитников, необходимой для выполнения поставленной задачи;
 
-- указать газодымозащитникам места расположения КПП и поста безопасности;
+6. Указать газодымозащитникам места расположения КПП и поста безопасности;
 
-- проводить рабочую проверку закрепленного СИЗОД, контролировать ее проведение газодымозащитниками и правильность включения в СИЗОД;
+7. Проводить рабочую проверку закрепленного СИЗОД, контролировать ее проведение газодымозащитниками и правильность включения в СИЗОД;
 
-- проверять перед входом в НДС давление воздуха (кислорода) в баллонах СИЗОД газодымозащитников и сообщить постовому на посту безопасности наименьшее значение давления воздуха (кислорода);
+8. Проверять перед входом в НДС давление воздуха (кислорода) в баллонах СИЗОД газодымозащитников и сообщить постовому на посту безопасности наименьшее значение давления воздуха (кислорода);
 
-- проверить правильность проведенных соответствующих записей постовым на посту безопасности;
+9. Проверить правильность проведенных соответствующих записей постовым на посту безопасности;
 
-- сообщать газодымозащитникам при подходе к месту проведения тушения пожаров в НДС контрольное давление СИЗОД, при котором необходимо возвращаться к посту безопасности;
+10. Сообщать газодымозащитникам при подходе к месту проведения тушения пожаров в НДС контрольное давление СИЗОД, при котором необходимо возвращаться к посту безопасности;
 
-- чередовать напряженную работу газодымозащитников с периодами отдыха;
+11. Чередовать напряженную работу газодымозащитников с периодами отдыха;
 
-- следить за самочувствием газодымозащитников, правильным использованием ими снаряжения, оборудования и инструмента, осуществлять контроль за расходованием воздуха (кислорода) по показаниям манометра и при достижении контрольного давления, установленного с учетом обеспечения запаса воздуха (кислорода), необходимого для выхода из НДС, выводить звено ГДЗС на свежий воздух только в полном составе;
+12. Следить за самочувствием газодымозащитников, правильным использованием ими снаряжения, оборудования и инструмента, осуществлять контроль за расходованием воздуха (кислорода) по показаниям манометра и при достижении контрольного давления, установленного с учетом обеспечения запаса воздуха (кислорода), необходимого для выхода из НДС, выводить звено ГДЗС на свежий воздух только в полном составе;
 
-- при обнаружении неисправности СИЗОД у одного из газодымозащитников звена ГДЗС принять меры к устранению ее на месте, а если это сделать невозможно - вывести звено ГДЗС в полном составе на свежий воздух и немедленно доложить РТП, начальнику КПП (СТП). В случае потери сознания газодымозащитником или ухудшения его самочувствия незамедлительно оказывается первая помощь;
+13. При обнаружении неисправности СИЗОД у одного из газодымозащитников звена ГДЗС принять меры к устранению ее на месте, а если это сделать невозможно - вывести звено ГДЗС в полном составе на свежий воздух и немедленно доложить РТП, начальнику КПП (СТП). В случае потери сознания газодымозащитником или ухудшения его самочувствия незамедлительно оказывается первая помощь;
 
-- докладывать о неисправностях или иных неблагоприятных для звена ГДЗС обстоятельствах на пост безопасности и принимать решения по обеспечению безопасности газодымозащитников звена ГДЗС;
+14. Докладывать о неисправностях или иных неблагоприятных для звена ГДЗС обстоятельствах на пост безопасности и принимать решения по обеспечению безопасности газодымозащитников звена ГДЗС;
 
-- определять при выходе из НДС место выключения из СИЗОД и давать команду звену ГДЗС на выключение из СИЗОД.
+15. Определять при выходе из НДС место выключения из СИЗОД и давать команду звену ГДЗС на выключение из СИЗОД.
 </string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="kjT-PM-3sj" firstAttribute="top" secondItem="KOG-F9-u6q" secondAttribute="top" id="5C6-3O-A3Z"/>
                                             <constraint firstItem="kjT-PM-3sj" firstAttribute="leading" secondItem="KOG-F9-u6q" secondAttribute="leading" constant="8" id="PG3-up-SYH"/>
@@ -1492,7 +1764,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KPk-wj-xhA" firstAttribute="leading" secondItem="iT7-TZ-ZKl" secondAttribute="leading" id="Q38-X6-frM"/>
                             <constraint firstItem="KPk-wj-xhA" firstAttribute="top" secondItem="iT7-TZ-ZKl" secondAttribute="top" id="Q8K-P4-IsN"/>
@@ -1506,7 +1778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TE-O9-LeS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4840.8000000000002" y="2605.4187192118229"/>
+            <point key="canvasLocation" x="2153" y="657"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hru-A2-Gtl">
@@ -1520,49 +1792,49 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-tL-0yH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1484.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1589.3333333333333"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-kp-S7q">
-                                                <rect key="frame" x="8" y="8" width="359" height="1468.3333333333333"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-kp-S7q">
+                                                <rect key="frame" x="8" y="8" width="359" height="1573.3333333333333"/>
                                                 <string key="text">Газодымозащитник при осуществлении своей деятельности обязан:
 
-- быть в постоянной готовности к ведению действий по тушению пожаров в непригодной для дыхания среде, совершенствовать в установленном порядке свою физическую, специальную, медицинскую, психологическую подготовку;
+1. Быть в постоянной готовности к ведению действий по тушению пожаров в непригодной для дыхания среде, совершенствовать в установленном порядке свою физическую, специальную, медицинскую, психологическую подготовку;
 
-- содержать в полной технической исправности СИЗОД, другой закрепленный за ним пожарный инструмент и оборудование, обеспечивать в установленные сроки техническое обслуживание СИЗОД;
+2. Содержать в полной технической исправности СИЗОД, другой закрепленный за ним пожарный инструмент и оборудование, обеспечивать в установленные сроки техническое обслуживание СИЗОД;
 
-- уметь проводить расчеты запаса воздуха (кислорода) и времени пребывания звена ГДЗС в СИЗОД в непригодной для дыхания среде;
+3. Уметь проводить расчеты запаса воздуха (кислорода) и времени пребывания звена ГДЗС в СИЗОД в непригодной для дыхания среде;
 
-- уметь оказывать первую помощь пострадавшим на пожаре;
+4. Уметь оказывать первую помощь пострадавшим на пожаре;
 
-- совершенствовать навыки действий в составе звена ГДЗС при ведении тушения пожаров в непригодной для дыхания среде.
+5. Совершенствовать навыки действий в составе звена ГДЗС при ведении тушения пожаров в непригодной для дыхания среде.
 
 При ведении действий по тушению пожаров в непригодной для дыхания среде газодымозащитник обязан:
 
-- подчиняться командиру звена ГДЗС, знать задачу звена ГДЗС и выполнять ее;
+1. Подчиняться командиру звена ГДЗС, знать задачу звена ГДЗС и выполнять ее;
 
-- знать место расположения поста безопасности и КПП;
+2. Знать место расположения поста безопасности и КПП;
 
-- строго соблюдать маршрут движения звена ГДЗС и правила работы в СИЗОД, выполнять приказы, отданные командиром звена ГДЗС;
+3. Строго соблюдать маршрут движения звена ГДЗС и правила работы в СИЗОД, выполнять приказы, отданные командиром звена ГДЗС;
 
-- не оставлять звено ГДЗС без разрешения командира звена ГДЗС;
+4. Не оставлять звено ГДЗС без разрешения командира звена ГДЗС;
 
-- следить на маршруте движения за изменением обстановки, обращать внимание на состояние строительных конструкций, как во время движения, так и на месте проведения работ;
+5. Следить на маршруте движения за изменением обстановки, обращать внимание на состояние строительных конструкций, как во время движения, так и на месте проведения работ;
 
-- запоминать маршрут к месту проведения тушения пожаров в непригодной для дыхания среде;
+6. Запоминать маршрут к месту проведения тушения пожаров в непригодной для дыхания среде;
 
-- следить по манометру за давлением воздуха (кислорода) в баллоне СИЗОД;
+7. Следить по манометру за давлением воздуха (кислорода) в баллоне СИЗОД;
 
-- не пользоваться без необходимости аварийным клапаном (байпасом);
+8. Не пользоваться без необходимости аварийным клапаном (байпасом);
 
-- включаться в СИЗОД и выключаться из него по команде командира звена ГДЗС;
+9. Включаться в СИЗОД и выключаться из него по команде командира звена ГДЗС;
 
-- докладывать командиру звена ГДЗС об изменении обстановки, обнаруженных неисправностях в СИЗОД или появлении плохого самочувствия (головной боли, ощущения кислого вкуса во рту, затруднения дыхания) и действовать по его указанию.</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+10. Докладывать командиру звена ГДЗС об изменении обстановки, обнаруженных неисправностях в СИЗОД или появлении плохого самочувствия (головной боли, ощущения кислого вкуса во рту, затруднения дыхания) и действовать по его указанию.</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="T1s-kp-S7q" secondAttribute="bottom" constant="8" id="Rnk-9L-Bzr"/>
                                             <constraint firstItem="T1s-kp-S7q" firstAttribute="top" secondItem="Kya-tL-0yH" secondAttribute="top" constant="8" id="UdC-fe-RVl"/>
@@ -1581,7 +1853,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3ZC-6v-LLi" firstAttribute="top" secondItem="wZJ-mr-br2" secondAttribute="top" id="Mi2-4U-Q2D"/>
                             <constraint firstItem="3ZC-6v-LLi" firstAttribute="trailing" secondItem="wZJ-mr-br2" secondAttribute="trailing" id="Q8N-Bw-eQV"/>
@@ -1595,7 +1867,98 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4P-e9-bIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3855.1999999999998" y="3048.768472906404"/>
+            <point key="canvasLocation" x="3129" y="657"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Wt-dv-Gi2">
+            <objects>
+                <viewController id="dkf-4J-kKu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXI-31-pjc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aB-lB-tfO">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhd-HD-Lv3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1345.6666666666667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-Ln-6lm">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1345.6666666666667"/>
+                                                <string key="text">Для выполнения поставленных задач каждое звено ГДЗС должно иметь необходимый минимум оснащения, который предусматривает:
+
+1. СИЗОД;
+
+2. Cпасательное устройство, входящее в комплект СИЗОД (одно на каждого газодымозащитника);
+
+3. Прибор контроля местонахождения пожарных (при его наличии);
+
+4. Средства связи (радиостанция, переговорное устройство или иное табельное средство);
+
+5. Приборы освещения: групповой фонарь - один на звено ГДЗС и индивидуальный фонарь - на каждого газодымозащитника;
+
+6. Лом легкий;
+
+7. Пожарную спасательную веревку;
+
+8. Путевой трос (по решению командира звена);
+
+9. Средства тушения (рабочая рукавная линия с примкнутым к ней перекрывным стволом, огнетушитель);
+
+10. Инструмент для проведения специальных работ на пожаре (открывания дверей и вскрытия конструкций (при необходимости выполнения работ).
+
+В зависимости от поставленной задачи в оснащение звена ГДЗС дополнительно включаются следующие технические средства:
+
+1. Приборы контроля состояния окружающей среды, тепловизор (при его наличии), приборы радиационной и химической разведки (при их наличии);
+
+2. Изолирующие самоспасатели для обеспечения эвакуации людей из зоны с опасными факторами пожара (аварии);
+
+3. Специальная защитная одежда изолирующего типа, а также специальная защитная одежда от повышенных тепловых воздействий;
+
+4. Пожарный инструмент и оборудование (брезентовая перемычка, комплект II - III типов защиты от поражения электрическим током, домкрат, аварийно-спасательный инструмент);
+</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xbV-Ln-6lm" secondAttribute="trailing" constant="8" id="Wc9-Z5-172"/>
+                                            <constraint firstAttribute="bottom" secondItem="xbV-Ln-6lm" secondAttribute="bottom" id="XYz-oy-u9i"/>
+                                            <constraint firstItem="xbV-Ln-6lm" firstAttribute="leading" secondItem="Bhd-HD-Lv3" secondAttribute="leading" constant="8" id="thm-9N-GtQ"/>
+                                            <constraint firstItem="xbV-Ln-6lm" firstAttribute="top" secondItem="Bhd-HD-Lv3" secondAttribute="top" id="xto-N2-iPo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Bhd-HD-Lv3" firstAttribute="height" secondItem="1aB-lB-tfO" secondAttribute="height" priority="250" id="EgR-Q6-igW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bhd-HD-Lv3" secondAttribute="bottom" id="K8q-GZ-2HB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bhd-HD-Lv3" secondAttribute="trailing" id="MZd-Ff-bFx"/>
+                                    <constraint firstItem="Bhd-HD-Lv3" firstAttribute="width" secondItem="1aB-lB-tfO" secondAttribute="width" id="h2k-zK-rRV"/>
+                                    <constraint firstItem="Bhd-HD-Lv3" firstAttribute="leading" secondItem="1aB-lB-tfO" secondAttribute="leading" id="kLs-lw-KEi"/>
+                                    <constraint firstItem="Bhd-HD-Lv3" firstAttribute="top" secondItem="1aB-lB-tfO" secondAttribute="top" id="v9p-NV-63J"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="top" secondItem="RPp-tS-HA1" secondAttribute="top" id="3Y7-2p-fKx"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="bottom" secondItem="RPp-tS-HA1" secondAttribute="bottom" id="AXq-yU-tUL"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="bottom" secondItem="RPp-tS-HA1" secondAttribute="bottom" id="JfG-Ww-3Tr"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="trailing" secondItem="RPp-tS-HA1" secondAttribute="trailing" id="QvG-BG-hHY"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="leading" secondItem="RPp-tS-HA1" secondAttribute="leading" id="VAd-sn-zv3"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="top" secondItem="RPp-tS-HA1" secondAttribute="top" id="jr1-ZR-GTT"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="leading" secondItem="RPp-tS-HA1" secondAttribute="leading" id="u8y-Ej-EFr"/>
+                            <constraint firstItem="1aB-lB-tfO" firstAttribute="trailing" secondItem="RPp-tS-HA1" secondAttribute="trailing" id="wRd-bd-TpM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RPp-tS-HA1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dbi-Vh-5HG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvS-fW-VuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="1892.3645320197045"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b5F-yc-v6A">
@@ -1609,45 +1972,45 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-gJ-gM4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1825.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2008"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIu-pF-To2">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="1825.3333333333333"/>
-                                                <string key="text">Постовой на посту безопасности выставляется на месте тушения пожара в непригодной для дыхания среде (учении) на свежем воздухе перед входом в непригодную для дыхания среду. Постовыми на посту безопасности назначаются личный состав, прошедший обучение и допущенный для выполнения этих обязанностей распорядительным документом начальника (руководителя) подразделения.
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIu-pF-To2">
+                                                <rect key="frame" x="8" y="0.0" width="359" height="2008"/>
+                                                <string key="text">Постовой на посту безопасности выставляется на месте тушения пожара в непригодной для дыхания среде (учении) на свежем воздухе перед входом в НДС. Постовыми на посту безопасности назначаются личный состав, прошедший обучение и допущенный для выполнения этих обязанностей распорядительным документом начальника (руководителя) подразделения.
 
 Постовой на посту безопасности при осуществлении своей деятельности обязан:
 
-- выполнять требования, предусмотренные для него Порядком тушения пожаров подразделениями пожарной охраны*(9);
+1. Выполнять требования, предусмотренные для него Порядком тушения пожаров подразделениями пожарной охраны;
 
-- добросовестно исполнять обязанности, ничем не отвлекаться и не покидать пост безопасности до выполнения задачи звеном ГДЗС и без команды должностного лица федеральной противопожарной службы Государственной противопожарной службы на пожаре, которому он подчинен;
+2. Добросовестно исполнять обязанности, ничем не отвлекаться и не покидать пост безопасности до выполнения задачи звеном ГДЗС и без команды должностного лица федеральной противопожарной службы Государственной противопожарной службы на пожаре, которому он подчинен;
 
-- уметь проводить расчеты запаса воздуха (кислорода) и времени работы звена ГДЗС в СИЗОД, вести журнал учета времени пребывания звеньев ГДЗС в непригодной для дыхания среде по рекомендуемому образцу согласно приложению N 4 к настоящим Правилам;
+3. Уметь проводить расчеты запаса воздуха (кислорода) и времени работы звена ГДЗС в СИЗОД, вести журнал учета времени пребывания звеньев ГДЗС в НДС;
 
-- рассчитывать перед входом звена ГДЗС в непригодную для дыхания среду ожидаемое время его возвращения, сообщать результат расчета командиру звена ГДЗС и заносить в журнал учета работающих звеньев ГДЗС.
+4. Рассчитывать перед входом звена ГДЗС в НДС ожидаемое время его возвращения, сообщать результат расчета командиру звена ГДЗС и заносить в журнал учета работающих звеньев ГДЗС.
 
 При получении от командира звена ГДЗС сведений о максимальном падении давления воздуха (кислорода) в СИЗОД сообщить ему информацию:
 
-- о давлении воздуха (кислорода) в баллоне СИЗОД, при котором звену ГДЗС необходимо возвращаться на свежий воздух;
+1. О давлении воздуха (кислорода) в баллоне СИЗОД, при котором звену ГДЗС необходимо возвращаться на свежий воздух;
 
-- о примерном времени работы звена ГДЗС у очага пожара и (или) места проведения спасательных работ;
+2. О примерном времени работы звена ГДЗС у очага пожара и (или) места проведения спасательных работ;
 
-- об учете газодымозащитников, находящихся в непригодной для дыхания среде и возвратившихся из нее;
+3. Об учете газодымозащитников, находящихся в непригодной для дыхания среде и возвратившихся из нее;
 
-- поддерживать постоянную связь со звеном ГДЗС и выполнять указания командира звена ГДЗС, в случае потери связи со звеном ГДЗС сообщить РТП, начальнику КПП, УТП (СТП) и действовать по их указанию;
+4. Поддерживать постоянную связь со звеном ГДЗС и выполнять указания командира звена ГДЗС, в случае потери связи со звеном ГДЗС сообщить РТП, начальнику КПП, УТП (СТП) и действовать по их указанию;
 
-- не допускать лиц, не входящих в состав звена ГДЗС, в непригодную для дыхания среду;
+5. Не допускать лиц, не входящих в состав звена ГДЗС, в непригодную для дыхания среду;
 
-- не допускать скопление людей у места входа звена ГДЗС в задымленное помещение;
+6. Не допускать скопление людей у места входа звена ГДЗС в задымленное помещение;
 
-- внимательно вести наблюдение за обстановкой на пожаре и состоянием строительных конструкций в районе поста безопасности. При изменениях состояния строительных конструкций в установленном порядке информировать должностных лиц федеральной противопожарной службы Государственной противопожарной службы на пожаре и командира звена ГДЗС. В случае если звену ГДЗС угрожает опасность, немедленно сообщить о ее характере и определить с командиром звена ГДЗС порядок совместных действий;
+7. Внимательно вести наблюдение за обстановкой на пожаре и состоянием строительных конструкций в районе поста безопасности. При изменениях состояния строительных конструкций в установленном порядке информировать должностных лиц федеральной противопожарной службы Государственной противопожарной службы на пожаре и командира звена ГДЗС. В случае если звену ГДЗС угрожает опасность, немедленно сообщить о ее характере и определить с командиром звена ГДЗС порядок совместных действий;
 
-информировать командира звена ГДЗС через каждые 10 минут о времени, прошедшем с момента включения в СИЗОД.</string>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+8. Информировать командира звена ГДЗС через каждые 10 минут о времени, прошедшем с момента включения в СИЗОД.</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="kIu-pF-To2" firstAttribute="leading" secondItem="5N9-gJ-gM4" secondAttribute="leading" constant="8" id="75H-bj-w8c"/>
                                             <constraint firstAttribute="trailing" secondItem="kIu-pF-To2" secondAttribute="trailing" constant="8" id="AgT-jm-rkY"/>
@@ -1666,7 +2029,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xLN-eX-6BA" firstAttribute="top" secondItem="pzJ-iG-zkg" secondAttribute="top" id="LjV-hz-LWL"/>
                             <constraint firstItem="xLN-eX-6BA" firstAttribute="bottom" secondItem="pzJ-iG-zkg" secondAttribute="bottom" id="QcB-yq-hcv"/>
@@ -1680,101 +2043,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4R-jO-gBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4842.3999999999996" y="3525.3694581280788"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6KE-7s-Udv">
-            <objects>
-                <viewController id="sNR-0p-doK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qel-l4-2Tv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjT-Qy-FZi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5z0-og-JGb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2446.3333333333335"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-cT-eGR">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="2272.3333333333335"/>
-                                                <string key="text">20. Первичной тактической единицей при тушении пожаров в непригодной для дыхания среде является звено ГДЗС, которое возглавляет командир звена ГДЗС.
-
-21. Состав звена ГДЗС формирует командир звена ГДЗС по указанию руководителя тушения пожара (далее - РТП), исходя из имеющихся на месте тушения пожаров в непригодной для дыхания среде приданных ему сил и средств ГДЗС, поставленных задач на ведение действий по тушению пожаров в непригодной для дыхания среде.
-
-22. Командир звена ГДЗС при решении поставленной оперативной задачи подчиняется:
-
-на месте тушения пожаров - РТП;
-
-на месте проведения аварийно-спасательных работ - руководителю работ по ликвидации аварии;
-
-при организации участка тушения пожара (далее - УТП), сектора тушения пожара (далее - СТП) - начальнику УТП (СТП).
-
-23. При тушении пожаров в непригодной для дыхания среде звено ГДЗС состоит не менее чем из трех газодымозащитников, включая командира звена ГДЗС.
-
-24. При тушении пожаров в подземных сооружениях метрополитена, подземных фойе зданий, зданиях повышенной этажности, зданиях и сооружениях со сложной планировкой, трюмах судов, кабельных и транспортных тоннелях, звено ГДЗС состоит не менее чем из пяти газодымозащитников, включая командира звена ГДЗС.
-
-При работах по спасению людей по решению РТП или начальника УТП (СТП) звено ГДЗС состоит не менее чем из двух газодымозащитников, включая командира звена ГДЗС.
-
-25. По решению РТП (руководителя работ по ликвидации аварии) количество звеньев ГДЗС и их состав может быть увеличен, в зависимости от поставленной задачи и складывающейся обстановки на местах тушения пожаров в непригодной для дыхания среде.
-
-26. Газодымозащитники одного звена ГДЗС должны иметь СИЗОД единого типа с одинаковым номинальным временем защитного действия и, как правило, в состав звена ГДЗС включаются газодымозащитники, которые несут службу в одном подразделении (карауле, дежурной смене). По решению РТП или начальника УТП (СТП) в состав звена ГДЗС включаются газодымозащитники разных подразделений, имеющих СИЗОД единого типа с одинаковым номинальным временем защитного действия.
-
-27. В зоне аварии, связанной с выбросом АХОВ и выделением радиоактивных веществ, количество звеньев ГДЗС, необходимость применения средств локальной защиты газодымозащитников от повышенных тепловых потоков и ионизирующего излучения, средств защиты кожи изолирующего типа от воздействия агрессивных сред, сильнодействующих и ядовитых веществ определяет руководитель работ по ликвидации аварии.
-
-28. При формировании звеньев ГДЗС и ведении ими действий по тушению пожаров в непригодной для дыхания среде РТП и (или) начальник оперативного штаба пожаротушения обеспечивает сбор информации в соответствии с требованиями Порядка тушения пожаров подразделениями пожарной охраны*(9), а также сбор информации:
-
-о составе, количестве и порядке расстановки сил и средств ГДЗС;
-
-о маршрутах продвижения звеньев ГДЗС к месту выполнения поставленных задач (на позиции);
-
-о местах сосредоточения резервных звеньев ГДЗС;
-
-об оснащении звеньев ГДЗС с учетом характера планируемых действий;
-
-о порядке и способах спасания людей газодымозащитниками;
-
-о порядке организации первой помощи газодымозащитниками.
-</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="DIb-cT-eGR" secondAttribute="bottom" constant="174" id="SHg-RV-amP"/>
-                                            <constraint firstItem="DIb-cT-eGR" firstAttribute="top" secondItem="5z0-og-JGb" secondAttribute="top" id="V63-2h-dCG"/>
-                                            <constraint firstAttribute="trailing" secondItem="DIb-cT-eGR" secondAttribute="trailing" constant="8" id="ijR-se-LUZ"/>
-                                            <constraint firstItem="DIb-cT-eGR" firstAttribute="leading" secondItem="5z0-og-JGb" secondAttribute="leading" constant="8" id="m4E-f0-Fzf"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5z0-og-JGb" secondAttribute="bottom" id="GcP-E9-Cgl"/>
-                                    <constraint firstItem="5z0-og-JGb" firstAttribute="top" secondItem="TjT-Qy-FZi" secondAttribute="top" id="Gkc-NS-AYN"/>
-                                    <constraint firstItem="5z0-og-JGb" firstAttribute="leading" secondItem="TjT-Qy-FZi" secondAttribute="leading" id="ggM-56-1aw"/>
-                                    <constraint firstItem="5z0-og-JGb" firstAttribute="width" secondItem="TjT-Qy-FZi" secondAttribute="width" id="mQL-pX-HEs"/>
-                                    <constraint firstItem="5z0-og-JGb" firstAttribute="height" secondItem="TjT-Qy-FZi" secondAttribute="height" priority="250" id="mR0-yF-2I3"/>
-                                    <constraint firstAttribute="trailing" secondItem="5z0-og-JGb" secondAttribute="trailing" id="w6H-za-c6G"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="TjT-Qy-FZi" firstAttribute="top" secondItem="Qel-l4-2Tv" secondAttribute="top" id="FV4-UK-2XV"/>
-                            <constraint firstAttribute="bottom" secondItem="TjT-Qy-FZi" secondAttribute="bottom" id="V6V-bT-OyJ"/>
-                            <constraint firstItem="TjT-Qy-FZi" firstAttribute="trailing" secondItem="GDf-mC-eon" secondAttribute="trailing" id="ef3-Wp-m0v"/>
-                            <constraint firstItem="TjT-Qy-FZi" firstAttribute="leading" secondItem="GDf-mC-eon" secondAttribute="leading" id="sqZ-zU-q3R"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="GDf-mC-eon"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="3FO-JD-G2r"/>
-                    <size key="freeformSize" width="375" height="1700"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PjC-qw-Mdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1727" y="3429"/>
+            <point key="canvasLocation" x="4084" y="657"/>
         </scene>
         <!--Marks View Controller-->
         <scene sceneID="Erh-sr-hxL">
@@ -1805,7 +2074,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8d-7h-2Uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999" y="1844"/>
+            <point key="canvasLocation" x="303" y="259"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="uZ5-rn-fqb">
@@ -1846,25 +2115,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5g-c7-7gW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1162" y="-11"/>
-        </scene>
-        <!--ГДЗС-->
-        <scene sceneID="dqV-KM-bD3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B3s-2w-Hhh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ГДЗС" id="YGu-kx-Isv"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Fh-pz-dp4">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qQE-Mi-fFD" kind="relationship" relationship="rootViewController" id="bUZ-5w-dsu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qau-jy-Eje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4409" y="-11"/>
         </scene>
     </scenes>
     <resources>

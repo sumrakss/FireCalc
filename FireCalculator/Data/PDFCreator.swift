@@ -243,7 +243,10 @@ class PDFCreator: NSObject {
 		// Максимальное падение давления
 		let maxDropString = SettingsData.measureType == .kgc ? (String(Int(maxDrop))) : (String(format:"%.1f", floor(maxDrop * 10) / 10))
 		// Давление к выходу
-		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", floor(exitPressure * 10) / 10))
+		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", exitPressure))
+//		let exitPString = SettingsData.measureType == .kgc ? (String(Int(exitPressure))) : (String(format:"%.1f", floor(exitPressure * 10) / 10))
+		
+		
 		// Давление воздуха, необходимое для устойчивой работы редуктора
         let reductor = SettingsData.measureType == .kgc ? String(Int(SettingsData.reductionStability)) : String(SettingsData.reductionStability)
 		// Объем баллона в литрах
@@ -308,7 +311,7 @@ class PDFCreator: NSObject {
 			print = "= \(String(format:"%.1f", timeDelta)) ≈ \(Int(timeDelta)) мин."
 			print.draw(at: CGPoint(x: 365, y: 475), withAttributes: large)
             
-//             4
+			//4
             let time = DateFormatter()
             time.dateFormat = "HH"
 			print = "\(time.string(from: appData.enterTime))    +    = \(exitTime)"
