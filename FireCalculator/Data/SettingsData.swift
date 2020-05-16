@@ -57,7 +57,7 @@ class SettingsData {
 	}
 	
 	// Показать простое решение
-	var simpleSolution = true
+	var simpleSolution = false
 	// Очаг найден true/false
 	var firePlace = false
 	// Сложные условия true/false

@@ -141,7 +141,7 @@ class PDFCreator: NSObject {
 			string = "(\(minPressure) - \(reductor)) * \(capacity)"
 			string.draw(at: CGPoint(x: 308, y: 267), withAttributes: large)
 			
-			string = "= \(String(format:"%.1f", totalTime)) ≈ \(String(Int(totalTime))) мин."
+			string = "= \(String(format:"%.1f", totalTime)) ≈ \(Int(totalTime)) мин."
 			string.draw(at: CGPoint(x: 428, y: 280), withAttributes: large)
 			
 			//2
@@ -151,7 +151,7 @@ class PDFCreator: NSObject {
 			string.draw(at: CGPoint(x: 320, y: 371), withAttributes: large)
 			
             time.dateFormat = "mm"
-			string = "\(time.string(from: appData.enterTime))     \(String(Int(totalTime)))"
+			string = "\(time.string(from: appData.enterTime))     \(Int(totalTime))"
 			string.draw(at: CGPoint(x: 340, y: 368), withAttributes: small)
 			
 			

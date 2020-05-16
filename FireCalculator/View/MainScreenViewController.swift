@@ -379,7 +379,7 @@ class MainScreenViewController: UITableViewController {
         if segue.identifier == "previewSegue" {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
-//			vc.appData = data
+			vc.appData = data
 			// Проверяем содержимое на корретность ввода
 			// для этого обновляем массивы значений
 			inputFieldsView(fieldCount: teamCounter)
