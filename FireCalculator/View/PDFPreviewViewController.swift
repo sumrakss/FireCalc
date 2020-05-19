@@ -12,6 +12,7 @@ import PDFKit
 class PDFPreviewViewController: UIViewController {
     public var documentData: Data?
     var appData: SettingsData?
+	let value = SettingsData.measureType == .kgc ? "кгс/см\u{00B2}" : "МПа"
     
     @IBOutlet weak var pdfView: PDFView!
     
@@ -49,9 +50,10 @@ class PDFPreviewViewController: UIViewController {
 	
 	// Выход по звуковому сигналу
 	func atencionMessage() {
+		let signal = SettingsData.measureType == .kgc ? (String(Int(SettingsData.airSignal))) : (String(format:"%.1f", SettingsData.airSignal))
 		if SettingsData.airSignalMode {
 			if SettingsData.airSignalFlag {
-				let alert = UIAlertController(title: "Внимание", message: "Выход по звуковому сигналу!", preferredStyle: .alert)
+				let alert = UIAlertController(title: "Внимание!", message: "Выход по звуковому сигналу\n\(signal) \(value)", preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 				present(alert, animated: true, completion: nil)
 				SettingsData.airSignalFlag = false

@@ -31,7 +31,8 @@ class ValueTableController: UITableViewController {
 		defaults.set(SettingsData.airRate, forKey: "airRate")
 		defaults.set(SettingsData.airIndex, forKey: "airIndex")
 		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
-		
+		defaults.set(SettingsData.airSignal, forKey: "airSignal")
+		defaults.synchronize()
 	}
 	
     

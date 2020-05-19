@@ -36,7 +36,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 		//		imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
 				
 				header.text = "БрандМастер - ГДЗС"
-				version.text = "Версия 0.9.0"
+				version.text = "Версия 0.9.2"
 				copyright.text = "\u{00A9} Aleksey Orekhov"
 				header.textAlignment = .center
 				version.textAlignment = .center

@@ -31,6 +31,8 @@ class SettingsTableController: UITableViewController {
 	@IBOutlet weak var handModeSwitch: UISwitch!
 	// Звуковой сигнал
 	@IBOutlet weak var airSignalSwitch: UISwitch!
+	// Показать только ответы
+	@IBOutlet weak var simpleSolutionSwitch: UISwitch!
 	
 	
 	override func viewDidLoad() {
@@ -46,6 +48,7 @@ class SettingsTableController: UITableViewController {
       
 		airSignalSwitch.isOn = SettingsData.airSignalMode ? true : false
 		handModeSwitch.isOn = SettingsData.handInputMode ? true : false
+		simpleSolutionSwitch.isOn = !SettingsData.simpleSolution ? true : false
 		
 		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
 		
@@ -87,6 +90,7 @@ class SettingsTableController: UITableViewController {
 		defaults.set(SettingsData.handInputMode, forKey: "handInputMode")
 		defaults.set(SettingsData.airSignal, forKey: "airSignal")
 		defaults.set(SettingsData.airSignalMode, forKey: "airSignalMode")
+		defaults.set(SettingsData.simpleSolution, forKey: "simpleSolution")
 		defaults.synchronize()
 		print("Settings save")
 	}
@@ -152,11 +156,14 @@ class SettingsTableController: UITableViewController {
 		SettingsData.airSignal = 63
 		SettingsData.handInputMode = false
 		SettingsData.airSignalMode = false
+		SettingsData.simpleSolution = false
 		SettingsData.airSignal = 60
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
 		handModeSwitch.isOn = false
 		airSignalSwitch.isOn = false
+		reducLabel.text = "Давление редуктора кгс/см\u{00B2}"
+		airSignalLabel.text = "Срабатывание сигнала кгс/см\u{00B2}"
 		
 		defaultDataText()
 		tableView.reloadData()
@@ -176,6 +183,12 @@ class SettingsTableController: UITableViewController {
 	@IBAction func airSignalMode(_ sender: UISwitch) {
 		SettingsData.airSignalMode = !SettingsData.airSignalMode
 		print("Учитывать сигнал \(SettingsData.airSignalMode)")
+	}
+	
+	
+	@IBAction func solutionSwitcher(_ sender: UISwitch) {
+		SettingsData.simpleSolution = !SettingsData.simpleSolution
+		print(SettingsData.simpleSolution)
 	}
 	
 	
@@ -235,11 +248,11 @@ class SettingsTableController: UITableViewController {
 				guardValue = 0
 		}
 		
-			let alert = UIAlertController(title: "Некорректное значение", message: "Введите значение в пределах \n - \(guardValue)", preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-			present(alert, animated: true, completion: nil)
-			return
-		}
+		let alert = UIAlertController(title: "Некорректное значение", message: "Введите значение в пределах \n - \(guardValue)", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		present(alert, animated: true, completion: nil)
+		return
+	}
 	
 	
 	func atencionMessage(value: Double) {

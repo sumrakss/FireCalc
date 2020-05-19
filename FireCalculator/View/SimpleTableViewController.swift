@@ -29,6 +29,7 @@ class SimpleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		appData.firePlace ? fireFound() : fireNotFound()
+		atencionMessage()
     }
 
 	func fireNotFound() {
@@ -68,17 +69,30 @@ class SimpleTableViewController: UITableViewController {
 		let expectedTime = comp.expectedTimeCalculation(inputTime: appData.enterTime, totalTime: totalTime)
 	
 		// 3) Расчет давления для выхода (Рк.вых)
-		let exitPressure = comp.exitPressureCalculation(maxDrop: appData.fallPressure, hardChoice: appData.hardWork)
+		var exitPressure = comp.exitPressureCalculation(maxDrop: appData.fallPressure, hardChoice: appData.hardWork)
 	
+		
+		
+		if SettingsData.airSignalMode {
+			if exitPressure < SettingsData.airSignal {
+				exitPressure = SettingsData.airSignal
+				print(exitPressure)
+				SettingsData.airSignalFlag = true
+			}
+		}
+		
 		// Pквых округлям при кгс и не меняем при МПа
-		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
-	
+		var exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
+//		if SettingsData.airSignalFlag {
+//			exitPString = SettingsData.measureType == .kgc ? String(Int(SettingsData.airSignal)) : String(format:"%.1f", floor(SettingsData.airSignal * 10) / 10)
+//		}
+		
 		// 4) Расчет времени работы у очага (Траб)
 		let workTime = comp.workTimeCalculation(minPressure: appData.hearthData, exitPressure: exitPressure)
-	
+		
 		// 5) Время подачи команды постовым на выход звена
 		let  exitTime = comp.expectedTimeCalculation(inputTime: appData.fireTime, totalTime: workTime)
-	
+
 		listFound.append("\(Int(totalTime)) мин.")
 		listFound.append("\(expectedTime)")
 		listFound.append("\(exitPString) \(value)")
@@ -119,12 +133,25 @@ class SimpleTableViewController: UITableViewController {
     }
     
 
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		var headerText = ""
-		if section == 0 {
-			headerText = "Решение"
-		}
-		return headerText
-	}
+//	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//		var headerText = ""
+//		if section == 0 {
+//			headerText = "Решение"
+//		}
+//		return headerText
+//	}
 
+	// Выход по звуковому сигналу
+	func atencionMessage() {
+		let signal = SettingsData.measureType == .kgc ? (String(Int(SettingsData.airSignal))) : (String(format:"%.1f", SettingsData.airSignal))
+		if SettingsData.airSignalMode {
+			if SettingsData.airSignalFlag {
+				let alert = UIAlertController(title: "Внимание!", message: "Выход по звуковому сигналу\n\(signal) \(value)", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				present(alert, animated: true, completion: nil)
+				SettingsData.airSignalFlag = false
+				return
+			}
+		}
+	}
 }

@@ -46,16 +46,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Тип СИЗОД" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oBQ-2z-Fth">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="92.666666666666671" height="20.333333333333332"/>
+                                                    <rect key="frame" x="16" y="11.000000000000002" width="90" height="21.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k9o-m0-Own">
-                                                    <rect key="frame" x="296" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                                    <rect key="frame" x="296" y="11.000000000000002" width="44" height="21.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,16 +73,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Единицы измерения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8po-o8-suC">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="164" height="20.333333333333332"/>
+                                                    <rect key="frame" x="16" y="11.000000000000002" width="164.66666666666666" height="21.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i90-81-zRy">
-                                                    <rect key="frame" x="296" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                                    <rect key="frame" x="296" y="11.000000000000002" width="44" height="21.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -100,11 +100,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Точность" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-nh-eEr">
-                                                    <rect key="frame" x="16" y="11.666666666666664" width="181" height="21"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="181" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="pVE-tk-DW0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -132,11 +132,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учитывать сигнал" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-Gx-Kti">
-                                                    <rect key="frame" x="16" y="11.666666666666664" width="181" height="21"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="181" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="iQ2-mk-mzN"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -156,12 +156,44 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="qxY-zY-mtE">
+                                        <rect key="frame" x="0.0" y="229.33333206176758" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qxY-zY-mtE" id="PSi-0N-QMs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подробное решение" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-EN-HWZ">
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="181" height="21.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="181" id="eTW-sK-R8O"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOs-ox-GJD">
+                                                    <rect key="frame" x="310" y="6" width="51" height="33"/>
+                                                    <connections>
+                                                        <action selector="solutionSwitcher:" destination="BDL-cD-JAh" eventType="valueChanged" id="mXH-bu-bXe"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cEH-EN-HWZ" firstAttribute="centerY" secondItem="PSi-0N-QMs" secondAttribute="centerY" id="2LF-ro-RNa"/>
+                                                <constraint firstAttribute="trailing" secondItem="zOs-ox-GJD" secondAttribute="trailing" constant="16" id="Hye-FT-mmv"/>
+                                                <constraint firstItem="cEH-EN-HWZ" firstAttribute="leading" secondItem="PSi-0N-QMs" secondAttribute="leading" constant="16" id="M5k-uq-LGT"/>
+                                                <constraint firstItem="zOs-ox-GJD" firstAttribute="top" secondItem="PSi-0N-QMs" secondAttribute="top" constant="6" id="h2T-jL-V8q"/>
+                                                <constraint firstAttribute="bottom" secondItem="zOs-ox-GJD" secondAttribute="bottom" constant="5" id="uDR-Cq-jrO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Параметры СИЗОД" id="HM9-z3-meL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="cIX-S8-eKs">
-                                        <rect key="frame" x="0.0" y="313.33333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="356.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cIX-S8-eKs" id="bhH-gk-UEX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -172,7 +204,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5Xd-rc-ep1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="cylinderVolumeData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="RFy-pp-tdn"/>
@@ -182,13 +214,13 @@
                                                     <rect key="frame" x="16" y="5" width="151" height="34.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vб" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wZ-i2-1d4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="151" height="19.666666666666668"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="151" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вместимость баллона (л)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-Gh-eAK">
-                                                            <rect key="frame" x="0.0" y="19.666666666666668" width="151" height="14.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="20.333333333333332" width="151" height="13.999999999999996"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -206,7 +238,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="9eG-7v-hF6">
-                                        <rect key="frame" x="0.0" y="356.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="400.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9eG-7v-hF6" id="FcI-oq-fAu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -217,7 +249,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="LiA-mJ-ckM"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="airRateData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="Iw9-Yn-Bgs"/>
@@ -227,13 +259,13 @@
                                                     <rect key="frame" x="16" y="5" width="194.66666666666666" height="34.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qвозд." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wh-Ds-OZW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Средний расход воздуха (л/мин)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-hy-5wU">
-                                                            <rect key="frame" x="0.0" y="22" width="194.66666666666666" height="12.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="22.666666666666668" width="194.66666666666666" height="11.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -251,7 +283,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="KCz-ik-7c9">
-                                        <rect key="frame" x="0.0" y="400.33333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="443.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCz-ik-7c9" id="q9E-st-40s">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -262,7 +294,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="XTf-Dx-Ggc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="airIndexTextData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="wSU-i1-Nag"/>
@@ -272,13 +304,13 @@
                                                     <rect key="frame" x="16" y="5" width="177.66666666666666" height="34.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ксж." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omz-xk-0X9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коэффициент сжатия воздуха" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unF-68-77n">
-                                                            <rect key="frame" x="0.0" y="22" width="177.66666666666666" height="12.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="22.666666666666668" width="177.66666666666666" height="11.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -296,7 +328,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pmE-Fo-yK0">
-                                        <rect key="frame" x="0.0" y="443.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="487.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pmE-Fo-yK0" id="IJP-0y-814">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -307,7 +339,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="o1w-Rp-fPW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="reductionStabilityData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="JJ3-Dn-Fji"/>
@@ -317,13 +349,13 @@
                                                     <rect key="frame" x="16" y="5" width="253" height="34.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pуст.раб." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-8e-fXX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Давление редуктора (кгс/см)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="287" translatesAutoresizingMaskIntoConstraints="NO" id="xs0-dB-0Na">
-                                                            <rect key="frame" x="0.0" y="22" width="253" height="12.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="22.666666666666668" width="253" height="11.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -342,7 +374,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="BIp-GS-elr">
-                                        <rect key="frame" x="0.0" y="487.33333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="530.83333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BIp-GS-elr" id="PWD-uH-DHw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -353,7 +385,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="4lW-4a-TpL"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <connections>
                                                         <action selector="airSignalData:" destination="BDL-cD-JAh" eventType="editingDidEnd" id="mfx-S7-40B"/>
@@ -363,13 +395,13 @@
                                                     <rect key="frame" x="16" y="5" width="253" height="34.333333333333336"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сигнальное устройство" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-uA-CaU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срабатывание сигнала (кгс/cм)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="287" translatesAutoresizingMaskIntoConstraints="NO" id="f7S-F4-6Oa">
-                                                            <rect key="frame" x="0.0" y="22" width="253" height="12.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="22.666666666666668" width="253" height="11.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -392,7 +424,7 @@
                             <tableViewSection id="MgO-Rm-OpS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="wTH-vR-XZq">
-                                        <rect key="frame" x="0.0" y="566.83333206176758" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="610.33333206176758" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wTH-vR-XZq" id="fNQ-oJ-899">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -439,6 +471,7 @@
                         <outlet property="handModeSwitch" destination="EP1-b8-r8q" id="Mkd-4s-qOT"/>
                         <outlet property="reducLabel" destination="xs0-dB-0Na" id="qeF-dx-InB"/>
                         <outlet property="reductionStabilityTextField" destination="Vff-Ou-5E7" id="WeI-xt-caQ"/>
+                        <outlet property="simpleSolutionSwitch" destination="zOs-ox-GJD" id="9tB-rI-ja7"/>
                         <outlet property="typeDetailLabel" destination="k9o-m0-Own" id="2pm-xw-0dJ"/>
                         <outlet property="vCylinderLabel" destination="7wZ-i2-1d4" id="hoZ-m5-bw3"/>
                         <outlet property="valueDetailLabel" destination="i90-81-zRy" id="75q-ts-3zk"/>
@@ -469,7 +502,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ДАСВ (воздух)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTs-uS-PZI">
                                                     <rect key="frame" x="16" y="11" width="157" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -486,7 +519,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ДАСК (кислород)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6I-Hi-2bt">
                                                     <rect key="frame" x="16" y="11" width="157" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -532,7 +565,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" кгс/см2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGq-EP-zOH">
                                                     <rect key="frame" x="16" y="11" width="157" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -549,7 +582,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="МПа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-e9-zBC">
                                                     <rect key="frame" x="16" y="11" width="157" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -641,7 +674,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="178" id="EIt-cZ-mwW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -673,7 +706,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="211" id="TKx-gd-UIM"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -694,20 +727,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время включения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r8-t4-jan">
-                                                    <rect key="frame" x="16" y="11.666666666666666" width="181" height="20.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11.666666666666664" width="181" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="5wt-Ze-fqa"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPi-C6-Hx0">
-                                                    <rect key="frame" x="294" y="10" width="65" height="24"/>
+                                                    <rect key="frame" x="294" y="8.6666666666666661" width="65" height="26.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="4RL-wY-lbw"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                                     <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -761,16 +794,16 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="5tX-Pw-Iex"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-q7-vkP">
-                                                    <rect key="frame" x="294" y="10" width="65" height="24"/>
+                                                    <rect key="frame" x="294" y="8.6666666666666661" width="65" height="26.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="UgM-ae-txm"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                                     <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -823,11 +856,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состав звена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pb-DV-1Pt">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="151" height="21"/>
+                                                    <rect key="frame" x="20" y="11.333333333333334" width="151" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="151" id="L6I-Jx-N6n"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -854,39 +887,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Р вкл." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-go-QT6">
-                                                    <rect key="frame" x="132.66666666666666" y="11" width="45.666666666666657" height="21"/>
+                                                    <rect key="frame" x="133" y="11" width="45.666666666666657" height="21"/>
                                                     <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Р очага" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUd-rt-A5C">
-                                                    <rect key="frame" x="215.66666666666666" y="11" width="57.666666666666657" height="21"/>
+                                                    <rect key="frame" x="216" y="11" width="57.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S3z-NF-WiF">
-                                                    <rect key="frame" x="93.000000000000014" y="34.666666666666657" width="189.33333333333337" height="202"/>
+                                                    <rect key="frame" x="92.666666666666686" y="34.666666666666657" width="190" height="202"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bqe-RN-G2o">
-                                                            <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="34"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-Kf-tkB">
-                                                                    <rect key="frame" x="0.0" y="5.3333333333333357" width="11.333333333333334" height="23"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="12" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-bn-ke2">
-                                                                    <rect key="frame" x="27.333333333333329" y="0.0" width="73" height="34"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="73" height="34"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="73" id="9Ad-Bd-Udu"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-LO-Uoc">
-                                                                    <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="117" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
@@ -895,84 +928,84 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uuN-Gp-eX9">
-                                                            <rect key="frame" x="0.0" y="42.000000000000007" width="189.33333333333334" height="33.999999999999993"/>
+                                                            <rect key="frame" x="0.0" y="42.000000000000007" width="190" height="33.999999999999993"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxp-q4-etU">
-                                                                    <rect key="frame" x="0.0" y="5.3333333333333286" width="11.333333333333334" height="23"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="12" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="sjH-Ru-eRk">
-                                                                    <rect key="frame" x="27.333333333333329" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-XK-wvU">
-                                                                    <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="117" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6LT-qD-r91">
-                                                            <rect key="frame" x="0.0" y="84" width="189.33333333333334" height="34"/>
+                                                            <rect key="frame" x="0.0" y="84" width="190" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GT-nG-y6R">
-                                                                    <rect key="frame" x="0.0" y="5.3333333333333286" width="11.333333333333334" height="23"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="12" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-H7-QVt">
-                                                                    <rect key="frame" x="27.333333333333329" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ujd-cf-BPO">
-                                                                    <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="117" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="F3j-3S-Ehe">
-                                                            <rect key="frame" x="0.0" y="126" width="189.33333333333334" height="34"/>
+                                                            <rect key="frame" x="0.0" y="126" width="190" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cX4-Rv-oKj">
-                                                                    <rect key="frame" x="0.0" y="5.3333333333333428" width="11.333333333333334" height="23"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="12" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="25p-hn-If6">
-                                                                    <rect key="frame" x="27.333333333333329" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="i6y-D0-wQK">
-                                                                    <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="117" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="r36-ba-dAe">
-                                                            <rect key="frame" x="0.0" y="168" width="189.33333333333334" height="34"/>
+                                                            <rect key="frame" x="0.0" y="168" width="190" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQl-3l-7Fn">
-                                                                    <rect key="frame" x="0.0" y="5.3333333333333428" width="11.333333333333334" height="23"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="12" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-MN-PJY">
-                                                                    <rect key="frame" x="27.333333333333329" y="0.0" width="73" height="34"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="73" height="34"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="73" id="X0f-AF-8MB"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="250" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="rbi-sA-fb6">
-                                                                    <rect key="frame" x="116.33333333333334" y="0.0" width="73" height="34"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="117" y="0.0" width="73" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 </textField>
                                                             </subviews>
@@ -998,41 +1031,6 @@
                                                 <constraint firstItem="qX8-go-QT6" firstAttribute="top" secondItem="snF-ft-cpQ" secondAttribute="top" constant="11" id="gcN-6g-KOi"/>
                                                 <constraint firstItem="S3z-NF-WiF" firstAttribute="centerX" secondItem="snF-ft-cpQ" secondAttribute="centerX" id="hGb-0S-Nox"/>
                                                 <constraint firstItem="9kI-bn-ke2" firstAttribute="leading" secondItem="qX8-go-QT6" secondAttribute="trailing" constant="-58" id="vpE-Jy-ceH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="mhF-gu-mCF">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="44" id="lJp-Tn-Fai">
-                                        <rect key="frame" x="0.0" y="1099.6666641235352" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJp-Tn-Fai" id="7hU-xr-Rre">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qZ-BY-lFT">
-                                                    <rect key="frame" x="311" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="solutionSwitcher:" destination="aty-dd-hWz" eventType="valueChanged" id="oj3-kB-waQ"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подробное решение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4j-RV-x2V">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="205" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="205" id="gah-AX-IjO"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="5qZ-BY-lFT" secondAttribute="trailing" constant="15" id="1QG-iq-8Ow"/>
-                                                <constraint firstItem="5qZ-BY-lFT" firstAttribute="centerY" secondItem="7hU-xr-Rre" secondAttribute="centerY" id="ds1-cv-6iw"/>
-                                                <constraint firstItem="z4j-RV-x2V" firstAttribute="leading" secondItem="7hU-xr-Rre" secondAttribute="leading" constant="20" id="gPp-s8-SNF"/>
-                                                <constraint firstItem="z4j-RV-x2V" firstAttribute="centerY" secondItem="7hU-xr-Rre" secondAttribute="centerY" id="qrN-Y6-nJ1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1107,21 +1105,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="zCB-w5-zmi" detailTextLabel="ooi-ub-oUU" style="IBUITableViewCellStyleSubtitle" id="Rbf-Rd-YBt">
-                                <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="55.666667938232422"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="57.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbf-Rd-YBt" id="fXC-K1-biI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zCB-w5-zmi">
-                                            <rect key="frame" x="16" y="10.000000000000002" width="36" height="21.666666666666668"/>
+                                            <rect key="frame" x="16" y="10.666666666666666" width="36" height="21.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ooi-ub-oUU">
-                                            <rect key="frame" x="15.999999999999996" y="31.666666666666668" width="32.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="15.999999999999996" y="32.666666666666671" width="32.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -1189,11 +1187,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Примечания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-PY-LrP">
-                                                    <rect key="frame" x="34" y="11.666666666666664" width="176" height="21"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="176" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="ZHr-rB-bTb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1223,11 +1221,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обязанности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-sY-05o">
-                                                    <rect key="frame" x="34" y="11.666666666666664" width="176" height="21"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="176" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="ptJ-tN-lku"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1257,11 +1255,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минимум оснащения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-4G-uqs">
-                                                    <rect key="frame" x="34" y="11.666666666666664" width="213" height="21"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="213" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="213" id="UcN-Ey-WF6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1295,11 +1293,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БрандМастер в VK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or2-FB-31N">
-                                                    <rect key="frame" x="34" y="11.999999999999998" width="176" height="20.333333333333329"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="176" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="yph-dS-Z5M"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1326,11 +1324,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обратная связь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCc-WN-nDM">
-                                                    <rect key="frame" x="34" y="11.666666666666664" width="176" height="21"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="176" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="dmo-xa-3g3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1357,11 +1355,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Политика конфиденциальности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD9-DH-sxb">
-                                                    <rect key="frame" x="34" y="11.666666666666664" width="275" height="21"/>
+                                                    <rect key="frame" x="34" y="11.333333333333334" width="275" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="275" id="DYD-Et-w0t"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1407,11 +1405,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Командир звена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7b-Jc-8Ea">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="164" height="20.333333333333329"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="164" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="164" id="7IP-fx-Wun"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1433,11 +1431,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Газодымозащитник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCH-K0-ay6">
-                                                    <rect key="frame" x="16" y="11.666666666666664" width="176" height="21"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="176" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="176" id="b1r-80-aki"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1459,11 +1457,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Постовой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnJ-NT-22w">
-                                                    <rect key="frame" x="16" y="11.999999999999998" width="164" height="20.333333333333329"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="164" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="164" id="TpM-Pb-g8r"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1485,11 +1483,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При использовании ДАСК" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-6s-Mgr">
-                                                    <rect key="frame" x="16" y="11.666666666666664" width="241" height="21"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="241" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="241" id="L2T-hV-zD9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1511,11 +1509,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При использовании ДАСВ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUa-EG-q2Q">
-                                                    <rect key="frame" x="16" y="11.666666666666664" width="239" height="21"/>
+                                                    <rect key="frame" x="16" y="11.333333333333334" width="239" height="21.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="239" id="gHr-rr-YIS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1555,10 +1553,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmt-7d-guT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1035.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1015.3333333333334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fY-Xt-fIB">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="1035.3333333333333"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1015.3333333333334"/>
                                                 <string key="text">При использовании ДАСК в непригодной для дыхания среде, газодымозащитник обязан:
 
 1. Проводить замену кислородных баллонов и регенеративных патронов только на свежем воздухе;
@@ -1579,7 +1577,7 @@
 
 Не допускается использовать ДАСК при тушении пожаров на объектах, где по особенностям технологического процесса производства их использование запрещено.
 </string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1630,10 +1628,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-Mu-Pxg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="662.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0I-sc-gpJ">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="662.66666666666663"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="669.66666666666663"/>
                                                 <string key="text">При использовании ДАСВ в непригодной для дыхания среде газодымозащитник обязан:
 
 1. Использовать на баллонах защитные чехлы;
@@ -1649,7 +1647,7 @@
 6. Применять спасательное устройство, входящее в комплект ДАСВ;
 
 7. Не допускать после выключения из ДАСВ интенсивного дыхания холодным воздухом и приема холодной воды.</string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1700,10 +1698,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOG-F9-u6q">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2153"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2073.6666666666665"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjT-PM-3sj">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="2153"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="2073.6666666666665"/>
                                                 <string key="text">Командир звена ГДЗС назначается из числа наиболее опытных и подготовленных лиц младшего и среднего начальствующего состава ФПС ГПС.
 
 При ведении действий по тушению пожаров в НДС, командир звена ГДЗС подчиняется РТП, начальнику УТП (СТП).
@@ -1740,7 +1738,7 @@
 
 15. Определять при выходе из НДС место выключения из СИЗОД и давать команду звену ГДЗС на выключение из СИЗОД.
 </string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1792,10 +1790,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-tL-0yH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1589.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1571.3333333333333"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-kp-S7q">
-                                                <rect key="frame" x="8" y="8" width="359" height="1573.3333333333333"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="1555.3333333333333"/>
                                                 <string key="text">Газодымозащитник при осуществлении своей деятельности обязан:
 
 1. Быть в постоянной готовности к ведению действий по тушению пожаров в непригодной для дыхания среде, совершенствовать в установленном порядке свою физическую, специальную, медицинскую, психологическую подготовку;
@@ -1829,7 +1827,7 @@
 9. Включаться в СИЗОД и выключаться из него по команде командира звена ГДЗС;
 
 10. Докладывать командиру звена ГДЗС об изменении обстановки, обнаруженных неисправностях в СИЗОД или появлении плохого самочувствия (головной боли, ощущения кислого вкуса во рту, затруднения дыхания) и действовать по его указанию.</string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1881,10 +1879,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhd-HD-Lv3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1345.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1361"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-Ln-6lm">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="1345.6666666666667"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1361"/>
                                                 <string key="text">Для выполнения поставленных задач каждое звено ГДЗС должно иметь необходимый минимум оснащения, который предусматривает:
 
 1. СИЗОД;
@@ -1917,7 +1915,7 @@
 
 4. Пожарный инструмент и оборудование (брезентовая перемычка, комплект II - III типов защиты от поражения электрическим током, домкрат, аварийно-спасательный инструмент);
 </string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1972,10 +1970,10 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-gJ-gM4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2008"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1857.6666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIu-pF-To2">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="2008"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="1857.6666666666667"/>
                                                 <string key="text">Постовой на посту безопасности выставляется на месте тушения пожара в непригодной для дыхания среде (учении) на свежем воздухе перед входом в НДС. Постовыми на посту безопасности назначаются личный состав, прошедший обучение и допущенный для выполнения этих обязанностей распорядительным документом начальника (руководителя) подразделения.
 
 Постовой на посту безопасности при осуществлении своей деятельности обязан:
@@ -2005,7 +2003,7 @@
 7. Внимательно вести наблюдение за обстановкой на пожаре и состоянием строительных конструкций в районе поста безопасности. При изменениях состояния строительных конструкций в установленном порядке информировать должностных лиц федеральной противопожарной службы Государственной противопожарной службы на пожаре и командира звена ГДЗС. В случае если звену ГДЗС угрожает опасность, немедленно сообщить о ее характере и определить с командиром звена ГДЗС порядок совместных действий;
 
 8. Информировать командира звена ГДЗС через каждые 10 минут о времени, прошедшем с момента включения в СИЗОД.</string>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

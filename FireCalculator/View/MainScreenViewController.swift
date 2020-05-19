@@ -121,6 +121,10 @@ class MainScreenViewController: UITableViewController {
 		if UserDefaults.standard.object(forKey: "airSignalMode") != nil {
 			SettingsData.airSignalMode = defaults.bool(forKey: "airSignalMode")
 		}
+		
+		if UserDefaults.standard.object(forKey: "simpleSolution") != nil {
+			SettingsData.simpleSolution = defaults.bool(forKey: "simpleSolution")
+		}
 		defaults.synchronize()
 	}
 	
@@ -296,11 +300,6 @@ class MainScreenViewController: UITableViewController {
 	}
 
 	
-	@IBAction func solutionSwitcher(_ sender: UISwitch) {
-		data.simpleSolution = !data.simpleSolution
-		print(data.simpleSolution)
-	}
-	
 	
 // MARK: fesf
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -366,7 +365,7 @@ class MainScreenViewController: UITableViewController {
     
 	
 	@IBAction func solutionButton(_ sender: UIBarButtonItem) {
-		if data.simpleSolution {
+		if SettingsData.simpleSolution {
 			performSegue(withIdentifier: "toSimple", sender: self)
 		} else {
 			performSegue(withIdentifier: "previewSegue", sender: self)
