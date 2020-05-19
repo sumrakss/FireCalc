@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainScreenViewController: UITableViewController {
 
@@ -31,7 +32,6 @@ class MainScreenViewController: UITableViewController {
 			teamStepper.maximumValue = 5
 		}
 	}
-	@IBOutlet weak var solutionSwitch: UISwitch!
 	
 	
     let time = DateFormatter()
@@ -42,8 +42,8 @@ class MainScreenViewController: UITableViewController {
 	
     var counter = 0
 	var flag = true
+	// Численность звена
 	var teamCounter = 3
-	var simpleSolution = false
 	
 
 	
@@ -57,8 +57,10 @@ class MainScreenViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		loadUserSettings()
+		navigationItem.title = "Условия работы"
+		navigationController?.navigationBar.prefersLargeTitles = true
 		
+		loadUserSettings()
 		// Скрываем клавиатуру
 		tableView.keyboardDismissMode = .onDrag
 		
@@ -81,7 +83,6 @@ class MainScreenViewController: UITableViewController {
         inputFieldsView(fieldCount: teamCounter)
     }
 
-
 	
 	// Загрузка сохраненных настроек пользователя
 	func loadUserSettings() {
@@ -92,34 +93,41 @@ class MainScreenViewController: UITableViewController {
 		if let measureType = MeasureType(rawValue: defaults.string(forKey: "measureType") ?? "") {
 			SettingsData.measureType = measureType
 		}
-		
-		let cylinderVolume = defaults.double(forKey: "cylinderVolume") 
-		
-		if cylinderVolume != 0.0 {
-			SettingsData.cylinderVolume = cylinderVolume
+
+		if UserDefaults.standard.object(forKey: "cylinderVolume") != nil {
+			SettingsData.cylinderVolume = defaults.double(forKey: "cylinderVolume")
+		}
+
+		if UserDefaults.standard.object(forKey: "airRate") != nil {
+			SettingsData.airRate = defaults.double(forKey: "airRate")
+		}
+
+		if UserDefaults.standard.object(forKey: "airIndex") != nil {
+			SettingsData.airIndex = defaults.double(forKey: "airIndex")
+		}
+	
+		if UserDefaults.standard.object(forKey: "reductionStability") != nil {
+			SettingsData.reductionStability = defaults.double(forKey: "reductionStability")
 		}
 		
-		let airRate = defaults.double(forKey: "airRate")
-		if airRate != 0.0 {
-			SettingsData.airRate = airRate
+		if UserDefaults.standard.object(forKey: "handInputMode") != nil {
+			SettingsData.handInputMode = defaults.bool(forKey: "handInputMode")
 		}
-		 
-		let airIndex = defaults.double(forKey: "airIndex")
-		if airIndex != 0 {
-			SettingsData.airIndex = airIndex
+
+		if UserDefaults.standard.object(forKey: "airSignal") != nil {
+			SettingsData.airSignal = defaults.double(forKey: "airSignal")
 		}
-			
-		let reductionStability = defaults.double(forKey: "reductionStability")
-		if reductionStability != 0 {
-			SettingsData.reductionStability = reductionStability
+
+		if UserDefaults.standard.object(forKey: "airSignalMode") != nil {
+			SettingsData.airSignalMode = defaults.bool(forKey: "airSignalMode")
 		}
 		
-		let handInput = defaults.bool(forKey: "handInputMode")
-		if handInput != nil {
-			SettingsData.handInputMode = handInput
+		if UserDefaults.standard.object(forKey: "simpleSolution") != nil {
+			SettingsData.simpleSolution = defaults.bool(forKey: "simpleSolution")
 		}
 		defaults.synchronize()
 	}
+	
 	
 	// Метод изменяет значения в полях ввода при изменении единиц измерения
 	func stockValues() {
@@ -129,8 +137,8 @@ class MainScreenViewController: UITableViewController {
 				data.enterData[i] /= 10.0
 				data.hearthData[i] /= 10.0
 				data.fallPressure[i] /= 10.0
-				enterValueFields[i].text = String(data.enterData[i])
 				firePlaceFields[i].text = String(data.hearthData[i])
+				enterValueFields[i].text = String(data.enterData[i])
 			}
 			// Изменить значения скрытых полей ввода
 			for i in data.enterData.count ..< enterValueFields.count {
@@ -172,15 +180,11 @@ class MainScreenViewController: UITableViewController {
             
             for i in 0..<fieldCount {
                 if let enterValue = enterValueFields[i].text?.dotGuard() {
-					
 					data.enterData.append(enterValue)
-					
                 }
                 
                 if let hearthValue = firePlaceFields[i].text?.dotGuard() {
-					
 					data.hearthData.append(hearthValue)
-					
                 }
             
                 data.fallPressure.append(data.enterData[i] - data.hearthData[i])
@@ -189,7 +193,7 @@ class MainScreenViewController: UITableViewController {
 //                enterValueFields[i].borderStyle = .line
             }
         counter += 1
-        }
+	}
     
 	
 	 // Настройка pickerView
@@ -243,7 +247,10 @@ class MainScreenViewController: UITableViewController {
 	}
 	
 	
-    // Swicher Очаг
+	
+	
+	
+	// Swicher Очаг
     @IBAction func firePlaceChange(_ sender: Any) {
         data.firePlace = !data.firePlace
         fireStackLabel.isHidden = !fireStackLabel.isHidden
@@ -292,7 +299,9 @@ class MainScreenViewController: UITableViewController {
 		tableView.reloadData()
 	}
 
-
+	
+	
+// MARK: fesf
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 //		cell.backgroundColor = UIColor(white: 8, alpha: 0.5)
 	}
@@ -329,11 +338,19 @@ class MainScreenViewController: UITableViewController {
     }
     
     
+//	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//		if section == 0 {
+//			return 40
+//		}
+//		return 40
+//	}
+	
+	
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var headerText = ""
-        if section == 0 {
-            headerText = "Условия работы"
-        }
+//        if section == 0 {
+//            headerText = "Условия работы"
+//        }
         
         if section == 1 {
 			switch SettingsData.measureType {
@@ -346,32 +363,39 @@ class MainScreenViewController: UITableViewController {
         return headerText
     }
     
+	
+	@IBAction func solutionButton(_ sender: UIBarButtonItem) {
+		if SettingsData.simpleSolution {
+			performSegue(withIdentifier: "toSimple", sender: self)
+		} else {
+			performSegue(withIdentifier: "previewSegue", sender: self)
+		}
+	}
+	
+	
     // Передача данных по segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
             guard let vc = segue.destination as? PDFPreviewViewController else { return }
             let pdfCreator = PDFCreator()
 			vc.appData = data
-			
 			// Проверяем содержимое на корретность ввода
 			// для этого обновляем массивы значений
 			inputFieldsView(fieldCount: teamCounter)
 			atencionMessage()
 			
-			if simpleSolution {
-				// Простое решение
-				//TODO
+			if data.firePlace { // Если очаг найден
+				vc.documentData = pdfCreator.foundPDFCreator(appData: data)
 			} else {
-				// Подробное решение по-умолчанию
-				
-				// Подробное решение
-				if data.firePlace { // Если очаг найден
-					vc.documentData = pdfCreator.foundPDFCreator(appData: data)
-				} else {
-					vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
-				}
+				vc.documentData = pdfCreator.notFoundPDFCreator(appData: data)
 			}
         }
+		
+		if segue.identifier == "toSimple" {
+			guard let vc = segue.destination as? SimpleTableViewController else { return }
+			vc.appData = data
+			
+		}
     }
 	
 	
@@ -413,7 +437,6 @@ extension String {
 }
 
 
-
 extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // Количество колонок в PickerView
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -429,8 +452,9 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	
 	// Логика для выбранного элемента
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		
         for textField in textFieldForInput {
-            if textField.isEditing {
+			if textField.isEditing {
 				textField.text = self.data.pickerComponents[row]
             }
         }
@@ -439,29 +463,8 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	
 	// Отображаем в picker значения из списка
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		
 		return self.data.pickerComponents[row]
 	}
-	
-	
-
-	
 }
 
-
-/*
-extension String {
-    static let numberFormatter = NumberFormatter()
-    var doubleValue: Double {
-        String.numberFormatter.decimalSeparator = "."
-        if let result =  String.numberFormatter.number(from: self) {
-            return result.doubleValue
-        } else {
-            String.numberFormatter.decimalSeparator = ","
-            if let result = String.numberFormatter.number(from: self) {
-                return result.doubleValue
-            }
-        }
-        return 0
-    }
-}
-*/

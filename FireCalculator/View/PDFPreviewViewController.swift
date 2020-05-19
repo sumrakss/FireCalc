@@ -12,6 +12,7 @@ import PDFKit
 class PDFPreviewViewController: UIViewController {
     public var documentData: Data?
     var appData: SettingsData?
+	let value = SettingsData.measureType == .kgc ? "кгс/см\u{00B2}" : "МПа"
     
     @IBOutlet weak var pdfView: PDFView!
     
@@ -24,18 +25,43 @@ class PDFPreviewViewController: UIViewController {
         }
     }
     
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+		atencionMessage()
+		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		// При переходе на другое view разрешаем только портретную ориентацию
-		// и устанавливаем ее
-		AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
+	
+	
+//	override func viewWillDisappear(_ animated: Bool) {
+//		super.viewWillDisappear(animated)
+//
+//		// При переходе на другое view разрешаем только портретную ориентацию
+//		// и устанавливаем ее
+//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+//	}
+	
+	
+	// Выход по звуковому сигналу
+	func atencionMessage() {
+		let signal = SettingsData.measureType == .kgc ? (String(Int(SettingsData.airSignal))) : (String(format:"%.1f", SettingsData.airSignal))
+		if SettingsData.airSignalMode {
+			if SettingsData.airSignalFlag {
+				let alert = UIAlertController(title: "Внимание!", message: "Выход по звуковому сигналу\n\(signal) \(value)", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				present(alert, animated: true, completion: nil)
+				SettingsData.airSignalFlag = false
+				return
+			}
+		}
+	}
+	
 	
 	
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {

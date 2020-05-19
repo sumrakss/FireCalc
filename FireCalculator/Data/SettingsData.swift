@@ -8,11 +8,13 @@
 
 import Foundation
 
+
 // Типы дыхательного аппарата
 enum DeviceType: String {
 	case air
 	case oxigen
 }
+
 
 // Единицы измерения расчетов
 enum MeasureType: String {
@@ -37,7 +39,12 @@ class SettingsData {
     static var reductionStability = 10.0
 	// Ручной ввод давления (иначе испльзутся picker)
 	static var handInputMode = false
-    
+	// Учитывать звуковой сигнал в расчетах
+	static var airSignalMode = false
+	// Давление срабатывания звукового сигнала
+	static var airSignal = 60.0
+    static var airSignalFlag = false
+	
 	static var airFlow: Double {
 		get {
 			switch deviceType {
@@ -48,6 +55,9 @@ class SettingsData {
 			}
 		}
 	}
+	
+	// Показать простое решение
+	static var simpleSolution = false
 	// Очаг найден true/false
 	var firePlace = false
 	// Сложные условия true/false
