@@ -82,7 +82,7 @@ class SimpleTableViewController: UITableViewController {
 		}
 		
 		// Pквых округлям при кгс и не меняем при МПа
-		var exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
+		let exitPString = SettingsData.measureType == .kgc ? String(Int(exitPressure)) : String(format:"%.1f", floor(exitPressure * 10) / 10)
 //		if SettingsData.airSignalFlag {
 //			exitPString = SettingsData.measureType == .kgc ? String(Int(SettingsData.airSignal)) : String(format:"%.1f", floor(SettingsData.airSignal * 10) / 10)
 //		}

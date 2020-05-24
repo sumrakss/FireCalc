@@ -28,11 +28,6 @@ class MarksViewController: UIViewController {
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
 		AppDelegate.AppUtility.lockOrientation(.all)
 	}
-
-//	override func viewWillDisappear(_ animated: Bool) {
-//		super.viewWillDisappear(animated)
-//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-//	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)

@@ -25,8 +25,19 @@ enum MeasureType: String {
 
 class SettingsData {
 	
+	static var settings = SettingsOperations()
+	
     //  Тип СИЗОД. По-умолчанию ДАСВ
-	static var deviceType = DeviceType.air
+	static var deviceType = DeviceType.air 
+		
+		
+//	static var deviceType: DeviceType {
+//		get {
+//
+//		}
+//	}
+		
+		
     // Единицы измерения.
 	static var measureType = MeasureType.kgc
     // Объем баллога
@@ -58,6 +69,8 @@ class SettingsData {
 	
 	// Показать простое решение
 	static var simpleSolution = false
+	
+	
 	// Очаг найден true/false
 	var firePlace = false
 	// Сложные условия true/false
@@ -91,12 +104,4 @@ class SettingsData {
 				}
 		}
 	}
-	
-//	func encode(with coder: NSCoder) {
-//		coder.encode(SettingsData.deviceType, forKey: "deviceType")
-//	}
-//	
-//	required init?(coder: NSCoder) {
-//		SettingsData.deviceType = DeviceType(rawValue: coder.decodeObject(forKey: "deviceType") as! String) ?? DeviceType.air
-//	}
 }

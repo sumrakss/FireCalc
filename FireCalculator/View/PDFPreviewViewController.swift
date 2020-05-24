@@ -29,7 +29,7 @@ class PDFPreviewViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		// Разрешаем любую ориентацию для отображения PDF-файла с решением
-		atencionMessage()
+//		atencionMessage()
 		AppDelegate.AppUtility.lockOrientation(.all)
 	}
 

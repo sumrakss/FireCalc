@@ -16,10 +16,8 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         super.viewDidLoad()
 		navigationItem.title = "Информация"
 		navigationController?.navigationBar.prefersLargeTitles = true
-//		navigationItem.largeTitleDisplayMode = .automatic
 		tableView.beginUpdates()
 		tableView.endUpdates()
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 	
 
@@ -55,16 +53,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 			}
 			return headerView
 	}
-	
-	
-	
-//	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//		if section == 0 {
-//			return 83
-//		}
-//		return 0
-//	}
-	
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if indexPath.section == 1, indexPath.row == 0 {
