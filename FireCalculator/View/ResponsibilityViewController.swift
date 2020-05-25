@@ -47,15 +47,12 @@ class ResponsibilityViewController: UIViewController {
 		
 //		SettingsData.fontSize = fontSize
 		
-//		self.navigationItem.title = "New title"
-		self.navigationController?.navigationBar.prefersLargeTitles = false
 		textView.text? = text
     }
 
 	
 	override func viewWillDisappear(_ animated: Bool) {
 //		super.viewWillAppear(animated)
-		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 	
 	

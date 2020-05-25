@@ -30,6 +30,7 @@
 		FABDA75B2479F6FA00D4128B /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA75A2479F6F900D4128B /* airFoundNew.pdf */; };
 		FABDA763247A041500D4128B /* signal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA762247A041500D4128B /* signal.pdf */; };
 		FABDA766247B8B3600D4128B /* GSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDA764247B8B3600D4128B /* GSTableViewController.swift */; };
+		FABDA76B247BE77100D4128B /* TextForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDA76A247BE77100D4128B /* TextForView.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 		FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE93245BF73200BF4F2C /* Marks.pdf */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		FABDA75A2479F6F900D4128B /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = airFoundNew.pdf; path = ../../pdfPatterns/airFoundNew.pdf; sourceTree = "<group>"; };
 		FABDA762247A041500D4128B /* signal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = signal.pdf; path = ../../pdfPatterns/signal.pdf; sourceTree = "<group>"; };
 		FABDA764247B8B3600D4128B /* GSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSTableViewController.swift; sourceTree = "<group>"; };
+		FABDA76A247BE77100D4128B /* TextForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForView.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FAF6AE93245BF73200BF4F2C /* Marks.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Marks.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				FAB7125C2419061900CAF846 /* SettingsData.swift */,
 				FA183F8D247545AA008967C3 /* SettingsOperation.swift */,
 				FA60648123F7AD0000B2317A /* Formula.swift */,
+				FABDA76A247BE77100D4128B /* TextForView.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
 				FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */,
 				FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */,
+				FABDA76B247BE77100D4128B /* TextForView.swift in Sources */,
 				FA183F92247779F9008967C3 /* ResponsibilityViewController.swift in Sources */,
 				FA60648223F7AD0000B2317A /* Formula.swift in Sources */,
 				88F327F423FBF4B40085BBC8 /* MainScreenViewController.swift in Sources */,
@@ -369,7 +373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
@@ -390,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
