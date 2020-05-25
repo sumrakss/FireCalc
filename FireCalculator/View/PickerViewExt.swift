@@ -97,23 +97,22 @@ extension MainScreenViewController: UIPickerViewDelegate, UIPickerViewDataSource
 	}
 }
 
-
 //  расширение для автоматического перевода запятой в точку
 extension String {
-	static let numberFormatter = NumberFormatter()
-	func dotGuard() -> Double {
-		var doubleValue: Double {
-			String.numberFormatter.decimalSeparator = "."
-			if let result =  String.numberFormatter.number(from: self) {
-				return result.doubleValue
-			} else {
-				String.numberFormatter.decimalSeparator = ","
-				if let result = String.numberFormatter.number(from: self) {
-					return result.doubleValue
-				}
-			}
-			return 0
-		}
-		return doubleValue
-	}
+    static let numberFormatter = NumberFormatter()
+    func dotGuard() -> Double {
+        var doubleValue: Double {
+            String.numberFormatter.decimalSeparator = "."
+            if let result =  String.numberFormatter.number(from: self) {
+                return result.doubleValue
+            } else {
+                String.numberFormatter.decimalSeparator = ","
+                if let result = String.numberFormatter.number(from: self) {
+                    return result.doubleValue
+                }
+            }
+            return 0
+        }
+        return doubleValue
+    }
 }

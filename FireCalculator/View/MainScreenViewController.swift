@@ -26,7 +26,7 @@ class MainScreenViewController: UITableViewController {
 	@IBOutlet var enterValueFields: [UITextField]!  // Текстовые поля "При включении"
 	@IBOutlet var firePlaceFields: [UITextField]!   // Текстовые поля "У очага"
 	@IBOutlet var textFieldForInput: [UITextField]! // Текстовые поля для ввода
-	@IBOutlet weak var teamStepper: UIStepper!{
+	@IBOutlet weak var teamStepper: UIStepper! {
 		didSet {
 			teamStepper.value = 3
 			teamStepper.minimumValue = 2
@@ -216,7 +216,11 @@ class MainScreenViewController: UITableViewController {
 		} else {
 			tapList.insert(tappedIndexPath)
 		}
+		
 		tableView.reloadRows(at: [indexPath], with: .none)
+		// ячейка "время у очага" не кликается без этого кода
+		let select = tableView.cellForRow(at: indexPath)
+		select?.selectionStyle = .gray
 	}
 	
 	
@@ -227,6 +231,9 @@ class MainScreenViewController: UITableViewController {
 		
 		// Отображаем поле "Время у очага" только при необходимости
 		if indexPath.row == 4 {
+			
+			let select = tableView.cellForRow(at: indexPath)
+			select?.selectionStyle = .gray
 			return (data.firePlace ? tableView.rowHeight : 0)
 		}
 		

@@ -178,8 +178,8 @@ class SettingsTableController: UITableViewController {
 		handModeSwitch.isOn = false
 		airSignalSwitch.isOn = false
 		simpleSolutionSwitch.isOn = true
-		reducLabel.text = "Давление редуктора кгс/см\u{00B2}"
-		airSignalLabel.text = "Срабатывание сигнала кгс/см\u{00B2}"
+		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
+		airSignalLabel.text = "Срабатывание сигнала (кгс/см\u{00B2})"
 		defaultDataText()
 		tableView.reloadData()
 	}

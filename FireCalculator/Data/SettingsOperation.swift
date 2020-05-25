@@ -23,6 +23,7 @@ struct SettingsOperations {
 		defaults.set(SettingsData.airSignal, forKey: "airSignal")
 		defaults.set(SettingsData.airSignalMode, forKey: "airSignalMode")
 		defaults.set(SettingsData.simpleSolution, forKey: "simpleSolution")
+		defaults.set(SettingsData.fontSize, forKey: "fontSize")
 		defaults.synchronize()
 	}
 	
@@ -64,6 +65,10 @@ struct SettingsOperations {
 		
 		if UserDefaults.standard.object(forKey: "simpleSolution") != nil {
 			SettingsData.simpleSolution = defaults.bool(forKey: "simpleSolution")
+		}
+		
+		if UserDefaults.standard.object(forKey: "fontSize") != nil {
+			SettingsData.fontSize = defaults.double(forKey: "fontSize")
 		}
 		defaults.synchronize()
 	}

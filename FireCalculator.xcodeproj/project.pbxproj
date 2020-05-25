@@ -23,13 +23,13 @@
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
-		FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */; };
 		FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C12112456F044008F768F /* AboutTableViewController.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
 		FABDA75B2479F6FA00D4128B /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA75A2479F6F900D4128B /* airFoundNew.pdf */; };
 		FABDA763247A041500D4128B /* signal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA762247A041500D4128B /* signal.pdf */; };
+		FABDA766247B8B3600D4128B /* GSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDA764247B8B3600D4128B /* GSTableViewController.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 		FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE93245BF73200BF4F2C /* Marks.pdf */; };
 /* End PBXBuildFile section */
@@ -53,13 +53,13 @@
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
-		FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		FA7C12112456F044008F768F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		FABDA75A2479F6F900D4128B /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = airFoundNew.pdf; path = ../../pdfPatterns/airFoundNew.pdf; sourceTree = "<group>"; };
 		FABDA762247A041500D4128B /* signal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = signal.pdf; path = ../../pdfPatterns/signal.pdf; sourceTree = "<group>"; };
+		FABDA764247B8B3600D4128B /* GSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSTableViewController.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FAF6AE93245BF73200BF4F2C /* Marks.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Marks.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +108,7 @@
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
 				FA183F93247784FC008967C3 /* ResponsibilityTableViewController.swift */,
 				FA183F91247779F9008967C3 /* ResponsibilityViewController.swift */,
+				FABDA764247B8B3600D4128B /* GSTableViewController.swift */,
 				88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */,
 				FA183F8F2476A59D008967C3 /* PickerViewExt.swift */,
 				FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */,
@@ -116,7 +117,6 @@
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
 				FA724A6C241B46BC0000EA3A /* ValueTableController.swift */,
 				FA7C12112456F044008F768F /* AboutTableViewController.swift */,
-				FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 				FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */,
 				FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */,
 				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
-				FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */,
+				FABDA766247B8B3600D4128B /* GSTableViewController.swift in Sources */,
 				FA183F94247784FC008967C3 /* ResponsibilityTableViewController.swift in Sources */,
 				FA183F8E247545AA008967C3 /* SettingsOperation.swift in Sources */,
 				FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */,

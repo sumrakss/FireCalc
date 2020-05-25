@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 // Типы дыхательного аппарата
 enum DeviceType: String {
@@ -28,15 +28,7 @@ class SettingsData {
 	static var settings = SettingsOperations()
 	
     //  Тип СИЗОД. По-умолчанию ДАСВ
-	static var deviceType = DeviceType.air 
-		
-		
-//	static var deviceType: DeviceType {
-//		get {
-//
-//		}
-//	}
-		
+	static var deviceType = DeviceType.air
 		
     // Единицы измерения.
 	static var measureType = MeasureType.kgc
@@ -46,12 +38,14 @@ class SettingsData {
     static var airIndex = 1.1
     // Средний расход воздуха
     static var airRate = 40.0
+
+	
 	// давление воздуха, необходимое для устойчивой работы редуктора
     static var reductionStability = 10.0
 	// Ручной ввод давления (иначе испльзутся picker)
 	static var handInputMode = false
 	// Учитывать звуковой сигнал в расчетах
-	static var airSignalMode = false
+	static var airSignalMode = true
 	// Давление срабатывания звукового сигнала
 	static var airSignal = 60.0
     static var airSignalFlag = false
@@ -69,7 +63,8 @@ class SettingsData {
 	
 	// Показать простое решение
 	static var simpleSolution = false
-	
+	// Размер шрифта текста
+	static var fontSize = 18.0
 	
 	// Очаг найден true/false
 	var firePlace = false
@@ -99,6 +94,7 @@ class SettingsData {
 			case .mpa:
 				value = 30
 				while value >= 10 {
+					
 					pickerComponents.append(String(value))
 					value -= 0.5
 				}

@@ -180,38 +180,39 @@ class PDFCreator: NSObject {
 				
 				let signal = "\(exitPString) \(value)"
 				signal.draw(at: CGPoint(x: 480, y: 514), withAttributes: large)
+//				SettingsData.airSignalFlag = false
 			}
 						
 			// 4
-			let someValue = SettingsData.airSignalFlag ? 40 : 0
+			let someValue = SettingsData.airSignalFlag ? 36 : 0
 			
 			switch SettingsData.deviceType {
 				case .air:
 					string = "\(airRate) * K"
-					string.draw(at: CGPoint(x: 180, y: 580+someValue), withAttributes: large)
-					airPressSG.draw(at: CGPoint(x: 228, y: 585+someValue), withAttributes: small)
+					string.draw(at: CGPoint(x: 180, y: 582+someValue), withAttributes: large)
+					airPressSG.draw(at: CGPoint(x: 228, y: 587+someValue), withAttributes: small)
 					
 					string = "\(airRate) * \(airIndex)"
-					string.draw(at: CGPoint(x: 330, y: 580+someValue), withAttributes: large)
+					string.draw(at: CGPoint(x: 330, y: 582+someValue), withAttributes: large)
 			
 				case .oxigen:
-					airFlow.draw(at: CGPoint(x: 190, y: 580+someValue), withAttributes: large)
-					airFlow.draw(at: CGPoint(x: 350, y: 580+someValue), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 190, y: 582+someValue), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 350, y: 582+someValue), withAttributes: large)
 			}
 			string = "(\(minFirePressure) - \(exitPString)) * \(capacity)"
-			string.draw(at: CGPoint(x: 304, y: 559+someValue), withAttributes: large)
+			string.draw(at: CGPoint(x: 304, y: 561+someValue), withAttributes: large)
 			
 			string = "= \(String(format:"%.1f", floor(workTime*10)/10)) ≈ \(Int(workTime)) мин."
-			string.draw(at: CGPoint(x: 433, y: 569+someValue), withAttributes: large)
+			string.draw(at: CGPoint(x: 433, y: 571+someValue), withAttributes: large)
 			
 			// 5
 			time.dateFormat = "HH"
 			string = "\(time.string(from: appData.fireTime))    +    = \(exitTime)"
-			string.draw(at: CGPoint(x: 310, y: 684+someValue), withAttributes: large)
+			string.draw(at: CGPoint(x: 310, y: 686+someValue), withAttributes: large)
 
 			time.dateFormat = "mm"
 			string = "\(time.string(from: appData.fireTime))     \(Int(workTime))"
-			string.draw(at: CGPoint(x: 330, y: 679+someValue), withAttributes: small)
+			string.draw(at: CGPoint(x: 330, y: 681+someValue), withAttributes: small)
 			
 			// Имя файла PDF-шаблона
 			let fileName = SettingsData.airSignalFlag ? "signal" : "airFoundNew"

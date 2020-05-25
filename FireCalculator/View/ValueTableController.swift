@@ -38,7 +38,7 @@ class ValueTableController: UITableViewController {
 				SettingsData.reductionStability *= 10
 				SettingsData.airRate *= 10
 				SettingsData.airSignal *= 10
-				print("reductionStability \(SettingsData.reductionStability)")
+				print("Измерение в кгс/см\u{00B2}")
 			}
 			checkmarkCell()
 		}
@@ -50,7 +50,7 @@ class ValueTableController: UITableViewController {
 				SettingsData.reductionStability /= 10
 				SettingsData.airRate /= 10
 				SettingsData.airSignal /= 10
-				print("reductionStability \(SettingsData.reductionStability)")
+				print("Измерение в MPa")
 			}
 			checkmarkCell()
 		}
