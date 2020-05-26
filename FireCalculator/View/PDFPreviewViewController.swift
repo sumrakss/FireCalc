@@ -10,11 +10,12 @@ import UIKit
 import PDFKit
 
 class PDFPreviewViewController: UIViewController {
+
+	@IBOutlet weak var shareButton: UIBarButtonItem!
+	@IBOutlet weak var pdfView: PDFView!
     public var documentData: Data?
     var appData: SettingsData?
-	let value = SettingsData.measureType == .kgc ? "кгс/см\u{00B2}" : "МПа"
     
-    @IBOutlet weak var pdfView: PDFView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,37 +38,22 @@ class PDFPreviewViewController: UIViewController {
 		super.viewDidDisappear(animated)
 		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 	}
-	
-	
-//	override func viewWillDisappear(_ animated: Bool) {
-//		super.viewWillDisappear(animated)
-//
-//		// При переходе на другое view разрешаем только портретную ориентацию
-//		// и устанавливаем ее
-//		AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-//	}
-	
+
 	
 	// Выход по звуковому сигналу
 	func atencionMessage() {
-		let signal = SettingsData.measureType == .kgc ? (String(Int(SettingsData.airSignal))) : (String(format:"%.1f", SettingsData.airSignal))
 		if SettingsData.airSignalMode {
 			if SettingsData.airSignalFlag {
-				let alert = UIAlertController(title: "Внимание!", message: "Выход по звуковому сигналу\n\(signal) \(value)", preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-				present(alert, animated: true, completion: nil)
 				SettingsData.airSignalFlag = false
-				return
 			}
 		}
 	}
 	
 	
-	
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {
         let pdfCreator = PDFCreator()
 		var pdfData = Data()
-		if appData!.firePlace {
+		if  appData!.firePlace {
 			pdfData = pdfCreator.foundPDFCreator(appData: appData!)
 		} else {
 			pdfData = pdfCreator.notFoundPDFCreator(appData: appData!)

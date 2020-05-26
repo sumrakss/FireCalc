@@ -11,9 +11,7 @@ import PDFKit
 
 class PDFCreator: NSObject {
     
-//	private var value = "кгс/см\u{00B2}"
 	let value = SettingsData.measureType == .kgc ? "кгс/см\u{00B2}" : "МПа"
-//	let airPressK = "* К"
 	let airPressSG = "сж"
 	
 	
@@ -115,6 +113,8 @@ class PDFCreator: NSObject {
 			// Щрифты для констант и вычисляемых значений
 			let large = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 16)!]
 			let small = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 12)!]
+			let bold = [NSAttributedString.Key.font: UIFont(name: "Charter-Bold", size: 16)!]
+			let note = [NSAttributedString.Key.font: UIFont(name: "Charter", size: 12)!]
 
 			//index
 			String(index+1).draw(at: CGPoint(x: 510, y: 141), withAttributes: large)
@@ -156,57 +156,66 @@ class PDFCreator: NSObject {
 			
 			
 			// 3
+			var formulaPat = ""	// шаблон
 			if appData.hardWork {
-				string = "2 * \(maxFallPresure) + \(reductor) = \(exitPString) \(value)"
-				string.draw(at: CGPoint(x: 330, y: 478), withAttributes: large)
+				formulaPat = "P        = 2 * P            + P         "
+				formulaPat.draw(at: CGPoint(x: 90, y: 478), withAttributes: bold)
+				formulaPat = "к. вых                 макс. пад           уст. раб"
+				formulaPat.draw(at: CGPoint(x: 98, y: 485), withAttributes: note)
+				
+				string = "= 2 * \(maxFallPresure) + \(reductor) = \(exitPString) \(value)"
+				string.draw(at: CGPoint(x: 325, y: 478), withAttributes: large)
 			} else {
-				string = " \(maxFallPresure) + \(maxFallPresure)/2 + \(reductor) = \(exitPString) \(value)"
-				string.draw(at: CGPoint(x: 348, y: 478), withAttributes: large)
+				formulaPat = "P        = P            + P            /2 + P         "
+				formulaPat.draw(at: CGPoint(x: 37, y: 478), withAttributes: bold)
+				formulaPat = "к. вых         макс. пад         макс. пад                уст. раб"
+				formulaPat.draw(at: CGPoint(x: 47, y: 485), withAttributes: note)
+				
+				string = "= \(maxFallPresure) + \(maxFallPresure)/2 + \(reductor) = \(exitPString) \(value)"
+				string.draw(at: CGPoint(x: 344, y: 478), withAttributes: large)
 			}
 			
 			if SettingsData.airSignalFlag {
 				exitPString = SettingsData.measureType == .kgc ? String(Int(SettingsData.airSignal)) : String(format:"%.1f", floor(SettingsData.airSignal * 10) / 10)
+				
+				let signal = "\(exitPString) \(value)"
+				signal.draw(at: CGPoint(x: 480, y: 514), withAttributes: large)
+//				SettingsData.airSignalFlag = false
 			}
 						
 			// 4
-			let someValue = SettingsData.airSignalFlag ? 40 : 0
+			let someValue = SettingsData.airSignalFlag ? 36 : 0
 			
 			switch SettingsData.deviceType {
 				case .air:
 					string = "\(airRate) * K"
-					string.draw(at: CGPoint(x: 180, y: 584+someValue), withAttributes: large)
-					airPressSG.draw(at: CGPoint(x: 228, y: 589+someValue), withAttributes: small)
+					string.draw(at: CGPoint(x: 180, y: 582+someValue), withAttributes: large)
+					airPressSG.draw(at: CGPoint(x: 228, y: 587+someValue), withAttributes: small)
 					
 					string = "\(airRate) * \(airIndex)"
-					string.draw(at: CGPoint(x: 330, y: 584+someValue), withAttributes: large)
+					string.draw(at: CGPoint(x: 330, y: 582+someValue), withAttributes: large)
 			
 				case .oxigen:
-					airFlow.draw(at: CGPoint(x: 190, y: 584+someValue), withAttributes: large)
-					airFlow.draw(at: CGPoint(x: 350, y: 584+someValue), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 190, y: 582+someValue), withAttributes: large)
+					airFlow.draw(at: CGPoint(x: 350, y: 582+someValue), withAttributes: large)
 			}
 			string = "(\(minFirePressure) - \(exitPString)) * \(capacity)"
-			string.draw(at: CGPoint(x: 304, y: 563+someValue), withAttributes: large)
+			string.draw(at: CGPoint(x: 304, y: 561+someValue), withAttributes: large)
 			
 			string = "= \(String(format:"%.1f", floor(workTime*10)/10)) ≈ \(Int(workTime)) мин."
-			string.draw(at: CGPoint(x: 433, y: 573+someValue), withAttributes: large)
-//			}
+			string.draw(at: CGPoint(x: 433, y: 571+someValue), withAttributes: large)
 			
 			// 5
 			time.dateFormat = "HH"
 			string = "\(time.string(from: appData.fireTime))    +    = \(exitTime)"
-			string.draw(at: CGPoint(x: 310, y: 690+someValue), withAttributes: large)
+			string.draw(at: CGPoint(x: 310, y: 686+someValue), withAttributes: large)
 
 			time.dateFormat = "mm"
 			string = "\(time.string(from: appData.fireTime))     \(Int(workTime))"
-			string.draw(at: CGPoint(x: 330, y: 685+someValue), withAttributes: small)
+			string.draw(at: CGPoint(x: 330, y: 681+someValue), withAttributes: small)
 			
 			// Имя файла PDF-шаблона
-			var fileName = appData.hardWork ? "hardAirFoundNew" : "airFoundNew"
-			// Подставляем PDF шаблон с формулами
-			if SettingsData.airSignalFlag {
-				// Выбираем шаблон в зависимости от настроек
-				fileName = appData.hardWork ? "hardFoundSignal" : "foundSignal"
-			}
+			let fileName = SettingsData.airSignalFlag ? "signal" : "airFoundNew"
 			
 			let path = Bundle.main.path(forResource: fileName, ofType: "pdf")!
 			let url = URL(fileURLWithPath: path)

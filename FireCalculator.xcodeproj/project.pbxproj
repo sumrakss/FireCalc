@@ -12,10 +12,10 @@
 		88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */; };
 		88F327F423FBF4B40085BBC8 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */; };
 		FA0B7E36246A67F30048DCCA /* airNotFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA0B7E35246A67F20048DCCA /* airNotFoundNew.pdf */; };
-		FA0B7E4A246A798F0048DCCA /* hardAirFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA0B7E48246A798F0048DCCA /* hardAirFoundNew.pdf */; };
-		FA0B7E4C246A79D20048DCCA /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA0B7E4B246A79D20048DCCA /* airFoundNew.pdf */; };
-		FA0B7E54246AA55A0048DCCA /* foundSignal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA0B7E52246AA5590048DCCA /* foundSignal.pdf */; };
-		FA0B7E56246AA75B0048DCCA /* hardFoundSignal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FA0B7E55246AA75A0048DCCA /* hardFoundSignal.pdf */; };
+		FA183F8E247545AA008967C3 /* SettingsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA183F8D247545AA008967C3 /* SettingsOperation.swift */; };
+		FA183F902476A59E008967C3 /* PickerViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA183F8F2476A59D008967C3 /* PickerViewExt.swift */; };
+		FA183F92247779F9008967C3 /* ResponsibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA183F91247779F9008967C3 /* ResponsibilityViewController.swift */; };
+		FA183F94247784FC008967C3 /* ResponsibilityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA183F93247784FC008967C3 /* ResponsibilityTableViewController.swift */; };
 		FA1F35FD23DEB07000A8641C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F35FC23DEB07000A8641C /* AppDelegate.swift */; };
 		FA1F35FF23DEB07000A8641C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */; };
 		FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1F360523DEB07300A8641C /* Assets.xcassets */; };
@@ -23,14 +23,16 @@
 		FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */; };
 		FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457BD523FE7E430004CCBC /* TypeTableController.swift */; };
 		FA60648223F7AD0000B2317A /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60648123F7AD0000B2317A /* Formula.swift */; };
-		FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */; };
 		FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA724A6C241B46BC0000EA3A /* ValueTableController.swift */; };
 		FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */; };
 		FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C12112456F044008F768F /* AboutTableViewController.swift */; };
 		FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7125C2419061900CAF846 /* SettingsData.swift */; };
+		FABDA75B2479F6FA00D4128B /* airFoundNew.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA75A2479F6F900D4128B /* airFoundNew.pdf */; };
+		FABDA763247A041500D4128B /* signal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FABDA762247A041500D4128B /* signal.pdf */; };
+		FABDA766247B8B3600D4128B /* GSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDA764247B8B3600D4128B /* GSTableViewController.swift */; };
+		FABDA76B247BE77100D4128B /* TextForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDA76A247BE77100D4128B /* TextForView.swift */; };
 		FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAE2AF2723FFC52B004FA92B /* .gitignore */; };
 		FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6AE93245BF73200BF4F2C /* Marks.pdf */; };
-		FAFF4D582473FA9600A323A6 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF4D572473FA9600A323A6 /* Calculate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +41,11 @@
 		88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewViewController.swift; sourceTree = "<group>"; };
 		88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		FA0B7E35246A67F20048DCCA /* airNotFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airNotFoundNew.pdf; sourceTree = "<group>"; };
-		FA0B7E48246A798F0048DCCA /* hardAirFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardAirFoundNew.pdf; sourceTree = "<group>"; };
-		FA0B7E4B246A79D20048DCCA /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = airFoundNew.pdf; sourceTree = "<group>"; };
-		FA0B7E52246AA5590048DCCA /* foundSignal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = foundSignal.pdf; sourceTree = "<group>"; };
-		FA0B7E55246AA75A0048DCCA /* hardFoundSignal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = hardFoundSignal.pdf; sourceTree = "<group>"; };
 		FA16B226244F27C400B5B39C /* БрандМастер - ГДЗС.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "БрандМастер - ГДЗС.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA183F8D247545AA008967C3 /* SettingsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsOperation.swift; path = FireCalculator/Data/SettingsOperation.swift; sourceTree = SOURCE_ROOT; };
+		FA183F8F2476A59D008967C3 /* PickerViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewExt.swift; sourceTree = "<group>"; };
+		FA183F91247779F9008967C3 /* ResponsibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsibilityViewController.swift; sourceTree = "<group>"; };
+		FA183F93247784FC008967C3 /* ResponsibilityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsibilityTableViewController.swift; sourceTree = "<group>"; };
 		FA1F35FC23DEB07000A8641C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1F35FE23DEB07000A8641C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA1F360523DEB07300A8641C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,14 +54,16 @@
 		FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		FA457BD523FE7E430004CCBC /* TypeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableController.swift; sourceTree = "<group>"; };
 		FA60648123F7AD0000B2317A /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
-		FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
 		FA724A6C241B46BC0000EA3A /* ValueTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTableController.swift; sourceTree = "<group>"; };
 		FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		FA7C12112456F044008F768F /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		FAB7125C2419061900CAF846 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		FABDA75A2479F6F900D4128B /* airFoundNew.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = airFoundNew.pdf; path = ../../pdfPatterns/airFoundNew.pdf; sourceTree = "<group>"; };
+		FABDA762247A041500D4128B /* signal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = signal.pdf; path = ../../pdfPatterns/signal.pdf; sourceTree = "<group>"; };
+		FABDA764247B8B3600D4128B /* GSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSTableViewController.swift; sourceTree = "<group>"; };
+		FABDA76A247BE77100D4128B /* TextForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextForView.swift; sourceTree = "<group>"; };
 		FAE2AF2723FFC52B004FA92B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FAF6AE93245BF73200BF4F2C /* Marks.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Marks.pdf; sourceTree = "<group>"; };
-		FAFF4D572473FA9600A323A6 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +88,9 @@
 		FA1F35FB23DEB07000A8641C /* FireCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				FA0B7E52246AA5590048DCCA /* foundSignal.pdf */,
-				FA0B7E55246AA75A0048DCCA /* hardFoundSignal.pdf */,
-				FA0B7E4B246A79D20048DCCA /* airFoundNew.pdf */,
-				FA0B7E48246A798F0048DCCA /* hardAirFoundNew.pdf */,
+				FABDA75A2479F6F900D4128B /* airFoundNew.pdf */,
 				FA0B7E35246A67F20048DCCA /* airNotFoundNew.pdf */,
+				FABDA762247A041500D4128B /* signal.pdf */,
 				FAF6AE93245BF73200BF4F2C /* Marks.pdf */,
 				FAB7125F2419063700CAF846 /* Data */,
 				FA3156C8241A322E00D8206B /* View */,
@@ -106,14 +108,17 @@
 			children = (
 				FA1F360723DEB07300A8641C /* LaunchScreen.storyboard */,
 				885DF6E923FCD0EA00BB6E1D /* Main.storyboard */,
-				FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */,
+				FA183F93247784FC008967C3 /* ResponsibilityTableViewController.swift */,
+				FA183F91247779F9008967C3 /* ResponsibilityViewController.swift */,
+				FABDA764247B8B3600D4128B /* GSTableViewController.swift */,
 				88F327F323FBF4B40085BBC8 /* MainScreenViewController.swift */,
+				FA183F8F2476A59D008967C3 /* PickerViewExt.swift */,
+				FA756EBA246F6920007BB424 /* SimpleTableViewController.swift */,
 				88DBDD93240BCF4E00F8012B /* PDFPreviewViewController.swift */,
 				FA457BD323FE7D2D0004CCBC /* SettingsTableController.swift */,
 				FA457BD523FE7E430004CCBC /* TypeTableController.swift */,
 				FA724A6C241B46BC0000EA3A /* ValueTableController.swift */,
 				FA7C12112456F044008F768F /* AboutTableViewController.swift */,
-				FA6CA7FF245AF7AA00B430EA /* MarksViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,8 +128,9 @@
 			children = (
 				88DBDD91240BCED900F8012B /* PDFCreator.swift */,
 				FAB7125C2419061900CAF846 /* SettingsData.swift */,
+				FA183F8D247545AA008967C3 /* SettingsOperation.swift */,
 				FA60648123F7AD0000B2317A /* Formula.swift */,
-				FAFF4D572473FA9600A323A6 /* Calculate.swift */,
+				FABDA76A247BE77100D4128B /* TextForView.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -187,15 +193,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABDA763247A041500D4128B /* signal.pdf in Resources */,
 				FAE2AF2823FFC52B004FA92B /* .gitignore in Resources */,
-				FA0B7E54246AA55A0048DCCA /* foundSignal.pdf in Resources */,
-				FA0B7E4C246A79D20048DCCA /* airFoundNew.pdf in Resources */,
+				FABDA75B2479F6FA00D4128B /* airFoundNew.pdf in Resources */,
 				FA0B7E36246A67F30048DCCA /* airNotFoundNew.pdf in Resources */,
 				885DF6EA23FCD0EA00BB6E1D /* Main.storyboard in Resources */,
 				FA1F360923DEB07300A8641C /* LaunchScreen.storyboard in Resources */,
-				FA0B7E4A246A798F0048DCCA /* hardAirFoundNew.pdf in Resources */,
 				FA1F360623DEB07300A8641C /* Assets.xcassets in Resources */,
-				FA0B7E56246AA75B0048DCCA /* hardFoundSignal.pdf in Resources */,
 				FAF6AE94245BF73200BF4F2C /* Marks.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,12 +216,16 @@
 				FAB7125D2419061900CAF846 /* SettingsData.swift in Sources */,
 				FA7C12122456F044008F768F /* AboutTableViewController.swift in Sources */,
 				88DBDD94240BCF4E00F8012B /* PDFPreviewViewController.swift in Sources */,
-				FA6CA800245AF7AA00B430EA /* MarksViewController.swift in Sources */,
+				FABDA766247B8B3600D4128B /* GSTableViewController.swift in Sources */,
+				FA183F94247784FC008967C3 /* ResponsibilityTableViewController.swift in Sources */,
+				FA183F8E247545AA008967C3 /* SettingsOperation.swift in Sources */,
 				FA756EBB246F6920007BB424 /* SimpleTableViewController.swift in Sources */,
+				FA183F902476A59E008967C3 /* PickerViewExt.swift in Sources */,
 				FA457BD623FE7E430004CCBC /* TypeTableController.swift in Sources */,
-				FAFF4D582473FA9600A323A6 /* Calculate.swift in Sources */,
 				FA724A6D241B46BC0000EA3A /* ValueTableController.swift in Sources */,
 				FA457BD423FE7D2D0004CCBC /* SettingsTableController.swift in Sources */,
+				FABDA76B247BE77100D4128B /* TextForView.swift in Sources */,
+				FA183F92247779F9008967C3 /* ResponsibilityViewController.swift in Sources */,
 				FA60648223F7AD0000B2317A /* Formula.swift in Sources */,
 				88F327F423FBF4B40085BBC8 /* MainScreenViewController.swift in Sources */,
 				88DBDD92240BCED900F8012B /* PDFCreator.swift in Sources */,
@@ -357,7 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -365,7 +373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 0.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;
@@ -378,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 95Q7BF5S85;
 				INFOPLIST_FILE = FireCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -386,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 0.9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Orekhov.FireCalculator";
 				PRODUCT_NAME = "БрандМастер - ГДЗС";
 				SWIFT_VERSION = 5.0;

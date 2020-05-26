@@ -9,7 +9,7 @@
 import UIKit
 
 class TypeTableController: UITableViewController {
-
+	
     @IBOutlet weak var cell1: UITableViewCell!
     @IBOutlet weak var cell2: UITableViewCell!
     
@@ -23,15 +23,7 @@ class TypeTableController: UITableViewController {
 	// Сохнаняем настройки при выходе
     override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
-		let defaults = UserDefaults.standard
-		defaults.set(SettingsData.deviceType.rawValue, forKey: "deviceType")
-		defaults.set(SettingsData.measureType.rawValue, forKey: "measureType")
-		defaults.set(SettingsData.cylinderVolume, forKey: "cylinderVolume")
-		defaults.set(SettingsData.airRate, forKey: "airRate")
-		defaults.set(SettingsData.airIndex, forKey: "airIndex")
-		defaults.set(SettingsData.reductionStability, forKey: "reductionStability")
-		defaults.set(SettingsData.airSignal, forKey: "airSignal")
-		defaults.synchronize()
+		SettingsData.settings.saveSettings()
 	}
 	
 	
@@ -44,7 +36,6 @@ class TypeTableController: UITableViewController {
 				SettingsData.cylinderVolume = 6.8
 				cell1.accessoryType = .checkmark
 				cell2.accessoryType = .none
-				print("reductionStability \(SettingsData.reductionStability)")
 			}
             checkmarkCell()
         }
@@ -56,7 +47,6 @@ class TypeTableController: UITableViewController {
 				SettingsData.cylinderVolume = 1.0
 				cell1.accessoryType = .none
 				cell2.accessoryType = .checkmark
-				print("reductionStability \(SettingsData.reductionStability)")
 			}
             checkmarkCell()
         }
@@ -73,6 +63,4 @@ class TypeTableController: UITableViewController {
 				cell2.accessoryType = .checkmark
 		}
     }
-	
-
 }
