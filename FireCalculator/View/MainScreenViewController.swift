@@ -57,6 +57,11 @@ class MainScreenViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configureStartScreen()
+	}
+	
+	
+	fileprivate func configureStartScreen() {
 		navigationItem.title = "Условия работы"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		
@@ -84,7 +89,7 @@ class MainScreenViewController: UITableViewController {
 	
 	
 	// Метод изменяет значения в полях ввода при изменении единиц измерения
-	func stockValues() {
+	fileprivate func stockValues() {
 		if SettingsData.measureType == .mpa && flag {
 			// Изменить значения видимых полей ввода
 			for i in 0 ..< data.enterData.count {
@@ -231,7 +236,6 @@ class MainScreenViewController: UITableViewController {
 		
 		// Отображаем поле "Время у очага" только при необходимости
 		if indexPath.row == 4 {
-			
 			let select = tableView.cellForRow(at: indexPath)
 			select?.selectionStyle = .gray
 			return (data.firePlace ? tableView.rowHeight : 0)

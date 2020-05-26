@@ -90,9 +90,8 @@ struct SettingsOperations {
 		SettingsData.reductionStability = 10.0
 		SettingsData.airSignal = 63
 		SettingsData.handInputMode = false
-		SettingsData.airSignalMode = false
+		SettingsData.airSignalMode = true
 		SettingsData.simpleSolution = false
 		SettingsData.airSignal = 60
-		
 	}
 }

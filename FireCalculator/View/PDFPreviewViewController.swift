@@ -50,7 +50,6 @@ class PDFPreviewViewController: UIViewController {
 	}
 	
 	
-	
 	@IBAction func shareAction(_ sender: UIBarButtonItem) {
         let pdfCreator = PDFCreator()
 		var pdfData = Data()

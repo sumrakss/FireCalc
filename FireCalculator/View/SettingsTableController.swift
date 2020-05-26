@@ -42,7 +42,18 @@ class SettingsTableController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(false)
-      
+		configureViewInterface()
+    }
+    
+	// Сохнаняем настройки при выходе
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		SettingsData.settings.saveSettings()
+		print("Settings save")
+	}
+	
+	
+	fileprivate func configureViewInterface() {
 		airSignalSwitch.isOn = SettingsData.airSignalMode ? true : false
 		handModeSwitch.isOn = SettingsData.handInputMode ? true : false
 		simpleSolutionSwitch.isOn = !SettingsData.simpleSolution ? true : false
@@ -71,17 +82,10 @@ class SettingsTableController: UITableViewController {
         }
 		defaultDataText()
 		tableView.reloadData()
-    }
-    
-	// Сохнаняем настройки при выходе
-	override func viewDidDisappear(_ animated: Bool) {
-		super.viewDidDisappear(animated)
-		SettingsData.settings.saveSettings()
-		print("Settings save")
 	}
 	
 	
-	func defaultDataText() {
+	fileprivate func defaultDataText() {
 		cylinderVolumeTextField.text = String(SettingsData.cylinderVolume)
 		airRateTextField.text = String(Int(SettingsData.airRate))
 		airIndexTextField.text = String(SettingsData.airIndex)
@@ -176,7 +180,7 @@ class SettingsTableController: UITableViewController {
 		typeDetailLabel.text = "ДАСВ"
 		valueDetailLabel.text = "кгс/см\u{00B2}"
 		handModeSwitch.isOn = false
-		airSignalSwitch.isOn = false
+		airSignalSwitch.isOn = true
 		simpleSolutionSwitch.isOn = true
 		reducLabel.text = "Давление редуктора (кгс/см\u{00B2})"
 		airSignalLabel.text = "Срабатывание сигнала (кгс/см\u{00B2})"
