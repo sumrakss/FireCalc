@@ -1187,18 +1187,8 @@
                                                         <constraint firstAttribute="height" constant="37" id="gyf-CE-WDC"/>
                                                     </constraints>
                                                 </imageView>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БрандМастер в VK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-PY-LrP">
-                                                    <rect key="frame" x="34" y="11.999999999999998" width="176" height="20.333333333333329"/>
-=======
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Примечания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-PY-LrP">
-                                                    <rect key="frame" x="34" y="11.333333333333334" width="176" height="21.666666666666664"/>
->>>>>>> version09
-=======
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Примечания к формулам" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-PY-LrP">
                                                     <rect key="frame" x="34" y="11" width="213" height="22"/>
->>>>>>> version09
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="213" id="ZHr-rB-bTb"/>
                                                     </constraints>
