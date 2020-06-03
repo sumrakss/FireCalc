@@ -37,7 +37,11 @@ class SettingsTableController: UITableViewController {
 		// Скрываем клавиатуру
 		tableView.keyboardDismissMode =  .onDrag
 		navigationItem.title = "Настройки"
-		navigationController?.navigationBar.prefersLargeTitles = true
+		if #available(iOS 11.0, *) {
+			navigationController?.navigationBar.prefersLargeTitles = true
+		} else {
+			// Fallback on earlier versions
+		}
 	}
     
     override func viewWillAppear(_ animated: Bool) {

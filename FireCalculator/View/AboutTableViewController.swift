@@ -15,7 +15,11 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationItem.title = "Информация"
-		navigationController?.navigationBar.prefersLargeTitles = true
+		if #available(iOS 11.0, *) {
+			navigationController?.navigationBar.prefersLargeTitles = true
+		} else {
+			// Fallback on earlier versions
+		}
 		tableView.beginUpdates()
 		tableView.endUpdates()
 	}
